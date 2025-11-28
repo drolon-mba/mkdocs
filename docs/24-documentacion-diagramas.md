@@ -185,7 +185,7 @@ erDiagram
 **When:** Diseñar arquitectura OOP, refactoring.
 
 **PlantUML:**
-```plantuml
+```puml
 @startuml
 class User {
   - id: UUID
@@ -263,7 +263,7 @@ sequenceDiagram
 **When:** Arquitectura modular, microservicios.
 
 **PlantUML:**
-```plantuml
+```puml
 @startuml
 package "Frontend" {
   [React App]
@@ -362,7 +362,7 @@ graph TB
 **When:** DevOps, infraestructura, deployment planning.
 
 **PlantUML:**
-```plantuml
+```puml
 @startuml
 node "AWS" {
   node "EKS Cluster" {
