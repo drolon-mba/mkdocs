@@ -6,6 +6,24 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 Elegir Protocolo](#elegir-protocolo)
+- [🌐 REST (Representational State Transfer)](#rest-representational-state-transfer)
+- [🔍 GraphQL](#graphql)
+- [⚡ gRPC](#grpc)
+- [🔌 WebSockets](#websockets)
+- [📨 Server-Sent Events (SSE)](#server-sent-events-sse)
+- [🎯 Event-Driven / Async](#event-driven-async)
+- [📄 Documentación](#documentacion)
+- [🔐 Autenticación](#autenticacion)
+- [🎨 Diseño de APIs](#diseno-de-apis)
+- [🔄 Webhooks](#webhooks)
+- [📊 Comparación](#comparacion)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## 🎯 Elegir Protocolo
 
 **What:** Definir cómo sistemas se comunican.
@@ -304,4 +322,4 @@ X-Signature: sha256=...
 
 ---
 
-[⬅️ Anterior: Bases de Datos](./09-bases-datos.md) | [⬆️ Volver arriba](#10---apis-y-protocolos) | [➡️ Siguiente: Mobile, UI y UX](./11-mobile-ui-ux.md)
+[⬅️ Anterior: Bases de Datos](./09-bases-datos.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Mobile, UI y UX](./11-mobile-ui-ux.md)

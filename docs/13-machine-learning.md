@@ -6,6 +6,25 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🤖 Machine Learning](#machine-learning)
+- [📊 Tipos de Aprendizaje](#tipos-de-aprendizaje)
+- [🧠 Algoritmos Clásicos (ML)](#algoritmos-clasicos-ml)
+- [🧠 Deep Learning](#deep-learning)
+- [🗣️ NLP (Natural Language Processing)](#nlp-natural-language-processing)
+- [👁️ Computer Vision](#computer-vision)
+- [🔄 MLOps](#mlops)
+- [📊 Pipeline ML](#pipeline-ml)
+- [🎯 Evaluación de Modelos](#evaluacion-de-modelos)
+- [🔧 Feature Engineering](#feature-engineering)
+- [⚙️ Optimización Hiperparámetros](#optimizacion-hiperparametros)
+- [🧪 Validación](#validacion)
+- [🚫 Problemas Comunes](#problemas-comunes)
+- [🔐 Ética y Fairness](#etica-y-fairness)
+- [📚 Recursos](#recursos)
+---
+
 ## 🤖 Machine Learning
 
 **What:** Algoritmos que mejoran con experiencia sin ser programados explícitamente.
@@ -234,4 +253,4 @@
 
 ---
 
-[⬅️ Anterior: Infraestructura Cloud](./12-infraestructura-cloud.md) | [⬆️ Volver arriba](#13---machine-learning-y-deep-learning) | [➡️ Siguiente: Ciencia de Datos](./14-ciencia-datos.md)
+[⬅️ Anterior: Infraestructura Cloud](./12-infraestructura-cloud.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Ciencia de Datos](./14-ciencia-datos.md)

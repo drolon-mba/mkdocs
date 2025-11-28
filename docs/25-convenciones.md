@@ -6,6 +6,21 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🔤 Nomenclatura](#nomenclatura)
+- [📁 Estructura de Carpetas](#estructura-de-carpetas)
+- [🔀 Git Workflow](#git-workflow)
+- [📦 Gestión de Dependencias](#gestion-de-dependencias)
+- [🌍 i18n y l10n](#i18n-y-l10n)
+- [⚙️ Configuración y Entornos](#configuracion-y-entornos)
+- [🔒 .gitignore](#gitignore)
+- [📋 Code Style](#code-style)
+- [📝 Comentarios y Documentación](#comentarios-y-documentacion)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## 🔤 Nomenclatura
 
 **What:** Reglas consistentes para nombrar variables, funciones, archivos y componentes.
@@ -783,4 +798,4 @@ function isValidEmail(email: string): boolean {
 
 ---
 
-[⬅️ Anterior: Documentación y Diagramas](./24-documentacion-diagramas.md) | [⬆️ Volver arriba](#25---convenciones-y-estándares) | [➡️ Siguiente: Onboarding](./26-onboarding.md)
+[⬅️ Anterior: Documentación y Diagramas](./24-documentacion-diagramas.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Onboarding](./26-onboarding.md)

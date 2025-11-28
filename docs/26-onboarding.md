@@ -6,6 +6,24 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 Onboarding Efectivo](#onboarding-efectivo)
+- [📅 Timeline Sugerido](#timeline-sugerido)
+- [📚 Onboarding Docs Esenciales](#onboarding-docs-esenciales)
+- [👥 Buddy System](#buddy-system)
+- [🎓 Learning Path](#learning-path)
+- [🔍 Explorar Codebase](#explorar-codebase)
+- [📊 Metrics de Onboarding](#metrics-de-onboarding)
+- [💬 Check-ins Regulares](#check-ins-regulares)
+- [🎉 Celebrar Hitos](#celebrar-hitos)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📋 Onboarding Checklist (Manager/TL)](#onboarding-checklist-managertl)
+- [📝 Template: Feedback Survey](#template-feedback-survey)
+- [🌟 Onboarding Remoto](#onboarding-remoto)
+- [📚 Recursos](#recursos)
+---
+
 ## 🎯 Onboarding Efectivo
 
 **What:** Proceso para que nuevo desarrollador sea productivo rápidamente y se sienta parte del equipo.
@@ -379,4 +397,4 @@ Onboarding Feedback
 
 ---
 
-[⬅️ Anterior: Convenciones](./25-convenciones.md) | [⬆️ Volver arriba](#26---onboarding-de-nuevos-desarrolladores) | [➡️ Siguiente: Checklist de Producción](./27-checklist-produccion.md)
+[⬅️ Anterior: Convenciones](./25-convenciones.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Checklist de Producción](./27-checklist-produccion.md)

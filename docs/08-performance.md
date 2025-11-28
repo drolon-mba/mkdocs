@@ -6,6 +6,20 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 Principios de Performance](#principios-de-performance)
+- [🗄️ Base de Datos](#base-de-datos)
+- [🚀 Backend](#backend)
+- [💻 Frontend](#frontend)
+- [🌐 Networking](#networking)
+- [📊 Profiling y Diagnóstico](#profiling-y-diagnostico)
+- [🎯 Métricas Clave](#metricas-clave)
+- [💾 Caching Strategies](#caching-strategies)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## 🎯 Principios de Performance
 
 **What:** Optimización basada en mediciones, no suposiciones.
@@ -139,4 +153,4 @@
 
 ---
 
-[⬅️ Anterior: Observabilidad](./07-observabilidad.md) | [⬆️ Volver arriba](#08---optimización-de-performance) | [➡️ Siguiente: Bases de Datos](./09-bases-datos.md)
+[⬅️ Anterior: Observabilidad](./07-observabilidad.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Bases de Datos](./09-bases-datos.md)

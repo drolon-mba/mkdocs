@@ -6,6 +6,15 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [📊 Niveles de Criticidad](#niveles-de-criticidad)
+- [🧠 Reglas Generales de Código](#reglas-generales-de-codigo)
+- [🧱 Reglas por Lenguaje](#reglas-por-lenguaje)
+- [🧩 Reglas por Framework](#reglas-por-framework)
+- [🎯 Checklist de Código Limpio](#checklist-de-codigo-limpio)
+---
+
 ## 📊 Niveles de Criticidad
 
 | Criticidad | Abrev. | Explicación                                  |
@@ -192,4 +201,4 @@ Antes de cada commit, verificar:
 
 ---
 
-[⬆️ Volver arriba](#01---fundamentos) | [➡️ Siguiente: Disciplinas de Desarrollo](./02-disciplinas-desarrollo.md)
+[⬆️ Volver arriba](#) | [➡️ Siguiente: Disciplinas de Desarrollo](./02-disciplinas-desarrollo.md)

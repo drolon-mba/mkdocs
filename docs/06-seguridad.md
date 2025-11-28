@@ -6,6 +6,22 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 Seguridad como Cultura](#seguridad-como-cultura)
+- [🔐 Principios Fundamentales](#principios-fundamentales)
+- [🛡️ OWASP Top 10 (2021)](#owasp-top-10-2021)
+- [🔑 Autenticación y Autorización](#autenticacion-y-autorizacion)
+- [🔒 Secrets Management](#secrets-management)
+- [🛡️ Patrones de Seguridad Avanzados](#patrones-de-seguridad-avanzados)
+- [🔍 Security Testing](#security-testing)
+- [🔐 Cifrado](#cifrado)
+- [🚨 Incident Response](#incident-response)
+- [📋 Security Checklist](#security-checklist)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## 🎯 Seguridad como Cultura
 
 **What:** Integrar seguridad en cada fase del desarrollo (Shift-Left Security).
@@ -175,4 +191,4 @@
 
 ---
 
-[⬅️ Anterior: DevOps](./05-devops.md) | [⬆️ Volver arriba](#06---seguridad) | [➡️ Siguiente: Observabilidad](./07-observabilidad.md)
+[⬅️ Anterior: DevOps](./05-devops.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Observabilidad](./07-observabilidad.md)

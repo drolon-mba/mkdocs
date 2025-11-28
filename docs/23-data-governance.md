@@ -6,6 +6,22 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 Data Governance](#data-governance)
+- [📊 Pilares de Data Governance](#pilares-de-data-governance)
+- [📋 Data Quality Framework](#data-quality-framework)
+- [🔍 Data Lineage](#data-lineage)
+- [📚 Data Catalog](#data-catalog)
+- [🔐 Data Security & Privacy](#data-security-privacy)
+- [🗄️ Master Data Management (MDM)](#master-data-management-mdm)
+- [📊 Data Quality Monitoring](#data-quality-monitoring)
+- [🔄 Data Lifecycle Management](#data-lifecycle-management)
+- [📋 Data Governance Roles](#data-governance-roles)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## 🎯 Data Governance
 
 **What:** Framework de políticas, procesos y controles para gestionar datos como activo estratégico.
@@ -312,4 +328,4 @@ Transaction Records:
 
 ---
 
-[⬅️ Anterior: Cost Optimization](./22-cost-optimization.md) | [⬆️ Volver arriba](#23---data-governance) | [➡️ Siguiente: Documentación y Diagramas](./24-documentacion-diagramas.md)
+[⬅️ Anterior: Cost Optimization](./22-cost-optimization.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Documentación y Diagramas](./24-documentacion-diagramas.md)

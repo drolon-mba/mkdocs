@@ -6,6 +6,21 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 ¿Qué es DevOps?](#que-es-devops)
+- [🔄 CI/CD (Continuous Integration / Continuous Delivery)](#cicd-continuous-integration-continuous-delivery)
+- [🏗️ IaC (Infrastructure as Code)](#iac-infrastructure-as-code)
+- [📦 Contenedores y Orquestación](#contenedores-y-orquestacion)
+- [🚀 Patrones de Despliegue](#patrones-de-despliegue)
+- [🔒 GitOps](#gitops)
+- [🛡️ Seguridad en CI/CD](#seguridad-en-cicd)
+- [📊 Métricas DORA (DevOps Research and Assessment)](#metricas-dora-devops-research-and-assessment)
+- [🔧 Herramientas Clave por Fase](#herramientas-clave-por-fase)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## 🎯 ¿Qué es DevOps?
 
 **What:** Cultura y conjunto de prácticas que combinan desarrollo (Dev) y operaciones (Ops) para entregar software de forma rápida, confiable y segura.
@@ -165,4 +180,4 @@
 
 ---
 
-[⬅️ Anterior: Arquitectura](./04-arquitectura-patrones.md) | [⬆️ Volver arriba](#05---devops) | [➡️ Siguiente: Seguridad](./06-seguridad.md)
+[⬅️ Anterior: Arquitectura](./04-arquitectura-patrones.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Seguridad](./06-seguridad.md)

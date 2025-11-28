@@ -6,6 +6,21 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 Los Tres Pilares](#los-tres-pilares)
+- [📝 Logging (Registros)](#logging-registros)
+- [📊 Metrics (Métricas)](#metrics-metricas)
+- [🔍 Tracing (Trazas Distribuidas)](#tracing-trazas-distribuidas)
+- [🏥 Health Checks](#health-checks)
+- [🚨 Alerting (Alertas)](#alerting-alertas)
+- [📈 APM (Application Performance Monitoring)](#apm-application-performance-monitoring)
+- [🎯 SLIs, SLOs, SLAs](#slis-slos-slas)
+- [📊 Dashboards](#dashboards)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## 🎯 Los Tres Pilares
 
 **What:** Logging, Metrics, Tracing - información complementaria para diagnosticar sistemas.
@@ -240,4 +255,4 @@ Si SLO = 99.9%, Error Budget = 0.1% = 43.2 min/mes
 
 ---
 
-[⬅️ Anterior: Seguridad](./06-seguridad.md) | [⬆️ Volver arriba](#07---observabilidad-y-telemetría) | [➡️ Siguiente: Performance](./08-performance.md)
+[⬅️ Anterior: Seguridad](./06-seguridad.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Performance](./08-performance.md)

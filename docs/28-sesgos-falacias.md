@@ -8,18 +8,22 @@
 
 ## 📋 Índice Rápido
 
-- [¿Por qué importan los Sesgos?](#-por-qué-importan-los-sesgos)
-- [Leyes Fundamentales](#-leyes-fundamentales-en-tecnología)
-- [Sesgos de Decisión y Juicio](#-sesgos-de-decisión-y-juicio)
-- [Sesgos en Datos y Análisis](#-sesgos-en-datos-y-análisis)
-- [Sesgos Sociales y de Grupo](#-sesgos-sociales-y-de-grupo)
-- [Sesgos Perceptuales](#-sesgos-perceptuales-y-de-evaluación)
-- [Falacias Lógicas](#️-falacias-lógicas-críticas)
-- [Leyes y Efectos Paradójicos](#️-leyes-y-efectos-paradójicos)
-- [Sesgos en Data Science y ML](#-sesgos-en-data-science-y-ml)
-- [Estrategias de Mitigación](#️-estrategias-de-mitigación)
-- [Checklist Anti-Sesgos](#-checklist-anti-sesgos)
-
+- [🧠 ¿Por qué importan los Sesgos?](#por-que-importan-los-sesgos)
+- [📐 Leyes Fundamentales en Tecnología](#leyes-fundamentales-en-tecnologia)
+- [🎯 Sesgos de Decisión y Juicio](#sesgos-de-decision-y-juicio)
+- [📊 Sesgos en Datos y Análisis](#sesgos-en-datos-y-analisis)
+- [👥 Sesgos Sociales y de Grupo](#sesgos-sociales-y-de-grupo)
+- [🔍 Sesgos Perceptuales y de Evaluación](#sesgos-perceptuales-y-de-evaluacion)
+- [⚖️ Falacias Lógicas Críticas](#falacias-logicas-criticas)
+- [⚠️ Leyes y Efectos Paradójicos](#leyes-y-efectos-paradojicos)
+- [📊 Sesgos en Data Science y ML](#sesgos-en-data-science-y-ml)
+- [🛡️ Estrategias de Mitigación](#estrategias-de-mitigacion)
+- [🚫 Señales de Alerta: Cómo Reconocer Estás Sesgado](#senales-de-alerta-como-reconocer-estas-sesgado)
+- [✅ Checklist Anti-Sesgos](#checklist-anti-sesgos)
+- [🎯 Template para RFCs Anti-Sesgo](#template-para-rfcs-anti-sesgo)
+- [🎯 Casos Prácticos en Tecnología](#casos-practicos-en-tecnologia)
+- [📚 Recursos](#recursos)
+- [💡 Clave para Semi-Seniors](#clave-para-semi-seniors)
 ---
 
 ## 🧠 ¿Por qué importan los Sesgos?
@@ -479,4 +483,4 @@ Los mejores tech leads y PMs no son los que no tienen sesgos (todos los tenemos)
 
 ---
 
-[⬅️ Anterior: Checklist Producción](./27-checklist-produccion.md) | [⬆️ Volver arriba](#28---sesgos-cognitivos-falacias-y-leyes-a-evitar) | [🏠 Volver al índice](./00-indice.md)
+[⬅️ Anterior: Checklist Producción](./27-checklist-produccion.md) | [⬆️ Volver arriba](#) | [🏠 Volver al índice](./00-indice.md)

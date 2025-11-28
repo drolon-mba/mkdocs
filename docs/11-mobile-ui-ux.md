@@ -6,6 +6,15 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [📱 Mobile Development](#mobile-development)
+- [🎨 UI (Interfaz de Usuario)](#ui-interfaz-de-usuario)
+- [🧭 UX (Experiencia de Usuario)](#ux-experiencia-de-usuario)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## 📱 Mobile Development
 
 **What:** Desarrollo de aplicaciones para dispositivos móviles (iOS, Android).
@@ -215,4 +224,4 @@
 
 ---
 
-[⬅️ Anterior: APIs y Protocolos](./10-apis-protocolos.md) | [⬆️ Volver arriba](#11---mobile-ui-y-ux) | [➡️ Siguiente: Infraestructura Cloud](./12-infraestructura-cloud.md)
+[⬅️ Anterior: APIs y Protocolos](./10-apis-protocolos.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Infraestructura Cloud](./12-infraestructura-cloud.md)

@@ -6,6 +6,21 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🤝 Colaboración en Desarrollo](#colaboracion-en-desarrollo)
+- [👥 Pair Programming](#pair-programming)
+- [👨‍👩‍👧‍👦 Mob Programming](#mob-programming)
+- [🔍 Code Review](#code-review)
+- [📋 Blameless Post-Mortems](#blameless-post-mortems)
+- [🔄 Retrospectivas](#retrospectivas)
+- [🎯 Working Agreements](#working-agreements)
+- [🗣️ Comunicación Efectiva](#comunicacion-efectiva)
+- [🎓 Knowledge Sharing](#knowledge-sharing)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## 🤝 Colaboración en Desarrollo
 
 **What:** Trabajar juntos efectivamente para crear mejor software.
@@ -327,4 +342,4 @@
 
 ---
 
-[⬅️ Anterior: Métricas y KPIs](./20-metricas-kpis.md) | [⬆️ Volver arriba](#21---colaboración-y-cultura-de-desarrollo) | [➡️ Siguiente: Optimización de Costos](./22-cost-optimization.md)
+[⬅️ Anterior: Métricas y KPIs](./20-metricas-kpis.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Optimización de Costos](./22-cost-optimization.md)

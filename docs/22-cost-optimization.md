@@ -6,6 +6,25 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [💰 FinOps (Financial Operations)](#finops-financial-operations)
+- [📊 Fases FinOps](#fases-finops)
+- [🏷️ Tagging Strategy](#tagging-strategy)
+- [📏 Right-Sizing](#right-sizing)
+- [💳 Reserved Instances & Savings Plans](#reserved-instances-savings-plans)
+- [⚡ Spot Instances](#spot-instances)
+- [📉 Eliminar Waste](#eliminar-waste)
+- [⏰ Scheduling (Apagar recursos)](#scheduling-apagar-recursos)
+- [📦 Storage Optimization](#storage-optimization)
+- [🌐 Network Costs](#network-costs)
+- [📊 Cost Monitoring & Alerting](#cost-monitoring-alerting)
+- [🎯 FinOps KPIs](#finops-kpis)
+- [🔄 FinOps Culture](#finops-culture)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## 💰 FinOps (Financial Operations)
 
 **What:** Disciplina de gestión financiera cloud que une finanzas, tecnología y negocio.
@@ -317,4 +336,4 @@ Alert: Recursos sin tags
 
 ---
 
-[⬅️ Anterior: Colaboración y Cultura](./21-colaboracion-cultura.md) | [⬆️ Volver arriba](#22---optimización-de-costos-finops) | [➡️ Siguiente: Data Governance](./23-data-governance.md)
+[⬅️ Anterior: Colaboración y Cultura](./21-colaboracion-cultura.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Data Governance](./23-data-governance.md)

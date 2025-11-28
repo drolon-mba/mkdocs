@@ -6,6 +6,29 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 SMART Goals](#smart-goals)
+- [📊 Goal Pyramid](#goal-pyramid)
+- [🎯 BHAG (Big Hairy Audacious Goal)](#bhag-big-hairy-audacious-goal)
+- [📋 SCQA Framework](#scqa-framework)
+- [🔍 CIRCLES Method](#circles-method)
+- [📊 Lean Canvas](#lean-canvas)
+- [🧠 Mapa de Empatía](#mapa-de-empatia)
+- [🎯 Product Management](#product-management)
+- [💡 JTBD (Jobs To Be Done)](#jtbd-jobs-to-be-done)
+- [🗺️ User Story Mapping](#user-story-mapping)
+- [🎯 OKRs (Objectives & Key Results)](#okrs-objectives-key-results)
+- [⭐ North Star Metric](#north-star-metric)
+- [📊 Product-Market Fit](#product-market-fit)
+- [🔄 Build-Measure-Learn](#build-measure-learn)
+- [📋 Priorización](#priorizacion)
+- [📝 Product Requirements](#product-requirements)
+- [🔍 Discovery Techniques](#discovery-techniques)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## 🎯 SMART Goals
 
 **What:** Criterio para definir objetivos efectivos.
@@ -504,4 +527,4 @@ Pregunta a usuarios: "¿Qué tan decepcionado estarías si ya no pudieras usar e
 
 ---
 
-[⬅️ Anterior: Análisis Estratégico](./18-analisis-estrategico.md) | [⬆️ Volver arriba](#19---product-management) | [➡️ Siguiente: Métricas y KPIs](./20-metricas-kpis.md)
+[⬅️ Anterior: Análisis Estratégico](./18-analisis-estrategico.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Métricas y KPIs](./20-metricas-kpis.md)

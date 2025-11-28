@@ -6,6 +6,22 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 Mejora Continua](#mejora-continua)
+- [📊 Six Sigma](#six-sigma)
+- [🔄 Kaizen (改善)](#kaizen)
+- [🏭 Lean Manufacturing](#lean-manufacturing)
+- [🔄 Ciclo PDCA (Plan-Do-Check-Act)](#ciclo-pdca-plan-do-check-act)
+- [🧹 5S (5 Eses)](#5s-5-eses)
+- [🔧 8D (Eight Disciplines)](#8d-eight-disciplines)
+- [📋 Kanban](#kanban)
+- [⚙️ MTBF y MTTR](#mtbf-y-mttr)
+- [📊 Comparación de Metodologías](#comparacion-de-metodologias)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## 🎯 Mejora Continua
 
 **What:** Filosofía de optimización incremental constante en procesos y productos.
@@ -272,4 +288,4 @@
 
 ---
 
-[⬅️ Anterior: Herramientas de Problemas](./16-herramientas-problemas.md) | [⬆️ Volver arriba](#17---metodologías-de-mejora-continua) | [➡️ Siguiente: Análisis Estratégico](./18-analisis-estrategico.md)
+[⬅️ Anterior: Herramientas de Problemas](./16-herramientas-problemas.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Análisis Estratégico](./18-analisis-estrategico.md)

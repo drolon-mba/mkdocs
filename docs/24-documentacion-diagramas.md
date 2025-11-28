@@ -6,6 +6,18 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [📝 Documentación de Software](#documentacion-de-software)
+- [📖 Lenguajes de Documentación](#lenguajes-de-documentacion)
+- [🎨 Herramientas de Diagramas](#herramientas-de-diagramas)
+- [📊 Tipos de Diagramas](#tipos-de-diagramas)
+- [📚 Tipos de Documentación](#tipos-de-documentacion)
+- [✍️ Best Practices Documentación](#best-practices-documentacion)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## 📝 Documentación de Software
 
 **What:** Información escrita o visual que explica cómo funciona, se usa o se mantiene un sistema.
@@ -422,4 +434,4 @@ be --> s3
 
 ---
 
-[⬅️ Anterior: Data Governance](./23-data-governance.md) | [⬆️ Volver arriba](#24---documentación-y-diagramas) | [➡️ Siguiente: Convenciones](./25-convenciones.md)
+[⬅️ Anterior: Data Governance](./23-data-governance.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Convenciones](./25-convenciones.md)

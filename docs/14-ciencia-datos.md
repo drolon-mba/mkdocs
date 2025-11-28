@@ -6,6 +6,23 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [📊 Ciencia de Datos](#ciencia-de-datos)
+- [🔄 Workflow Data Science](#workflow-data-science)
+- [🧹 Data Cleaning (Limpieza)](#data-cleaning-limpieza)
+- [🔍 EDA (Exploratory Data Analysis)](#eda-exploratory-data-analysis)
+- [📈 Visualización](#visualizacion)
+- [📊 Estadística](#estadistica)
+- [🔬 Reproducibilidad](#reproducibilidad)
+- [🧮 Herramientas Core](#herramientas-core)
+- [📊 Tipos de Análisis](#tipos-de-analisis)
+- [🔄 Data Quality](#data-quality)
+- [🎯 Métricas de Negocio](#metricas-de-negocio)
+- [🚫 Errores Comunes](#errores-comunes)
+- [📚 Recursos](#recursos)
+---
+
 ## 📊 Ciencia de Datos
 
 **What:** Disciplina que combina estadística, programación y conocimiento del dominio para extraer insights de datos.
@@ -226,4 +243,4 @@
 
 ---
 
-[⬅️ Anterior: Machine Learning](./13-machine-learning.md) | [⬆️ Volver arriba](#14---ciencia-de-datos) | [➡️ Siguiente: Gestión de Calidad](./15-gestion-calidad.md)
+[⬅️ Anterior: Machine Learning](./13-machine-learning.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Gestión de Calidad](./15-gestion-calidad.md)

@@ -6,6 +6,19 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 ¿Qué son las Disciplinas de Desarrollo?](#que-son-las-disciplinas-de-desarrollo)
+- [🧪 Disciplinas Principales](#disciplinas-principales)
+- [🔄 Ciclo TDD Detallado](#ciclo-tdd-detallado)
+- [📝 Ejemplo BDD (Gherkin)](#ejemplo-bdd-gherkin)
+- [🏗️ DDD: Conceptos Clave](#ddd-conceptos-clave)
+- [🧪 Property-Based Testing: Ejemplo](#property-based-testing-ejemplo)
+- [🎯 ¿Cuándo usar cada disciplina?](#cuando-usar-cada-disciplina)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## 🎯 ¿Qué son las Disciplinas de Desarrollo?
 
 Enfoques metodológicos que establecen **cómo** escribir código, diseñar sistemas y validar funcionalidad. Van más allá de "escribir tests" hacia culturas de calidad integrada.
@@ -150,4 +163,4 @@ def test_reverse_involution(texto):
 
 ---
 
-[⬅️ Anterior: Fundamentos](./01-fundamentos.md) | [⬆️ Volver arriba](#02---disciplinas-de-desarrollo) | [➡️ Siguiente: Testing](./03-testing.md)
+[⬅️ Anterior: Fundamentos](./01-fundamentos.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Testing](./03-testing.md)

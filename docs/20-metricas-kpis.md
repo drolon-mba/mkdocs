@@ -6,6 +6,24 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 Métricas vs KPIs](#metricas-vs-kpis)
+- [❤️ HEART Framework (Google)](#heart-framework-google)
+- [🏴‍☠️ AARRR (Pirate Metrics)](#aarrr-pirate-metrics)
+- [📊 Métricas DORA (DevOps)](#metricas-dora-devops)
+- [🎯 NPS, CSAT, CES](#nps-csat-ces)
+- [💰 Métricas de Negocio](#metricas-de-negocio)
+- [📈 Métricas de Engagement](#metricas-de-engagement)
+- [🔄 Retention Cohorts](#retention-cohorts)
+- [⚠️ Vanity Metrics vs Actionable Metrics](#vanity-metrics-vs-actionable-metrics)
+- [🎯 North Star + Supporting Metrics](#north-star-supporting-metrics)
+- [🔬 A/B Testing Metrics](#ab-testing-metrics)
+- [📊 Dashboards](#dashboards)
+- [🚫 Errores Comunes](#errores-comunes)
+- [📚 Recursos](#recursos)
+---
+
 ## 🎯 Métricas vs KPIs
 
 **What:** Métricas = cualquier dato medible. KPIs = métricas críticas para objetivos estratégicos.
@@ -317,4 +335,4 @@
 
 ---
 
-[⬅️ Anterior: Product Management](./19-product-management.md) | [⬆️ Volver arriba](#20---métricas-y-kpis) | [➡️ Siguiente: Colaboración y Cultura](./21-colaboracion-cultura.md)
+[⬅️ Anterior: Product Management](./19-product-management.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Colaboración y Cultura](./21-colaboracion-cultura.md)

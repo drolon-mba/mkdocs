@@ -1,4 +1,4 @@
-# 📘 Guía Integral de Ingeniería de Software
+# 00 - Indice General
 
 > Documento vivo de estándares, buenas prácticas y decisiones técnicas del equipo.
 >
@@ -6,6 +6,15 @@
 >
 > Última actualización: `2025-04-05`
 
+---
+
+## 📋 Índice Rápido
+
+- [📖 Índice General](#indice-general)
+- [🎯 Cómo usar esta guía](#como-usar-esta-guia)
+- [📋 Niveles de Criticidad](#niveles-de-criticidad)
+- [🤝 Contribuciones](#contribuciones)
+- [📚 Recursos Adicionales](#recursos-adicionales)
 ---
 
 ## 📖 Índice General

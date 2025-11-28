@@ -6,6 +6,28 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 Pre-Deploy Checklist](#pre-deploy-checklist)
+- [✅ Código y Testing](#codigo-y-testing)
+- [🔒 Seguridad](#seguridad)
+- [🗄️ Base de Datos](#base-de-datos)
+- [📊 Performance](#performance)
+- [🔍 Observabilidad](#observabilidad)
+- [🌐 Infraestructura](#infraestructura)
+- [📝 Documentación](#documentacion)
+- [🔄 Proceso de Deploy](#proceso-de-deploy)
+- [✅ Post-Deploy Verification](#post-deploy-verification)
+- [🚨 Rollback Criteria](#rollback-criteria)
+- [🎯 Checklist por Tipo de Change](#checklist-por-tipo-de-change)
+- [📋 Sign-off](#sign-off)
+- [🚫 Common Mistakes](#common-mistakes)
+- [🎓 Mejora Continua](#mejora-continua)
+- [📚 Recursos](#recursos)
+- [✅ Final Approval](#final-approval)
+- [🎉 ¡Checklist Completo!](#checklist-completo)
+---
+
 ## 🎯 Pre-Deploy Checklist
 
 **What:** Lista de verificación obligatoria antes de cualquier deploy a producción.
@@ -423,7 +445,7 @@ Después de cada deploy:
 
 ---
 
-[⬅️ Anterior: Onboarding](./26-onboarding.md) | [⬆️ Volver arriba](#27---checklist-de-producción) | [🏠 Volver al índice](./00-indice.md)
+[⬅️ Anterior: Onboarding](./26-onboarding.md) | [⬆️ Volver arriba](#) | [🏠 Volver al índice](./00-indice.md)
 
 ---
 

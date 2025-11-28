@@ -6,6 +6,18 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 ¿Por qué Testing?](#por-que-testing)
+- [🏗️ Pirámide de Testing](#piramide-de-testing)
+- [🧪 Testing por Contexto](#testing-por-contexto)
+- [🧪 Testing Avanzado](#testing-avanzado)
+- [📏 Métricas de Testing](#metricas-de-testing)
+- [🎯 Estrategia de Testing por Proyecto](#estrategia-de-testing-por-proyecto)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## 🎯 ¿Por qué Testing?
 
 **Why:** Tests automatizados son la red de seguridad que permite refactorizar, escalar y desplegar con confianza. Sin tests, cada cambio es un riesgo.
@@ -143,4 +155,4 @@
 
 ---
 
-[⬅️ Anterior: Disciplinas de Desarrollo](./02-disciplinas-desarrollo.md) | [⬆️ Volver arriba](#03---testing) | [➡️ Siguiente: Arquitectura y Patrones](./04-arquitectura-patrones.md)
+[⬅️ Anterior: Disciplinas de Desarrollo](./02-disciplinas-desarrollo.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Arquitectura y Patrones](./04-arquitectura-patrones.md)

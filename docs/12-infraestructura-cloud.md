@@ -6,6 +6,26 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [☁️ Cloud Computing](#cloud-computing)
+- [🌍 Proveedores Cloud](#proveedores-cloud)
+- [🏗️ Modelos de Servicio](#modelos-de-servicio)
+- [🚀 Serverless](#serverless)
+- [🐳 Contenedores](#contenedores)
+- [🗄️ Storage](#storage)
+- [🌐 Networking](#networking)
+- [🔐 Identity & Access](#identity-access)
+- [📊 Managed Services](#managed-services)
+- [🌍 Multi-Cloud & Hybrid](#multi-cloud-hybrid)
+- [📍 Edge Computing](#edge-computing)
+- [💰 Cost Optimization](#cost-optimization)
+- [🏛️ Well-Architected Framework](#well-architected-framework)
+- [🔄 Disaster Recovery](#disaster-recovery)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+---
+
 ## ☁️ Cloud Computing
 
 **What:** Infraestructura y servicios on-demand vía internet.
@@ -225,4 +245,4 @@
 
 ---
 
-[⬅️ Anterior: Mobile, UI y UX](./11-mobile-ui-ux.md) | [⬆️ Volver arriba](#12---infraestructura-y-arquitectura-cloud) | [➡️ Siguiente: Machine Learning](./13-machine-learning.md)
+[⬅️ Anterior: Mobile, UI y UX](./11-mobile-ui-ux.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Machine Learning](./13-machine-learning.md)

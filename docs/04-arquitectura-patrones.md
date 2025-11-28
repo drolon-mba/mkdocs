@@ -6,6 +6,18 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🏗️ Arquitecturas de Software](#arquitecturas-de-software)
+- [🧩 Patrones de Diseño (Gang of Four)](#patrones-de-diseno-gang-of-four)
+- [🏗️ Patrones Arquitectónicos Avanzados](#patrones-arquitectonicos-avanzados)
+- [🎭 Finite State Machines (FSM)](#finite-state-machines-fsm)
+- [📐 Principios de Arquitectura](#principios-de-arquitectura)
+- [🗂️ Distribución de Carpetas](#distribucion-de-carpetas)
+- [🚫 Anti-patrones Arquitectónicos](#anti-patrones-arquitectonicos)
+- [📚 Recursos](#recursos)
+---
+
 ## 🏗️ Arquitecturas de Software
 
 **What:** Decisiones estructurales fundamentales sobre cómo organizar un sistema.
@@ -182,4 +194,4 @@ const orderMachine = createMachine({
 
 ---
 
-[⬅️ Anterior: Testing](./03-testing.md) | [⬆️ Volver arriba](#04---arquitectura-y-patrones) | [➡️ Siguiente: DevOps](./05-devops.md)
+[⬅️ Anterior: Testing](./03-testing.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: DevOps](./05-devops.md)

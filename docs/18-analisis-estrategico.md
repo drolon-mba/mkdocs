@@ -6,6 +6,21 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 Análisis Estratégico](#analisis-estrategico)
+- [🔍 FODA / SWOT](#foda-swot)
+- [🎯 CAME](#came)
+- [🌍 PESTEL](#pestel)
+- [⚔️ 5 Fuerzas de Porter](#5-fuerzas-de-porter)
+- [💎 VRIO](#vrio)
+- [👤 Buyer Persona](#buyer-persona)
+- [🎯 ICP (Ideal Customer Profile)](#icp-ideal-customer-profile)
+- [📅 Diagrama de Gantt](#diagrama-de-gantt)
+- [🚫 Errores Comunes](#errores-comunes)
+- [📚 Recursos](#recursos)
+---
+
 ## 🎯 Análisis Estratégico
 
 **What:** Herramientas para evaluar situación actual, entorno y definir estrategia.
@@ -290,4 +305,4 @@ Deploy                 |      |      |      | █    |
 
 ---
 
-[⬅️ Anterior: Mejora Continua](./17-mejora-continua.md) | [⬆️ Volver arriba](#18---análisis-estratégico-y-de-negocio) | [➡️ Siguiente: Product Management](./19-product-management.md)
+[⬅️ Anterior: Mejora Continua](./17-mejora-continua.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Product Management](./19-product-management.md)
