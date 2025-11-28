@@ -14,6 +14,16 @@ _Ejemplo: "Login – NullPointerException al autenticar en staging"_
 - **Entorno:** [prod/staging/local, SO, JVM, Docker image, configuraciones clave]
 - **Cambios recientes:** [Despliegues/configuraciones desde YYYY-MM-DD]
 
+```mermaid
+flowchart LR
+    A[Reporte Recibido] --> B{Reproducible?}
+    B -- Sí --> C[Triaje & Prioridad]
+    B -- No --> D[Pedir más info]
+    C --> E[Asignar Dev]
+    E --> F[Fix & Test]
+    F --> G[Deploy & Verify]
+```
+
 ---
 
 ### 🔄 Reproducibilidad
@@ -62,3 +72,7 @@ _Ejemplo: "Login – NullPointerException al autenticar en staging"_
 
 - **Rule out:** [qué ya se descartó: recursos, permisos, colas, etc.]
 - **Próximo paso:** [ej. aislar en staging con mismos datos, habilitar debug]
+
+---
+
+[➡️ Ver Ejemplo](../examples/bug-report-example.md)
