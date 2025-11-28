@@ -16,3 +16,9 @@ theme:
       toggle:
         icon: material/brightness-7 
         name: Switch to dark mode
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
