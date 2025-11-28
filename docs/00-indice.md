@@ -4,7 +4,7 @@
 >
 > Si encontrás una mejora, ¡actualizalo!
 >
-> Última actualización: `2025-04-05`
+> Última actualización: `YYYY-MM-DD`
 
 ---
 
@@ -188,6 +188,4 @@ Este documento es vivo y colaborativo:
 
 ---
 
-**Versión**: 2.0.0  
-**Mantenedores**: Equipo de Arquitectura  
-**Última revisión**: 2025-04-05
+**Mantenedores**: David Rolón (https://rolondavid.pythonanywhere.com/)

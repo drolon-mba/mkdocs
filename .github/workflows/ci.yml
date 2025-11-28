@@ -25,5 +25,9 @@ jobs:
           path: ~/.cache 
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material 
+      - run: pip install -r requirements.txt
+      - name: Update global last commit date
+        run: |
+          DATE=$(git log -1 --date=short --pretty=format:"%cd")
+          sed -i "s/Última actualización: .*/Última actualización: \`$DATE\`/" docs/00-indice.md
       - run: mkdocs gh-deploy --force
