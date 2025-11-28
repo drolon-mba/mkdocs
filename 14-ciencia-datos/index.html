@@ -1,0 +1,2718 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/mysite/14-ciencia-datos/">
+      
+      
+        <link rel="prev" href="../13-machine-learning/">
+      
+      
+        <link rel="next" href="../15-gestion-calidad/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>14 - Ciencia de Datos - My site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#14-ciencia-de-datos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My site" class="md-header__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              14 - Ciencia de Datos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My site" class="md-nav__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My site
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📘 Guía Integral de Ingeniería de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-indice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    00 - Indice General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fundamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 - Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-disciplinas-desarrollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 - Disciplinas de Desarrollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 - Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-arquitectura-patrones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 - Arquitectura y Patrones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-devops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 - DevOps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-seguridad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 - Seguridad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-observabilidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 - Observabilidad y Telemetría
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 - Optimización de Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-bases-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 - Optimización de Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-apis-protocolos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - APIs y Protocolos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-mobile-ui-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Mobile, UI y UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-infraestructura-cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Infraestructura y Arquitectura Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-machine-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Machine Learning y Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Ciencia de Datos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Ciencia de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Índice Rápido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ciencia-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Ciencia de Datos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Workflow Data Science
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-cleaning-limpieza" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧹 Data Cleaning (Limpieza)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eda-exploratory-data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 EDA (Exploratory Data Analysis)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 EDA (Exploratory Data Analysis)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analisis-univariado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análisis Univariado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analisis-bivariado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análisis Bivariado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analisis-multivariado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análisis Multivariado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Visualización
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Visualización">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-graficos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de Gráficos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estadistica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Estadística
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Estadística">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descriptiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descriptiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inferencial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inferencial
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproducibilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Reproducibilidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herramientas-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧮 Herramientas Core
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-analisis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Tipos de Análisis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Data Quality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricas-de-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Métricas de Negocio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errores-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚫 Errores Comunes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Recursos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-gestion-calidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Ciencia de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-herramientas-problemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - Product Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-mejora-continua/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Metodologías de Mejora Continua
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-analisis-estrategico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Análisis Estratégico y de Negocio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-product-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - Product Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-metricas-kpis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - Métricas y KPIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-colaboracion-cultura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21 - Colaboración y Cultura de Desarrollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-cost-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22 - Optimización de Costos (FinOps)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 - Data Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-documentacion-diagramas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24 - Documentación y Diagramas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-convenciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25 - Convenciones y Estándares
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26 - Onboarding de Nuevos Desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-checklist-produccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27 - Checklist de Producción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-sesgos-falacias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28 - Sesgos Cognitivos, Falacias y Leyes a Evitar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_31" >
+        
+          
+          <label class="md-nav__link" for="__nav_31" id="__nav_31_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_31_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_31">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_31_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_31_1" id="__nav_31_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_31_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_31_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/bug-report-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug report example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/feature-request-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature request example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/new-feature-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New feature example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/post-mortem-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post mortem example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/rfc-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rfc example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_31_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_31_2" id="__nav_31_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_31_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_31_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/bug-report-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug report template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/feature-request-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature request template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/new-feature-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New feature template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/post-mortem-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post mortem template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/rfc-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rfc template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Índice Rápido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ciencia-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Ciencia de Datos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Workflow Data Science
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-cleaning-limpieza" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧹 Data Cleaning (Limpieza)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eda-exploratory-data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 EDA (Exploratory Data Analysis)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 EDA (Exploratory Data Analysis)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analisis-univariado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análisis Univariado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analisis-bivariado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análisis Bivariado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analisis-multivariado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Análisis Multivariado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Visualización
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Visualización">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-graficos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de Gráficos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estadistica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Estadística
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Estadística">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descriptiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descriptiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inferencial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inferencial
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproducibilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Reproducibilidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herramientas-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧮 Herramientas Core
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-analisis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Tipos de Análisis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Data Quality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricas-de-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Métricas de Negocio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errores-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚫 Errores Comunes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Recursos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="14-ciencia-de-datos">14 - Ciencia de Datos</h1>
+<blockquote>
+<p>Extraer conocimiento y valor de datos mediante estadística, visualización y análisis exploratorio.</p>
+</blockquote>
+<p><a href="../00-indice/">🏠 Volver al índice</a></p>
+<hr />
+<h2 id="indice-rapido">📋 Índice Rápido</h2>
+<ul>
+<li><a href="#ciencia-de-datos">📊 Ciencia de Datos</a></li>
+<li><a href="#workflow-data-science">🔄 Workflow Data Science</a></li>
+<li><a href="#data-cleaning-limpieza">🧹 Data Cleaning (Limpieza)</a></li>
+<li><a href="#eda-exploratory-data-analysis">🔍 EDA (Exploratory Data Analysis)</a></li>
+<li><a href="#visualizacion">📈 Visualización</a></li>
+<li><a href="#estadistica">📊 Estadística</a></li>
+<li><a href="#reproducibilidad">🔬 Reproducibilidad</a></li>
+<li><a href="#herramientas-core">🧮 Herramientas Core</a></li>
+<li><a href="#tipos-de-analisis">📊 Tipos de Análisis</a></li>
+<li><a href="#data-quality">🔄 Data Quality</a></li>
+<li><a href="#metricas-de-negocio">🎯 Métricas de Negocio</a></li>
+<li><a href="#errores-comunes">🚫 Errores Comunes</a></li>
+<li><a href="#recursos">📚 Recursos</a></li>
+</ul>
+<hr />
+<h2 id="ciencia-de-datos">📊 Ciencia de Datos</h2>
+<p><strong>What:</strong> Disciplina que combina estadística, programación y conocimiento del dominio para extraer insights de datos.</p>
+<p><strong>Why:</strong> Tomar decisiones data-driven, descubrir patrones, validar hipótesis.</p>
+<p><strong>Who:</strong> Data Scientists, Data Analysts, Business Intelligence.</p>
+<p><strong>How much:</strong> ROI variable según caso, requiere datos de calidad y stakeholder buy-in.</p>
+<hr />
+<h2 id="workflow-data-science">🔄 Workflow Data Science</h2>
+<div class="highlight"><pre><span></span><code>1. Problem Framing (¿Qué queremos saber?)
+   ↓
+2. Data Collection (¿Dónde están los datos?)
+   ↓
+3. Data Cleaning (¿Son datos limpios?)
+   ↓
+4. EDA (¿Qué nos dicen?)
+   ↓
+5. Analysis/Modeling (¿Cómo responder la pregunta?)
+   ↓
+6. Communication (¿Cómo presentar insights?)
+   ↓
+7. Action (¿Qué decisión tomar?)
+</code></pre></div>
+<hr />
+<h2 id="data-cleaning-limpieza">🧹 Data Cleaning (Limpieza)</h2>
+<p><strong>What:</strong> Preparar datos crudos para análisis.</p>
+<p><strong>Why:</strong> "Garbage in, garbage out" - datos sucios = análisis inválido.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Problema</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">Solución</th>
+<th style="text-align: left;">Herramientas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Valores faltantes</strong></td>
+<td style="text-align: left;">NaN, NULL, vacíos</td>
+<td style="text-align: left;">Imputar (media, mediana), eliminar, flag</td>
+<td style="text-align: left;"><a href="https://pandas.pydata.org/">pandas</a> <code>fillna()</code>, <code>dropna()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Duplicados</strong></td>
+<td style="text-align: left;">Registros repetidos</td>
+<td style="text-align: left;">Eliminar con lógica</td>
+<td style="text-align: left;"><code>drop_duplicates()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Outliers</strong></td>
+<td style="text-align: left;">Valores extremos</td>
+<td style="text-align: left;">Investigar, eliminar o transformar</td>
+<td style="text-align: left;">IQR, Z-score, visualización</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Inconsistencias</strong></td>
+<td style="text-align: left;">"USA" vs "United States"</td>
+<td style="text-align: left;">Estandarizar</td>
+<td style="text-align: left;">Regex, <code>replace()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tipos incorrectos</strong></td>
+<td style="text-align: left;">Fechas como string</td>
+<td style="text-align: left;">Convertir tipos</td>
+<td style="text-align: left;"><code>pd.to_datetime()</code>, <code>astype()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Formato</strong></td>
+<td style="text-align: left;">Espacios, mayúsculas</td>
+<td style="text-align: left;">Normalizar</td>
+<td style="text-align: left;"><code>str.strip()</code>, <code>str.lower()</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Herramientas:</strong> <a href="https://pandas.pydata.org/">pandas</a>, <a href="https://pola.rs/">Polars</a>, <a href="https://pyjanitor-devs.github.io/pyjanitor/">pyjanitor</a></p>
+<hr />
+<h2 id="eda-exploratory-data-analysis">🔍 EDA (Exploratory Data Analysis)</h2>
+<p><strong>What:</strong> Entender datos mediante estadística y visualización.</p>
+<p><strong>Why:</strong> Encontrar patrones, anomalías, formular hipótesis.</p>
+<h3 id="analisis-univariado">Análisis Univariado</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipo Variable</th>
+<th style="text-align: left;">Métricas</th>
+<th style="text-align: left;">Visualización</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Numérica</strong></td>
+<td style="text-align: left;">Mean, median, std, min, max, percentiles</td>
+<td style="text-align: left;">Histogram, boxplot, density plot</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Categórica</strong></td>
+<td style="text-align: left;">Frecuencias, moda</td>
+<td style="text-align: left;">Bar chart, pie chart</td>
+</tr>
+</tbody>
+</table>
+<h3 id="analisis-bivariado">Análisis Bivariado</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Combinación</th>
+<th style="text-align: left;">Análisis</th>
+<th style="text-align: left;">Visualización</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Num vs Num</strong></td>
+<td style="text-align: left;">Correlación (Pearson, Spearman)</td>
+<td style="text-align: left;">Scatter plot, heatmap</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cat vs Num</strong></td>
+<td style="text-align: left;">Comparar distribuciones</td>
+<td style="text-align: left;">Boxplot, violin plot</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cat vs Cat</strong></td>
+<td style="text-align: left;">Tablas de contingencia, chi-squared</td>
+<td style="text-align: left;">Heatmap, stacked bars</td>
+</tr>
+</tbody>
+</table>
+<h3 id="analisis-multivariado">Análisis Multivariado</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Técnica</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">Herramienta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>PCA</strong></td>
+<td style="text-align: left;">Reducción dimensionalidad</td>
+<td style="text-align: left;">scikit-learn</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>t-SNE</strong></td>
+<td style="text-align: left;">Visualizar high-dim data</td>
+<td style="text-align: left;">scikit-learn</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Correlation Matrix</strong></td>
+<td style="text-align: left;">Relaciones entre variables</td>
+<td style="text-align: left;">seaborn heatmap</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="visualizacion">📈 Visualización</h2>
+<p><strong>What:</strong> Representar datos gráficamente.</p>
+<p><strong>Why:</strong> "Un gráfico vale más que mil tablas".</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">When</th>
+<th style="text-align: left;">Herramienta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Estática</strong></td>
+<td style="text-align: left;">Reportes, papers</td>
+<td style="text-align: left;"><a href="https://matplotlib.org/">Matplotlib</a>, <a href="https://seaborn.pydata.org/">Seaborn</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Interactiva</strong></td>
+<td style="text-align: left;">Dashboards, exploración</td>
+<td style="text-align: left;"><a href="https://plotly.com/python/">Plotly</a>, <a href="https://altair-viz.github.io/">Altair</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Dashboards</strong></td>
+<td style="text-align: left;">Apps analíticas</td>
+<td style="text-align: left;"><a href="https://plotly.com/dash/">Dash</a>, <a href="https://streamlit.io/">Streamlit</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>BI Tools</strong></td>
+<td style="text-align: left;">Business users</td>
+<td style="text-align: left;"><a href="https://www.tableau.com/">Tableau</a>, <a href="https://powerbi.microsoft.com/">Power BI</a>, <a href="https://cloud.google.com/looker">Looker</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tipos-de-graficos">Tipos de Gráficos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Gráfico</th>
+<th style="text-align: left;">When</th>
+<th style="text-align: left;">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Line</strong></td>
+<td style="text-align: left;">Series temporales</td>
+<td style="text-align: left;">Ventas por mes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Bar</strong></td>
+<td style="text-align: left;">Comparar categorías</td>
+<td style="text-align: left;">Ventas por región</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Scatter</strong></td>
+<td style="text-align: left;">Relación 2 variables</td>
+<td style="text-align: left;">Precio vs tamaño</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Histogram</strong></td>
+<td style="text-align: left;">Distribución</td>
+<td style="text-align: left;">Distribución edades</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Boxplot</strong></td>
+<td style="text-align: left;">Distribución + outliers</td>
+<td style="text-align: left;">Salarios por departamento</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Heatmap</strong></td>
+<td style="text-align: left;">Correlaciones, matrices</td>
+<td style="text-align: left;">Matriz de correlación</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pie</strong></td>
+<td style="text-align: left;">Proporciones (evitar)</td>
+<td style="text-align: left;">Market share</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="estadistica">📊 Estadística</h2>
+<h3 id="descriptiva">Descriptiva</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Métrica</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">Cuándo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Media</strong></td>
+<td style="text-align: left;">Promedio</td>
+<td style="text-align: left;">Distribución normal</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mediana</strong></td>
+<td style="text-align: left;">Valor medio</td>
+<td style="text-align: left;">Outliers presentes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Moda</strong></td>
+<td style="text-align: left;">Más frecuente</td>
+<td style="text-align: left;">Variables categóricas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Std Dev</strong></td>
+<td style="text-align: left;">Dispersión</td>
+<td style="text-align: left;">Cuantificar variabilidad</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Percentiles</strong></td>
+<td style="text-align: left;">Posición en distribución</td>
+<td style="text-align: left;">Benchmarking</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inferencial">Inferencial</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Concepto</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">Herramienta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Hypothesis Testing</strong></td>
+<td style="text-align: left;">Validar suposiciones</td>
+<td style="text-align: left;">t-test, chi-squared</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>p-value</strong></td>
+<td style="text-align: left;">Probabilidad resultado por azar</td>
+<td style="text-align: left;">&lt;0.05 = significativo</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Confidence Intervals</strong></td>
+<td style="text-align: left;">Rango valores probables</td>
+<td style="text-align: left;">Bootstrap, t-distribution</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A/B Testing</strong></td>
+<td style="text-align: left;">Comparar variantes</td>
+<td style="text-align: left;">scipy.stats</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="reproducibilidad">🔬 Reproducibilidad</h2>
+<p><strong>What:</strong> Capacidad de replicar análisis.</p>
+<p><strong>Why:</strong> Ciencia requiere verificabilidad.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Aspecto</th>
+<th style="text-align: left;">How</th>
+<th style="text-align: left;">Herramientas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Versionado datos</strong></td>
+<td style="text-align: left;">Trackear cambios en datasets</td>
+<td style="text-align: left;"><a href="https://dvc.org/">DVC</a>, <a href="https://git-lfs.github.com/">Git LFS</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Versionado código</strong></td>
+<td style="text-align: left;">Git para notebooks y scripts</td>
+<td style="text-align: left;">Git, GitHub</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Environments</strong></td>
+<td style="text-align: left;">Aislar dependencias</td>
+<td style="text-align: left;"><a href="https://docs.conda.io/">conda</a>, <a href="https://docs.python.org/3/library/venv.html">venv</a>, <a href="https://www.docker.com/">Docker</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Notebooks parametrizados</strong></td>
+<td style="text-align: left;">Ejecutar con distintos params</td>
+<td style="text-align: left;"><a href="https://github.com/nteract/papermill">Papermill</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Seeds</strong></td>
+<td style="text-align: left;">Reproducir aleatoriedad</td>
+<td style="text-align: left;"><code>np.random.seed(42)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Documentation</strong></td>
+<td style="text-align: left;">Documentar decisiones</td>
+<td style="text-align: left;">Markdown, docstrings</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="herramientas-core">🧮 Herramientas Core</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Herramienta</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="https://pandas.pydata.org/">pandas</a></td>
+<td style="text-align: left;">Manipulación tabular</td>
+<td style="text-align: left;">Default para análisis</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://numpy.org/">NumPy</a></td>
+<td style="text-align: left;">Cálculo numérico</td>
+<td style="text-align: left;">Operaciones matriciales</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://pola.rs/">Polars</a></td>
+<td style="text-align: left;">Pandas más rápido</td>
+<td style="text-align: left;">Datasets grandes (&gt;1GB)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://www.dask.org/">Dask</a></td>
+<td style="text-align: left;">Parallel computing</td>
+<td style="text-align: left;">Datos que no caben en RAM</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://jupyter.org/">Jupyter</a></td>
+<td style="text-align: left;">Notebooks interactivos</td>
+<td style="text-align: left;">Exploración, prototipado</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://code.visualstudio.com/">VS Code</a></td>
+<td style="text-align: left;">IDE con notebook support</td>
+<td style="text-align: left;">Desarrollo productivo</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tipos-de-analisis">📊 Tipos de Análisis</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">Pregunta</th>
+<th style="text-align: left;">Técnica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Descriptivo</strong></td>
+<td style="text-align: left;">¿Qué pasó?</td>
+<td style="text-align: left;">Métricas históricas</td>
+<td style="text-align: left;">Aggregations, visualización</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Diagnóstico</strong></td>
+<td style="text-align: left;">¿Por qué pasó?</td>
+<td style="text-align: left;">Causas</td>
+<td style="text-align: left;">Correlaciones, comparaciones</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Predictivo</strong></td>
+<td style="text-align: left;">¿Qué pasará?</td>
+<td style="text-align: left;">Forecast</td>
+<td style="text-align: left;">Machine Learning, time series</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Prescriptivo</strong></td>
+<td style="text-align: left;">¿Qué hacer?</td>
+<td style="text-align: left;">Recomendaciones</td>
+<td style="text-align: left;">Optimization, simulación</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="data-quality">🔄 Data Quality</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dimensión</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">Cómo validar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Completeness</strong></td>
+<td style="text-align: left;">Sin valores faltantes</td>
+<td style="text-align: left;"><code>df.isnull().sum()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Uniqueness</strong></td>
+<td style="text-align: left;">Sin duplicados</td>
+<td style="text-align: left;"><code>df.duplicated().sum()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Consistency</strong></td>
+<td style="text-align: left;">Valores válidos</td>
+<td style="text-align: left;">Regex, value ranges</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Accuracy</strong></td>
+<td style="text-align: left;">Datos correctos</td>
+<td style="text-align: left;">Validar con fuentes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Timeliness</strong></td>
+<td style="text-align: left;">Datos actuales</td>
+<td style="text-align: left;">Timestamps</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Herramientas:</strong> <a href="https://greatexpectations.io/">Great Expectations</a>, <a href="https://pandera.readthedocs.io/">Pandera</a></p>
+<hr />
+<h2 id="metricas-de-negocio">🎯 Métricas de Negocio</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Métrica</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">Fórmula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Churn Rate</strong></td>
+<td style="text-align: left;">% clientes que abandonan</td>
+<td style="text-align: left;">Churned / Total × 100</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CAC</strong></td>
+<td style="text-align: left;">Customer Acquisition Cost</td>
+<td style="text-align: left;">Marketing Spend / New Customers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>LTV</strong></td>
+<td style="text-align: left;">Lifetime Value</td>
+<td style="text-align: left;">Avg Revenue per User × Avg Lifetime</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Conversion Rate</strong></td>
+<td style="text-align: left;">% que completan acción</td>
+<td style="text-align: left;">Conversions / Visitors × 100</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>AOV</strong></td>
+<td style="text-align: left;">Average Order Value</td>
+<td style="text-align: left;">Revenue / Orders</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="errores-comunes">🚫 Errores Comunes</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Error</th>
+<th style="text-align: left;">Problema</th>
+<th style="text-align: left;">Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Correlation = Causation</strong></td>
+<td style="text-align: left;">Confundir relación con causa</td>
+<td style="text-align: left;">Experimentos, domain knowledge</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>P-hacking</strong></td>
+<td style="text-align: left;">Buscar hasta encontrar p&lt;0.05</td>
+<td style="text-align: left;">Hipótesis a priori, correction</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Confirmation Bias</strong></td>
+<td style="text-align: left;">Buscar solo evidencia que confirme</td>
+<td style="text-align: left;">Buscar evidencia contradictoria</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Simpson's Paradox</strong></td>
+<td style="text-align: left;">Tendencia se invierte al agregar</td>
+<td style="text-align: left;">Estratificar análisis</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Survivorship Bias</strong></td>
+<td style="text-align: left;">Solo analizar sobrevivientes</td>
+<td style="text-align: left;">Incluir todos los casos</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recursos">📚 Recursos</h2>
+<ul>
+<li><a href="https://wesmckinney.com/book/">Python for Data Analysis - Wes McKinney</a></li>
+<li><a href="https://www.storytellingwithdata.com/">Storytelling with Data - Cole Nussbaumer</a></li>
+<li><a href="https://r4ds.hadley.nz/">R for Data Science</a></li>
+<li><a href="https://www.kaggle.com/datasets">Kaggle Datasets</a></li>
+</ul>
+<hr />
+<p><a href="../13-machine-learning/">⬅️ Anterior: Machine Learning</a> | <a href="#">⬆️ Volver arriba</a> | <a href="../15-gestion-calidad/">➡️ Siguiente: Gestión de Calidad</a></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 de noviembre de 2025 18:59:00 UTC">28 de noviembre de 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>

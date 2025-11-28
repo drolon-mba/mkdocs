@@ -1,0 +1,2401 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/mysite/08-performance/">
+      
+      
+        <link rel="prev" href="../07-observabilidad/">
+      
+      
+        <link rel="next" href="../09-bases-datos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>08 - Optimización de Performance - My site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#08-optimizacion-de-performance" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My site" class="md-header__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              08 - Optimización de Performance
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My site" class="md-nav__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My site
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📘 Guía Integral de Ingeniería de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-indice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    00 - Indice General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fundamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 - Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-disciplinas-desarrollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 - Disciplinas de Desarrollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 - Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-arquitectura-patrones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 - Arquitectura y Patrones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-devops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 - DevOps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-seguridad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 - Seguridad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-observabilidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 - Observabilidad y Telemetría
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 - Optimización de Performance
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 - Optimización de Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Índice Rápido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principios-de-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Principios de Performance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗄️ Base de Datos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Backend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💻 Frontend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Networking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling-y-diagnostico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Profiling y Diagnóstico
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricas-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Métricas Clave
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caching-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💾 Caching Strategies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-patrones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚫 Anti-patrones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Recursos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-bases-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 - Optimización de Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-apis-protocolos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - APIs y Protocolos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-mobile-ui-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Mobile, UI y UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-infraestructura-cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Infraestructura y Arquitectura Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-machine-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Machine Learning y Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-ciencia-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Ciencia de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-gestion-calidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Ciencia de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-herramientas-problemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - Product Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-mejora-continua/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Metodologías de Mejora Continua
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-analisis-estrategico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Análisis Estratégico y de Negocio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-product-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - Product Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-metricas-kpis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - Métricas y KPIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-colaboracion-cultura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21 - Colaboración y Cultura de Desarrollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-cost-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22 - Optimización de Costos (FinOps)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 - Data Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-documentacion-diagramas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24 - Documentación y Diagramas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-convenciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25 - Convenciones y Estándares
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26 - Onboarding de Nuevos Desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-checklist-produccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27 - Checklist de Producción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-sesgos-falacias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28 - Sesgos Cognitivos, Falacias y Leyes a Evitar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_31" >
+        
+          
+          <label class="md-nav__link" for="__nav_31" id="__nav_31_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_31_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_31">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_31_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_31_1" id="__nav_31_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_31_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_31_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/bug-report-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug report example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/feature-request-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature request example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/new-feature-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New feature example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/post-mortem-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post mortem example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/rfc-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rfc example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_31_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_31_2" id="__nav_31_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_31_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_31_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/bug-report-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug report template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/feature-request-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature request template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/new-feature-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New feature template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/post-mortem-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post mortem template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/rfc-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rfc template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Índice Rápido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principios-de-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Principios de Performance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗄️ Base de Datos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Backend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💻 Frontend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Networking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling-y-diagnostico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Profiling y Diagnóstico
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricas-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Métricas Clave
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caching-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💾 Caching Strategies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-patrones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚫 Anti-patrones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Recursos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="08-optimizacion-de-performance">08 - Optimización de Performance</h1>
+<blockquote>
+<p>Técnicas y estrategias para mejorar velocidad, throughput y eficiencia de sistemas.</p>
+</blockquote>
+<p><a href="../00-indice/">🏠 Volver al índice</a></p>
+<hr />
+<h2 id="indice-rapido">📋 Índice Rápido</h2>
+<ul>
+<li><a href="#principios-de-performance">🎯 Principios de Performance</a></li>
+<li><a href="#base-de-datos">🗄️ Base de Datos</a></li>
+<li><a href="#backend">🚀 Backend</a></li>
+<li><a href="#frontend">💻 Frontend</a></li>
+<li><a href="#networking">🌐 Networking</a></li>
+<li><a href="#profiling-y-diagnostico">📊 Profiling y Diagnóstico</a></li>
+<li><a href="#metricas-clave">🎯 Métricas Clave</a></li>
+<li><a href="#caching-strategies">💾 Caching Strategies</a></li>
+<li><a href="#anti-patrones">🚫 Anti-patrones</a></li>
+<li><a href="#recursos">📚 Recursos</a></li>
+</ul>
+<hr />
+<h2 id="principios-de-performance">🎯 Principios de Performance</h2>
+<p><strong>What:</strong> Optimización basada en mediciones, no suposiciones.</p>
+<p><strong>Why:</strong> Performance impacta UX, conversión y costos. 100ms extra = -1% conversión (Amazon).</p>
+<p><strong>Who:</strong> Developers, architects, SREs.</p>
+<p><strong>How much:</strong> Medir primero (profiling), optimizar cuellos de botella, validar mejora.</p>
+<hr />
+<h2 id="base-de-datos">🗄️ Base de Datos</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Técnica</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">Why</th>
+<th style="text-align: left;">When</th>
+<th style="text-align: left;">How</th>
+<th style="text-align: left;">Herramientas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Indexing</strong></td>
+<td style="text-align: left;">Estructuras para búsqueda rápida</td>
+<td style="text-align: left;">O(log n) vs O(n)</td>
+<td style="text-align: left;">Columnas en WHERE, JOIN, ORDER BY</td>
+<td style="text-align: left;"><code>CREATE INDEX idx_users_email ON users(email)</code></td>
+<td style="text-align: left;"><a href="https://www.postgresql.org/docs/current/sql-explain.html">EXPLAIN ANALYZE</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Query Optimization</strong></td>
+<td style="text-align: left;">Mejorar queries lentas</td>
+<td style="text-align: left;">Reducir scans completos</td>
+<td style="text-align: left;">Queries &gt; 100ms</td>
+<td style="text-align: left;">Evitar SELECT *, usar covering indexes, LIMIT</td>
+<td style="text-align: left;"><a href="https://www.jetbrains.com/datagrip/">DataGrip</a>, <a href="https://www.pgadmin.org/">pgAdmin</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Connection Pooling</strong></td>
+<td style="text-align: left;">Reutilizar conexiones</td>
+<td style="text-align: left;">Evitar overhead de TCP handshake</td>
+<td style="text-align: left;">Siempre</td>
+<td style="text-align: left;">Pool de 10-50 conexiones</td>
+<td style="text-align: left;"><a href="https://github.com/brettwooldridge/HikariCP">HikariCP</a>, <a href="https://www.pgbouncer.org/">pgBouncer</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Read Replicas</strong></td>
+<td style="text-align: left;">Réplicas para lecturas</td>
+<td style="text-align: left;">Escalar horizontalmente reads</td>
+<td style="text-align: left;">Read:Write ratio &gt; 70:30</td>
+<td style="text-align: left;">Master escribe, replicas leen</td>
+<td style="text-align: left;"><a href="https://www.postgresql.org/docs/current/warm-standby.html">PostgreSQL Replication</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sharding</strong></td>
+<td style="text-align: left;">Particionar horizontalmente</td>
+<td style="text-align: left;">Superar límites de un servidor</td>
+<td style="text-align: left;">&gt; 1TB datos, &gt; 10k writes/sec</td>
+<td style="text-align: left;">Shard por user_id, region</td>
+<td style="text-align: left;"><a href="https://vitess.io/">Vitess</a>, <a href="https://www.citusdata.com/">Citus</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Materialized Views</strong></td>
+<td style="text-align: left;">Precalcular queries complejas</td>
+<td style="text-align: left;">Leer agregaciones sin calcular</td>
+<td style="text-align: left;">Reportes, dashboards</td>
+<td style="text-align: left;"><code>CREATE MATERIALIZED VIEW</code>, refresh periódico</td>
+<td style="text-align: left;">PostgreSQL, MySQL 8+</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Denormalization</strong></td>
+<td style="text-align: left;">Duplicar datos para evitar JOINs</td>
+<td style="text-align: left;">Reducir complejidad de queries</td>
+<td style="text-align: left;">Alta carga de lectura</td>
+<td style="text-align: left;">Almacenar campos calculados</td>
+<td style="text-align: left;">Trade-off: consistencia vs performance</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="backend">🚀 Backend</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Técnica</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">Why</th>
+<th style="text-align: left;">When</th>
+<th style="text-align: left;">How</th>
+<th style="text-align: left;">Herramientas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Caching</strong></td>
+<td style="text-align: left;">Almacenar resultados para reutilizar</td>
+<td style="text-align: left;">Evitar cómputo/DB repetidos</td>
+<td style="text-align: left;">Datos que cambian poco</td>
+<td style="text-align: left;">Cache-Aside, Write-Through, TTL</td>
+<td style="text-align: left;"><a href="https://redis.io/">Redis</a>, <a href="https://memcached.org/">Memcached</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Async Processing</strong></td>
+<td style="text-align: left;">Desacoplar operaciones lentas</td>
+<td style="text-align: left;">No bloquear request</td>
+<td style="text-align: left;">Emails, reports, ML inference</td>
+<td style="text-align: left;">Job queues, event-driven</td>
+<td style="text-align: left;"><a href="https://docs.celeryq.dev/">Celery</a>, <a href="https://docs.bullmq.io/">BullMQ</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Rate Limiting</strong></td>
+<td style="text-align: left;">Limitar requests por cliente</td>
+<td style="text-align: left;">Prevenir abuse, proteger recursos</td>
+<td style="text-align: left;">APIs públicas</td>
+<td style="text-align: left;">Token bucket, sliding window</td>
+<td style="text-align: left;"><a href="https://github.com/brandur/redis-cell">redis-cell</a>, <a href="https://github.com/express-rate-limit/express-rate-limit">express-rate-limit</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pagination</strong></td>
+<td style="text-align: left;">Retornar datos en páginas</td>
+<td style="text-align: left;">Evitar payloads gigantes</td>
+<td style="text-align: left;">Listas largas</td>
+<td style="text-align: left;">Limit/Offset o Cursor-based</td>
+<td style="text-align: left;">Backend frameworks</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Compression</strong></td>
+<td style="text-align: left;">Comprimir responses HTTP</td>
+<td style="text-align: left;">Reducir bandwidth</td>
+<td style="text-align: left;">Responses &gt; 1KB</td>
+<td style="text-align: left;">Gzip, Brotli</td>
+<td style="text-align: left;">Nginx, middleware</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>HTTP/2</strong></td>
+<td style="text-align: left;">Multiplexing, server push</td>
+<td style="text-align: left;">Reducir latencia</td>
+<td style="text-align: left;">Siempre (HTTPS)</td>
+<td style="text-align: left;">Habilitar en server</td>
+<td style="text-align: left;">Nginx, Caddy</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Database Prepared Statements</strong></td>
+<td style="text-align: left;">Cachear plan de ejecución</td>
+<td style="text-align: left;">Reducir parsing overhead</td>
+<td style="text-align: left;">Queries repetidas</td>
+<td style="text-align: left;"><code>PREPARE</code>, <code>EXECUTE</code></td>
+<td style="text-align: left;">ORMs built-in</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="frontend">💻 Frontend</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Técnica</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">Why</th>
+<th style="text-align: left;">When</th>
+<th style="text-align: left;">How</th>
+<th style="text-align: left;">Herramientas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Code Splitting</strong></td>
+<td style="text-align: left;">Dividir bundle en chunks</td>
+<td style="text-align: left;">Cargar solo lo necesario</td>
+<td style="text-align: left;">SPAs grandes</td>
+<td style="text-align: left;">Dynamic imports, route-based splitting</td>
+<td style="text-align: left;"><a href="https://webpack.js.org/">Webpack</a>, <a href="https://vitejs.dev/">Vite</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Lazy Loading</strong></td>
+<td style="text-align: left;">Cargar recursos al scrollear</td>
+<td style="text-align: left;">Reducir initial load</td>
+<td style="text-align: left;">Imágenes, componentes below fold</td>
+<td style="text-align: left;"><code>loading="lazy"</code>, Intersection Observer</td>
+<td style="text-align: left;"><a href="https://github.com/twobin/react-lazyload">react-lazyload</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tree Shaking</strong></td>
+<td style="text-align: left;">Eliminar código no usado</td>
+<td style="text-align: left;">Reducir bundle size</td>
+<td style="text-align: left;">Siempre</td>
+<td style="text-align: left;">ES6 imports, <code>sideEffects: false</code></td>
+<td style="text-align: left;">Webpack, Rollup</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Minification</strong></td>
+<td style="text-align: left;">Remover espacios, renombrar vars</td>
+<td style="text-align: left;">Reducir tamaño</td>
+<td style="text-align: left;">Producción</td>
+<td style="text-align: left;">Terser, UglifyJS</td>
+<td style="text-align: left;">Build tools</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CDN</strong></td>
+<td style="text-align: left;">Servir assets desde edge</td>
+<td style="text-align: left;">Baja latencia global</td>
+<td style="text-align: left;">Assets estáticos</td>
+<td style="text-align: left;">Subir a CDN, cache headers</td>
+<td style="text-align: left;"><a href="https://www.cloudflare.com/">Cloudflare</a>, <a href="https://aws.amazon.com/cloudfront/">CloudFront</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Prefetch/Preload</strong></td>
+<td style="text-align: left;">Cargar recursos anticipadamente</td>
+<td style="text-align: left;">Percepción de velocidad</td>
+<td style="text-align: left;">Recursos críticos next page</td>
+<td style="text-align: left;"><code>&lt;link rel="prefetch"&gt;</code>, <code>&lt;link rel="preload"&gt;</code></td>
+<td style="text-align: left;">HTML hints</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Virtual Scrolling</strong></td>
+<td style="text-align: left;">Renderizar solo elementos visibles</td>
+<td style="text-align: left;">Listas con 1000s de items</td>
+<td style="text-align: left;">Tablas grandes</td>
+<td style="text-align: left;">Renderizar ventana visible + buffer</td>
+<td style="text-align: left;"><a href="https://github.com/bvaughn/react-window">react-window</a>, <a href="https://github.com/Akryum/vue-virtual-scroller">vue-virtual-scroller</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Image Optimization</strong></td>
+<td style="text-align: left;">Comprimir, formatos modernos</td>
+<td style="text-align: left;">Reducir tamaño sin perder calidad</td>
+<td style="text-align: left;">Todas las imágenes</td>
+<td style="text-align: left;">WebP, AVIF, responsive images</td>
+<td style="text-align: left;"><a href="https://sharp.pixelplumbing.com/">Sharp</a>, <a href="https://imageoptim.com/">ImageOptim</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Service Workers</strong></td>
+<td style="text-align: left;">Cachear assets offline</td>
+<td style="text-align: left;">PWA, velocidad</td>
+<td style="text-align: left;">Apps que necesitan offline</td>
+<td style="text-align: left;">Cache API, precache assets</td>
+<td style="text-align: left;"><a href="https://developer.chrome.com/docs/workbox/">Workbox</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="networking">🌐 Networking</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Técnica</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">Why</th>
+<th style="text-align: left;">When</th>
+<th style="text-align: left;">How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>HTTP Keep-Alive</strong></td>
+<td style="text-align: left;">Reutilizar conexión TCP</td>
+<td style="text-align: left;">Evitar handshakes</td>
+<td style="text-align: left;">Siempre</td>
+<td style="text-align: left;"><code>Connection: keep-alive</code> header</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>DNS Prefetch</strong></td>
+<td style="text-align: left;">Resolver DNS antes de click</td>
+<td style="text-align: left;">Reducir latencia</td>
+<td style="text-align: left;">Links externos</td>
+<td style="text-align: left;"><code>&lt;link rel="dns-prefetch" href="//example.com"&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>HTTP/3 (QUIC)</strong></td>
+<td style="text-align: left;">UDP en vez de TCP</td>
+<td style="text-align: left;">Reducir latency en redes lossy</td>
+<td style="text-align: left;">Mobile, alta latencia</td>
+<td style="text-align: left;">Habilitar en CDN/server</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>gRPC</strong></td>
+<td style="text-align: left;">RPC binario</td>
+<td style="text-align: left;">Más eficiente que JSON</td>
+<td style="text-align: left;">Microservicios internos</td>
+<td style="text-align: left;">Protocol Buffers, HTTP/2</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="profiling-y-diagnostico">📊 Profiling y Diagnóstico</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Herramienta</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">When</th>
+<th style="text-align: left;">Cómo leer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="https://developer.chrome.com/docs/devtools/">Chrome DevTools</a></td>
+<td style="text-align: left;">Performance tab, Network, Lighthouse</td>
+<td style="text-align: left;">Frontend</td>
+<td style="text-align: left;">Flamegraphs, waterfall charts</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/benfred/py-spy">py-spy</a></td>
+<td style="text-align: left;">Profiler Python sin modificar código</td>
+<td style="text-align: left;">Backend Python</td>
+<td style="text-align: left;">Flamegraph de CPU time</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/async-profiler/async-profiler">async-profiler</a></td>
+<td style="text-align: left;">Profiler Java low-overhead</td>
+<td style="text-align: left;">Backend Java</td>
+<td style="text-align: left;">Flamegraphs, allocation profiling</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://clinicjs.org/">clinic.js</a></td>
+<td style="text-align: left;">Profiler Node.js</td>
+<td style="text-align: left;">Backend Node.js</td>
+<td style="text-align: left;">Doctor, bubbleprof, flame</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://httpd.apache.org/docs/2.4/programs/ab.html">ab</a></td>
+<td style="text-align: left;">Benchmark HTTP simple</td>
+<td style="text-align: left;">Load testing básico</td>
+<td style="text-align: left;"><code>ab -n 1000 -c 10 URL</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/wg/wrk">wrk</a></td>
+<td style="text-align: left;">Benchmark HTTP avanzado</td>
+<td style="text-align: left;">Load testing con scripts Lua</td>
+<td style="text-align: left;">RPS, latency distribution</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="metricas-clave">🎯 Métricas Clave</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Métrica</th>
+<th style="text-align: left;">Objetivo</th>
+<th style="text-align: left;">Cómo medir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>TTFB</strong> (Time To First Byte)</td>
+<td style="text-align: left;">&lt; 200ms</td>
+<td style="text-align: left;">Chrome DevTools Network</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FCP</strong> (First Contentful Paint)</td>
+<td style="text-align: left;">&lt; 1.8s</td>
+<td style="text-align: left;">Lighthouse, Web Vitals</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>LCP</strong> (Largest Contentful Paint)</td>
+<td style="text-align: left;">&lt; 2.5s</td>
+<td style="text-align: left;">Core Web Vitals</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TTI</strong> (Time To Interactive)</td>
+<td style="text-align: left;">&lt; 3.8s</td>
+<td style="text-align: left;">Lighthouse</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CLS</strong> (Cumulative Layout Shift)</td>
+<td style="text-align: left;">&lt; 0.1</td>
+<td style="text-align: left;">Web Vitals</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FID</strong> (First Input Delay)</td>
+<td style="text-align: left;">&lt; 100ms</td>
+<td style="text-align: left;">Real User Monitoring</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Throughput</strong></td>
+<td style="text-align: left;">Requests/sec</td>
+<td style="text-align: left;">Load testing tools</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>p95 Latency</strong></td>
+<td style="text-align: left;">&lt; 500ms</td>
+<td style="text-align: left;">APM, Prometheus</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="caching-strategies">💾 Caching Strategies</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Strategy</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">When</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Cache-Aside</strong></td>
+<td style="text-align: left;">App lee cache, si miss → DB → cache</td>
+<td style="text-align: left;">Lectura intensiva</td>
+<td style="text-align: left;"><code>getUser() → check Redis → query DB → set Redis</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Write-Through</strong></td>
+<td style="text-align: left;">Escribir en cache y DB simultáneamente</td>
+<td style="text-align: left;">Consistencia fuerte</td>
+<td style="text-align: left;"><code>updateUser() → write DB + write Redis</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Write-Behind</strong></td>
+<td style="text-align: left;">Escribir en cache, async a DB</td>
+<td style="text-align: left;">Alta carga escritura</td>
+<td style="text-align: left;">Logs, metrics (eventual consistency OK)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Refresh-Ahead</strong></td>
+<td style="text-align: left;">Refrescar cache antes de expirar</td>
+<td style="text-align: left;">Evitar cache misses</td>
+<td style="text-align: left;">Precarga de datos populares</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TTL (Time To Live):</strong> 
+- Datos estáticos: 24h+
+- Datos frecuentes: 1-5min
+- Datos en tiempo real: 10-30s</p>
+<hr />
+<h2 id="anti-patrones">🚫 Anti-patrones</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Anti-patrón</th>
+<th style="text-align: left;">Problema</th>
+<th style="text-align: left;">Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>N+1 Queries</strong></td>
+<td style="text-align: left;">Un query por item en lista</td>
+<td style="text-align: left;">Eager loading, JOIN</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SELECT *</strong></td>
+<td style="text-align: left;">Traer columnas innecesarias</td>
+<td style="text-align: left;">SELECT solo lo necesario</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sin indexes</strong></td>
+<td style="text-align: left;">Full table scans</td>
+<td style="text-align: left;">Indexar columnas en WHERE</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cachear todo</strong></td>
+<td style="text-align: left;">Cache invalidation compleja</td>
+<td style="text-align: left;">Cachear solo lo necesario</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Optimización prematura</strong></td>
+<td style="text-align: left;">Complejidad sin beneficio</td>
+<td style="text-align: left;">Medir, luego optimizar</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sincronizar operaciones async</strong></td>
+<td style="text-align: left;">Bloquear esperando</td>
+<td style="text-align: left;">Usar async/await correctamente</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recursos">📚 Recursos</h2>
+<ul>
+<li><a href="https://hpbn.co/">High Performance Browser Networking</a></li>
+<li><a href="https://web.dev/performance/">Web.dev Performance</a></li>
+<li><a href="https://use-the-index-luke.com/">Database Performance Tuning</a></li>
+<li><a href="https://www.brendangregg.com/systems-performance-2nd-edition-book.html">Systems Performance - Brendan Gregg</a></li>
+</ul>
+<hr />
+<p><a href="../07-observabilidad/">⬅️ Anterior: Observabilidad</a> | <a href="#">⬆️ Volver arriba</a> | <a href="../09-bases-datos/">➡️ Siguiente: Bases de Datos</a></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 de noviembre de 2025 18:59:00 UTC">28 de noviembre de 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>

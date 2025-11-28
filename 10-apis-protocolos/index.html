@@ -1,0 +1,2545 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/mysite/10-apis-protocolos/">
+      
+      
+        <link rel="prev" href="../09-bases-datos/">
+      
+      
+        <link rel="next" href="../11-mobile-ui-ux/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>10 - APIs y Protocolos - My site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#10-apis-y-protocolos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My site" class="md-header__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              10 - APIs y Protocolos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My site" class="md-nav__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My site
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📘 Guía Integral de Ingeniería de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-indice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    00 - Indice General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fundamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 - Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-disciplinas-desarrollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 - Disciplinas de Desarrollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 - Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-arquitectura-patrones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 - Arquitectura y Patrones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-devops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 - DevOps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-seguridad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 - Seguridad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-observabilidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 - Observabilidad y Telemetría
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 - Optimización de Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-bases-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 - Optimización de Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - APIs y Protocolos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - APIs y Protocolos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Índice Rápido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elegir-protocolo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Elegir Protocolo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest-representational-state-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 REST (Representational State Transfer)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 GraphQL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ gRPC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#websockets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔌 WebSockets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-sent-events-sse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📨 Server-Sent Events (SSE)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-driven-async" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Event-Driven / Async
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📄 Documentación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔐 Autenticación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diseno-de-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎨 Diseño de APIs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Webhooks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Comparación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-patrones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚫 Anti-patrones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Recursos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-mobile-ui-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Mobile, UI y UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-infraestructura-cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Infraestructura y Arquitectura Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-machine-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Machine Learning y Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-ciencia-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Ciencia de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-gestion-calidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Ciencia de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-herramientas-problemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - Product Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-mejora-continua/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Metodologías de Mejora Continua
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-analisis-estrategico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Análisis Estratégico y de Negocio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-product-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - Product Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-metricas-kpis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - Métricas y KPIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-colaboracion-cultura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21 - Colaboración y Cultura de Desarrollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-cost-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22 - Optimización de Costos (FinOps)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 - Data Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-documentacion-diagramas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24 - Documentación y Diagramas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-convenciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25 - Convenciones y Estándares
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26 - Onboarding de Nuevos Desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-checklist-produccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27 - Checklist de Producción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-sesgos-falacias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28 - Sesgos Cognitivos, Falacias y Leyes a Evitar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_31" >
+        
+          
+          <label class="md-nav__link" for="__nav_31" id="__nav_31_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_31_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_31">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_31_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_31_1" id="__nav_31_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_31_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_31_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/bug-report-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug report example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/feature-request-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature request example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/new-feature-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New feature example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/post-mortem-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post mortem example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/rfc-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rfc example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_31_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_31_2" id="__nav_31_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_31_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_31_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/bug-report-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug report template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/feature-request-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature request template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/new-feature-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New feature template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/post-mortem-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post mortem template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/rfc-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rfc template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Índice Rápido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elegir-protocolo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Elegir Protocolo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest-representational-state-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 REST (Representational State Transfer)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 GraphQL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ gRPC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#websockets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔌 WebSockets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-sent-events-sse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📨 Server-Sent Events (SSE)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-driven-async" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Event-Driven / Async
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📄 Documentación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔐 Autenticación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diseno-de-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎨 Diseño de APIs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Webhooks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Comparación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-patrones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚫 Anti-patrones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Recursos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="10-apis-y-protocolos">10 - APIs y Protocolos</h1>
+<blockquote>
+<p>Interfaces para comunicación entre sistemas: REST, GraphQL, gRPC, WebSockets y más.</p>
+</blockquote>
+<p><a href="../00-indice/">🏠 Volver al índice</a></p>
+<hr />
+<h2 id="indice-rapido">📋 Índice Rápido</h2>
+<ul>
+<li><a href="#elegir-protocolo">🎯 Elegir Protocolo</a></li>
+<li><a href="#rest-representational-state-transfer">🌐 REST (Representational State Transfer)</a></li>
+<li><a href="#graphql">🔍 GraphQL</a></li>
+<li><a href="#grpc">⚡ gRPC</a></li>
+<li><a href="#websockets">🔌 WebSockets</a></li>
+<li><a href="#server-sent-events-sse">📨 Server-Sent Events (SSE)</a></li>
+<li><a href="#event-driven-async">🎯 Event-Driven / Async</a></li>
+<li><a href="#documentacion">📄 Documentación</a></li>
+<li><a href="#autenticacion">🔐 Autenticación</a></li>
+<li><a href="#diseno-de-apis">🎨 Diseño de APIs</a></li>
+<li><a href="#webhooks">🔄 Webhooks</a></li>
+<li><a href="#comparacion">📊 Comparación</a></li>
+<li><a href="#anti-patrones">🚫 Anti-patrones</a></li>
+<li><a href="#recursos">📚 Recursos</a></li>
+</ul>
+<hr />
+<h2 id="elegir-protocolo">🎯 Elegir Protocolo</h2>
+<p><strong>What:</strong> Definir cómo sistemas se comunican.</p>
+<p><strong>Why:</strong> Impacta performance, developer experience, escalabilidad.</p>
+<p><strong>Who:</strong> Arquitectos, backend developers.</p>
+<p><strong>How much:</strong> Decisión difícil de cambiar una vez adoptada.</p>
+<hr />
+<h2 id="rest-representational-state-transfer">🌐 REST (Representational State Transfer)</h2>
+<p><strong>What:</strong> APIs basadas en HTTP con recursos y verbos.</p>
+<p><strong>Why:</strong> Estándar universal, cacheable, stateless.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Aspecto</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Recursos</strong></td>
+<td style="text-align: left;">Sustantivos (entidades)</td>
+<td style="text-align: left;"><code>/users</code>, <code>/orders</code>, <code>/products</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Verbos HTTP</strong></td>
+<td style="text-align: left;">Acciones sobre recursos</td>
+<td style="text-align: left;">GET (leer), POST (crear), PUT (actualizar), DELETE (borrar)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Códigos Status</strong></td>
+<td style="text-align: left;">Resultado de operación</td>
+<td style="text-align: left;">200 OK, 201 Created, 400 Bad Request, 404 Not Found, 500 Server Error</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Idempotencia</strong></td>
+<td style="text-align: left;">Mismo request → mismo resultado</td>
+<td style="text-align: left;">GET, PUT, DELETE idempotentes. POST no</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>HATEOAS</strong></td>
+<td style="text-align: left;">Hypermedia as Engine of State</td>
+<td style="text-align: left;">Responses incluyen links a recursos relacionados</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo:</strong>
+<div class="highlight"><pre><span></span><code><span class="err">GET /api/v1/users/123</span>
+<span class="err">Authorization: Bearer &lt;token&gt;</span>
+
+<span class="err">Response 200:</span>
+<span class="err">{</span>
+<span class="err">  &quot;id&quot;: 123,</span>
+<span class="err">  &quot;name&quot;: &quot;Alice&quot;,</span>
+<span class="err">  &quot;email&quot;: &quot;alice@example.com&quot;,</span>
+<span class="err">  &quot;_links&quot;: {</span>
+<span class="err">    &quot;self&quot;: &quot;/users/123&quot;,</span>
+<span class="err">    &quot;orders&quot;: &quot;/users/123/orders&quot;</span>
+<span class="err">  }</span>
+<span class="err">}</span>
+</code></pre></div></p>
+<hr />
+<h2 id="graphql">🔍 GraphQL</h2>
+<p><strong>What:</strong> Query language para APIs con schema tipado.</p>
+<p><strong>Why:</strong> Cliente pide exactamente lo que necesita, no más ni menos.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Concepto</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Schema</strong></td>
+<td style="text-align: left;">Tipos y relaciones</td>
+<td style="text-align: left;"><code>type User { id: ID! name: String! posts: [Post] }</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Query</strong></td>
+<td style="text-align: left;">Leer datos</td>
+<td style="text-align: left;"><code>{ user(id: "123") { name email } }</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mutation</strong></td>
+<td style="text-align: left;">Modificar datos</td>
+<td style="text-align: left;"><code>mutation { createUser(input: {...}) { id } }</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Subscription</strong></td>
+<td style="text-align: left;">Real-time updates</td>
+<td style="text-align: left;"><code>subscription { messageAdded { id text } }</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolver</strong></td>
+<td style="text-align: left;">Función que obtiene datos</td>
+<td style="text-align: left;"><code>User.posts: (parent) =&gt; fetchPosts(parent.id)</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ventajas:</strong>
+- Sin overfetching/underfetching
+- Un endpoint para todo
+- Schema autodocumentado</p>
+<p><strong>Desventajas:</strong>
+- Complejidad adicional
+- Caching difícil
+- Queries costosas (N+1)</p>
+<p><strong>Herramientas:</strong> <a href="https://www.apollographql.com/">Apollo</a>, <a href="https://hasura.io/">Hasura</a>, <a href="https://the-guild.dev/graphql/yoga-server">GraphQL Yoga</a></p>
+<hr />
+<h2 id="grpc">⚡ gRPC</h2>
+<p><strong>What:</strong> RPC framework con Protocol Buffers binario.</p>
+<p><strong>Why:</strong> Performance, tipado fuerte, streaming nativo.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Aspecto</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">Ventaja</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Protocol Buffers</strong></td>
+<td style="text-align: left;">Serialización binaria</td>
+<td style="text-align: left;">Más pequeño y rápido que JSON</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>HTTP/2</strong></td>
+<td style="text-align: left;">Multiplexing, server push</td>
+<td style="text-align: left;">Menos conexiones</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Streaming</strong></td>
+<td style="text-align: left;">Bidireccional</td>
+<td style="text-align: left;">Server/Client/Bidirectional streams</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Code generation</strong></td>
+<td style="text-align: left;">Clientes/servers automáticos</td>
+<td style="text-align: left;">Type-safe</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo .proto:</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">service</span><span class="w"> </span><span class="n">UserService</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">rpc</span><span class="w"> </span><span class="n">GetUser</span><span class="w"> </span><span class="p">(</span><span class="n">GetUserRequest</span><span class="p">)</span><span class="w"> </span><span class="k">returns</span><span class="w"> </span><span class="p">(</span><span class="n">User</span><span class="p">);</span>
+<span class="w">  </span><span class="k">rpc</span><span class="w"> </span><span class="n">StreamUsers</span><span class="w"> </span><span class="p">(</span><span class="n">StreamUsersRequest</span><span class="p">)</span><span class="w"> </span><span class="k">returns</span><span class="w"> </span><span class="p">(</span><span class="n">stream</span><span class="w"> </span><span class="n">User</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span><span class="w"> </span><span class="nc">User</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int32</span><span class="w"> </span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">string</span><span class="w"> </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">string</span><span class="w"> </span><span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Cuándo usar:</strong> Microservicios internos, alta performance, streaming.</p>
+<p><strong>Herramientas:</strong> <a href="https://grpc.io/">gRPC</a>, <a href="https://buf.build/">Buf</a>, <a href="https://github.com/fullstorydev/grpcurl">grpcurl</a></p>
+<hr />
+<h2 id="websockets">🔌 WebSockets</h2>
+<p><strong>What:</strong> Conexión bidireccional persistente sobre TCP.</p>
+<p><strong>Why:</strong> Real-time, baja latencia, push de servidor.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Aspecto</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">Cuándo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Full-duplex</strong></td>
+<td style="text-align: left;">Cliente y servidor envían simultáneamente</td>
+<td style="text-align: left;">Chat, gaming</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Persistent</strong></td>
+<td style="text-align: left;">Conexión abierta continuamente</td>
+<td style="text-align: left;">Notificaciones en tiempo real</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Binary/Text</strong></td>
+<td style="text-align: left;">Soporta ambos formatos</td>
+<td style="text-align: left;">Flexible</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo:</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;wss://api.example.com/ws&#39;</span><span class="p">);</span>
+
+<span class="nx">ws</span><span class="p">.</span><span class="nx">onmessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Message:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;subscribe&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">channel</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;updates&#39;</span><span class="w"> </span><span class="p">}));</span>
+</code></pre></div></p>
+<p><strong>Cuándo usar:</strong> Chat, gaming, dashboards en tiempo real, collaborative editing.</p>
+<p><strong>Alternativa:</strong> Server-Sent Events (SSE) para one-way server→client.</p>
+<hr />
+<h2 id="server-sent-events-sse">📨 Server-Sent Events (SSE)</h2>
+<p><strong>What:</strong> Streaming unidireccional server→client sobre HTTP.</p>
+<p><strong>Why:</strong> Más simple que WebSockets para notificaciones.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">eventSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">EventSource</span><span class="p">(</span><span class="s1">&#39;/api/events&#39;</span><span class="p">);</span>
+
+<span class="nx">eventSource</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;update&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Update:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<p><strong>Cuándo usar:</strong> Notificaciones, cotizaciones, progress updates.</p>
+<p><strong>Ventajas vs WebSockets:</strong>
+- Más simple (HTTP estándar)
+- Reconnect automático
+- Event IDs para reanudar</p>
+<hr />
+<h2 id="event-driven-async">🎯 Event-Driven / Async</h2>
+<p><strong>What:</strong> Comunicación basada en eventos via message brokers.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Broker</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="https://www.rabbitmq.com/">RabbitMQ</a></td>
+<td style="text-align: left;">Message queue con routing</td>
+<td style="text-align: left;">Workflows complejos</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://kafka.apache.org/">Apache Kafka</a></td>
+<td style="text-align: left;">Event streaming distribuido</td>
+<td style="text-align: left;">Alto throughput, logs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://aws.amazon.com/sqs/">AWS SQS</a></td>
+<td style="text-align: left;">Queue serverless</td>
+<td style="text-align: left;">Desacople simple en AWS</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://redis.io/docs/manual/pubsub/">Redis Pub/Sub</a></td>
+<td style="text-align: left;">Publish/Subscribe en memoria</td>
+<td style="text-align: left;">Eventos en tiempo real</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Patrones:</strong>
+- <strong>Pub/Sub:</strong> Broadcast a múltiples consumidores
+- <strong>Queues:</strong> Work distribution, un consumidor procesa
+- <strong>Event Sourcing:</strong> Eventos como fuente de verdad</p>
+<hr />
+<h2 id="documentacion">📄 Documentación</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Protocolo</th>
+<th style="text-align: left;">Herramienta</th>
+<th style="text-align: left;">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>REST</strong></td>
+<td style="text-align: left;"><a href="https://www.openapis.org/">OpenAPI</a> / <a href="https://swagger.io/">Swagger</a></td>
+<td style="text-align: left;">Spec YAML → Swagger UI</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>GraphQL</strong></td>
+<td style="text-align: left;">Schema introspection</td>
+<td style="text-align: left;"><a href="https://github.com/graphql/graphql-playground">GraphQL Playground</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>gRPC</strong></td>
+<td style="text-align: left;"><a href="https://protobuf.dev/">Protocol Buffers</a></td>
+<td style="text-align: left;"><code>.proto</code> files → docs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>WebSockets</strong></td>
+<td style="text-align: left;"><a href="https://www.asyncapi.com/">AsyncAPI</a></td>
+<td style="text-align: left;">Spec para async APIs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo OpenAPI:</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">openapi</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.0.0</span>
+<span class="nt">paths</span><span class="p">:</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">/users/{id}</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="nt">get</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get user by ID</span>
+<span class="w">      </span><span class="nt">parameters</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">id</span>
+<span class="w">          </span><span class="nt">in</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">path</span>
+<span class="w">          </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">          </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
+<span class="w">      </span><span class="nt">responses</span><span class="p">:</span>
+<span class="w">        </span><span class="s">&#39;200&#39;</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">User found</span>
+<span class="w">          </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">$ref</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#/components/schemas/User&#39;</span>
+</code></pre></div></p>
+<hr />
+<h2 id="autenticacion">🔐 Autenticación</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">When</th>
+<th style="text-align: left;">Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>API Key</strong></td>
+<td style="text-align: left;">String estático</td>
+<td style="text-align: left;">Integraciones internas</td>
+<td style="text-align: left;"><code>X-API-Key: abc123</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Bearer Token</strong></td>
+<td style="text-align: left;">JWT en header</td>
+<td style="text-align: left;">SPAs, mobile apps</td>
+<td style="text-align: left;"><code>Authorization: Bearer &lt;jwt&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OAuth 2.0</strong></td>
+<td style="text-align: left;">Delegación con tokens</td>
+<td style="text-align: left;">Third-party integrations</td>
+<td style="text-align: left;"><code>Authorization: Bearer &lt;access_token&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Basic Auth</strong></td>
+<td style="text-align: left;">Usuario:contraseña en base64</td>
+<td style="text-align: left;">Desarrollo, admin tools</td>
+<td style="text-align: left;"><code>Authorization: Basic &lt;base64&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>mTLS</strong></td>
+<td style="text-align: left;">Certificados cliente/servidor</td>
+<td style="text-align: left;">Service-to-service</td>
+<td style="text-align: left;">TLS handshake</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="diseno-de-apis">🎨 Diseño de APIs</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Principio</th>
+<th style="text-align: left;">What</th>
+<th style="text-align: left;">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Versionado</strong></td>
+<td style="text-align: left;">Mantener compatibilidad</td>
+<td style="text-align: left;"><code>/api/v1/</code>, <code>/api/v2/</code> o header</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Paginación</strong></td>
+<td style="text-align: left;">Evitar payloads gigantes</td>
+<td style="text-align: left;"><code>?limit=20&amp;offset=40</code> o cursor</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Filtrado</strong></td>
+<td style="text-align: left;">Permitir búsquedas</td>
+<td style="text-align: left;"><code>?status=active&amp;role=admin</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ordenamiento</strong></td>
+<td style="text-align: left;">Control de orden</td>
+<td style="text-align: left;"><code>?sort=created_at:desc</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Rate Limiting</strong></td>
+<td style="text-align: left;">Prevenir abuse</td>
+<td style="text-align: left;"><code>X-RateLimit-Remaining: 45</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CORS</strong></td>
+<td style="text-align: left;">Controlar origins</td>
+<td style="text-align: left;"><code>Access-Control-Allow-Origin: *</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Idempotency Keys</strong></td>
+<td style="text-align: left;">Evitar duplicados</td>
+<td style="text-align: left;"><code>Idempotency-Key: uuid</code> header</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="webhooks">🔄 Webhooks</h2>
+<p><strong>What:</strong> HTTP callbacks cuando ocurre evento.</p>
+<p><strong>Why:</strong> Integración event-driven sin polling.</p>
+<p><strong>Ejemplo:</strong>
+<div class="highlight"><pre><span></span><code><span class="err">POST</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//yourapp.com/webhook</span>
+<span class="err">X</span><span class="mi">-</span><span class="err">Sig</span><span class="kc">nature</span><span class="p">:</span><span class="w"> </span><span class="err">sha</span><span class="mi">256</span><span class="err">=...</span>
+
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;payment.succeeded&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Seguridad:</strong>
+- Validar firma HMAC
+- HTTPS obligatorio
+- Retry exponential backoff
+- Idempotencia en receptor</p>
+<hr />
+<h2 id="comparacion">📊 Comparación</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Característica</th>
+<th style="text-align: left;">REST</th>
+<th style="text-align: left;">GraphQL</th>
+<th style="text-align: left;">gRPC</th>
+<th style="text-align: left;">WebSocket</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Protocol</strong></td>
+<td style="text-align: left;">HTTP</td>
+<td style="text-align: left;">HTTP</td>
+<td style="text-align: left;">HTTP/2</td>
+<td style="text-align: left;">TCP</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Payload</strong></td>
+<td style="text-align: left;">JSON</td>
+<td style="text-align: left;">JSON</td>
+<td style="text-align: left;">Protobuf</td>
+<td style="text-align: left;">Binary/Text</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Typing</strong></td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Sí (schema)</td>
+<td style="text-align: left;">Sí (protobuf)</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Streaming</strong></td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Sí (subscriptions)</td>
+<td style="text-align: left;">Sí</td>
+<td style="text-align: left;">Sí</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Caching</strong></td>
+<td style="text-align: left;">Fácil (HTTP)</td>
+<td style="text-align: left;">Difícil</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Browser Support</strong></td>
+<td style="text-align: left;">✅</td>
+<td style="text-align: left;">✅</td>
+<td style="text-align: left;">Limitado</td>
+<td style="text-align: left;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Learning Curve</strong></td>
+<td style="text-align: left;">Bajo</td>
+<td style="text-align: left;">Medio</td>
+<td style="text-align: left;">Alto</td>
+<td style="text-align: left;">Medio</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="anti-patrones">🚫 Anti-patrones</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Anti-patrón</th>
+<th style="text-align: left;">Problema</th>
+<th style="text-align: left;">Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Verbos en URLs</strong></td>
+<td style="text-align: left;"><code>/getUser</code>, <code>/createOrder</code></td>
+<td style="text-align: left;">Usar HTTP verbs: GET, POST</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sin versionado</strong></td>
+<td style="text-align: left;">Breaking changes rompen clientes</td>
+<td style="text-align: left;"><code>/v1/</code>, deprecation notices</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Respuestas inconsistentes</strong></td>
+<td style="text-align: left;">Diferentes estructuras por endpoint</td>
+<td style="text-align: left;">Estandarizar formato</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sin rate limiting</strong></td>
+<td style="text-align: left;">Abuse, DDoS</td>
+<td style="text-align: left;">Implementar límites</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Exponer IDs internos</strong></td>
+<td style="text-align: left;">Security risk</td>
+<td style="text-align: left;">Usar UUIDs públicos</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recursos">📚 Recursos</h2>
+<ul>
+<li><a href="https://restfulapi.net/">REST API Tutorial</a></li>
+<li><a href="https://graphql.org/learn/best-practices/">GraphQL Best Practices</a></li>
+<li><a href="https://grpc.io/docs/">gRPC Documentation</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc6455">WebSocket Protocol RFC</a></li>
+</ul>
+<hr />
+<p><a href="../09-bases-datos/">⬅️ Anterior: Bases de Datos</a> | <a href="#">⬆️ Volver arriba</a> | <a href="../11-mobile-ui-ux/">➡️ Siguiente: Mobile, UI y UX</a></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 de noviembre de 2025 18:59:00 UTC">28 de noviembre de 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>

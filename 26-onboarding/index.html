@@ -1,0 +1,2931 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/mysite/26-onboarding/">
+      
+      
+        <link rel="prev" href="../25-convenciones/">
+      
+      
+        <link rel="next" href="../27-checklist-produccion/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>26 - Onboarding de Nuevos Desarrolladores - My site</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#26-onboarding-de-nuevos-desarrolladores" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My site" class="md-header__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              26 - Onboarding de Nuevos Desarrolladores
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My site" class="md-nav__button md-logo" aria-label="My site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My site
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📘 Guía Integral de Ingeniería de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-indice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    00 - Indice General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fundamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 - Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-disciplinas-desarrollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 - Disciplinas de Desarrollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 - Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-arquitectura-patrones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 - Arquitectura y Patrones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-devops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 - DevOps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-seguridad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 - Seguridad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-observabilidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 - Observabilidad y Telemetría
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 - Optimización de Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-bases-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 - Optimización de Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-apis-protocolos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - APIs y Protocolos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-mobile-ui-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Mobile, UI y UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-infraestructura-cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Infraestructura y Arquitectura Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-machine-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Machine Learning y Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-ciencia-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Ciencia de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-gestion-calidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Ciencia de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-herramientas-problemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - Product Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-mejora-continua/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Metodologías de Mejora Continua
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-analisis-estrategico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Análisis Estratégico y de Negocio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-product-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - Product Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-metricas-kpis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - Métricas y KPIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-colaboracion-cultura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21 - Colaboración y Cultura de Desarrollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-cost-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22 - Optimización de Costos (FinOps)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 - Data Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-documentacion-diagramas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24 - Documentación y Diagramas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-convenciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25 - Convenciones y Estándares
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26 - Onboarding de Nuevos Desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26 - Onboarding de Nuevos Desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Índice Rápido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding-efectivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Onboarding Efectivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeline-sugerido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📅 Timeline Sugerido
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📅 Timeline Sugerido">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dia-1-setup-y-bienvenida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Día 1: Setup y Bienvenida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semana-1-contexto-y-primeros-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semana 1: Contexto y Primeros Pasos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semana-2-3-ramp-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semana 2-3: Ramp Up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semana-4-6-autonomia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semana 4-6: Autonomía
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding-docs-esenciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Onboarding Docs Esenciales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Onboarding Docs Esenciales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-getting_startedmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. GETTING_STARTED.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-architecturemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ARCHITECTURE.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-contributingmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. CONTRIBUTING.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-onboarding_tasksmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ONBOARDING_TASKS.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buddy-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👥 Buddy System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Learning Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎓 Learning Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recursos-internos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recursos Internos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primeros-tickets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primeros Tickets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explorar-codebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Explorar Codebase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Explorar Codebase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-code-reading-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Code Reading Sessions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-grepsearch-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Grep/Search Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-git-blamehistory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Git Blame/History
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ide-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. IDE Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics-de-onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Metrics de Onboarding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-ins-regulares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 Check-ins Regulares
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💬 Check-ins Regulares">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-on-1-con-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-on-1 con Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celebrar-hitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎉 Celebrar Hitos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-patrones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚫 Anti-patrones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding-checklist-managertl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Onboarding Checklist (Manager/TL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Onboarding Checklist (Manager/TL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#antes-del-dia-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes del día 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dia-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Día 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semana-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semana 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mes-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mes 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-feedback-survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Template: Feedback Survey
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌟 Onboarding Remoto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Recursos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-checklist-produccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27 - Checklist de Producción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-sesgos-falacias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28 - Sesgos Cognitivos, Falacias y Leyes a Evitar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_31" >
+        
+          
+          <label class="md-nav__link" for="__nav_31" id="__nav_31_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_31_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_31">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_31_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_31_1" id="__nav_31_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_31_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_31_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/bug-report-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug report example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/feature-request-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature request example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/new-feature-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New feature example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/post-mortem-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post mortem example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/rfc-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rfc example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_31_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_31_2" id="__nav_31_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_31_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_31_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/bug-report-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug report template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/feature-request-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature request template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/new-feature-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New feature template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/post-mortem-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post mortem template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/rfc-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rfc template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Índice Rápido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding-efectivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Onboarding Efectivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeline-sugerido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📅 Timeline Sugerido
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📅 Timeline Sugerido">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dia-1-setup-y-bienvenida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Día 1: Setup y Bienvenida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semana-1-contexto-y-primeros-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semana 1: Contexto y Primeros Pasos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semana-2-3-ramp-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semana 2-3: Ramp Up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semana-4-6-autonomia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semana 4-6: Autonomía
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding-docs-esenciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Onboarding Docs Esenciales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Onboarding Docs Esenciales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-getting_startedmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. GETTING_STARTED.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-architecturemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ARCHITECTURE.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-contributingmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. CONTRIBUTING.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-onboarding_tasksmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ONBOARDING_TASKS.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buddy-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👥 Buddy System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Learning Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎓 Learning Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recursos-internos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recursos Internos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primeros-tickets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primeros Tickets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explorar-codebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Explorar Codebase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Explorar Codebase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-code-reading-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Code Reading Sessions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-grepsearch-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Grep/Search Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-git-blamehistory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Git Blame/History
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ide-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. IDE Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics-de-onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Metrics de Onboarding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-ins-regulares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 Check-ins Regulares
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💬 Check-ins Regulares">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-on-1-con-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-on-1 con Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celebrar-hitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎉 Celebrar Hitos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-patrones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚫 Anti-patrones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding-checklist-managertl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Onboarding Checklist (Manager/TL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Onboarding Checklist (Manager/TL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#antes-del-dia-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes del día 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dia-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Día 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semana-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semana 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mes-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mes 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-feedback-survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Template: Feedback Survey
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌟 Onboarding Remoto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Recursos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="26-onboarding-de-nuevos-desarrolladores">26 - Onboarding de Nuevos Desarrolladores</h1>
+<blockquote>
+<p>Proceso estructurado para incorporar nuevos miembros del equipo de forma rápida y efectiva.</p>
+</blockquote>
+<p><a href="../00-indice/">🏠 Volver al índice</a></p>
+<hr />
+<h2 id="indice-rapido">📋 Índice Rápido</h2>
+<ul>
+<li><a href="#onboarding-efectivo">🎯 Onboarding Efectivo</a></li>
+<li><a href="#timeline-sugerido">📅 Timeline Sugerido</a></li>
+<li><a href="#onboarding-docs-esenciales">📚 Onboarding Docs Esenciales</a></li>
+<li><a href="#buddy-system">👥 Buddy System</a></li>
+<li><a href="#learning-path">🎓 Learning Path</a></li>
+<li><a href="#explorar-codebase">🔍 Explorar Codebase</a></li>
+<li><a href="#metrics-de-onboarding">📊 Metrics de Onboarding</a></li>
+<li><a href="#check-ins-regulares">💬 Check-ins Regulares</a></li>
+<li><a href="#celebrar-hitos">🎉 Celebrar Hitos</a></li>
+<li><a href="#anti-patrones">🚫 Anti-patrones</a></li>
+<li><a href="#onboarding-checklist-managertl">📋 Onboarding Checklist (Manager/TL)</a></li>
+<li><a href="#template-feedback-survey">📝 Template: Feedback Survey</a></li>
+<li><a href="#onboarding-remoto">🌟 Onboarding Remoto</a></li>
+<li><a href="#recursos">📚 Recursos</a></li>
+</ul>
+<hr />
+<h2 id="onboarding-efectivo">🎯 Onboarding Efectivo</h2>
+<p><strong>What:</strong> Proceso para que nuevo desarrollador sea productivo rápidamente y se sienta parte del equipo.</p>
+<p><strong>Why:</strong> Mal onboarding = 6 meses para ser productivo. Buen onboarding = 2-4 semanas.</p>
+<p><strong>Who:</strong> Nuevo dev + buddy/mentor + tech lead.</p>
+<p><strong>When:</strong> Desde día 1, primeras 4-6 semanas.</p>
+<p><strong>How much:</strong> Inversión de 20-30 horas del equipo, reduce turnover y acelera productividad.</p>
+<hr />
+<h2 id="timeline-sugerido">📅 Timeline Sugerido</h2>
+<h3 id="dia-1-setup-y-bienvenida">Día 1: Setup y Bienvenida</h3>
+<p><strong>Mañana (9-12h):</strong>
+- Welcome meeting con equipo
+- Setup laptop, accesos (email, Slack, GitHub, JIRA)
+- Tour de oficina (si presencial)
+- Lunch con equipo</p>
+<p><strong>Tarde (13-18h):</strong>
+- Leer README principal del proyecto
+- Clonar repositorios
+- Setup ambiente de desarrollo local
+- Primer build exitoso ✅</p>
+<p><strong>Objetivo:</strong> Sentirse bienvenido + ambiente funcionando.</p>
+<h3 id="semana-1-contexto-y-primeros-pasos">Semana 1: Contexto y Primeros Pasos</h3>
+<p><strong>Lunes-Miércoles:</strong>
+- Onboarding general empresa (HR, benefits, cultura)
+- Meeting 1-on-1 con manager
+- Leer docs de arquitectura
+- Explorar codebase (grep, code reading)
+- Shadowing: observar daily standup, planning</p>
+<p><strong>Jueves-Viernes:</strong>
+- Primer ticket: bug fix pequeño o mejora de docs
+- Pair programming con buddy
+- Primera PR (con mucha ayuda)
+- Code review de PRs del equipo (observar)</p>
+<p><strong>Objetivo:</strong> Entender contexto + primera contribución pequeña.</p>
+<h3 id="semana-2-3-ramp-up">Semana 2-3: Ramp Up</h3>
+<ul>
+<li>Tickets de complejidad creciente</li>
+<li>Pair programming 2-3 veces/semana</li>
+<li>Participar activamente en dailies</li>
+<li>Hacer preguntas (crear cultura de curiosidad)</li>
+<li>Primera feature pequeña end-to-end</li>
+</ul>
+<p><strong>Objetivo:</strong> Autonomía creciente, confianza.</p>
+<h3 id="semana-4-6-autonomia">Semana 4-6: Autonomía</h3>
+<ul>
+<li>Features medianas independientes</li>
+<li>Menos pair programming, más async support</li>
+<li>Participar en design discussions</li>
+<li>Onboarding de siguiente nuevo dev (enseñar = aprender)</li>
+</ul>
+<p><strong>Objetivo:</strong> Contribuidor full, integrado al equipo.</p>
+<hr />
+<h2 id="onboarding-docs-esenciales">📚 Onboarding Docs Esenciales</h2>
+<h3 id="1-getting_startedmd">1. GETTING_STARTED.md</h3>
+<p><strong>Contenido:</strong>
+<div class="highlight"><pre><span></span><code><span class="gh"># Getting Started</span>
+
+<span class="gu">## Prerequisites</span>
+<span class="k">-</span><span class="w"> </span>Node.js 18+
+<span class="k">-</span><span class="w"> </span>Docker Desktop
+<span class="k">-</span><span class="w"> </span>PostgreSQL 14+
+
+<span class="gu">## Setup (5 minutos)</span>
+<span class="k">1.</span> Clone repo: <span class="sb">`git clone ...`</span>
+<span class="k">2.</span> Install deps: <span class="sb">`npm install`</span>
+<span class="k">3.</span> Copy env: <span class="sb">`cp .env.example .env`</span>
+<span class="k">4.</span> Start services: <span class="sb">`docker-compose up -d`</span>
+<span class="k">5.</span> Run migrations: <span class="sb">`npm run migrate`</span>
+<span class="k">6.</span> Start dev server: <span class="sb">`npm run dev`</span>
+<span class="k">7.</span> Open http://localhost:3000
+
+<span class="gu">## Verify Setup</span>
+<span class="k">- [ ]</span> App loads sin errores
+<span class="k">- [ ]</span> Tests pasan: <span class="sb">`npm test`</span>
+<span class="k">- [ ]</span> Linter pasa: <span class="sb">`npm run lint`</span>
+
+<span class="gu">## Troubleshooting</span>
+<span class="gs">**Error: &quot;Port 3000 already in use&quot;**</span>
+<span class="k">-</span><span class="w"> </span>Run: <span class="sb">`lsof -ti:3000 | xargs kill -9`</span>
+
+<span class="gs">**Need help?**</span> Ask in <span class="ni">#engineering</span>-help Slack channel
+</code></pre></div></p>
+<h3 id="2-architecturemd">2. ARCHITECTURE.md</h3>
+<p><strong>Secciones:</strong>
+- Overview diagram (C4 Context)
+- Tech stack con versiones
+- Estructura de carpetas
+- Flujo request típico
+- Decisiones arquitecturales (ADRs)
+- Enlaces a docs detalladas</p>
+<h3 id="3-contributingmd">3. CONTRIBUTING.md</h3>
+<p><strong>Contenido:</strong>
+- Branch naming
+- Commit messages (Conventional Commits)
+- PR template y checklist
+- Code review guidelines
+- Testing requirements</p>
+<h3 id="4-onboarding_tasksmd">4. ONBOARDING_TASKS.md</h3>
+<p><strong>Checklist interactivo:</strong>
+<div class="highlight"><pre><span></span><code><span class="gu">## Week 1</span>
+<span class="k">- [ ]</span> Setup ambiente local
+<span class="k">- [ ]</span> Leer ARCHITECTURE.md
+<span class="k">- [ ]</span> Explorar codebase
+<span class="k">- [ ]</span> Completar ticket: <span class="ni">#123</span> (docs update)
+<span class="k">- [ ]</span> Primera PR merged
+<span class="k">- [ ]</span> Conocer al equipo (lunch/coffee)
+
+<span class="gu">## Week 2-3</span>
+<span class="k">- [ ]</span> Pair programming con 3 personas diferentes
+<span class="k">- [ ]</span> Fix bug: <span class="ni">#456</span>
+<span class="k">- [ ]</span> Implementar feature pequeña: <span class="ni">#789</span>
+<span class="k">- [ ]</span> Participar en retro
+<span class="k">- [ ]</span> Dar feedback sobre onboarding
+
+<span class="gu">## Week 4+</span>
+<span class="k">- [ ]</span> Feature mediana end-to-end
+<span class="k">- [ ]</span> Presentar trabajo en team meeting
+<span class="k">- [ ]</span> Revisar PRs de otros
+</code></pre></div></p>
+<hr />
+<h2 id="buddy-system">👥 Buddy System</h2>
+<p><strong>What:</strong> Asignar mentor/buddy al nuevo dev.</p>
+<p><strong>Responsabilidades del Buddy:</strong>
+- Responder preguntas (no juzgar ninguna pregunta)
+- Pair programming primeras 2 semanas
+- Code review de primeras PRs
+- Introducir a equipo, cultura, unwritten rules
+- Check-in diario primera semana, 2x/semana después</p>
+<p><strong>Perfil ideal:</strong>
+- Mid-senior level (no junior, no staff)
+- Paciente, buen comunicador
+- Conoce bien el codebase
+- Voluntario (no forzado)</p>
+<p><strong>Rotación:</strong> Rotar buddies cada 2-3 nuevos devs para evitar burnout.</p>
+<hr />
+<h2 id="learning-path">🎓 Learning Path</h2>
+<h3 id="recursos-internos">Recursos Internos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Contenido</th>
+<th style="text-align: left;">Cuándo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Video walkthroughs</strong></td>
+<td style="text-align: left;">Tour de codebase, demos</td>
+<td style="text-align: left;">Semana 1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tech talks grabados</strong></td>
+<td style="text-align: left;">Decisiones arquitecturales, postmortems</td>
+<td style="text-align: left;">Asíncrono</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Wiki interno</strong></td>
+<td style="text-align: left;">Runbooks, FAQs, How-tos</td>
+<td style="text-align: left;">Referencia continua</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Slack channels</strong></td>
+<td style="text-align: left;">#engineering-help, #engineering-random</td>
+<td style="text-align: left;">Desde día 1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="primeros-tickets">Primeros Tickets</h3>
+<p><strong>Características:</strong>
+- Bien definidos (acceptance criteria claros)
+- Scope pequeño (&lt; 1 día)
+- No críticos (ok si toma más tiempo)
+- Varias opciones para elegir según interés</p>
+<p><strong>Ejemplos:</strong>
+- Actualizar README con screenshots
+- Agregar tests a función existente
+- Fix typo en error messages
+- Mejorar logging de endpoint específico
+- Agregar validación faltante</p>
+<hr />
+<h2 id="explorar-codebase">🔍 Explorar Codebase</h2>
+<p><strong>Técnicas:</strong></p>
+<h3 id="1-code-reading-sessions">1. Code Reading Sessions</h3>
+<ul>
+<li>30 min diarios leyendo código</li>
+<li>Seguir un flujo completo (HTTP request → DB → response)</li>
+<li>Anotar preguntas</li>
+</ul>
+<h3 id="2-grepsearch-patterns">2. Grep/Search Patterns</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Encontrar todos los endpoints</span>
+rg<span class="w"> </span><span class="s2">&quot;@app.route\|@app.get&quot;</span><span class="w"> </span>--type<span class="w"> </span>py
+
+<span class="c1"># Encontrar uso de función</span>
+rg<span class="w"> </span><span class="s2">&quot;sendEmail&quot;</span><span class="w"> </span>--type<span class="w"> </span>ts
+
+<span class="c1"># Encontrar TODOs</span>
+rg<span class="w"> </span><span class="s2">&quot;TODO|FIXME&quot;</span>
+</code></pre></div>
+<h3 id="3-git-blamehistory">3. Git Blame/History</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Ver quién escribió línea X</span>
+git<span class="w"> </span>blame<span class="w"> </span>archivo.py
+
+<span class="c1"># Ver commits recientes de archivo</span>
+git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>archivo.py
+
+<span class="c1"># Ver cambios en función específica</span>
+git<span class="w"> </span>log<span class="w"> </span>-L<span class="w"> </span>:functionName:archivo.py
+</code></pre></div>
+<h3 id="4-ide-features">4. IDE Features</h3>
+<ul>
+<li>"Find all references"</li>
+<li>"Go to definition"</li>
+<li>"Show call hierarchy"</li>
+</ul>
+<hr />
+<h2 id="metrics-de-onboarding">📊 Metrics de Onboarding</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Métrica</th>
+<th style="text-align: left;">Target</th>
+<th style="text-align: left;">Cómo medir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Time to first commit</strong></td>
+<td style="text-align: left;">&lt; 3 días</td>
+<td style="text-align: left;">Git history</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Time to first merged PR</strong></td>
+<td style="text-align: left;">&lt; 1 semana</td>
+<td style="text-align: left;">GitHub/GitLab</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Time to independence</strong></td>
+<td style="text-align: left;">&lt; 4 semanas</td>
+<td style="text-align: left;">Manager assessment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Onboarding satisfaction</strong></td>
+<td style="text-align: left;">&gt; 4/5</td>
+<td style="text-align: left;">Survey post-onboarding</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Retention 90 días</strong></td>
+<td style="text-align: left;">&gt; 95%</td>
+<td style="text-align: left;">HR metrics</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="check-ins-regulares">💬 Check-ins Regulares</h2>
+<h3 id="1-on-1-con-manager">1-on-1 con Manager</h3>
+<p><strong>Semana 1:</strong>
+- ¿Cómo te sentís?
+- ¿Algo no quedó claro?
+- ¿Necesitás acceso a algo?</p>
+<p><strong>Semana 2:</strong>
+- ¿Estás bloqueado en algo?
+- ¿El buddy está siendo útil?
+- ¿Qué podemos mejorar del onboarding?</p>
+<p><strong>Semana 4:</strong>
+- ¿Te sentís integrado al equipo?
+- ¿Qué te gustaría aprender next?
+- Feedback del onboarding para mejorarlo</p>
+<hr />
+<h2 id="celebrar-hitos">🎉 Celebrar Hitos</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Hito</th>
+<th style="text-align: left;">Celebración</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Primera PR merged</strong></td>
+<td style="text-align: left;">Shoutout en Slack, emoji reaction 🎉</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Primera feature deployed</strong></td>
+<td style="text-align: left;">Demo en team meeting</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fin de onboarding (4-6 semanas)</strong></td>
+<td style="text-align: left;">Team lunch, pequeño regalo (swag)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cultura:</strong> Todos celebran, no solo manager. Hace sentir bienvenido.</p>
+<hr />
+<h2 id="anti-patrones">🚫 Anti-patrones</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Anti-patrón</th>
+<th style="text-align: left;">Problema</th>
+<th style="text-align: left;">Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>"Figure it out yourself"</strong></td>
+<td style="text-align: left;">Frustración, lentitud</td>
+<td style="text-align: left;">Buddy activo, docs claras</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Setup toma 3 días</strong></td>
+<td style="text-align: left;">Mal primera impresión</td>
+<td style="text-align: left;">Scripts automáticos, Docker</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sin primera tarea clara</strong></td>
+<td style="text-align: left;">No saber qué hacer</td>
+<td style="text-align: left;">Backlog de "good first issues"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Overwhelm con info</strong></td>
+<td style="text-align: left;">Parálisis</td>
+<td style="text-align: left;">Progressive disclosure, solo lo necesario</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sin feedback</strong></td>
+<td style="text-align: left;">No saber si va bien</td>
+<td style="text-align: left;">Check-ins semanales</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Buddy ausente</strong></td>
+<td style="text-align: left;">Nuevo dev abandondado</td>
+<td style="text-align: left;">Backup buddy, manager interviene</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="onboarding-checklist-managertl">📋 Onboarding Checklist (Manager/TL)</h2>
+<h3 id="antes-del-dia-1">Antes del día 1</h3>
+<ul>
+<li>[ ] Laptop y accesos configurados</li>
+<li>[ ] Buddy asignado (y aceptó)</li>
+<li>[ ] Primera tarea preparada</li>
+<li>[ ] Team notificado de llegada</li>
+<li>[ ] Calendario con meetings key</li>
+<li>[ ] Slack channels relevantes identificados</li>
+</ul>
+<h3 id="dia-1">Día 1</h3>
+<ul>
+<li>[ ] Welcome message en Slack</li>
+<li>[ ] Intro con equipo completo</li>
+<li>[ ] Tour de oficina/intro a herramientas</li>
+<li>[ ] Setup completado exitosamente</li>
+</ul>
+<h3 id="semana-1">Semana 1</h3>
+<ul>
+<li>[ ] 1-on-1 inicial (30 min)</li>
+<li>[ ] Primera PR revisada por buddy</li>
+<li>[ ] Invitado a todos los meetings de equipo</li>
+</ul>
+<h3 id="mes-1">Mes 1</h3>
+<ul>
+<li>[ ] Check-in semanal</li>
+<li>[ ] Primera feature merged</li>
+<li>[ ] Participando activamente en discusiones</li>
+<li>[ ] Survey de feedback de onboarding</li>
+</ul>
+<hr />
+<h2 id="template-feedback-survey">📝 Template: Feedback Survey</h2>
+<p><strong>Enviar después de 4-6 semanas:</strong></p>
+<div class="highlight"><pre><span></span><code>Onboarding Feedback
+
+1. En escala 1-5, ¿qué tan preparado te sentiste el día 1?
+2. ¿Qué parte del onboarding fue más útil?
+3. ¿Qué mejorarías del proceso?
+4. ¿Tu buddy fue efectivo? ¿Por qué sí/no?
+5. ¿Cuánto tiempo te tomó sentirte productivo?
+6. ¿Algo faltó que hubieras necesitado?
+7. Comentarios adicionales
+</code></pre></div>
+<p><strong>Usar feedback para iterar proceso.</strong></p>
+<hr />
+<h2 id="onboarding-remoto">🌟 Onboarding Remoto</h2>
+<p><strong>Desafíos extra:</strong>
+- Menos interacciones casuales
+- Difícil leer ambiente/cultura
+- Setup puede ser más complejo</p>
+<p><strong>Soluciones:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Desafío</th>
+<th style="text-align: left;">Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Aislamiento</strong></td>
+<td style="text-align: left;">Daily video check-in, coffee chats virtuales</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Setup</strong></td>
+<td style="text-align: left;">Video call screen-share para troubleshoot</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cultura</strong></td>
+<td style="text-align: left;">Enviar care package, virtual team building</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Comunicación</strong></td>
+<td style="text-align: left;">Sobre-comunicar, usar video no solo texto</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Onboarding doc</strong></td>
+<td style="text-align: left;">Aún más crítico, debe ser exhaustivo</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recursos">📚 Recursos</h2>
+<ul>
+<li><a href="https://about.gitlab.com/company/culture/all-remote/learning-and-development/#how-do-you-onboard-new-team-members">GitLab's Remote Onboarding</a></li>
+<li><a href="https://github.com/readme/guides/onboarding-engineers">The Missing README - Chapter on Onboarding</a></li>
+<li><a href="https://www.amazon.com/First-90-Days-Strategies-Expanded/dp/1422188612">First 90 Days - Michael Watkins</a></li>
+</ul>
+<hr />
+<p><a href="../25-convenciones/">⬅️ Anterior: Convenciones</a> | <a href="#">⬆️ Volver arriba</a> | <a href="../27-checklist-produccion/">➡️ Siguiente: Checklist de Producción</a></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 de noviembre de 2025 18:59:00 UTC">28 de noviembre de 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>
