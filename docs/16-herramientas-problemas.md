@@ -17,7 +17,7 @@
 - [❓ 5 Porqués](#5-porques)
 - [📊 Diagrama de Pareto (Regla 80/20)](#diagrama-de-pareto-regla-8020)
 - [💡 Lluvia de Ideas (Brainstorming)](#lluvia-de-ideas-brainstorming)
-- [🌳 Árbol Lógico de Fallos (FTA)](#arbol-logico-de-fallos-fta---fault-tree-analysis)
+- [🌳 Árbol Lógico de Fallos (FTA)](#arbol-logico-de-fallos-fta-fault-tree-analysis)
 - [📈 Diagrama de Flujo](#diagrama-de-flujo)
 - [🔍 5W2H](#5w2h)
 - [🔄 PDCA (Plan-Do-Check-Act)](#pdca-plan-do-check-act)
@@ -495,4 +495,4 @@ Problema: "Churn alto de usuarios"
 
 ---
 
-[⬅️ Anterior: Gestión de Calidad](./15-gestion-calidad.md) | [⬆️ Volver arriba](#16---herramientas-de-solución-de-problemas) | [➡️ Siguiente: Mejora Continua](./17-mejora-continua.md)
+[⬅️ Anterior: Gestión de Calidad](./15-gestion-calidad.md) | [⬆️ Volver arriba](#16-herramientas-de-solucion-de-problemas) | [➡️ Siguiente: Mejora Continua](./17-mejora-continua.md)

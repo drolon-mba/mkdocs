@@ -204,4 +204,4 @@
 
 ---
 
-[⬅️ Anterior: Ciencia de Datos](./14-ciencia-datos.md) | [⬆️ Volver arriba](#15---gestión-de-calidad) | [➡️ Siguiente: Herramientas de Problemas](./16-herramientas-problemas.md)
+[⬅️ Anterior: Ciencia de Datos](./14-ciencia-datos.md) | [⬆️ Volver arriba](#15-gestion-de-calidad) | [➡️ Siguiente: Herramientas de Problemas](./16-herramientas-problemas.md)
