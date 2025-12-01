@@ -1,133 +1,200 @@
-# 08 - Optimización de Performance
+# 09 - Bases de Datos
 
-> Técnicas y estrategias para mejorar velocidad, throughput y eficiencia de sistemas.
+> Sistemas de almacenamiento estructurado para datos persistentes, relacionales y no relacionales.
 
 [🏠 Volver al índice](./00-indice.md)
 
 ---
 
-## 📋 Índice Rápido
+## 🎯 Elegir Base de Datos
 
-- [🎯 Principios de Performance](#principios-de-performance)
-- [🗄️ Base de Datos](#base-de-datos)
-- [🚀 Backend](#backend)
-- [💻 Frontend](#frontend)
-- [🌐 Networking](#networking)
-- [📊 Profiling y Diagnóstico](#profiling-y-diagnostico)
-- [🎯 Métricas Clave](#metricas-clave)
-- [💾 Caching Strategies](#caching-strategies)
-- [🚫 Anti-patrones](#anti-patrones)
-- [📚 Recursos](#recursos)
----
+**What:** Decisión arquitectónica fundamental sobre cómo persistir datos.
 
-## 🎯 Principios de Performance
+**Why:** Cada tipo optimiza diferentes trade-offs (ACID, escalabilidad, flexibilidad).
 
-**What:** Optimización basada en mediciones, no suposiciones.
+**Who:** Arquitectos, DBAs, tech leads.
 
-**Why:** Performance impacta UX, conversión y costos. 100ms extra = -1% conversión (Amazon).
-
-**Who:** Developers, architects, SREs.
-
-**How much:** Medir primero (profiling), optimizar cuellos de botella, validar mejora.
+**How much:** Decisión crítica difícil de revertir. Evaluar con PoC.
 
 ---
 
-## 🗄️ Base de Datos
+## 🗄️ SQL (Relacionales)
 
-| Técnica | What | Why | When | How | Herramientas |
-|:--------|:-----|:----|:-----|:----|:-------------|
-| **Indexing** | Estructuras para búsqueda rápida | O(log n) vs O(n) | Columnas en WHERE, JOIN, ORDER BY | `CREATE INDEX idx_users_email ON users(email)` | [EXPLAIN ANALYZE](https://www.postgresql.org/docs/current/sql-explain.html) |
-| **Query Optimization** | Mejorar queries lentas | Reducir scans completos | Queries > 100ms | Evitar SELECT *, usar covering indexes, LIMIT | [DataGrip](https://www.jetbrains.com/datagrip/), [pgAdmin](https://www.pgadmin.org/) |
-| **Connection Pooling** | Reutilizar conexiones | Evitar overhead de TCP handshake | Siempre | Pool de 10-50 conexiones | [HikariCP](https://github.com/brettwooldridge/HikariCP), [pgBouncer](https://www.pgbouncer.org/) |
-| **Read Replicas** | Réplicas para lecturas | Escalar horizontalmente reads | Read:Write ratio > 70:30 | Master escribe, replicas leen | [PostgreSQL Replication](https://www.postgresql.org/docs/current/warm-standby.html) |
-| **Sharding** | Particionar horizontalmente | Superar límites de un servidor | > 1TB datos, > 10k writes/sec | Shard por user_id, region | [Vitess](https://vitess.io/), [Citus](https://www.citusdata.com/) |
-| **Materialized Views** | Precalcular queries complejas | Leer agregaciones sin calcular | Reportes, dashboards | `CREATE MATERIALIZED VIEW`, refresh periódico | PostgreSQL, MySQL 8+ |
-| **Denormalization** | Duplicar datos para evitar JOINs | Reducir complejidad de queries | Alta carga de lectura | Almacenar campos calculados | Trade-off: consistencia vs performance |
+**What:** Bases con esquema fijo, relaciones explícitas, ACID garantizado.
 
----
+**Why:** Integridad referencial, transacciones complejas, queries potentes.
 
-## 🚀 Backend
-
-| Técnica | What | Why | When | How | Herramientas |
-|:--------|:-----|:----|:-----|:----|:-------------|
-| **Caching** | Almacenar resultados para reutilizar | Evitar cómputo/DB repetidos | Datos que cambian poco | Cache-Aside, Write-Through, TTL | [Redis](https://redis.io/), [Memcached](https://memcached.org/) |
-| **Async Processing** | Desacoplar operaciones lentas | No bloquear request | Emails, reports, ML inference | Job queues, event-driven | [Celery](https://docs.celeryq.dev/), [BullMQ](https://docs.bullmq.io/) |
-| **Rate Limiting** | Limitar requests por cliente | Prevenir abuse, proteger recursos | APIs públicas | Token bucket, sliding window | [redis-cell](https://github.com/brandur/redis-cell), [express-rate-limit](https://github.com/express-rate-limit/express-rate-limit) |
-| **Pagination** | Retornar datos en páginas | Evitar payloads gigantes | Listas largas | Limit/Offset o Cursor-based | Backend frameworks |
-| **Compression** | Comprimir responses HTTP | Reducir bandwidth | Responses > 1KB | Gzip, Brotli | Nginx, middleware |
-| **HTTP/2** | Multiplexing, server push | Reducir latencia | Siempre (HTTPS) | Habilitar en server | Nginx, Caddy |
-| **Database Prepared Statements** | Cachear plan de ejecución | Reducir parsing overhead | Queries repetidas | `PREPARE`, `EXECUTE` | ORMs built-in |
+| DB | What | Why | When | Trade-offs |
+|:---|:-----|:----|:-----|:-----------|
+| [PostgreSQL](https://www.postgresql.org/) | RDBMS open-source más avanzado | JSONB, full-text search, extensiones | Default para apps modernas | ✅ Feature-rich, performance<br>❌ Scaling vertical |
+| [MySQL](https://www.mysql.com/) | RDBMS popular, ecosistema maduro | Simplicidad, InnoDB engine | WordPress, apps web tradicionales | ✅ Simple, ampliamente conocido<br>❌ Menos features que PostgreSQL |
+| [SQL Server](https://www.microsoft.com/sql-server) | RDBMS de Microsoft | Integración .NET, herramientas enterprise | Ecosistema Microsoft | ✅ Herramientas gráficas potentes<br>❌ Licencia costosa |
+| [Oracle](https://www.oracle.com/database/) | RDBMS enterprise líder | Features avanzadas, soporte 24/7 | Grandes corporaciones, compliance | ✅ Robusto, compliance<br>❌ Muy costoso |
+| [MariaDB](https://mariadb.org/) | Fork de MySQL con mejoras | Drop-in replacement MySQL | Migrar desde MySQL | ✅ Open source puro<br>❌ Comunidad más pequeña |
 
 ---
 
-## 💻 Frontend
+## 📄 NoSQL
 
-| Técnica | What | Why | When | How | Herramientas |
-|:--------|:-----|:----|:-----|:----|:-------------|
-| **Code Splitting** | Dividir bundle en chunks | Cargar solo lo necesario | SPAs grandes | Dynamic imports, route-based splitting | [Webpack](https://webpack.js.org/), [Vite](https://vitejs.dev/) |
-| **Lazy Loading** | Cargar recursos al scrollear | Reducir initial load | Imágenes, componentes below fold | `loading="lazy"`, Intersection Observer | [react-lazyload](https://github.com/twobin/react-lazyload) |
-| **Tree Shaking** | Eliminar código no usado | Reducir bundle size | Siempre | ES6 imports, `sideEffects: false` | Webpack, Rollup |
-| **Minification** | Remover espacios, renombrar vars | Reducir tamaño | Producción | Terser, UglifyJS | Build tools |
-| **CDN** | Servir assets desde edge | Baja latencia global | Assets estáticos | Subir a CDN, cache headers | [Cloudflare](https://www.cloudflare.com/), [CloudFront](https://aws.amazon.com/cloudfront/) |
-| **Prefetch/Preload** | Cargar recursos anticipadamente | Percepción de velocidad | Recursos críticos next page | `<link rel="prefetch">`, `<link rel="preload">` | HTML hints |
-| **Virtual Scrolling** | Renderizar solo elementos visibles | Listas con 1000s de items | Tablas grandes | Renderizar ventana visible + buffer | [react-window](https://github.com/bvaughn/react-window), [vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller) |
-| **Image Optimization** | Comprimir, formatos modernos | Reducir tamaño sin perder calidad | Todas las imágenes | WebP, AVIF, responsive images | [Sharp](https://sharp.pixelplumbing.com/), [ImageOptim](https://imageoptim.com/) |
-| **Service Workers** | Cachear assets offline | PWA, velocidad | Apps que necesitan offline | Cache API, precache assets | [Workbox](https://developer.chrome.com/docs/workbox/) |
+**What:** Bases schema-less, escalabilidad horizontal, eventual consistency.
 
----
+**Why:** Flexibilidad de esquema, performance en lecturas masivas.
 
-## 🌐 Networking
+### Document Stores
 
-| Técnica | What | Why | When | How |
-|:--------|:-----|:----|:-----|:----|
-| **HTTP Keep-Alive** | Reutilizar conexión TCP | Evitar handshakes | Siempre | `Connection: keep-alive` header |
-| **DNS Prefetch** | Resolver DNS antes de click | Reducir latencia | Links externos | `<link rel="dns-prefetch" href="//example.com">` |
-| **HTTP/3 (QUIC)** | UDP en vez de TCP | Reducir latency en redes lossy | Mobile, alta latencia | Habilitar en CDN/server |
-| **gRPC** | RPC binario | Más eficiente que JSON | Microservicios internos | Protocol Buffers, HTTP/2 |
+| DB | What | When | Use Case |
+|:---|:-----|:-----|:---------|
+| [MongoDB](https://www.mongodb.com/) | Documentos JSON con índices | Esquema flexible, prototipos rápidos | CMS, catálogos, perfiles usuario |
+| [CouchDB](https://couchdb.apache.org/) | Documentos con sync multi-master | Offline-first, replicación | Apps móviles con sync |
+| [Firestore](https://firebase.google.com/products/firestore) | Document DB de Google | Apps móviles, real-time | Chat, dashboards colaborativos |
 
----
+### Key-Value Stores
 
-## 📊 Profiling y Diagnóstico
+| DB | What | When | Use Case |
+|:---|:-----|:-----|:---------|
+| [Redis](https://redis.io/) | In-memory con persistencia opcional | Caching, sesiones, pub/sub | Cache, rate limiting, leaderboards |
+| [Memcached](https://memcached.org/) | In-memory puro (no persistencia) | Cache simple, ultra-rápido | Cache de objetos |
+| [DynamoDB](https://aws.amazon.com/dynamodb/) | Key-value serverless de AWS | Scaling automático, alta disponibilidad | Apps serverless, IoT |
 
-| Herramienta | What | When | Cómo leer |
-|:------------|:-----|:-----|:----------|
-| [Chrome DevTools](https://developer.chrome.com/docs/devtools/) | Performance tab, Network, Lighthouse | Frontend | Flamegraphs, waterfall charts |
-| [py-spy](https://github.com/benfred/py-spy) | Profiler Python sin modificar código | Backend Python | Flamegraph de CPU time |
-| [async-profiler](https://github.com/async-profiler/async-profiler) | Profiler Java low-overhead | Backend Java | Flamegraphs, allocation profiling |
-| [clinic.js](https://clinicjs.org/) | Profiler Node.js | Backend Node.js | Doctor, bubbleprof, flame |
-| [ab](https://httpd.apache.org/docs/2.4/programs/ab.html) | Benchmark HTTP simple | Load testing básico | `ab -n 1000 -c 10 URL` |
-| [wrk](https://github.com/wg/wrk) | Benchmark HTTP avanzado | Load testing con scripts Lua | RPS, latency distribution |
+### Columnar
 
----
+| DB | What | When | Use Case |
+|:---|:-----|:-----|:---------|
+| [ClickHouse](https://clickhouse.com/) | Columnar para analítica | Queries agregadas en TB de datos | Analytics, logs, eventos |
+| [Apache Druid](https://druid.apache.org/) | Real-time analytics | Queries sub-segundo en streams | Dashboards en tiempo real |
+| [Cassandra](https://cassandra.apache.org/) | Wide-column distribuida | Writes masivos, alta disponibilidad | Time-series, IoT, messaging |
 
-## 🎯 Métricas Clave
+### Graph
 
-| Métrica | Objetivo | Cómo medir |
-|:--------|:---------|:-----------|
-| **TTFB** (Time To First Byte) | < 200ms | Chrome DevTools Network |
-| **FCP** (First Contentful Paint) | < 1.8s | Lighthouse, Web Vitals |
-| **LCP** (Largest Contentful Paint) | < 2.5s | Core Web Vitals |
-| **TTI** (Time To Interactive) | < 3.8s | Lighthouse |
-| **CLS** (Cumulative Layout Shift) | < 0.1 | Web Vitals |
-| **FID** (First Input Delay) | < 100ms | Real User Monitoring |
-| **Throughput** | Requests/sec | Load testing tools |
-| **p95 Latency** | < 500ms | APM, Prometheus |
+| DB | What | When | Use Case |
+|:---|:-----|:-----|:---------|
+| [Neo4j](https://neo4j.com/) | Graph DB líder | Relaciones complejas | Redes sociales, recomendaciones, fraude |
+| [ArangoDB](https://www.arangodb.com/) | Multi-model (document + graph) | Flexibilidad model | Apps con datos relacionales y grafo |
 
 ---
 
-## 💾 Caching Strategies
+## ⏱️ Time Series
 
-| Strategy | What | When | Example |
-|:---------|:-----|:-----|:--------|
-| **Cache-Aside** | App lee cache, si miss → DB → cache | Lectura intensiva | `getUser() → check Redis → query DB → set Redis` |
-| **Write-Through** | Escribir en cache y DB simultáneamente | Consistencia fuerte | `updateUser() → write DB + write Redis` |
-| **Write-Behind** | Escribir en cache, async a DB | Alta carga escritura | Logs, metrics (eventual consistency OK) |
-| **Refresh-Ahead** | Refrescar cache antes de expirar | Evitar cache misses | Precarga de datos populares |
+**What:** Optimizadas para datos con timestamp (métricas, logs, sensores).
 
-**TTL (Time To Live):** 
-- Datos estáticos: 24h+
-- Datos frecuentes: 1-5min
-- Datos en tiempo real: 10-30s
+| DB | What | When | Features |
+|:---|:-----|:-----|:---------|
+| [InfluxDB](https://www.influxdata.com/) | Time-series purpose-built | Métricas, IoT | Retention policies, downsampling |
+| [TimescaleDB](https://www.timescale.com/) | Extensión PostgreSQL | Ya usas PostgreSQL | SQL + optimizaciones time-series |
+| [Prometheus](https://prometheus.io/) | Time-series para métricas | Monitoring | Pull model, PromQL |
+
+---
+
+## 🔍 Search Engines
+
+**What:** Optimizadas para búsqueda full-text y analítica.
+
+| DB | What | When | Features |
+|:---|:-----|:-----|:---------|
+| [Elasticsearch](https://www.elastic.co/elasticsearch/) | Search + analytics | Búsqueda compleja, logs | Full-text, agregaciones, Kibana |
+| [Apache Solr](https://solr.apache.org/) | Search basado en Lucene | Búsqueda empresarial | Faceting, highlighting |
+| [Meilisearch](https://www.meilisearch.com/) | Search API-first | Búsqueda simple, UX | Typo-tolerant, rápido setup |
+
+---
+
+## 🗃️ Embedded
+
+**What:** Bases livianas embebidas en la aplicación.
+
+| DB | What | When | Use Case |
+|:---|:-----|:-----|:---------|
+| [SQLite](https://www.sqlite.org/) | SQL embebido, single-file | Apps móviles, tests, prototipos | Local storage, demos |
+| [H2](https://www.h2database.com/) | SQL Java embebido | Tests Java | In-memory testing |
+| [LevelDB](https://github.com/google/leveldb) | Key-value embebido | Bases para otras DBs | Chrome, Bitcoin Core |
+
+---
+
+## 🔄 NewSQL
+
+**What:** SQL con escalabilidad horizontal (mejor de ambos mundos).
+
+| DB | What | When | Trade-offs |
+|:---|:-----|:-----|:-----------|
+| [CockroachDB](https://www.cockroachlabs.com/) | PostgreSQL distribuido | Global apps, alta disponibilidad | ✅ Geo-distributed<br>❌ Latencia mayor |
+| [Google Spanner](https://cloud.google.com/spanner/) | SQL global con TrueTime | Transacciones globales | ✅ Consistencia fuerte global<br>❌ Costoso |
+| [YugabyteDB](https://www.yugabyte.com/) | PostgreSQL + Cassandra | PostgreSQL con scale-out | ✅ Compatible PostgreSQL<br>❌ Operacionalmente complejo |
+
+---
+
+## 🎯 Decisión según Caso de Uso
+
+| Caso | Recomendación | Por qué |
+|:-----|:--------------|:--------|
+| **App web CRUD** | PostgreSQL | ACID, relaciones, features |
+| **Analytics** | ClickHouse, BigQuery | Queries agregadas en TB |
+| **Cache** | Redis | In-memory, TTL, estructuras |
+| **Búsqueda** | Elasticsearch | Full-text, faceting |
+| **Real-time** | DynamoDB, Firestore | Low latency, serverless |
+| **Graph/Social** | Neo4j | Traversals eficientes |
+| **Time-series** | InfluxDB, TimescaleDB | Retention, downsampling |
+| **Mobile offline** | SQLite, Realm | Embedded, sync |
+
+---
+
+## 📐 Diseño de Esquema
+
+### SQL
+
+| Principio | What | Ejemplo |
+|:----------|:-----|:--------|
+| **Normalización** | Eliminar redundancia | 3NF: sin dependencias transitivas |
+| **Denormalización** | Duplicar para performance | Agregar campos calculados |
+| **Foreign Keys** | Integridad referencial | `user_id REFERENCES users(id)` |
+| **Indexes** | Optimizar queries | Index en columnas de WHERE, JOIN |
+
+### NoSQL
+
+| Principio | What | Ejemplo |
+|:----------|:-----|:--------|
+| **Modelar por queries** | Diseñar según lectura | Duplicar datos si optimiza queries |
+| **Desnormalizar** | Embeber documentos relacionados | User con embedded addresses |
+| **Evitar JOINs** | No hay JOINs eficientes | Duplicar datos necesarios |
+
+---
+
+## 🔧 Optimización
+
+| Técnica | What | When | How |
+|:--------|:-----|:-----|:----|
+| **Indexing** | Acelerar búsquedas | Columnas en WHERE, JOIN | Evitar sobre-indexar (slow writes) |
+| **Partitioning** | Dividir tabla en chunks | Tablas > 10M rows | Por fecha, rango de IDs |
+| **Vacuum/Analyze** | Mantener estadísticas | PostgreSQL periódicamente | `VACUUM ANALYZE` automático |
+| **Connection Pooling** | Reutilizar conexiones | Siempre | PgBouncer, HikariCP |
+| **Query Plan Analysis** | Entender ejecución | Queries lentos | `EXPLAIN ANALYZE` |
+
+---
+
+## 🔒 Transacciones
+
+| Concepto | What | Ejemplo |
+|:---------|:-----|:--------|
+| **ACID** | Atomicity, Consistency, Isolation, Durability | PostgreSQL, MySQL InnoDB |
+| **Isolation Levels** | Read Uncommitted < Read Committed < Repeatable Read < Serializable | Trade-off: consistency vs performance |
+| **Deadlocks** | Dos transacciones esperan mutuamente | Timeout + retry con exponential backoff |
+| **Optimistic Locking** | Versionar registros | `UPDATE ... WHERE version = X` |
+| **Pessimistic Locking** | Lock explícito | `SELECT ... FOR UPDATE` |
+
+---
+
+## 🔄 Migraciones
+
+| Herramienta | What | When |
+|:------------|:-----|:-----|
+| [Flyway](https://flywaydb.org/) | Versionado SQL scripts | Java ecosystem |
+| [Liquibase](https://www.liquibase.org/) | Migraciones XML/YAML | Multi-DB support |
+| [Alembic](https://alembic.sqlalchemy.org/) | Migraciones Python | SQLAlchemy projects |
+| [TypeORM](https://typeorm.io/) | Migraciones TypeScript | Node.js + TypeScript |
+
+**Best Practices:**
+- Migraciones en un solo sentido (forward-only)
+- Testear en staging primero
+- Migraciones idempotentes
+- Backup antes de migrar
 
 ---
 
@@ -135,22 +202,22 @@
 
 | Anti-patrón | Problema | Solución |
 |:------------|:---------|:---------|
-| **N+1 Queries** | Un query por item en lista | Eager loading, JOIN |
-| **SELECT \*** | Traer columnas innecesarias | SELECT solo lo necesario |
-| **Sin indexes** | Full table scans | Indexar columnas en WHERE |
-| **Cachear todo** | Cache invalidation compleja | Cachear solo lo necesario |
-| **Optimización prematura** | Complejidad sin beneficio | Medir, luego optimizar |
-| **Sincronizar operaciones async** | Bloquear esperando | Usar async/await correctamente |
+| **Sin índices** | Full table scans | Indexar WHERE, JOIN columns |
+| **Sobre-indexar** | Writes lentos | Solo índices usados frecuentemente |
+| **EAV (Entity-Attribute-Value)** | Queries complejas, sin tipado | Usar JSONB o document DB |
+| **VARCHAR(255) everywhere** | Desperdicio espacio | Tamaño apropiado por columna |
+| **FLOAT para dinero** | Errores de precisión | DECIMAL o NUMERIC |
+| **No usar transacciones** | Datos inconsistentes | Wrap operaciones relacionadas |
 
 ---
 
 ## 📚 Recursos
 
-- [High Performance Browser Networking](https://hpbn.co/)
-- [Web.dev Performance](https://web.dev/performance/)
-- [Database Performance Tuning](https://use-the-index-luke.com/)
-- [Systems Performance - Brendan Gregg](https://www.brendangregg.com/systems-performance-2nd-edition-book.html)
+- [Use The Index, Luke](https://use-the-index-luke.com/)
+- [PostgreSQL Tutorial](https://www.postgresqltutorial.com/)
+- [MongoDB University](https://university.mongodb.com/)
+- [Database Internals - Alex Petrov](https://www.databass.dev/)
 
 ---
 
-[⬅️ Anterior: Observabilidad](./07-observabilidad.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Bases de Datos](./09-bases-datos.md)
+[⬅️ Anterior: Performance](./08-performance.md) | [⬆️ Volver arriba](#09---bases-de-datos) | [➡️ Siguiente: APIs y Protocolos](./10-apis-protocolos.md)

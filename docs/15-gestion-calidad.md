@@ -1,246 +1,190 @@
-# 14 - Ciencia de Datos
+# 15 - Gestión de Calidad
 
-> Extraer conocimiento y valor de datos mediante estadística, visualización y análisis exploratorio.
+> Prácticas y herramientas para mantener código limpio, seguro y mantenible a través de validaciones automatizadas.
 
 [🏠 Volver al índice](./00-indice.md)
 
 ---
 
-## 📋 Índice Rápido
+## 🎯 Calidad de Software
 
-- [📊 Ciencia de Datos](#ciencia-de-datos)
-- [🔄 Workflow Data Science](#workflow-data-science)
-- [🧹 Data Cleaning (Limpieza)](#data-cleaning-limpieza)
-- [🔍 EDA (Exploratory Data Analysis)](#eda-exploratory-data-analysis)
-- [📈 Visualización](#visualizacion)
-- [📊 Estadística](#estadistica)
-- [🔬 Reproducibilidad](#reproducibilidad)
-- [🧮 Herramientas Core](#herramientas-core)
-- [📊 Tipos de Análisis](#tipos-de-analisis)
-- [🔄 Data Quality](#data-quality)
-- [🎯 Métricas de Negocio](#metricas-de-negocio)
-- [🚫 Errores Comunes](#errores-comunes)
-- [📚 Recursos](#recursos)
----
+**What:** Conjunto de características que determinan si el software cumple requisitos y es mantenible.
 
-## 📊 Ciencia de Datos
+**Why:** Reduce bugs, facilita evolución, acelera desarrollo a largo plazo.
 
-**What:** Disciplina que combina estadística, programación y conocimiento del dominio para extraer insights de datos.
+**Who:** Todo el equipo, especialmente developers y QA.
 
-**Why:** Tomar decisiones data-driven, descubrir patrones, validar hipótesis.
-
-**Who:** Data Scientists, Data Analysts, Business Intelligence.
-
-**How much:** ROI variable según caso, requiere datos de calidad y stakeholder buy-in.
+**How much:** 15-20% del tiempo en configurar y mantener, previene costosas correcciones posteriores.
 
 ---
 
-## 🔄 Workflow Data Science
+## 📊 Code Coverage
 
-```
-1. Problem Framing (¿Qué queremos saber?)
-   ↓
-2. Data Collection (¿Dónde están los datos?)
-   ↓
-3. Data Cleaning (¿Son datos limpios?)
-   ↓
-4. EDA (¿Qué nos dicen?)
-   ↓
-5. Analysis/Modeling (¿Cómo responder la pregunta?)
-   ↓
-6. Communication (¿Cómo presentar insights?)
-   ↓
-7. Action (¿Qué decisión tomar?)
-```
+**What:** Porcentaje de código ejecutado por tests.
+
+| Métrica | What | Target | Herramienta |
+|:--------|:-----|:-------|:------------|
+| **Line Coverage** | % líneas ejecutadas | ≥80% lógica crítica | [JaCoCo](https://www.eclemma.org/jacoco/), [Coverage.py](https://coverage.readthedocs.io/) |
+| **Branch Coverage** | % ramas if/else ejecutadas | ≥70% | [Istanbul](https://istanbul.js.org/) |
+| **Function Coverage** | % funciones llamadas | 100% funciones públicas | Coverage tools |
+| **Mutation Coverage** | % mutantes detectados | ≥70% | [Stryker](https://stryker-mutator.io/), [mutmut](https://github.com/boxed/mutmut) |
+
+**Anti-patrón:** 100% coverage sin tests significativos.
 
 ---
 
-## 🧹 Data Cleaning (Limpieza)
+## 🔍 Static Analysis
 
-**What:** Preparar datos crudos para análisis.
+**What:** Analizar código sin ejecutarlo.
 
-**Why:** "Garbage in, garbage out" - datos sucios = análisis inválido.
-
-| Problema | What | Solución | Herramientas |
-|:---------|:-----|:---------|:-------------|
-| **Valores faltantes** | NaN, NULL, vacíos | Imputar (media, mediana), eliminar, flag | [pandas](https://pandas.pydata.org/) `fillna()`, `dropna()` |
-| **Duplicados** | Registros repetidos | Eliminar con lógica | `drop_duplicates()` |
-| **Outliers** | Valores extremos | Investigar, eliminar o transformar | IQR, Z-score, visualización |
-| **Inconsistencias** | "USA" vs "United States" | Estandarizar | Regex, `replace()` |
-| **Tipos incorrectos** | Fechas como string | Convertir tipos | `pd.to_datetime()`, `astype()` |
-| **Formato** | Espacios, mayúsculas | Normalizar | `str.strip()`, `str.lower()` |
-
-**Herramientas:** [pandas](https://pandas.pydata.org/), [Polars](https://pola.rs/), [pyjanitor](https://pyjanitor-devs.github.io/pyjanitor/)
-
----
-
-## 🔍 EDA (Exploratory Data Analysis)
-
-**What:** Entender datos mediante estadística y visualización.
-
-**Why:** Encontrar patrones, anomalías, formular hipótesis.
-
-### Análisis Univariado
-
-| Tipo Variable | Métricas | Visualización |
-|:--------------|:---------|:--------------|
-| **Numérica** | Mean, median, std, min, max, percentiles | Histogram, boxplot, density plot |
-| **Categórica** | Frecuencias, moda | Bar chart, pie chart |
-
-### Análisis Bivariado
-
-| Combinación | Análisis | Visualización |
-|:------------|:---------|:--------------|
-| **Num vs Num** | Correlación (Pearson, Spearman) | Scatter plot, heatmap |
-| **Cat vs Num** | Comparar distribuciones | Boxplot, violin plot |
-| **Cat vs Cat** | Tablas de contingencia, chi-squared | Heatmap, stacked bars |
-
-### Análisis Multivariado
-
-| Técnica | What | Herramienta |
-|:--------|:-----|:------------|
-| **PCA** | Reducción dimensionalidad | scikit-learn |
-| **t-SNE** | Visualizar high-dim data | scikit-learn |
-| **Correlation Matrix** | Relaciones entre variables | seaborn heatmap |
-
----
-
-## 📈 Visualización
-
-**What:** Representar datos gráficamente.
-
-**Why:** "Un gráfico vale más que mil tablas".
-
-| Tipo | When | Herramienta |
-|:-----|:-----|:------------|
-| **Estática** | Reportes, papers | [Matplotlib](https://matplotlib.org/), [Seaborn](https://seaborn.pydata.org/) |
-| **Interactiva** | Dashboards, exploración | [Plotly](https://plotly.com/python/), [Altair](https://altair-viz.github.io/) |
-| **Dashboards** | Apps analíticas | [Dash](https://plotly.com/dash/), [Streamlit](https://streamlit.io/) |
-| **BI Tools** | Business users | [Tableau](https://www.tableau.com/), [Power BI](https://powerbi.microsoft.com/), [Looker](https://cloud.google.com/looker) |
-
-### Tipos de Gráficos
-
-| Gráfico | When | Ejemplo |
-|:--------|:-----|:--------|
-| **Line** | Series temporales | Ventas por mes |
-| **Bar** | Comparar categorías | Ventas por región |
-| **Scatter** | Relación 2 variables | Precio vs tamaño |
-| **Histogram** | Distribución | Distribución edades |
-| **Boxplot** | Distribución + outliers | Salarios por departamento |
-| **Heatmap** | Correlaciones, matrices | Matriz de correlación |
-| **Pie** | Proporciones (evitar) | Market share |
-
----
-
-## 📊 Estadística
-
-### Descriptiva
-
-| Métrica | What | Cuándo |
-|:--------|:-----|:-------|
-| **Media** | Promedio | Distribución normal |
-| **Mediana** | Valor medio | Outliers presentes |
-| **Moda** | Más frecuente | Variables categóricas |
-| **Std Dev** | Dispersión | Cuantificar variabilidad |
-| **Percentiles** | Posición en distribución | Benchmarking |
-
-### Inferencial
-
-| Concepto | What | Herramienta |
-|:---------|:-----|:------------|
-| **Hypothesis Testing** | Validar suposiciones | t-test, chi-squared |
-| **p-value** | Probabilidad resultado por azar | <0.05 = significativo |
-| **Confidence Intervals** | Rango valores probables | Bootstrap, t-distribution |
-| **A/B Testing** | Comparar variantes | scipy.stats |
-
----
-
-## 🔬 Reproducibilidad
-
-**What:** Capacidad de replicar análisis.
-
-**Why:** Ciencia requiere verificabilidad.
-
-| Aspecto | How | Herramientas |
-|:--------|:----|:-------------|
-| **Versionado datos** | Trackear cambios en datasets | [DVC](https://dvc.org/), [Git LFS](https://git-lfs.github.com/) |
-| **Versionado código** | Git para notebooks y scripts | Git, GitHub |
-| **Environments** | Aislar dependencias | [conda](https://docs.conda.io/), [venv](https://docs.python.org/3/library/venv.html), [Docker](https://www.docker.com/) |
-| **Notebooks parametrizados** | Ejecutar con distintos params | [Papermill](https://github.com/nteract/papermill) |
-| **Seeds** | Reproducir aleatoriedad | `np.random.seed(42)` |
-| **Documentation** | Documentar decisiones | Markdown, docstrings |
-
----
-
-## 🧮 Herramientas Core
+**Why:** Detectar bugs, vulnerabilidades, code smells tempranamente.
 
 | Herramienta | What | When |
 |:------------|:-----|:-----|
-| [pandas](https://pandas.pydata.org/) | Manipulación tabular | Default para análisis |
-| [NumPy](https://numpy.org/) | Cálculo numérico | Operaciones matriciales |
-| [Polars](https://pola.rs/) | Pandas más rápido | Datasets grandes (>1GB) |
-| [Dask](https://www.dask.org/) | Parallel computing | Datos que no caben en RAM |
-| [Jupyter](https://jupyter.org/) | Notebooks interactivos | Exploración, prototipado |
-| [VS Code](https://code.visualstudio.com/) | IDE con notebook support | Desarrollo productivo |
+| [SonarQube](https://www.sonarsource.com/products/sonarqube/) | Plataforma calidad multi-lenguaje | CI/CD, pre-merge |
+| [ESLint](https://eslint.org/) | Linter JavaScript/TypeScript | Pre-commit, IDE |
+| [Pylint](https://pylint.pycqa.org/) | Linter Python | Pre-commit, CI |
+| [Checkstyle](https://checkstyle.sourceforge.io/) | Linter Java | CI, IDE |
+| [SpotBugs](https://spotbugs.github.io/) | Bug detector Java | CI |
+| [Bandit](https://bandit.readthedocs.io/) | Security linter Python | CI |
 
 ---
 
-## 📊 Tipos de Análisis
+## ✨ Code Formatting
 
-| Tipo | What | Pregunta | Técnica |
-|:-----|:-----|:---------|:--------|
-| **Descriptivo** | ¿Qué pasó? | Métricas históricas | Aggregations, visualización |
-| **Diagnóstico** | ¿Por qué pasó? | Causas | Correlaciones, comparaciones |
-| **Predictivo** | ¿Qué pasará? | Forecast | Machine Learning, time series |
-| **Prescriptivo** | ¿Qué hacer? | Recomendaciones | Optimization, simulación |
+**What:** Formateo automático consistente.
 
----
+**Why:** Elimina debates de estilo, diffs limpios, legibilidad.
 
-## 🔄 Data Quality
+| Lenguaje | Herramienta | Config |
+|:---------|:------------|:-------|
+| **JavaScript/TS** | [Prettier](https://prettier.io/) | `.prettierrc` |
+| **Python** | [Black](https://black.readthedocs.io/), [Ruff](https://docs.astral.sh/ruff/) | `pyproject.toml` |
+| **Java** | [google-java-format](https://github.com/google/google-java-format) | Maven/Gradle plugin |
+| **Go** | `gofmt` (built-in) | - |
+| **Rust** | `rustfmt` (built-in) | - |
 
-| Dimensión | What | Cómo validar |
-|:----------|:-----|:-------------|
-| **Completeness** | Sin valores faltantes | `df.isnull().sum()` |
-| **Uniqueness** | Sin duplicados | `df.duplicated().sum()` |
-| **Consistency** | Valores válidos | Regex, value ranges |
-| **Accuracy** | Datos correctos | Validar con fuentes |
-| **Timeliness** | Datos actuales | Timestamps |
-
-**Herramientas:** [Great Expectations](https://greatexpectations.io/), [Pandera](https://pandera.readthedocs.io/)
+**Setup:** Pre-commit hooks con [Husky](https://typicode.github.io/husky/) o [pre-commit](https://pre-commit.com/).
 
 ---
 
-## 🎯 Métricas de Negocio
+## 🔐 Security Scanning
 
-| Métrica | What | Fórmula |
-|:--------|:-----|:--------|
-| **Churn Rate** | % clientes que abandonan | Churned / Total × 100 |
-| **CAC** | Customer Acquisition Cost | Marketing Spend / New Customers |
-| **LTV** | Lifetime Value | Avg Revenue per User × Avg Lifetime |
-| **Conversion Rate** | % que completan acción | Conversions / Visitors × 100 |
-| **AOV** | Average Order Value | Revenue / Orders |
+| Tipo | What | Herramienta |
+|:-----|:-----|:------------|
+| **SAST** | Static Application Security Testing | [SonarQube](https://www.sonarsource.com/), [Checkmarx](https://checkmarx.com/) |
+| **Dependency Scan** | Vulnerabilidades en librerías | [Snyk](https://snyk.io/), [Dependabot](https://github.com/dependabot) |
+| **Secret Detection** | Credenciales en código | [GitGuardian](https://www.gitguardian.com/), [TruffleHog](https://github.com/trufflesecurity/trufflehog) |
+| **Container Scan** | Vulnerabilidades en imágenes | [Trivy](https://aquasecurity.github.io/trivy/), [Clair](https://github.com/quay/clair) |
 
 ---
 
-## 🚫 Errores Comunes
+## 👥 Code Review
 
-| Error | Problema | Solución |
-|:------|:---------|:---------|
-| **Correlation = Causation** | Confundir relación con causa | Experimentos, domain knowledge |
-| **P-hacking** | Buscar hasta encontrar p<0.05 | Hipótesis a priori, correction |
-| **Confirmation Bias** | Buscar solo evidencia que confirme | Buscar evidencia contradictoria |
-| **Simpson's Paradox** | Tendencia se invierte al agregar | Estratificar análisis |
-| **Survivorship Bias** | Solo analizar sobrevivientes | Incluir todos los casos |
+**What:** Revisión de código por pares antes de merge.
+
+**Why:** Detecta bugs, mejora diseño, comparte conocimiento.
+
+### Checklist
+
+- [ ] Código cumple requisitos
+- [ ] Tests incluidos y pasando
+- [ ] Sin código comentado
+- [ ] Sin console.log / print debug
+- [ ] Nombres descriptivos
+- [ ] Sin magic numbers
+- [ ] Documentación actualizada
+- [ ] Sin vulnerabilidades obvias
+- [ ] Performance aceptable
+- [ ] Cambios tienen sentido
+
+### Best Practices
+
+| Práctica | Why |
+|:---------|:----|
+| **PRs pequeños** | < 400 líneas, fácil revisar |
+| **Descripción clara** | Qué, por qué, cómo testear |
+| **Automatizar lo automatizable** | Linters, tests, no manual |
+| **Ser constructivo** | Sugerir mejoras, no criticar |
+| **Responder rápido** | < 24 horas |
+
+---
+
+## 🔄 CI Validation
+
+**What:** Validaciones automáticas en CI/CD.
+
+### Pipeline Típico
+
+```yaml
+1. Checkout code
+2. Install dependencies
+3. Lint (ESLint, Pylint)
+4. Format check (Prettier, Black)
+5. Unit tests
+6. Integration tests
+7. Code coverage (fail if <80%)
+8. Security scan
+9. Build
+10. Deploy (staging)
+```
+
+**Herramientas:** [GitHub Actions](https://github.com/features/actions), [GitLab CI](https://docs.gitlab.com/ee/ci/), [CircleCI](https://circleci.com/)
+
+---
+
+## 📏 Complexity Metrics
+
+| Métrica | What | Target | Herramienta |
+|:--------|:-----|:-------|:------------|
+| **Cyclomatic Complexity** | Número de caminos independientes | < 10 por función | SonarQube, ESLint |
+| **Cognitive Complexity** | Dificultad para entender | < 15 | SonarQube |
+| **LOC** | Lines of Code | < 200 por función | Linters |
+| **Nesting Depth** | Niveles de indentación | < 4 | Linters |
+
+---
+
+## 🎨 Design Quality
+
+| Aspecto | What | Cómo medir |
+|:--------|:-----|:-----------|
+| **Cohesión** | Qué tan relacionados están elementos | Alta cohesión = bueno |
+| **Acoplamiento** | Dependencias entre módulos | Bajo acoplamiento = bueno |
+| **Code Smells** | Indicadores de mal diseño | SonarQube, manual |
+| **Technical Debt** | Costo de soluciones subóptimas | SonarQube Debt Ratio |
+
+---
+
+## 📊 Métricas de Calidad
+
+| Métrica | Fórmula | Target |
+|:--------|:--------|:-------|
+| **Defect Density** | Bugs / KLOC | < 1 |
+| **Test Success Rate** | Tests passing / Total tests | 100% |
+| **Code Coverage** | Lines covered / Total lines | ≥80% |
+| **Technical Debt Ratio** | Remediation cost / Development cost | < 5% |
+
+---
+
+## 🚫 Anti-patrones
+
+| Anti-patrón | Problema | Solución |
+|:------------|:---------|:---------|
+| **Ignorar warnings** | Acumulación de problemas | Tratar warnings como errores |
+| **Tests sin asserts** | Falsa sensación de seguridad | Validar comportamiento real |
+| **Coverage por coverage** | Tests inútiles | Tests significativos |
+| **Skip CI checks** | Merges sin validar | CI obligatorio |
+| **Code review superficial** | LGTM sin leer | Checklist, tiempo dedicado |
 
 ---
 
 ## 📚 Recursos
 
-- [Python for Data Analysis - Wes McKinney](https://wesmckinney.com/book/)
-- [Storytelling with Data - Cole Nussbaumer](https://www.storytellingwithdata.com/)
-- [R for Data Science](https://r4ds.hadley.nz/)
-- [Kaggle Datasets](https://www.kaggle.com/datasets)
+- [Clean Code - Robert Martin](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
+- [Refactoring - Martin Fowler](https://refactoring.com/)
+- [SonarQube Docs](https://docs.sonarqube.org/)
+- [Google Engineering Practices](https://google.github.io/eng-practices/)
 
 ---
 
-[⬅️ Anterior: Machine Learning](./13-machine-learning.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Gestión de Calidad](./15-gestion-calidad.md)
+[⬅️ Anterior: Ciencia de Datos](./14-ciencia-datos.md) | [⬆️ Volver arriba](#15---gestión-de-calidad) | [➡️ Siguiente: Herramientas de Problemas](./16-herramientas-problemas.md)
