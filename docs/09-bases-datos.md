@@ -6,6 +6,25 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 Elegir Base de Datos](#elegir-base-de-datos)
+- [🗄️ SQL (Relacionales)](#sql-relacionales)
+- [📄 NoSQL](#nosql)
+- [⏱️ Time Series](#time-series)
+- [🔍 Search Engines](#search-engines)
+- [🗃️ Embedded](#embedded)
+- [🔄 NewSQL](#newsql)
+- [🎯 Decisión según Caso de Uso](#decision-segun-caso-de-uso)
+- [📐 Diseño de Esquema](#diseno-de-esquema)
+- [🔧 Optimización](#optimizacion)
+- [🔒 Transacciones](#transacciones)
+- [🔄 Migraciones](#migraciones)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+
+---
+
 ## 🎯 Elegir Base de Datos
 
 **What:** Decisión arquitectónica fundamental sobre cómo persistir datos.

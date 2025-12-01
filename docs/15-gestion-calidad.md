@@ -6,6 +6,23 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🎯 Calidad de Software](#calidad-de-software)
+- [📊 Code Coverage](#code-coverage)
+- [🔍 Static Analysis](#static-analysis)
+- [✨ Code Formatting](#code-formatting)
+- [🔐 Security Scanning](#security-scanning)
+- [👥 Code Review](#code-review)
+- [🔄 CI Validation](#ci-validation)
+- [📏 Complexity Metrics](#complexity-metrics)
+- [🎨 Design Quality](#design-quality)
+- [📊 Métricas de Calidad](#metricas-de-calidad)
+- [🚫 Anti-patrones](#anti-patrones)
+- [📚 Recursos](#recursos)
+
+---
+
 ## 🎯 Calidad de Software
 
 **What:** Conjunto de características que determinan si el software cumple requisitos y es mantenible.

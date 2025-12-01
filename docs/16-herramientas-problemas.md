@@ -6,6 +6,27 @@
 
 ---
 
+## 📋 Índice Rápido
+
+- [🌳 Issue Trees (Árbol de Problemas)](#issue-trees-arbol-de-problemas)
+- [🔍 MECE Principle](#mece-principle)
+- [✅ Phoenix Checklist](#phoenix-checklist)
+- [⚠️ AMFE (Análisis de Modos de Fallo y Efectos)](#amfe-analisis-de-modos-de-fallo-y-efectos)
+- [🎯 ¿Por qué usar herramientas estructuradas?](#por-que-usar-herramientas-estructuradas)
+- [🐟 Diagrama de Ishikawa (Espina de Pescado)](#diagrama-de-ishikawa-espina-de-pescado)
+- [❓ 5 Porqués](#5-porques)
+- [📊 Diagrama de Pareto (Regla 80/20)](#diagrama-de-pareto-regla-8020)
+- [💡 Lluvia de Ideas (Brainstorming)](#lluvia-de-ideas-brainstorming)
+- [🌳 Árbol Lógico de Fallos (FTA)](#arbol-logico-de-fallos-fta---fault-tree-analysis)
+- [📈 Diagrama de Flujo](#diagrama-de-flujo)
+- [🔍 5W2H](#5w2h)
+- [🔄 PDCA (Plan-Do-Check-Act)](#pdca-plan-do-check-act)
+- [🎯 Matriz de Decisión](#matriz-de-decision)
+- [🚫 Errores Comunes](#errores-comunes)
+- [📚 Recursos](#recursos)
+
+---
+
 ## 🌳 Issue Trees (Árbol de Problemas)
 
 **What:** Descomposición estructurada de problema en sub-problemas mutuamente excluyentes.
