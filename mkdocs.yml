@@ -1,5 +1,4 @@
-site_name: My site
-site_url: https://mydomain.org/mysite
+site_name: Guía Integral de Ingeniería de Software
 theme:
   name: material
   palette:

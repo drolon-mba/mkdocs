@@ -188,4 +188,4 @@ Este documento es vivo y colaborativo:
 
 ---
 
-**Mantenedores**: David Rolón (https://rolondavid.pythonanywhere.com/)
+**Mantenedores**: David Rolón (https://github.com/davichuder)
