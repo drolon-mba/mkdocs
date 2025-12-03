@@ -9,6 +9,7 @@
 ## 📋 Índice Rápido
 
 - [🏗️ Arquitecturas de Software](#arquitecturas-de-software)
+- [📢 Screaming Architecture](#screaming-architecture)
 - [🧩 Patrones de Diseño (Gang of Four)](#patrones-de-diseno-gang-of-four)
 - [🏗️ Patrones Arquitectónicos Avanzados](#patrones-arquitectonicos-avanzados)
 - [🎭 Finite State Machines (FSM)](#finite-state-machines-fsm)
@@ -37,6 +38,93 @@
 | **Capas** | Separación horizontal: presentación, negocio, datos | Modularidad, responsabilidades claras | Sistemas empresariales tradicionales | Monolitos estructurados | Capas solo conocen la inferior, DTO entre capas | ✅ Organización clara<br>❌ Puede ser rígido |
 | **Event-Driven** | Comunicación basada en eventos asincrónicos | Desacoplamiento, escalabilidad | Sistemas con workflows complejos, integraciones | E-commerce, IoT, streaming | Event Bus/Broker, productores/consumidores | ✅ Desacoplamiento total<br>❌ Debugging complejo, eventual consistency |
 | **Serverless** | Funciones sin servidor dedicado, auto-scaling | Costo por uso, cero gestión servidores | Tareas puntuales, APIs sencillas, jobs | AWS Lambda, Cloud Functions | Funciones stateless, triggers (HTTP, eventos), short-lived | ✅ Escalado automático, low cost<br>❌ Cold starts, vendor lock-in |
+
+---
+
+## 📢 Screaming Architecture
+
+**What:** Arquitectura que hace obvio el dominio/propósito de la aplicación desde la estructura de carpetas y nombres, no el framework usado.
+
+**Why:** Cuando mirás la estructura del proyecto, debería "gritar" qué hace la aplicación (ej: healthcare, e-commerce), no qué framework usa (ej: Rails, Angular).
+
+**Who:** Acuñado por Robert C. Martin (Uncle Bob)
+
+**When:** Todos los proyectos, especialmente aplicaciones domain-driven
+
+**How:**
+- Carpetas de nivel superior representan dominios de negocio, no capas técnicas
+- El framework es un detalle, aislado en capa de infraestructura
+- Los casos de uso son explícitos y visibles en la estructura
+
+### Ejemplo - Sistema de Salud
+
+**✅ Screaming Architecture (Grita "Healthcare"):**
+```
+/src
+  /patients
+    /use-cases
+      - RegisterPatient.ts
+      - ScheduleAppointment.ts
+      - UpdateMedicalHistory.ts
+    /entities
+      - Patient.ts
+      - MedicalRecord.ts
+    /repositories
+      - IPatientRepository.ts
+  /appointments
+    /use-cases
+      - BookAppointment.ts
+      - CancelAppointment.ts
+    /entities
+      - Appointment.ts
+  /billing
+    /use-cases
+      - GenerateInvoice.ts
+      - ProcessPayment.ts
+  /infrastructure  # Framework vive acá
+    /express
+    /database
+    /email
+```
+
+**❌ Framework-Centric (Grita "Express/MVC"):**
+```
+/src
+  /controllers
+    - PatientController.ts
+    - AppointmentController.ts
+  /services
+    - PatientService.ts
+    - AppointmentService.ts
+  /models
+    - Patient.ts
+    - Appointment.ts
+  /views
+  /routes
+```
+
+### Principio Clave
+
+> "Your architecture should tell readers about the system, not about the frameworks you used in your system." 
+> — Robert C. Martin
+
+### Beneficios
+
+| Beneficio | Explicación |
+|:----------|:------------|
+| **Claridad de dominio** | Nuevos devs entienden el negocio mirando carpetas |
+| **Independencia de framework** | Cambiar de Express a Fastify no afecta estructura core |
+| **Testability** | Casos de uso son testables sin framework |
+| **Mantenibilidad** | Features relacionadas están juntas, no dispersas por capas |
+| **Onboarding rápido** | La estructura documenta el sistema |
+
+### Cuándo Aplicar
+
+- ✅ **Aplicaciones de negocio complejas**: E-commerce, healthcare, fintech
+- ✅ **Proyectos de larga vida**: Sistemas que evolucionarán años
+- ✅ **Equipos grandes**: Múltiples devs trabajando en paralelo
+- ⚠️ **MVPs simples**: Puede ser over-engineering para prototipos
+- ⚠️ **CRUD básicos**: Si solo es ABM, capas tradicionales pueden bastar
 
 ---
 
@@ -194,4 +282,4 @@ const orderMachine = createMachine({
 
 ---
 
-[⬅️ Anterior: Testing](./03-testing.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: DevOps](./05-devops.md)
+[⬅️ Anterior: Testing](./03-testing.md) | [⬆️ Volver arriba](#04-arquitectura-y-patrones) | [➡️ Siguiente: DevOps](./05-devops.md)

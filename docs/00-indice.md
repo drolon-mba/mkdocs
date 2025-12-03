@@ -112,6 +112,10 @@
 - [28 - Sesgos Cognitivos, Falacias y Leyes](./28-sesgos-falacias.md)
   - Sesgos cognitivos, Falacias lógicas, Leyes paradójicas, Efectos psicológicos
 
+
+### 🤖 AI y Automatización
+- [29 - Prompts y Agentes de IA](./29-prompts-agentes.md)
+  - The Gentleman (agente principal), Agentes especializados, Prompt engineering
 ### 📝 Reportes y Templates
 
 | Tipo de Reporte | Template | Ejemplo |
