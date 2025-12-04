@@ -112,10 +112,40 @@
 - [28 - Sesgos Cognitivos, Falacias y Leyes](./28-sesgos-falacias.md)
   - Sesgos cognitivos, Falacias lógicas, Leyes paradójicas, Efectos psicológicos
 
-
-### 🤖 AI y Automatización
-- [29 - Prompts y Agentes de IA](./29-prompts-agentes.md)
-  - The Gentleman (agente principal), Agentes especializados, Prompt engineering
+### 🤖 AI y Automatización
+- [29 - Prompts y Agentes de IA](./29-prompts-agentes.md)
+  - The Gentleman (agente principal), 57 Agentes especializados, Prompt engineering
+
+### 👥 Roles y Estrategia
+- [30 - Roles y Responsabilidades](./30-roles-responsabilidades.md)
+  - Roles técnicos, Producto y negocio, Calidad, Operaciones, Datos, RACI Matrix
+- [31 - Estrategia de IA y Automatización](./31-estrategia-ia-automatizacion.md)
+  - Casos de uso prácticos, Límites de la IA, Prompt engineering avanzado, Integración en CI/CD
+
+### ⚖️ Ética y Gobernanza
+- [32 - Ética y Gobernanza de IA](./32-etica-gobernanza-ia.md)
+  - Bias en ML, Fairness metrics, Explicabilidad (XAI), Privacy, Gobernanza
+
+### 📝 Comunicación y Artefactos
+- [33 - Comunicación y Contenido Técnico](./33-comunicacion-contenido.md)
+  - Escritura para diferentes audiencias, Storytelling técnico, Content repurposing, SEO
+- [34 - Plantillas y Artefactos](./34-plantillas-artefactos.md)
+  - Decision Journal, Pre-Mortem, Runbook, Incident Response Playbook, ADR
+
+### 🔧 Gestión Técnica
+- [35 - Gestión de Dependencias y Deuda Técnica](./35-dependencias-deuda-tecnica.md)
+  - Dependency management, Technical debt tracking, Refactoring strategies, Breaking changes
+- [36 - Priorización y Roadmapping](./36-priorizacion-roadmapping.md)
+  - RICE Framework, MoSCoW, Kano Model, Value vs Effort Matrix, Roadmapping
+- [37 - Gestión de Secretos](./37-gestion-secretos.md)
+  - Secret management tools, Secret rotation, Least privilege, Secrets en CI/CD, Detección
+
+### 🛡️ Resiliencia y Datos
+- [38 - Chaos Engineering y Resiliencia](./38-chaos-engineering.md)
+  - Chaos Engineering principles, Failure injection, Game Days, Resiliencia patterns
+- [39 - Data Literacy](./39-data-literacy.md)
+  - Data literacy fundamentals, Self-service analytics, Data storytelling, Data quality
+
 ### 📝 Reportes y Templates
 
 | Tipo de Reporte | Template | Ejemplo |
