@@ -240,6 +240,8 @@ const orderMachine = createMachine({
 
 ## 📐 Principios de Arquitectura
 
+> **Nota:** Estos principios se aplican a nivel arquitectónico. Para ver su definición fundamental y aplicación a nivel de código, consultar [Reglas Generales de Código](./01-fundamentos.md#reglas-generales-de-codigo).
+
 | Principio | What | Why |
 |:----------|:-----|:----|
 | **Separation of Concerns** | Separar responsabilidades en módulos/capas | Mantenimiento, testing, escalabilidad |

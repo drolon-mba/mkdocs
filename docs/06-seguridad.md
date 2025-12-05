@@ -82,12 +82,7 @@
 
 **Why:** Evitar hardcodear secrets en código (Git history es eterno).
 
-| Herramienta | What | Why | When | How |
-|:------------|:-----|:----|:-----|:----|
-| [HashiCorp Vault](https://www.vaultproject.io/) | Almacenamiento seguro con dynamic secrets | Rotación automática, auditoría | Producción, secretos sensibles | Sellar/dessellar con unseal keys, políticas de acceso |
-| [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) | Secrets en AWS con rotación | Integración nativa con RDS, servicios AWS | Apps en AWS | Versionar secrets, Lambda para rotación |
-| [Azure Key Vault](https://azure.microsoft.com/en-us/products/key-vault) | Secrets + keys + certificates en Azure | HSM-backed, compliance | Apps en Azure | Acceso vía Managed Identity |
-| [Doppler](https://www.doppler.com/) | Sync secrets entre entornos | Developer-friendly | Equipos pequeños/medianos | CLI, sync con CI/CD |
+**Ver [Capítulo 37 - Gestión de Secretos](./37-gestion-secretos.md) para implementación detallada de Vault, AWS Secrets Manager, Azure Key Vault y mejores prácticas.**
 
 ---
 
