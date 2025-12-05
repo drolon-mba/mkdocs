@@ -17,11 +17,7 @@
 
 ## 📊 Niveles de Criticidad
 
-| Criticidad | Abrev. | Explicación                                  |
-| ---------- | ------ | -------------------------------------------- |
-| Crítico    | 🔴     | Incumplimiento = bug de seguridad o caída.   |
-| Alto       | 🟠     | Afecta mantenibilidad o rendimiento.         |
-| Estilo     | 🟢     | Preferencia de equipo, sin impacto funcional.|
+Ver [Tabla de Niveles de Criticidad](./00-indice.md#niveles-de-criticidad) en el Índice General.
 
 ---
 

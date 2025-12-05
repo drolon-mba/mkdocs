@@ -1,4 +1,4 @@
-# 29 - Prompts y Agentes de IA
+# 30 - Prompts y Agentes de IA
 
 > Definiciones de agentes de IA especializados para asistir en desarrollo, arquitectura, testing y mejores prácticas.
 
@@ -123,6 +123,38 @@
 - **Atomic Design**: Component organization
 - **Container-Presentational Pattern**: Smart vs Dumb components
 - **Modularization**: Feature-based, domain-driven
+
+#### Certificaciones y Reconocimientos de Élite
+
+**Python:**
+- PSF Fellow (Python Software Foundation)
+- FastAPI Core Contributor (GitHub)
+- Django Fellows / Core Contributors
+
+**Java:**
+- Java Champions
+
+**Frontend:**
+- Angular GDE (Google Developer Expert)
+- React Core Contributor / Community Leader
+
+**Data Science:**
+- Kaggle Grandmasters
+- ODSC Speakers (Open Data Science Conference)
+
+**Bases de Datos:**
+- MySQL Community Contributors
+- MongoDB Champions
+- PostgreSQL Major Contributors
+- Microsoft MVP (Data Platform)
+
+**Product Management:**
+- PMI Certifications (PMP, PMI‑ACP)
+- Scrum Alliance (CSPO, CSM)
+
+**QA/SRE:**
+- ISTQB Certifications
+- SRE Conference Speakers (SREcon)
 
 ### 🛠️ Capacidades Específicas
 
@@ -341,4 +373,4 @@ Dejame ayudarte a hacerlo BIEN, no con duct tape.
 
 ---
 
-[⬅️ Anterior: Sesgos y Falacias](./28-sesgos-falacias.md) | [➡️ Siguiente: Roles y Responsabilidades](./30-roles-responsabilidades.md) | [⬆️ Volver arriba](#29-prompts-y-agentes-de-ia)
+[⬅️ Anterior: Sesgos y Falacias](./29-sesgos-falacias.md) | [⬆️ Volver arriba](#30-prompts-y-agentes-de-ia) | [➡️ Siguiente: Estrategia de IA](./31-estrategia-ia-automatizacion.md)

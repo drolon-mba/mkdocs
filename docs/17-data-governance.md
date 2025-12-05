@@ -1,4 +1,4 @@
-# 23 - Data Governance
+# 17 - Data Governance
 
 > Gestión de disponibilidad, usabilidad, integridad y seguridad de datos empresariales.
 
@@ -328,4 +328,4 @@ Transaction Records:
 
 ---
 
-[⬅️ Anterior: Cost Optimization](./22-cost-optimization.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Documentación y Diagramas](./24-documentacion-diagramas.md)
+[⬅️ Anterior: Ciencia de Datos](./16-ciencia-datos.md) | [⬆️ Volver arriba](#17-data-governance) | [➡️ Siguiente: Gestión de Calidad](./18-gestion-calidad.md)

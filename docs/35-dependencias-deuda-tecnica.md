@@ -12,7 +12,6 @@
 - [💳 Technical Debt Tracking](#technical-debt-tracking)
 - [🔄 Refactoring Strategies](#refactoring-strategies)
 - [⚠️ Breaking Changes](#breaking-changes)
-- [📋 Artefactos](#artefactos)
 
 ---
 
@@ -426,4 +425,4 @@ npx @package/migrate
 
 ---
 
-[⬅️ Anterior: Plantillas y Artefactos](./34-plantillas-artefactos.md) | [➡️ Siguiente: Priorización y Roadmapping](./36-priorizacion-roadmapping.md) | [⬆️ Volver arriba](#35-gestion-de-dependencias-y-deuda-tecnica)
+[⬅️ Anterior: Plantillas y Artefactos](./34-plantillas-artefactos.md) | [⬆️ Volver arriba](#35-gestion-de-dependencias-y-deuda-tecnica) | [➡️ Siguiente: Priorización y Roadmapping](./36-priorizacion-roadmapping.md)

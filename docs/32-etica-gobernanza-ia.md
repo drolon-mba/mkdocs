@@ -584,4 +584,4 @@ for round in range(num_rounds):
 
 ---
 
-[⬅️ Anterior: Estrategia de IA](./31-estrategia-ia-automatizacion.md) | [➡️ Siguiente: Comunicación y Contenido](./33-comunicacion-contenido.md) | [⬆️ Volver arriba](#32-etica-y-gobernanza-de-ia)
+[⬅️ Anterior: Estrategia de IA](./31-estrategia-ia-automatizacion.md) | [⬆️ Volver arriba](#32-etica-y-gobernanza-de-ia) | [➡️ Siguiente: Comunicación y Contenido](./33-comunicacion-contenido.md)

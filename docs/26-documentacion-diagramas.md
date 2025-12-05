@@ -1,4 +1,4 @@
-# 24 - Documentación y Diagramas
+# 26 - Documentación y Diagramas
 
 > Lenguajes, herramientas y tipos de diagramas para documentar sistemas de software efectivamente.
 
@@ -434,4 +434,4 @@ be --> s3
 
 ---
 
-[⬅️ Anterior: Data Governance](./23-data-governance.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Convenciones](./25-convenciones.md)
+[⬅️ Anterior: Colaboración y Cultura](./25-colaboracion-cultura.md) | [⬆️ Volver arriba](#26-documentacion-y-diagramas) | [➡️ Siguiente: Convenciones](./27-convenciones.md)

@@ -296,4 +296,4 @@ Escala:
 
 ---
 
-[⬅️ Anterior: Dependencias y Deuda Técnica](./35-dependencias-deuda-tecnica.md) | [➡️ Siguiente: Gestión de Secretos](./37-gestion-secretos.md) | [⬆️ Volver arriba](#36-priorizacion-y-roadmapping)
+[⬅️ Anterior: Gestión de Dependencias](./35-dependencias-deuda-tecnica.md) | [⬆️ Volver arriba](#36-priorizacion-y-roadmapping) | [➡️ Siguiente: Gestión de Secretos](./37-gestion-secretos.md)

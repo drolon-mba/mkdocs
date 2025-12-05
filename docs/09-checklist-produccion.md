@@ -1,4 +1,4 @@
-# 27 - Checklist de Producción
+# 09 - Checklist de Producción
 
 > Validación exhaustiva antes de desplegar código a producción para minimizar riesgos y maximizar confiabilidad.
 
@@ -445,7 +445,7 @@ Después de cada deploy:
 
 ---
 
-[⬅️ Anterior: Onboarding](./26-onboarding.md) | [⬆️ Volver arriba](#) | [🏠 Volver al índice](./00-indice.md)
+[⬅️ Anterior: Optimización de Performance](./08-performance.md) | [⬆️ Volver arriba](#09-checklist-de-produccion) | [➡️ Siguiente: Bases de Datos](./10-bases-datos.md)
 
 ---
 

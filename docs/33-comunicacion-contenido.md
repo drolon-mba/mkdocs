@@ -530,4 +530,4 @@ Keywords: migrar monolito microservicios, spring boot microservices, microservic
 
 ---
 
-[⬅️ Anterior: Ética y Gobernanza](./32-etica-gobernanza-ia.md) | [➡️ Siguiente: Plantillas y Artefactos](./34-plantillas-artefactos.md) | [⬆️ Volver arriba](#33-comunicacion-y-contenido-tecnico)
+[⬅️ Anterior: Ética y Gobernanza de IA](./32-etica-gobernanza-ia.md) | [⬆️ Volver arriba](#33-comunicacion-y-contenido-tecnico) | [➡️ Siguiente: Plantillas y Artefactos](./34-plantillas-artefactos.md)

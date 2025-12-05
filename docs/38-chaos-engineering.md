@@ -481,4 +481,4 @@ kubectl delete pod -n staging -l app=payment-service --force
 
 ---
 
-[⬅️ Anterior: Gestión de Secretos](./37-gestion-secretos.md) | [➡️ Siguiente: Data Literacy](./39-data-literacy.md) | [⬆️ Volver arriba](#38-chaos-engineering-y-resiliencia)
+[⬅️ Anterior: Gestión de Secretos](./37-gestion-secretos.md) | [⬆️ Volver arriba](#38-chaos-engineering-y-resiliencia) | [➡️ Siguiente: Data Literacy](./39-data-literacy.md)

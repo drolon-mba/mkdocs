@@ -1,4 +1,4 @@
-# 14 - Ciencia de Datos
+# 16 - Ciencia de Datos
 
 > Extraer conocimiento y valor de datos mediante estadística, visualización y análisis exploratorio.
 
@@ -243,4 +243,4 @@
 
 ---
 
-[⬅️ Anterior: Machine Learning](./13-machine-learning.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Gestión de Calidad](./15-gestion-calidad.md)
+[⬅️ Anterior: Machine Learning](./15-machine-learning.md) | [⬆️ Volver arriba](#ciencia-de-datos) | [➡️ Siguiente: Data Governance](./17-data-governance.md)

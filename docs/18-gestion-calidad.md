@@ -1,4 +1,4 @@
-# 15 - Gestión de Calidad
+# 18 - Gestión de Calidad
 
 > Prácticas y herramientas para mantener código limpio, seguro y mantenible a través de validaciones automatizadas.
 
@@ -204,4 +204,4 @@
 
 ---
 
-[⬅️ Anterior: Ciencia de Datos](./14-ciencia-datos.md) | [⬆️ Volver arriba](#15-gestion-de-calidad) | [➡️ Siguiente: Herramientas de Problemas](./16-herramientas-problemas.md)
+[⬅️ Anterior: Data Governance](./17-data-governance.md) | [⬆️ Volver arriba](#18-gestion-de-calidad) | [➡️ Siguiente: Herramientas de Problemas](./19-herramientas-problemas.md)

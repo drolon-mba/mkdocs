@@ -12,7 +12,6 @@
 - [📓 Decision Journal](#decision-journal)
 - [⚠️ Pre-Mortem](#pre-mortem)
 - [📖 Runbook](#runbook)
-- [🚨 Incident Response Playbook](#incident-response-playbook)
 - [🏛️ Architecture Decision Record (ADR)](#architecture-decision-record-adr)
 
 ---
@@ -529,4 +528,4 @@ Implementar Event Sourcing para entidades críticas (Transactions, Accounts).
 
 ---
 
-[⬅️ Anterior: Comunicación y Contenido](./33-comunicacion-contenido.md) | [➡️ Siguiente: Dependencias y Deuda Técnica](./35-dependencias-deuda-tecnica.md) | [⬆️ Volver arriba](#34-plantillas-y-artefactos)
+[⬅️ Anterior: Comunicación y Contenido](./33-comunicacion-contenido.md) | [⬆️ Volver arriba](#34-plantillas-y-artefactos) | [➡️ Siguiente: Gestión de Dependencias](./35-dependencias-deuda-tecnica.md)

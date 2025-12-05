@@ -10,8 +10,6 @@
 
 - [📊 Data Literacy Fundamentals](#data-literacy-fundamentals)
 - [🔧 Self-Service Analytics](#self-service-analytics)
-- [📖 Data Storytelling](#data-storytelling)
-- [✅ Data Quality](#data-quality)
 - [📋 Artefactos](#artefactos)
 
 ---
@@ -394,4 +392,4 @@ Cuando veas un insight:
 
 ---
 
-[⬅️ Anterior: Chaos Engineering](./38-chaos-engineering.md) | [🏠 Volver al índice](./00-indice.md) | [⬆️ Volver arriba](#39-data-literacy)
+[⬅️ Anterior: Chaos Engineering](./38-chaos-engineering.md) | [⬆️ Volver arriba](#39-data-literacy)

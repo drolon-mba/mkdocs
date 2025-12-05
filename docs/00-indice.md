@@ -48,79 +48,79 @@
   - Logging, Metrics, Tracing, APM, Alerting, Health checks
 - [08 - Optimización de Performance](./08-performance.md)
   - Optimización de DB, Frontend, Backend, Caching
+- [09 - Checklist de Producción](./09-checklist-produccion.md)
+  - Validaciones pre-deploy, Post-deploy verification, Rollback criteria
 
 ### 💾 Datos y APIs
-- [09 - Bases de Datos](./09-bases-datos.md)
+- [10 - Bases de Datos](./10-bases-datos.md)
   - SQL, NoSQL, Time Series, Graph, Columnar, In-memory
-- [10 - APIs y Protocolos](./10-apis-protocolos.md)
+- [11 - APIs y Protocolos](./11-apis-protocolos.md)
   - REST, GraphQL, gRPC, WebSockets, Event-Driven
   - Documentación por protocolo
   - Patrones de comunicación
 
 ### 📱 Interfaces y Experiencia
-- [11 - Mobile, UI y UX](./11-mobile-ui-ux.md)
+- [12 - Mobile, UI y UX](./12-mobile-ui-ux.md)
   - Desarrollo móvil, UI, UX, Accesibilidad
 
-### ☁️ Infraestructura
-- [12 - Infraestructura y Cloud](./12-infraestructura-cloud.md)
+### ☁️ Infraestructura y Costos
+- [13 - Infraestructura y Cloud](./13-infraestructura-cloud.md)
   - Multi-cloud, Serverless, Containerization, Edge computing
+- [14 - Optimización de Costos (FinOps)](./14-cost-optimization.md)
+  - FinOps, Right-sizing, Reserved Instances, Cloud cost monitoring
 
 ### 🤖 Datos Avanzados
-- [13 - Machine Learning y Deep Learning](./13-machine-learning.md)
+- [15 - Machine Learning y Deep Learning](./15-machine-learning.md)
   - ML supervisado/no supervisado, DL, MLOps, NLP, RL
-- [14 - Ciencia de Datos](./14-ciencia-datos.md)
+- [16 - Ciencia de Datos](./16-ciencia-datos.md)
   - Limpieza, Visualización, Reproducibilidad, Modelado
+- [17 - Data Governance](./17-data-governance.md)
+  - Data Lineage, Data Quality, MDM, Privacy by Design
 
 ### ✅ Calidad y Gestión
-- [15 - Gestión de Calidad](./15-gestion-calidad.md)
+- [18 - Gestión de Calidad](./18-gestion-calidad.md)
   - Code coverage, Static analysis, Linting, Peer review
 
 ### 🛠️ Resolución de Problemas y Mejora
-- [16 - Herramientas de Solución de Problemas](./16-herramientas-problemas.md)
+- [19 - Herramientas de Solución de Problemas](./19-herramientas-problemas.md)
   - Ishikawa, 5 Porqués, Pareto, FTA, 5W2H, Lluvia de ideas
-- [17 - Metodologías de Mejora Continua](./17-mejora-continua.md)
+- [20 - Metodologías de Mejora Continua](./20-mejora-continua.md)
   - Six Sigma, Kaizen, Lean, PDCA, 5S, 8D, Kanban, MTBF
 
 ### 📊 Estrategia y Negocio
-- [18 - Análisis Estratégico](./18-analisis-estrategico.md)
+- [21 - Análisis Estratégico](./21-analisis-estrategico.md)
   - FODA, PESTEL, Porter, VRIO, CAME, Buyer Persona, ICP
-- [19 - Product Management](./19-product-management.md)
+- [22 - Product Management](./22-product-management.md)
   - JTBD, User Story Mapping, OKRs, North Star Metric
-- [20 - Métricas y KPIs](./20-metricas-kpis.md)
+- [23 - Métricas y KPIs](./23-metricas-kpis.md)
   - HEART, AARRR, DORA, NPS, SLIs/SLOs/SLAs
 
-### 👥 Cultura y Colaboración
-- [21 - Colaboración y Cultura](./21-colaboracion-cultura.md)
+### 👥 Roles y Cultura
+- [24 - Roles y Responsabilidades](./24-roles-responsabilidades.md)
+  - Roles técnicos, Producto y negocio, Calidad, Operaciones, Datos, RACI Matrix
+- [25 - Colaboración y Cultura](./25-colaboracion-cultura.md)
   - Pair Programming, Code Review, Postmortems, Escalation
-- [22 - Optimización de Costos](./22-cost-optimization.md)
-  - FinOps, Right-sizing, Reserved Instances, Cloud cost monitoring
-- [23 - Data Governance](./23-data-governance.md)
-  - Data Lineage, Data Quality, MDM, Privacy by Design
 
 ### 📝 Documentación y Convenciones
-- [24 - Documentación y Diagramas](./24-documentacion-diagramas.md)
+- [26 - Documentación y Diagramas](./26-documentacion-diagramas.md)
   - Markdown, Mermaid, LaTeX, PlantUML, C4, ER, UML
   - Tipos de diagramas: flujo, secuencia, clases, estado
-- [25 - Convenciones](./25-convenciones.md)
+- [27 - Convenciones](./27-convenciones.md)
   - Nomenclatura, Git/GitOps, i18n/l10n, Configuración, Dependencias
 
-### 🎓 Onboarding y Criterios
-- [26 - Onboarding](./26-onboarding.md)
+### 🎓 Onboarding
+- [28 - Onboarding](./28-onboarding.md)
   - Guía de inicio, Arquitectura, Primer PR
-- [27 - Checklist de Producción](./27-checklist-produccion.md)
-  - Validaciones pre-deploy
-- [28 - Sesgos Cognitivos, Falacias y Leyes](./28-sesgos-falacias.md)
+
+### 🧠 Cognición y Sesgos
+- [29 - Sesgos Cognitivos, Falacias y Leyes](./29-sesgos-falacias.md)
   - Sesgos cognitivos, Falacias lógicas, Leyes paradójicas, Efectos psicológicos
 
 ### 🤖 AI y Automatización
-- [29 - Prompts y Agentes de IA](./29-prompts-agentes.md)
+- [30 - Prompts y Agentes de IA](./30-prompts-agentes.md)
   - The Gentleman (agente principal), 57 Agentes especializados, Prompt engineering
-
-### 👥 Roles y Estrategia
-- [30 - Roles y Responsabilidades](./30-roles-responsabilidades.md)
-  - Roles técnicos, Producto y negocio, Calidad, Operaciones, Datos, RACI Matrix
 - [31 - Estrategia de IA y Automatización](./31-estrategia-ia-automatizacion.md)
-  - Casos de uso prácticos, Límites de la IA, Prompt engineering avanzado, Integración en CI/CD
+  - Casos de uso prácticos, Límites de la IA, Integración en CI/CD
 
 ### ⚖️ Ética y Gobernanza
 - [32 - Ética y Gobernanza de IA](./32-etica-gobernanza-ia.md)
@@ -162,30 +162,30 @@
 ### Para nuevos desarrolladores
 1. Comenzar por [Fundamentos](./01-fundamentos.md)
 2. Leer [Disciplinas de Desarrollo](./02-disciplinas-desarrollo.md)
-3. Consultar [Onboarding](./26-onboarding.md)
+3. Consultar [Onboarding](./28-onboarding.md)
 4. Revisar convenciones del lenguaje/framework que usarás
 
 ### Para arquitectos
 1. Revisar [Arquitectura y Patrones](./04-arquitectura-patrones.md)
-2. Consultar [Infraestructura y Cloud](./12-infraestructura-cloud.md)
+2. Consultar [Infraestructura y Cloud](./13-infraestructura-cloud.md)
 3. Validar contra [Seguridad](./06-seguridad.md)
 4. Implementar [Observabilidad](./07-observabilidad.md)
 
 ### Para product managers
-1. Estudiar [Product Management](./19-product-management.md)
-2. Definir [Métricas y KPIs](./20-metricas-kpis.md)
-3. Usar [Análisis Estratégico](./18-analisis-estrategico.md)
-4. Aplicar [Herramientas de Problemas](./16-herramientas-problemas.md)
+1. Estudiar [Product Management](./22-product-management.md)
+2. Definir [Métricas y KPIs](./23-metricas-kpis.md)
+3. Usar [Análisis Estratégico](./21-analisis-estrategico.md)
+4. Aplicar [Herramientas de Problemas](./19-herramientas-problemas.md)
 
 ### Para DevOps/SRE
 1. Implementar [DevOps](./05-devops.md)
 2. Configurar [Observabilidad](./07-observabilidad.md)
 3. Optimizar [Performance](./08-performance.md)
-4. Gestionar [Infraestructura Cloud](./12-infraestructura-cloud.md)
+4. Gestionar [Infraestructura Cloud](./13-infraestructura-cloud.md)
 
 ### Para resolución de problemas
-1. Aplicar [Herramientas de Problemas](./16-herramientas-problemas.md)
-2. Usar [Mejora Continua](./17-mejora-continua.md)
+1. Aplicar [Herramientas de Problemas](./19-herramientas-problemas.md)
+2. Usar [Mejora Continua](./20-mejora-continua.md)
 3. Consultar [Testing](./03-testing.md)
 4. Revisar [Observabilidad](./07-observabilidad.md)
 

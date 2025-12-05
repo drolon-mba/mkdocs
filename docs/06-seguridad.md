@@ -191,4 +191,4 @@
 
 ---
 
-[⬅️ Anterior: DevOps](./05-devops.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Observabilidad](./07-observabilidad.md)
+[⬅️ Anterior: DevOps](./05-devops.md) | [⬆️ Volver arriba](#06-seguridad) | [➡️ Siguiente: Observabilidad](./07-observabilidad.md)

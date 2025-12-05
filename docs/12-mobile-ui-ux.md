@@ -1,4 +1,4 @@
-# 11 - Mobile, UI y UX
+# 12 - Mobile, UI y UX
 
 > Desarrollo móvil, diseño de interfaces y experiencia de usuario para apps efectivas y deleitables.
 
@@ -224,4 +224,4 @@
 
 ---
 
-[⬅️ Anterior: APIs y Protocolos](./10-apis-protocolos.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Infraestructura Cloud](./12-infraestructura-cloud.md)
+[⬅️ Anterior: APIs y Protocolos](./11-apis-protocolos.md) | [⬆️ Volver arriba](#12-mobile-ui-y-ux) | [➡️ Siguiente: Infraestructura y Cloud](./13-infraestructura-cloud.md)

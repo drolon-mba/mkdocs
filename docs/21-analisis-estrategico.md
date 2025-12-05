@@ -1,4 +1,4 @@
-# 18 - Análisis Estratégico y de Negocio
+# 21 - Análisis Estratégico y de Negocio
 
 > Frameworks para analizar mercados, competencia, clientes y tomar decisiones estratégicas informadas.
 
@@ -71,6 +71,12 @@
 - Competidor grande puede copiar
 - Recesión reduce presupuestos B2B
 - Regulaciones nuevas posibles
+
+**⚠️ Sesgos Cognitivos a Evitar:**
+
+- **[Confirmation Bias](./29-sesgos-falacias.md#sesgos-de-decision-y-juicio)**: Tendencia a buscar solo información que confirme nuestras creencias. En FODA, esto puede llevar a sobrestimar fortalezas e ignorar debilidades reales. **Mitigación**: Buscar activamente evidencia que contradiga tus suposiciones.
+
+- **[Status Quo Bias](./29-sesgos-falacias.md#sesgos-de-decision-y-juicio)**: Preferencia por mantener el estado actual. Puede impedir identificar oportunidades de cambio necesarias. **Mitigación**: Preguntarse "si empezara de cero hoy, ¿haría esto igual?"
 
 **Siguiente paso:** Usar CAME para convertir insights en acciones.
 
@@ -305,4 +311,4 @@ Deploy                 |      |      |      | █    |
 
 ---
 
-[⬅️ Anterior: Mejora Continua](./17-mejora-continua.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Product Management](./19-product-management.md)
+[⬅️ Anterior: Mejora Continua](./20-mejora-continua.md) | [⬆️ Volver arriba](#21-analisis-estrategico-y-de-negocio) | [➡️ Siguiente: Product Management](./22-product-management.md)

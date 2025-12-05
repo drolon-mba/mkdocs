@@ -525,4 +525,4 @@ Constraints:
 
 ---
 
-[⬅️ Anterior: Roles y Responsabilidades](./30-roles-responsabilidades.md) | [➡️ Siguiente: Ética y Gobernanza de IA](./32-etica-gobernanza-ia.md) | [⬆️ Volver arriba](#31-estrategia-de-ia-y-automatizacion)
+[⬅️ Anterior: Prompts y Agentes](./30-prompts-agentes.md) | [⬆️ Volver arriba](#31-estrategia-de-ia-y-automatizacion) | [➡️ Siguiente: Ética y Gobernanza de IA](./32-etica-gobernanza-ia.md)

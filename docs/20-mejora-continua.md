@@ -1,4 +1,4 @@
-# 17 - Metodologías de Mejora Continua
+# 20 - Metodologías de Mejora Continua
 
 > Frameworks sistemáticos para optimizar procesos, eliminar desperdicios y mejorar calidad de forma sostenida.
 
@@ -288,4 +288,4 @@
 
 ---
 
-[⬅️ Anterior: Herramientas de Problemas](./16-herramientas-problemas.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Análisis Estratégico](./18-analisis-estrategico.md)
+[⬅️ Anterior: Herramientas de Problemas](./19-herramientas-problemas.md) | [⬆️ Volver arriba](#20-metodologias-de-mejora-continua) | [➡️ Siguiente: Análisis Estratégico](./21-analisis-estrategico.md)

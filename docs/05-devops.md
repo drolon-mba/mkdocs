@@ -180,4 +180,4 @@
 
 ---
 
-[⬅️ Anterior: Arquitectura](./04-arquitectura-patrones.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Seguridad](./06-seguridad.md)
+[⬅️ Anterior: Arquitectura y Patrones](./04-arquitectura-patrones.md) | [⬆️ Volver arriba](#05-devops) | [➡️ Siguiente: Seguridad](./06-seguridad.md)

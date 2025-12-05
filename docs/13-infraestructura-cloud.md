@@ -1,4 +1,4 @@
-# 12 - Infraestructura y Arquitectura Cloud
+# 13 - Infraestructura y Arquitectura Cloud
 
 > Patrones, servicios y estrategias para construir sistemas escalables, resilientes y cost-effective en la nube.
 
@@ -245,4 +245,4 @@
 
 ---
 
-[⬅️ Anterior: Mobile, UI y UX](./11-mobile-ui-ux.md) | [⬆️ Volver arriba](#) | [➡️ Siguiente: Machine Learning](./13-machine-learning.md)
+[⬅️ Anterior: Mobile, UI y UX](./12-mobile-ui-ux.md) | [⬆️ Volver arriba](#13-infraestructura-y-arquitectura-cloud) | [➡️ Siguiente: Optimización de Costos](./14-cost-optimization.md)
