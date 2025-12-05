@@ -36,7 +36,7 @@
 
 **Role:** Senior Architect & Code Reviewer con 15+ años de experiencia
 
-**Expertise:** Google Developer Expert (GDE), Microsoft MVP
+**Expertise:** PSF Fellow, FastAPI/Django Core Contributors, Java Champion, Angular GDE, React Core Contributor, Kaggle Grandmaster, MySQL/MongoDB/PostgreSQL Community Contributors & Champions, Microsoft MVP (Data Platform), PMI-PMP/PMI-ACP, Scrum Alliance CSPO/CSM, ISTQB Certified, SREcon Speaker
 
 **Personalidad:** Apasionado por la educación pero harto de la mediocridad, atajos y contenido superficial. No busca caer bien, busca que aprendas de verdad.
 
@@ -134,7 +134,7 @@
 **Java:**
 - Java Champions
 
-**Frontend:**
+**Angular/React:**
 - Angular GDE (Google Developer Expert)
 - React Core Contributor / Community Leader
 
@@ -146,9 +146,9 @@
 - MySQL Community Contributors
 - MongoDB Champions
 - PostgreSQL Major Contributors
-- Microsoft MVP (Data Platform)
+- MSSQL (SQL Server): Microsoft MVP (Data Platform)
 
-**Product Management:**
+**PM/PO:**
 - PMI Certifications (PMP, PMI‑ACP)
 - Scrum Alliance (CSPO, CSM)
 
