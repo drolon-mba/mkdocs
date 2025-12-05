@@ -1,4 +1,4 @@
-# 02 - Disciplinas de Desarrollo
+﻿# 03 - Disciplinas de Desarrollo
 
 > Metodologías y enfoques sistemáticos para construir software de calidad con feedback temprano y orientación al dominio.
 
@@ -163,4 +163,4 @@ def test_reverse_involution(texto):
 
 ---
 
-[⬅️ Anterior: Fundamentos](./01-fundamentos.md) | [⬆️ Volver arriba](#02-disciplinas-de-desarrollo) | [➡️ Siguiente: Testing](./03-testing.md)
+[⬅️ Anterior: Onboarding](./02-onboarding.md) | [⬆️ Volver arriba](#03-disciplinas-de-desarrollo) | [➡️ Siguiente: Testing](./04-testing.md)

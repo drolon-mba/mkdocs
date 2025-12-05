@@ -1,4 +1,4 @@
-# 22 - Product Management
+﻿# 24 - Product Management
 
 > Frameworks y técnicas para descubrir, priorizar y entregar productos que usuarios amen y negocio necesite.
 
@@ -463,9 +463,9 @@ Pregunta a usuarios: "¿Qué tan decepcionado estarías si ya no pudieras usar e
 
 **⚠️ Sesgos Cognitivos a Evitar:**
 
-- **[Planning Fallacy](./29-sesgos-falacias.md#sesgos-de-decision-y-juicio)**: Tendencia a subestimar el tiempo necesario para completar tareas. Al estimar "Effort" en RICE, considera agregar un buffer del 30-50%. **Mitigación**: Usar estimaciones de 3 puntos (optimista, realista, pesimista) y revisar estimaciones históricas.
+- **[Planning Fallacy](./07-sesgos-falacias.md#sesgos-de-decision-y-juicio)**: Tendencia a subestimar el tiempo necesario para completar tareas. Al estimar "Effort" en RICE, considera agregar un buffer del 30-50%. **Mitigación**: Usar estimaciones de 3 puntos (optimista, realista, pesimista) y revisar estimaciones históricas.
 
-- **[Sunk Cost Fallacy](./29-sesgos-falacias.md#sesgos-de-decision-y-juicio)**: Continuar invirtiendo en algo porque ya invertiste mucho. No dejes que el trabajo previo influya en la priorización actual. **Mitigación**: Evaluar cada feature como si fuera nueva, ignorando el esfuerzo ya invertido.
+- **[Sunk Cost Fallacy](./07-sesgos-falacias.md#sesgos-de-decision-y-juicio)**: Continuar invirtiendo en algo porque ya invertiste mucho. No dejes que el trabajo previo influya en la priorización actual. **Mitigación**: Evaluar cada feature como si fuera nueva, ignorando el esfuerzo ya invertido.
 
 ### Value vs Effort Matrix
 
@@ -533,4 +533,4 @@ Pregunta a usuarios: "¿Qué tan decepcionado estarías si ya no pudieras usar e
 
 ---
 
-[⬅️ Anterior: Análisis Estratégico](./21-analisis-estrategico.md) | [⬆️ Volver arriba](#product-management) | [➡️ Siguiente: Métricas y KPIs](./23-metricas-kpis.md)
+[⬅️ Anterior: Análisis Estratégico](./23-analisis-estrategico.md) | [⬆️ Volver arriba](#product-management) | [➡️ Siguiente: Métricas y KPIs](./25-metricas-kpis.md)

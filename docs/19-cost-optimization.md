@@ -1,4 +1,4 @@
-# 14 - Optimización de Costos (FinOps)
+﻿# 19 - Optimización de Costos (FinOps)
 
 > Prácticas para maximizar valor de inversión en cloud y recursos tecnológicos.
 
@@ -336,4 +336,4 @@ Alert: Recursos sin tags
 
 ---
 
-[⬅️ Anterior: Infraestructura y Cloud](./13-infraestructura-cloud.md) | [⬆️ Volver arriba](#14-optimizacion-de-costos-finops) | [➡️ Siguiente: Machine Learning](./15-machine-learning.md)
+[⬅️ Anterior: Infraestructura y Cloud](./18-infraestructura-cloud.md) | [⬆️ Volver arriba](#19-optimizacion-de-costos-finops) | [➡️ Siguiente: Machine Learning](./20-machine-learning.md)

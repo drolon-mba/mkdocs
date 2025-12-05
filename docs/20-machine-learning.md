@@ -1,4 +1,4 @@
-# 15 - Machine Learning y Deep Learning
+﻿# 20 - Machine Learning y Deep Learning
 
 > Sistemas que aprenden de datos para hacer predicciones, clasificaciones y generación de contenido.
 
@@ -253,4 +253,4 @@
 
 ---
 
-[⬅️ Anterior: Optimización de Costos](./14-cost-optimization.md) | [⬆️ Volver arriba](#15-machine-learning-y-deep-learning) | [➡️ Siguiente: Ciencia de Datos](./16-ciencia-datos.md)
+[⬅️ Anterior: Optimización de Costos](./19-cost-optimization.md) | [⬆️ Volver arriba](#20-machine-learning-y-deep-learning) | [➡️ Siguiente: Ciencia de Datos](./21-ciencia-datos.md)

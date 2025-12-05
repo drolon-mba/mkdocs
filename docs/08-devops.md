@@ -1,4 +1,4 @@
-# 05 - DevOps
+﻿# 08 - DevOps
 
 > Prácticas, herramientas y cultura para automatizar y unificar desarrollo, operaciones y entrega continua de software.
 
@@ -180,4 +180,4 @@
 
 ---
 
-[⬅️ Anterior: Arquitectura y Patrones](./04-arquitectura-patrones.md) | [⬆️ Volver arriba](#05-devops) | [➡️ Siguiente: Seguridad](./06-seguridad.md)
+[⬅️ Anterior: Sesgos, Falacias y Leyes](./07-sesgos-falacias.md) | [⬆️ Volver arriba](#08-devops) | [➡️ Siguiente: Seguridad](./09-seguridad.md)

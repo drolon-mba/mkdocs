@@ -1,4 +1,4 @@
-# 29 - Sesgos Cognitivos, Falacias y Leyes a Evitar
+﻿# 07 - Sesgos Cognitivos, Falacias y Leyes a Evitar
 
 > Trampas mentales, errores de razonamiento y leyes que impactan toma de decisiones en tecnología, producto y negocio.
 
@@ -483,4 +483,4 @@ Los mejores tech leads y PMs no son los que no tienen sesgos (todos los tenemos)
 
 ---
 
-[⬅️ Anterior: Onboarding](./28-onboarding.md) | [⬆️ Volver arriba](#29-sesgos-cognitivos-falacias-y-leyes-a-evitar) | [➡️ Siguiente: Prompts y Agentes de IA](./30-prompts-agentes.md)
+[⬅️ Anterior: Arquitectura y Patrones](./06-arquitectura-patrones.md) | [⬆️ Volver arriba](#07-sesgos-cognitivos-falacias-y-leyes-a-evitar) | [➡️ Siguiente: DevOps](./08-devops.md)

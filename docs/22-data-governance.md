@@ -1,4 +1,4 @@
-# 17 - Data Governance
+﻿# 22 - Data Governance
 
 > Gestión de disponibilidad, usabilidad, integridad y seguridad de datos empresariales.
 
@@ -328,4 +328,4 @@ Transaction Records:
 
 ---
 
-[⬅️ Anterior: Ciencia de Datos](./16-ciencia-datos.md) | [⬆️ Volver arriba](#17-data-governance) | [➡️ Siguiente: Gestión de Calidad](./18-gestion-calidad.md)
+[⬅️ Anterior: Ciencia de Datos](./21-ciencia-datos.md) | [⬆️ Volver arriba](#22-data-governance) | [➡️ Siguiente: Análisis Estratégico](./23-analisis-estrategico.md)

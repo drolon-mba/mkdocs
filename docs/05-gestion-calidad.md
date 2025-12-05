@@ -1,4 +1,4 @@
-# 18 - Gestión de Calidad
+﻿# 05 - Gestión de Calidad
 
 > Prácticas y herramientas para mantener código limpio, seguro y mantenible a través de validaciones automatizadas.
 
@@ -204,4 +204,4 @@
 
 ---
 
-[⬅️ Anterior: Data Governance](./17-data-governance.md) | [⬆️ Volver arriba](#18-gestion-de-calidad) | [➡️ Siguiente: Herramientas de Problemas](./19-herramientas-problemas.md)
+[⬅️ Anterior: Testing](./04-testing.md) | [⬆️ Volver arriba](#05-gestion-de-calidad) | [➡️ Siguiente: Arquitectura y Patrones](./06-arquitectura-patrones.md)

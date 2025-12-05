@@ -1,4 +1,4 @@
-# 03 - Testing
+﻿# 04 - Testing
 
 > Estrategias y herramientas para validar que el software funciona correctamente en todos los niveles: unitario, integración, E2E y performance.
 
@@ -155,4 +155,4 @@
 
 ---
 
-[⬅️ Anterior: Disciplinas de Desarrollo](./02-disciplinas-desarrollo.md) | [⬆️ Volver arriba](#03-testing) | [➡️ Siguiente: Arquitectura y Patrones](./04-arquitectura-patrones.md)
+[⬅️ Anterior: Disciplinas de Desarrollo](./03-disciplinas-desarrollo.md) | [⬆️ Volver arriba](#04-testing) | [➡️ Siguiente: Gestión de Calidad](./05-gestion-calidad.md)

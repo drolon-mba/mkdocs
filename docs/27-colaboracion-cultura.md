@@ -1,4 +1,4 @@
-# 25 - Colaboración y Cultura de Desarrollo
+﻿# 27 - Colaboración y Cultura de Desarrollo
 
 > Prácticas y patrones para equipos de desarrollo efectivos, colaborativos y sostenibles.
 
@@ -342,4 +342,4 @@
 
 ---
 
-[⬅️ Anterior: Roles y Responsabilidades](./24-roles-responsabilidades.md) | [⬆️ Volver arriba](#25-colaboracion-y-cultura-de-desarrollo) | [➡️ Siguiente: Documentación y Diagramas](./26-documentacion-diagramas.md)
+[⬅️ Anterior: Roles y Responsabilidades](./26-roles-responsabilidades.md) | [⬆️ Volver arriba](#27-colaboracion-y-cultura-de-desarrollo) | [➡️ Siguiente: Documentación y Diagramas](./28-documentacion-diagramas.md)

@@ -1,4 +1,4 @@
-# 07 - Observabilidad y Telemetría
+﻿# 10 - Observabilidad y Telemetría
 
 > Capacidad de entender el estado interno de un sistema mediante sus outputs: logs, métricas y traces.
 
@@ -255,4 +255,4 @@ Si SLO = 99.9%, Error Budget = 0.1% = 43.2 min/mes
 
 ---
 
-[⬅️ Anterior: Seguridad](./06-seguridad.md) | [⬆️ Volver arriba](#07-observabilidad-y-telemetria) | [➡️ Siguiente: Optimización de Performance](./08-performance.md)
+[⬅️ Anterior: Seguridad](./09-seguridad.md) | [⬆️ Volver arriba](#10-observabilidad-y-telemetria) | [➡️ Siguiente: Herramientas de Análisis de Problemas](./11-herramientas-problemas.md)

@@ -1,4 +1,4 @@
-# 23 - Métricas y KPIs
+﻿# 25 - Métricas y KPIs
 
 > Indicadores clave para medir salud del producto, negocio y experiencia de usuario.
 
@@ -335,4 +335,4 @@
 
 ---
 
-[⬅️ Anterior: Product Management](./22-product-management.md) | [⬆️ Volver arriba](#23-metricas-y-kpis) | [➡️ Siguiente: Roles y Responsabilidades](./24-roles-responsabilidades.md)
+[⬅️ Anterior: Product Management](./24-product-management.md) | [⬆️ Volver arriba](#25-metricas-y-kpis) | [➡️ Siguiente: Roles y Responsabilidades](./26-roles-responsabilidades.md)

@@ -1,4 +1,4 @@
-# 27 - Convenciones y Estándares
+﻿# 29 - Convenciones y Estándares
 
 > Nomenclatura, flujo Git, gestión de dependencias, configuración y convenciones de equipo.
 
@@ -798,4 +798,4 @@ function isValidEmail(email: string): boolean {
 
 ---
 
-[⬅️ Anterior: Documentación y Diagramas](./26-documentacion-diagramas.md) | [⬆️ Volver arriba](#27-convenciones-y-estandares) | [➡️ Siguiente: Onboarding](./28-onboarding.md)
+[⬅️ Anterior: Documentación y Diagramas](./28-documentacion-diagramas.md) | [⬆️ Volver arriba](#29-convenciones-y-estandares) | [➡️ Siguiente: Prompts y Agentes de IA](./30-prompts-agentes.md)

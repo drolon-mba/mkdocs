@@ -1,4 +1,4 @@
-# 24 - Roles y Responsabilidades
+﻿# 26 - Roles y Responsabilidades
 
 > Definición clara de roles en equipos de software, responsabilidades, skills requeridos e interacciones clave.
 
@@ -474,4 +474,4 @@ Basado en el libro "Team Topologies" de Matthew Skelton y Manuel Pais.
 
 ---
 
-[⬅️ Anterior: Métricas y KPIs](./23-metricas-kpis.md) | [⬆️ Volver arriba](#24-roles-y-responsabilidades) | [➡️ Siguiente: Colaboración y Cultura](./25-colaboracion-cultura.md)
+[⬅️ Anterior: Métricas y KPIs](./25-metricas-kpis.md) | [⬆️ Volver arriba](#26-roles-y-responsabilidades) | [➡️ Siguiente: Colaboración y Cultura](./27-colaboracion-cultura.md)

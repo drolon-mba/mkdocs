@@ -1,4 +1,4 @@
-# 28 - Onboarding de Nuevos Desarrolladores
+﻿# 02 - Onboarding de Nuevos Desarrolladores
 
 > Proceso estructurado para incorporar nuevos miembros del equipo de forma rápida y efectiva.
 
@@ -397,4 +397,4 @@ Onboarding Feedback
 
 ---
 
-[⬅️ Anterior: Convenciones](./27-convenciones.md) | [⬆️ Volver arriba](#28-onboarding-de-nuevos-desarrolladores) | [➡️ Siguiente: Sesgos Cognitivos, Falacias y Leyes](./29-sesgos-falacias.md)
+[⬅️ Anterior: Fundamentos](./01-fundamentos.md) | [⬆️ Volver arriba](#02-onboarding-de-nuevos-desarrolladores) | [➡️ Siguiente: Disciplinas de Desarrollo](./03-disciplinas-desarrollo.md)

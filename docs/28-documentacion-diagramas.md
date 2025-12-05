@@ -1,4 +1,4 @@
-# 26 - Documentación y Diagramas
+﻿# 28 - Documentación y Diagramas
 
 > Lenguajes, herramientas y tipos de diagramas para documentar sistemas de software efectivamente.
 
@@ -434,4 +434,4 @@ be --> s3
 
 ---
 
-[⬅️ Anterior: Colaboración y Cultura](./25-colaboracion-cultura.md) | [⬆️ Volver arriba](#26-documentacion-y-diagramas) | [➡️ Siguiente: Convenciones](./27-convenciones.md)
+[⬅️ Anterior: Colaboración y Cultura](./27-colaboracion-cultura.md) | [⬆️ Volver arriba](#28-documentacion-y-diagramas) | [➡️ Siguiente: Convenciones](./29-convenciones.md)

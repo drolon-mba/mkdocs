@@ -1,4 +1,4 @@
-# 30 - Prompts y Agentes de IA
+﻿# 30 - Prompts y Agentes de IA
 
 > Definiciones de agentes de IA especializados para asistir en desarrollo, arquitectura, testing y mejores prácticas.
 
@@ -59,7 +59,7 @@ Para ver el comportamiento completo, reglas de lenguaje, áreas de expertise det
 ## 🔮 Agentes Especializados
 
 > [!NOTE]
-> Los agentes especializados están definidos en archivos individuales siguiendo el **formato de Claude Code** para suagentes.
+> Los agentes especializados están definidos en archivos individuales siguiendo el **formato de Claude Code** para subagentes.
 > Cada agente tiene su propia definición completa con YAML frontmatter, expertise, comportamiento y prompts de ejemplo.
 > Haz clic en los enlaces para ver la definición completa de cada agente.
 
@@ -244,7 +244,7 @@ Prompt del sistema y comportamiento del agente...
 
 ### Documentación de Claude Code
 
-- [Claude Code - Suagentes (Documentación Oficial)](https://code.claude.com/docs/es/sub-agents) - Guía completa sobre cómo crear y usar suagentes en Claude Code
+- [Claude Code - Subagentes (Documentación Oficial)](https://code.claude.com/docs/es/sub-agents) - Guía completa sobre cómo crear y usar subagentes en Claude Code
 
 ### Prompt Engineering y Patrones
 
@@ -255,4 +255,4 @@ Prompt del sistema y comportamiento del agente...
 
 ---
 
-[⬅️ Anterior: Sesgos y Falacias](./29-sesgos-falacias.md) | [⬆️ Volver arriba](#30-prompts-y-agentes-de-ia) | [➡️ Siguiente: Estrategia de IA](./31-estrategia-ia-automatizacion.md)
+[⬅️ Anterior: Convenciones](./29-convenciones.md) | [⬆️ Volver arriba](#30-prompts-y-agentes-de-ia) | [➡️ Siguiente: Estrategia de IA](./31-estrategia-ia-automatizacion.md)

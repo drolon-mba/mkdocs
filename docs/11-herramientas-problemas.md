@@ -1,4 +1,4 @@
-# 19 - Herramientas de Solución de Problemas
+﻿# 11 - Herramientas de Análisis de Problemas
 
 > Técnicas estructuradas para identificar causas raíz, analizar problemas y encontrar soluciones efectivas.
 
@@ -495,4 +495,4 @@ Problema: "Churn alto de usuarios"
 
 ---
 
-[⬅️ Anterior: Gestión de Calidad](./18-gestion-calidad.md) | [⬆️ Volver arriba](#19-herramientas-de-solucion-de-problemas) | [➡️ Siguiente: Mejora Continua](./20-mejora-continua.md)
+[⬅️ Anterior: Observabilidad](./10-observabilidad.md) | [⬆️ Volver arriba](#11-herramientas-de-analisis-de-problemas) | [➡️ Siguiente: Mejora Continua](./12-mejora-continua.md)

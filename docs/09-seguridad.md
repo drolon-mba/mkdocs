@@ -1,4 +1,4 @@
-# 06 - Seguridad
+﻿# 09 - Seguridad
 
 > Principios, herramientas y prácticas para proteger sistemas, datos y usuarios contra amenazas y vulnerabilidades.
 
@@ -186,4 +186,4 @@
 
 ---
 
-[⬅️ Anterior: DevOps](./05-devops.md) | [⬆️ Volver arriba](#06-seguridad) | [➡️ Siguiente: Observabilidad](./07-observabilidad.md)
+[⬅️ Anterior: DevOps](./08-devops.md) | [⬆️ Volver arriba](#09-seguridad) | [➡️ Siguiente: Observabilidad](./10-observabilidad.md)

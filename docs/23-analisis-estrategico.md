@@ -1,4 +1,4 @@
-# 21 - Análisis Estratégico y de Negocio
+﻿# 23 - Análisis Estratégico y de Negocio
 
 > Frameworks para analizar mercados, competencia, clientes y tomar decisiones estratégicas informadas.
 
@@ -74,9 +74,9 @@
 
 **⚠️ Sesgos Cognitivos a Evitar:**
 
-- **[Confirmation Bias](./29-sesgos-falacias.md#sesgos-de-decision-y-juicio)**: Tendencia a buscar solo información que confirme nuestras creencias. En FODA, esto puede llevar a sobrestimar fortalezas e ignorar debilidades reales. **Mitigación**: Buscar activamente evidencia que contradiga tus suposiciones.
+- **[Confirmation Bias](./07-sesgos-falacias.md#sesgos-de-decision-y-juicio)**: Tendencia a buscar solo información que confirme nuestras creencias. En FODA, esto puede llevar a sobrestimar fortalezas e ignorar debilidades reales. **Mitigación**: Buscar activamente evidencia que contradiga tus suposiciones.
 
-- **[Status Quo Bias](./29-sesgos-falacias.md#sesgos-de-decision-y-juicio)**: Preferencia por mantener el estado actual. Puede impedir identificar oportunidades de cambio necesarias. **Mitigación**: Preguntarse "si empezara de cero hoy, ¿haría esto igual?"
+- **[Status Quo Bias](./07-sesgos-falacias.md#sesgos-de-decision-y-juicio)**: Preferencia por mantener el estado actual. Puede impedir identificar oportunidades de cambio necesarias. **Mitigación**: Preguntarse "si empezara de cero hoy, ¿haría esto igual?"
 
 **Siguiente paso:** Usar CAME para convertir insights en acciones.
 
@@ -311,4 +311,4 @@ Deploy                 |      |      |      | █    |
 
 ---
 
-[⬅️ Anterior: Mejora Continua](./20-mejora-continua.md) | [⬆️ Volver arriba](#21-analisis-estrategico-y-de-negocio) | [➡️ Siguiente: Product Management](./22-product-management.md)
+[⬅️ Anterior: Data Governance](./22-data-governance.md) | [⬆️ Volver arriba](#23-analisis-estrategico-y-de-negocio) | [➡️ Siguiente: Product Management](./24-product-management.md)

@@ -1,4 +1,4 @@
-# 08 - Optimización de Performance
+﻿# 13 - Optimización de Performance
 
 > Técnicas y estrategias para mejorar velocidad, throughput y eficiencia de sistemas.
 
@@ -153,4 +153,4 @@
 
 ---
 
-[⬅️ Anterior: Observabilidad](./07-observabilidad.md) | [⬆️ Volver arriba](#08-optimizacion-de-performance) | [➡️ Siguiente: Checklist de Producción](./09-checklist-produccion.md)
+[⬅️ Anterior: Mejora Continua](./12-mejora-continua.md) | [⬆️ Volver arriba](#13-optimizacion-de-performance) | [➡️ Siguiente: Checklist de Producción](./14-checklist-produccion.md)

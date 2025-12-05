@@ -1,4 +1,4 @@
-# 04 - Arquitectura y Patrones
+﻿# 06 - Arquitectura y Patrones
 
 > Estructuras de alto nivel y soluciones probadas para organizar sistemas complejos, escalables y mantenibles.
 
@@ -284,4 +284,4 @@ const orderMachine = createMachine({
 
 ---
 
-[⬅️ Anterior: Testing](./03-testing.md) | [⬆️ Volver arriba](#04-arquitectura-y-patrones) | [➡️ Siguiente: DevOps](./05-devops.md)
+[⬅️ Anterior: Gestión de Calidad](./05-gestion-calidad.md) | [⬆️ Volver arriba](#06-arquitectura-y-patrones) | [➡️ Siguiente: Sesgos, Falacias y Leyes](./07-sesgos-falacias.md)
