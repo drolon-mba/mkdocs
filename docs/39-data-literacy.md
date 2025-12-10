@@ -408,4 +408,4 @@ Cuando veas un insight:
 
 ---
 
-[⬅️ Anterior: Chaos Engineering](./38-chaos-engineering.md) | [⬆️ Volver arriba](#39-data-literacy)
+[⬅️ Anterior: Chaos Engineering](./38-chaos-engineering.md) | [⬆️ Volver arriba](#39-data-literacy) | [➡️ Siguiente: Recursos de práctica de código y preparación para entrevistas](./98-recursos-entrevistas.md)

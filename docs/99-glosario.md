@@ -187,4 +187,4 @@ En Machine Learning, ocurre cuando un modelo no puede capturar la tendencia suby
 
 ---
 
-[⬅️ Anterior: Chaos Engineering](./38-chaos-engineering.md) | [⬆️ Volver arriba](#99-glosario-de-terminos)
+[⬅️ Anterior: Recursos de práctica de código y preparación para entrevistas](./98-recursos-entrevistas.md) | [⬆️ Volver arriba](#99-glosario-de-terminos) | [⬅️ Siguiente: Índice General](./00-indice.md)
