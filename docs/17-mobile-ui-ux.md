@@ -159,7 +159,7 @@
 | **Contraste** | Texto legible | Min 4.5:1 (AA), 7:1 (AAA) | [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) |
 | **Keyboard Nav** | Navegable sin mouse | Tab order, Enter/Space | Test manual |
 | **Screen Readers** | Lectura de contenido | Roles ARIA, alt text | [NVDA](https://www.nvaccess.org/), [VoiceOver](https://www.apple.com/accessibility/voiceover/) |
-| **Focus Visible** | Indicar elemento activo | Outline claro | CSS `:focus-visible` |
+| **Foco Visible (Focus Visible)** | Indicar elemento activo | Outline claro | CSS `:focus-visible` |
 | **Alt Text** | Descripción de imágenes | `<img alt="Description">` | Linters |
 | **Semantic HTML** | Tags correctos | `<button>`, `<nav>`, `<main>` | [axe DevTools](https://www.deque.com/axe/devtools/) |
 

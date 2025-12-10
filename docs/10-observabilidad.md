@@ -36,7 +36,7 @@
 
 ## 📝 Logging (Registros)
 
-**What:** Eventos discretos con timestamp, nivel y contexto.
+**Qué:** Eventos discretos con timestamp, nivel y contexto.
 
 | Aspecto | Qué | Por qué | Cómo | Herramientas |
 |:--------|:-----|:----|:----|:-------------|
@@ -63,7 +63,7 @@
 
 ## 📊 Metrics (Métricas)
 
-**What:** Valores numéricos agregados en el tiempo.
+**Qué:** Valores numéricos agregados en el tiempo.
 
 | Framework | Qué | Cuándo | Ejemplo |
 |:----------|:-----|:-----|:--------|
@@ -93,9 +93,9 @@
 
 ## 🔍 Tracing (Trazas Distribuidas)
 
-**What:** Seguir una request a través de múltiples servicios.
+**Qué:** Seguir una request a través de múltiples servicios.
 
-**Why:** En microservicios, una operación toca N servicios. Tracing muestra el path completo.
+**Por qué:** En microservicios, una operación toca N servicios. Tracing muestra el path completo.
 
 | Componente | Qué | Cómo | Herramientas |
 |:-----------|:-----|:----|:-------------|
@@ -117,7 +117,7 @@
 
 ## 🏥 Health Checks
 
-**What:** Endpoints para validar estado del servicio.
+**Qué:** Endpoints para validar estado del servicio.
 
 | Tipo | Qué | Cuándo | Endpoint | Valida |
 |:-----|:-----|:-----|:---------|:-------|
@@ -144,9 +144,9 @@ GET /ready
 
 ## 🚨 Alerting (Alertas)
 
-**What:** Notificaciones automáticas ante problemas.
+**Qué:** Notificaciones automáticas ante problemas.
 
-**Why:** Detectar y responder antes que usuarios reporten.
+**Por qué:** Detectar y responder antes que usuarios reporten.
 
 | Concepto | Qué | Cómo |
 |:---------|:-----|:----|
@@ -181,9 +181,9 @@ GET /ready
 
 ## 📈 APM (Application Performance Monitoring)
 
-**What:** Monitoreo end-to-end de aplicaciones con profiling automático.
+**Qué:** Monitoreo end-to-end de aplicaciones con profiling automático.
 
-**Why:** Detecta N+1 queries, memory leaks, slow transactions sin instrumentación manual.
+**Por qué:** Detecta N+1 queries, memory leaks, slow transactions sin instrumentación manual.
 
 | Tool | Qué | Cuándo |
 |:-----|:-----|:-----|

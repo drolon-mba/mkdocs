@@ -31,7 +31,7 @@
 - **IA amplifica**: Un senior con IA es 10x más productivo. Un junior con IA sigue siendo junior.
 - **Garbage in, garbage out**: Prompts vagos → código mediocre
 - **Validación crítica**: NUNCA confiar ciegamente en código generado por IA
-- **Conceptos > Código**: IA genera código, pero vos debés entender qué hace y por qué
+- **Conceptos > Código**: IA genera código, pero tú debés entender qué hace y por qué
 
 ---
 

@@ -111,14 +111,14 @@ El acrónimo **DOWNTIME** ayuda a recordar los 8 desperdicios de Lean:
 
 | Desperdicio | Qué | Ejemplo Software |
 |:------------|:-----|:-----------------|
-| **Defects** | Errores, retrabajos | Bugs, hotfixes |
-| **Overproduction** | Producir más de lo necesario | Features no usadas |
-| **Waiting** | Tiempo ocioso | Esperar code review, deploys |
-| **Non-utilized talent** | No usar habilidades del equipo | Seniors haciendo tareas junior |
-| **Transportation** | Movimiento innecesario | Múltiples handoffs entre equipos |
-| **Inventory** | Work in progress excesivo | 20 PRs abiertos |
-| **Motion** | Movimiento innecesario | Cambiar entre 10 herramientas |
-| **Extra processing** | Trabajo que no agrega valor | Documentación que nadie lee |
+| **Defects** (Defectos) | Errores, retrabajos | Bugs, hotfixes |
+| **Overproduction** (Sobreproducción) | Producir más de lo necesario | Features no usadas |
+| **Waiting** (Esperas) | Tiempo ocioso | Esperar code review, deploys |
+| **Non-utilized talent** (Talento no utilizado) | No usar habilidades del equipo | Seniors haciendo tareas junior |
+| **Transportation** (Transporte) | Movimiento innecesario | Múltiples handoffs entre equipos |
+| **Inventory** (Inventario) | Work in progress excesivo | 20 PRs abiertos |
+| **Motion** (Movimiento) | Movimiento innecesario | Cambiar entre 10 herramientas |
+| **Extra processing** (Sobre-procesamiento) | Trabajo que no agrega valor | Documentación que nadie lee |
 
 **Herramientas Lean:**
 

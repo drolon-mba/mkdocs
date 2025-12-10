@@ -51,11 +51,11 @@
                   |
       ┌──────────┼──────────┐
       |          |          |
-  [Backend]  [Frontend]  [Network]
+  [Backend]  [Frontend]   [Red]
       |          |          |
   ┌───┼───┐  ┌──┼──┐   ┌───┼───┐
   |   |   |  |  |  |   |   |   |
- DB  API Code CSS JS HTML CDN Latency Bandwidth
+ DB Código AP CSS JS HTML CDN Latencia AnchoBanda
 ```
 
 **Reglas:**

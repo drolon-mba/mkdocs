@@ -36,9 +36,9 @@ flowchart LR
 
 ---
 
-## ✅ Expected vs ❌ Actual
+## ✅ Esperado vs ❌ Actual
 
-- **Expected:** [qué debería ocurrir]
+- **Esperado:** [qué debería ocurrir]
 - **Actual:** [qué ocurre realmente: error/log exacto, stacktrace, código de estado]
 
 ---
@@ -70,7 +70,7 @@ flowchart LR
 
 ## 🛠️ Acciones iniciales
 
-- **Rule out:** [qué ya se descartó: recursos, permisos, colas, etc.]
+- **Descartado:** [qué ya se descartó: recursos, permisos, colas, etc.]
 - **Próximo paso:** [ej. aislar en staging con mismos datos, habilitar debug]
 
 ---

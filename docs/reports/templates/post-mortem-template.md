@@ -25,7 +25,7 @@
 
 ---
 
-## 🕒 Timeline
+## 🕒 Cronología (Timeline)
 
 Todas las horas en UTC
 
@@ -38,7 +38,7 @@ Todas las horas en UTC
 
 ---
 
-## 🔍 Causa Raíz (5 Whys)
+## 🔍 Causa Raíz (5 Porqués)
 
 1. **¿Por qué falló el sistema?**
    [Respuesta]
@@ -77,7 +77,7 @@ Todas las horas en UTC
 
 ---
 
-## ✅ Action Items
+## ✅ Acciones (Action Items)
 
 | Tarea | Tipo | Dueño | Prioridad | Ticket |
 |:------|:-----|:------|:----------|:-------|

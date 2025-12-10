@@ -321,7 +321,7 @@
 - Error rate > 10%
 - p95 latency > 2x baseline
 - Health checks failing > 5 min
-- Critical feature broken
+- [ ] **Funcionalidad crítica rota**: Usuarios no pueden completar flujo principal (login, pago).bility introducida
 - Data corruption detectada
 - Security vulnerability introducida
 

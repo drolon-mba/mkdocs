@@ -308,7 +308,7 @@ X-Signature: sha256=...
 | **Streaming** | No | Sí (subscriptions) | Sí | Sí |
 | **Caching** | Fácil (HTTP) | Difícil | No | No |
 | **Browser Support** | ✅ | ✅ | Limitado | ✅ |
-| **Learning Curve** | Bajo | Medio | Alto | Medio |
+| **Curva de Aprendizaje** | Bajo | Medio | Alto | Medio |
 
 ---
 
@@ -320,7 +320,7 @@ X-Signature: sha256=...
 | **Sin versionado** | Breaking changes rompen clientes | `/v1/`, deprecation notices |
 | **Respuestas inconsistentes** | Diferentes estructuras por endpoint | Estandarizar formato |
 | **Sin rate limiting** | Abuse, DDoS | Implementar límites |
-| **Exponer IDs internos** | Security risk | Usar UUIDs públicos |
+| **Exponer IDs internos** | Security risk (Enumeration attacks) | Usar UUIDs públicos |
 
 ---
 

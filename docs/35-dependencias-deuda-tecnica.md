@@ -258,49 +258,49 @@ gateway.process_payment(100)
 ### Migration Guide Template
 
 `````markdown
-# Migration Guide: [Feature X] → [Feature Y]
-
-## Breaking Changes
-- [Change 1]
-- [Change 2]
-
-## Before (v1.x)
-```[language]
-// Old code
-```
-
-## After (v2.x)
-
-```[language]
-// New code
-```
-
-## Step-by-Step Migration
-
-### 1. Update dependencies
-
-```bash
-npm install package@2.0.0
-```
-
-### 2. Replace deprecated calls
-
-[Instrucciones]
-
-### 3. Test
-
-[Cómo verificar que la migración funcionó]
-
-## Automated Migration (if available)
-
-```bash
-npx @package/migrate
-```
-
-## Support
-
-- **Deprecated version support:** Until YYYY-MM-DD
-- **Questions:** [Slack channel / GitHub Discussions]
+# Guía de Migración: [Feature X] → [Feature Y]
+ 
+ ## Cambios de Ruptura (Breaking Changes)
+ - [Cambio 1]
+ - [Cambio 2]
+ 
+ ## Antes (v1.x)
+ ```[lenguaje]
+ // Código viejo
+ ```
+ 
+ ## Después (v2.x)
+ 
+ ```[lenguaje]
+ // Código nuevo
+ ```
+ 
+ ## Migración Paso a Paso
+ 
+ ### 1. Actualizar dependencias
+ 
+ ```bash
+ npm install package@2.0.0
+ ```
+ 
+ ### 2. Reemplazar llamadas deprecadas
+ 
+ [Instrucciones]
+ 
+ ### 3. Testear
+ 
+ [Cómo verificar que la migración funcionó]
+ 
+ ## Migración Automática (si existe)
+ 
+ ```bash
+ npx @package/migrate
+ ```
+ 
+ ## Soporte
+ 
+ - **Soporte versión deprecada:** Hasta YYYY-MM-DD
+ - **Preguntas:** [Slack channel / GitHub Discussions]
 
 `````
 
@@ -391,49 +391,49 @@ Extraer a `CreditCardValidator` service reutilizable
 ### Breaking Change Communication Template
 
 ````markdown
-# Breaking Change Announcement: [Feature X]
-
-**Affected versions:** v2.0.0+
-**Deprecation date:** YYYY-MM-DD
-**Removal date:** YYYY-MM-DD (6 months later)
-
-## What's Changing
-[Descripción clara del cambio]
-
-## Why
-[Razón del breaking change]
-
-## Impact
-**Who is affected:**
-- [Grupo 1]
-- [Grupo 2]
-
-**What breaks:**
-- [Funcionalidad 1]
-- [Funcionalidad 2]
-
-## Migration Path
-
-### Option 1: Automated Migration (Recommended)
-```bash
-npx @package/migrate
-```
-
-### Option 2: Manual Migration
-
-[Step-by-step guide]
-
-## Timeline
-
-- **YYYY-MM-DD**: Deprecation announced
-- **YYYY-MM-DD**: Warning logs added
-- **YYYY-MM-DD**: Feature removed in v2.0.0
-
-## Support
-
-- **Migration help:** [Slack channel]
-- **Questions:** [GitHub Discussions]
-- **Extended support:** Contact sales for extended v1.x support
+# Anuncio de Breaking Change: [Feature X]
+ 
+ **Versiones afectadas:** v2.0.0+
+ **Fecha deprecación:** YYYY-MM-DD
+ **Fecha remoción:** YYYY-MM-DD (6 meses después)
+ 
+ ## Qué Cambia
+ [Descripción clara del cambio]
+ 
+ ## Por Qué
+ [Razón del breaking change]
+ 
+ ## Impacto
+ **Quién es afectado:**
+ - [Grupo 1]
+ - [Grupo 2]
+ 
+ **Qué se rompe:**
+ - [Funcionalidad 1]
+ - [Funcionalidad 2]
+ 
+ ## Ruta de Migración
+ 
+ ### Opción 1: Migración Automática (Recomendada)
+ ```bash
+ npx @package/migrate
+ ```
+ 
+ ### Opción 2: Migración Manual
+ 
+ [Guía paso a paso]
+ 
+ ## Cronología
+ 
+ - **YYYY-MM-DD**: Anuncio de deprecación
+ - **YYYY-MM-DD**: Logs de warning agregados
+ - **YYYY-MM-DD**: Feature removida en v2.0.0
+ 
+ ## Soporte
+ 
+ - **Ayuda migración:** [Slack channel]
+ - **Preguntas:** [GitHub Discussions]
+ - **Soporte extendido:** Contactar ventas para soporte v1.x extendido
 
 ````
 
