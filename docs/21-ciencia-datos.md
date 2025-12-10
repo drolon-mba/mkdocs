@@ -201,11 +201,11 @@
 
 | Dimensión | Qué | Cómo validar |
 |:----------|:-----|:-------------|
-| **Completeness** | Sin valores faltantes | `df.isnull().sum()` |
-| **Uniqueness** | Sin duplicados | `df.duplicated().sum()` |
-| **Consistency** | Valores válidos | Regex, value ranges |
-| **Accuracy** | Datos correctos | Validar con fuentes |
-| **Timeliness** | Datos actuales | Timestamps |
+| **Completitud (Completeness)** | Sin valores faltantes | `df.isnull().sum()` |
+| **Unicidad (Uniqueness)** | Sin duplicados | `df.duplicated().sum()` |
+| **Consistencia (Consistency)** | Valores válidos | Regex, value ranges |
+| **Exactitud (Accuracy)** | Datos correctos | Validar con fuentes |
+| **Actualidad (Timeliness)** | Datos actuales | Timestamps |
 
 **Herramientas:** [Great Expectations](https://greatexpectations.io/), [Pandera](https://pandera.readthedocs.io/)
 

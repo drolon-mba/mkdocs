@@ -155,7 +155,7 @@ WHERE event_type = 'login'
    ↓
 3. Insight
    ↓
-4. Action
+4. Action (Acción)
 
 ```
 
@@ -182,7 +182,7 @@ WHERE event_type = 'login'
 **Insight:** Identificamos que el 60% de usuarios abandonan en el paso de pago.
 Análisis cualitativo (user interviews) reveló que el formulario es confuso.
 
-**Action:** Propongo rediseñar el checkout. Estimamos que subir conversion a 3.5%
+**Action (Acción):** Propongo rediseñar el checkout. Estimamos que subir conversion a 3.5%
 generaría $200K/mes adicionales. ROI en 2 meses.
 
 ```

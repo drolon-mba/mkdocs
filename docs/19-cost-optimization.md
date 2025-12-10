@@ -14,7 +14,7 @@
 - [📏 Right-Sizing](#right-sizing)
 - [💳 Reserved Instances & Savings Plans](#reserved-instances-savings-plans)
 - [⚡ Spot Instances](#spot-instances)
-- [📉 Eliminar Waste](#eliminar-waste)
+- [📉 Eliminar Desperdicio (Waste)](#eliminar-desperdicio-waste)
 - [⏰ Scheduling (Apagar recursos)](#scheduling-apagar-recursos)
 - [📦 Storage Optimization](#storage-optimization)
 - [🌐 Network Costs](#network-costs)
@@ -45,7 +45,7 @@
 | Fase | Qué | Actividades |
 |:-----|:-----|:------------|
 | **Inform** | Visibilidad total | Tagging, dashboards, chargeback |
-| **Optimize** | Reducir waste | Right-sizing, RIs, eliminar recursos idle |
+| **Optimize** | Reducir desperdicio | Right-sizing, RIs, eliminar recursos idle |
 | **Operate** | Cultura continua | Alertas, governance, automation |
 
 ---
@@ -166,9 +166,9 @@ Ahorro: $2,800/mes = $33,600/año
 
 ---
 
-## 📉 Eliminar Waste
+## 📉 Eliminar Desperdicio (Waste)
 
-| Waste | Qué | Cómo detectar | Solución |
+| Desperdicio | Qué | Cómo detectar | Solución |
 |:------|:-----|:--------------|:---------|
 | **Recursos idle** | Recursos sin uso | CPU <5%, network mínimo | Apagar fuera horario, auto-stop |
 | **Snapshots antiguos** | Backups obsoletos | >90 días | Lifecycle policy automático |
@@ -300,7 +300,7 @@ Alert: Recursos sin tags
 |:--------|:-------|:--------|
 | **Savings Rate** | >20% | (Savings / Total Spend) × 100 |
 | **RI/SP Coverage** | >70% | Horas covered / Total horas |
-| **Untagged Resources** | 0% | Resources sin tags / Total |
+| **Sin Etiquetar** | 0% | Recursos sin tags / Total |
 | **Idle Resource %** | <5% | Costo recursos idle / Total |
 | **Cost per Customer** | ↓ Over time | Total Spend / Active Customers |
 

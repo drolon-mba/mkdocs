@@ -225,7 +225,7 @@
 |:---------|:------|:---------|
 | **Overfitting** | Modelo memoriza training | Regularization, más datos, dropout |
 | **Underfitting** | Modelo muy simple | Más features, modelo más complejo |
-| **Data Leakage** | Info de test en training | Validar splits, feature engineering post-split |
+| **Fuga de Datos (Data Leakage)** | Info de test en training | Validar splits, feature engineering post-split |
 | **Imbalanced Classes** | 99% clase A, 1% clase B | Oversampling (SMOTE), class weights |
 | **Concept Drift** | Distribución cambia en prod | Retraining periódico, monitoring |
 
