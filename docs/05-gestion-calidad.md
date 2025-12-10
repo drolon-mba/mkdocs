@@ -156,7 +156,7 @@
 |:--------|:-----|:-------|:------------|
 | **Cyclomatic Complexity** | Número de caminos independientes | < 10 por función | SonarQube, ESLint |
 | **Cognitive Complexity** | Dificultad para entender | < 15 | SonarQube |
-| **LOC** | Lines of Code | < 200 por función | Linters |
+| **LOC** | Lines of Code | < 200 por función como umbral máximo | Linters |
 | **Nesting Depth** | Niveles de indentación | < 4 | Linters |
 
 ---

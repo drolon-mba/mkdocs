@@ -147,4 +147,4 @@
 
 ---
 
-[⬅️ Anterior: Data Literacy](./39-data-literacy.md) | [⬆️ Volver arriba](#98-recursos-de-practica-de-codigo-y-preparacion-para-entrevistas) | [➡️ Siguiente: Glosario](./99-glosario.md)
+[⬅️ Anterior: Gobernanza Low-Code/No-Code (LCNC)](./40-lowcode-nocode.md) | [⬆️ Volver arriba](#98-recursos-de-practica-de-codigo-y-preparacion-para-entrevistas) | [➡️ Siguiente: Glosario](./99-glosario.md)

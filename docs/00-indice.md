@@ -151,13 +151,20 @@
 - [39 - Data Literacy](./39-data-literacy.md)
   - Data literacy fundamentals, Self-service analytics, Data storytelling, Data quality
 
+### 📝 Gobernanza Low-Code/No-Code (LCNC)
+
+- [40 - Gobernanza Low-Code/No-Code (LCNC)](./40-lowcode-nocode.md)
+  - ¿Qué es LCNC Governance?, Riesgos Clave de LCNC, Políticas de Seguridad y Acceso, Data Governance para LCNC, Ciclo de Vida y Auditoría, Roles y Accountability, Anti-patrones, Recursos.
+
 ### 📝 Recursos de práctica de código y preparación para entrevistas
 
 - [98 - Recursos de práctica de código y preparación para entrevistas](./98-recursos-entrevistas.md)
+  - Coding interview questions, Coding interview preparation, Coding interview tips, Coding interview resources.
 
 ### 📝 Glosario
 
 - [99 - Glosario](./99-glosario.md)
+  - Glosario de términos técnicos y conceptos.
 
 ### 📝 Reportes y Templates
 

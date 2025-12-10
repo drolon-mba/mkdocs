@@ -309,6 +309,8 @@ Deploy                 |      |      |      | █    |
 | **Personas genéricas** | "Todas las empresas" | Segmentar, priorizar ICP |
 | **FODA superficial** | Solo lo obvio | Research profundo, data |
 | **Ignorar amenazas** | Optimismo sesgado | War gaming, escenarios pesimistas |
+| **No priorizar acciones** | Todo es igual | OKRs, PBI |
+| **Causación = Causalidad** | Correlación no implica causa | Experimentos, domain knowledge, Testing A/B |
 
 ---
 

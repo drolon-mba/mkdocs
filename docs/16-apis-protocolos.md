@@ -15,10 +15,10 @@
 - [🔌 WebSockets](#websockets)
 - [📨 Server-Sent Events (SSE)](#server-sent-events-sse)
 - [🎯 Event-Driven / Async](#event-driven-async)
+- [🔄 Webhooks](#webhooks)
 - [📄 Documentación](#documentacion)
 - [🔐 Autenticación](#autenticacion)
 - [🎨 Diseño de APIs](#diseno-de-apis)
-- [🔄 Webhooks](#webhooks)
 - [📊 Comparación](#comparacion)
 - [🚫 Anti-patrones](#anti-patrones)
 - [📚 Recursos](#recursos)
@@ -69,6 +69,21 @@ Response 200:
 }
 ```
 
+**Ventajas:**
+
+- Simplicidad y curva de aprendizaje baja.  
+- Amplio soporte en browsers, frameworks y herramientas.  
+- Caching nativo vía HTTP.  
+- Idempotencia clara en GET/PUT/DELETE.  
+- Estándar universal, interoperable.
+
+**Desventajas:**
+
+- Overfetching/underfetching: el cliente recibe más o menos datos de los necesarios.  
+- Multiplicidad de endpoints → mantenimiento más complejo.  
+- Falta de tipado fuerte (JSON libre).  
+- HATEOAS poco usado en la práctica.  
+
 ---
 
 ## 🔍 GraphQL
@@ -87,15 +102,18 @@ Response 200:
 
 **Ventajas:**
 
-- Sin overfetching/underfetching
-- Un endpoint para todo
-- Schema autodocumentado
+- Evita overfetching/underfetching: cliente pide exactamente lo que necesita.  
+- Un único endpoint centralizado.  
+- Schema tipado y autodocumentado.  
+- Soporta queries, mutations y subscriptions (real‑time).  
+- Ecosistema rico (Apollo, Hasura).
 
 **Desventajas:**
 
-- Complejidad adicional
-- Caching difícil
-- Queries costosas (N+1)
+- Curva de aprendizaje mayor, requiere definir schema y resolvers.  
+- Caching complejo (usa POST y un solo endpoint).  
+- Riesgo de queries costosas (N+1).  
+- Seguridad: requiere control de profundidad y complejidad de queries.
 
 **Herramientas:** [Apollo](https://www.apollographql.com/), [Hasura](https://hasura.io/), [GraphQL Yoga](https://the-guild.dev/graphql/yoga-server)
 
@@ -129,6 +147,21 @@ message User {
 }
 ```
 
+**Ventajas:**
+
+- Serialización binaria (Protocol Buffers) → payloads pequeños y rápidos.  
+- HTTP/2: multiplexing, server push, menos conexiones.  
+- Tipado fuerte y generación automática de clientes/servers.  
+- Streaming bidireccional nativo.  
+- Ideal para microservicios internos de alta performance.
+
+**Desventajas:**
+
+- Soporte limitado en browsers (requiere proxy/gateway).  
+- Curva de aprendizaje alta (proto files, tooling).  
+- Debugging más complejo que JSON/REST.  
+- No aprovecha caching HTTP estándar.  
+
 **Cuándo usar:** Microservicios internos, alta performance, streaming.
 
 **Herramientas:** [gRPC](https://grpc.io/), [Buf](https://buf.build/), [grpcurl](https://github.com/fullstorydev/grpcurl)
@@ -159,6 +192,20 @@ ws.onmessage = (event) => {
 ws.send(JSON.stringify({ type: 'subscribe', channel: 'updates' }));
 ```
 
+**Ventajas:**
+
+- Comunicación full‑duplex en tiempo real.  
+- Baja latencia, ideal para chat, gaming, dashboards.  
+- Soporta texto y binario.  
+- Amplio soporte en navegadores.
+
+**Desventajas:**
+
+- No cacheable.  
+- Escalabilidad más compleja (conexiones persistentes).  
+- Requiere load balancers y proxies compatibles.  
+- Difícil de depurar comparado con HTTP.
+
 **Cuándo usar:** Chat, gaming, dashboards en tiempo real, collaborative editing.
 
 **Alternativa:** Server-Sent Events (SSE) para one-way server→client.
@@ -181,17 +228,29 @@ eventSource.addEventListener('update', (event) => {
 
 **Cuándo usar:** Notificaciones, cotizaciones, progress updates.
 
-**Ventajas vs WebSockets:**
+**Ventajas:**
 
-- Más simple (HTTP estándar)
-- Reconnect automático
-- Event IDs para reanudar
+- Simples: usan HTTP estándar.
+- Reconexión automática integrada.  
+- Event IDs permiten reanudar streams.  
+- Menor complejidad que WebSockets para notificaciones unidireccionales.
+
+**Desventajas:**
+
+- Solo unidireccional (server → client).  
+- Basado en texto (no binario).  
+- Menor soporte en algunos entornos comparado con WebSockets.  
+- No apto para escenarios de alta concurrencia bidireccional.
 
 ---
 
 ## 🎯 Event-Driven / Async
 
 **Qué:** Comunicación basada en eventos via message brokers.
+
+**Por qué:** Desacopla productores y consumidores, escalable horizontalmente.
+
+**Cuándo usar:** Workflows complejos, alto throughput, logs.
 
 | Broker | Qué | Cuándo |
 |:-------|:-----|:-----|
@@ -206,6 +265,65 @@ eventSource.addEventListener('update', (event) => {
 - **Queues:** Work distribution, un consumidor procesa
 - **Event Sourcing:** Eventos como fuente de verdad
 
+**Ventajas:**
+
+- Desacopla productores y consumidores.  
+- Escalable horizontalmente.  
+- Patrones flexibles: Pub/Sub, colas, event sourcing.  
+- Alta tolerancia a fallos (Kafka, SQS).  
+- Ideal para sistemas distribuidos.
+
+**Desventajas:**
+
+- Complejidad operativa (brokers, clusters).  
+- Latencia mayor que RPC directo.  
+- Requiere monitoreo y observabilidad avanzada.  
+- Curva de aprendizaje de cada broker.  
+
+---
+
+## 🔄 Webhooks
+
+**Qué:** HTTP callbacks cuando ocurre evento.
+
+**Por qué:** Integración event-driven sin polling.
+
+**Ejemplo:**
+
+```json
+POST https://yourapp.com/webhook
+X-Signature: sha256=...
+
+{
+  "event": "payment.succeeded",
+  "data": {
+    "amount": 1000,
+    "currency": "USD"
+  }
+}
+```
+
+**Seguridad:**
+
+- Validar firma HMAC
+- HTTPS obligatorio
+- Retry exponential backoff
+- Idempotencia en receptor
+
+**Ventajas:**
+
+- Simples: callbacks HTTP estándar.  
+- Integración rápida entre sistemas.  
+- Evitan polling.  
+- Amplio soporte en SaaS y APIs públicas.
+
+**Desventajas:**
+
+- Seguridad: requieren validación de firmas y HTTPS.  
+- Fiabilidad: necesitan reintentos e idempotencia.  
+- Escalabilidad limitada (cada evento → request).  
+- Difícil de depurar si el receptor falla.
+
 ---
 
 ## 📄 Documentación
@@ -216,6 +334,7 @@ eventSource.addEventListener('update', (event) => {
 | **GraphQL** | Schema introspection | [GraphQL Playground](https://github.com/graphql/graphql-playground) |
 | **gRPC** | [Protocol Buffers](https://protobuf.dev/) | `.proto` files → docs |
 | **WebSockets** | [AsyncAPI](https://www.asyncapi.com/) | Spec para async APIs |
+| **Webhooks** | [AsyncAPI](https://www.asyncapi.com/) / [OpenAPI](https://www.openapis.org/) | Spec para webhooks |
 
 **Ejemplo OpenAPI:**
 
@@ -266,49 +385,17 @@ paths:
 | **CORS** | Controlar origins | `Access-Control-Allow-Origin: *` |
 | **Idempotency Keys** | Evitar duplicados | `Idempotency-Key: uuid` header |
 
----
-
-## 🔄 Webhooks
-
-**Qué:** HTTP callbacks cuando ocurre evento.
-
-**Por qué:** Integración event-driven sin polling.
-
-**Ejemplo:**
-
-```json
-POST https://yourapp.com/webhook
-X-Signature: sha256=...
-
-{
-  "event": "payment.succeeded",
-  "data": {
-    "amount": 1000,
-    "currency": "USD"
-  }
-}
-```
-
-**Seguridad:**
-
-- Validar firma HMAC
-- HTTPS obligatorio
-- Retry exponential backoff
-- Idempotencia en receptor
-
----
-
 ## 📊 Comparación
 
-| Característica | REST | GraphQL | gRPC | WebSocket |
-|:---------------|:-----|:--------|:-----|:----------|
-| **Protocol** | HTTP | HTTP | HTTP/2 | TCP |
-| **Payload** | JSON | JSON | Protobuf | Binary/Text |
-| **Typing** | No | Sí (schema) | Sí (protobuf) | No |
-| **Streaming** | No | Sí (subscriptions) | Sí | Sí |
-| **Caching** | Fácil (HTTP) | Difícil | No | No |
-| **Browser Support** | ✅ | ✅ | Limitado | ✅ |
-| **Curva de Aprendizaje** | Bajo | Medio | Alto | Medio |
+| Característica | REST | GraphQL | gRPC | WebSocket | Webhook |
+|:---------------|:-----|:--------|:-----|:----------|:--------|
+| **Protocol** | HTTP | HTTP | HTTP/2 | TCP | HTTP |
+| **Payload** | JSON | JSON | Protobuf | Binary/Text | JSON |
+| **Typing** | No | Sí (schema) | Sí (protobuf) | No | No |
+| **Streaming** | No | Sí (subscriptions) | Sí | Sí | No |
+| **Caching** | Fácil (HTTP) | Difícil | No | No | No |
+| **Browser Support** | ✅ | ✅ | Limitado | ✅ | ✅ |
+| **Curva de Aprendizaje** | Bajo | Medio | Alto | Medio | Medio |
 
 ---
 
