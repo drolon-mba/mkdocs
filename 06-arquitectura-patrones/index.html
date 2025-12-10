@@ -1,0 +1,5487 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../05-gestion-calidad/">
+      
+      
+        <link rel="next" href="../07-sesgos-falacias/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>06 - Arquitectura y Patrones - Guía Integral de Ingeniería de Software</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#06-arquitectura-y-patrones" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Guía Integral de Ingeniería de Software" class="md-header__button md-logo" aria-label="Guía Integral de Ingeniería de Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guía Integral de Ingeniería de Software
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              06 - Arquitectura y Patrones
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Guía Integral de Ingeniería de Software" class="md-nav__button md-logo" aria-label="Guía Integral de Ingeniería de Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Guía Integral de Ingeniería de Software
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📘 Guía Integral de Ingeniería de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-indice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    00 - Índice General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fundamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 - Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 - Onboarding de Nuevos Desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-disciplinas-desarrollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 - Disciplinas de Desarrollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 - Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-gestion-calidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 - Gestión de Calidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 - Arquitectura y Patrones
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 - Arquitectura y Patrones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Índice Rápido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitecturas-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ Arquitecturas de Software
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitectura-hexagonal-ports-adapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Arquitectura Hexagonal (Ports &amp; Adapters)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔷 Arquitectura Hexagonal (Ports &amp; Adapters)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes Principales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama de Dependencias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relacion-con-screaming-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relación con Screaming Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screaming-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📢 Screaming Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📢 Screaming Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-sistema-de-salud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo - Sistema de Salud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principio-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principio Clave
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beneficios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beneficios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-aplicar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cuándo Aplicar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patrones-de-diseno-gang-of-four" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 Patrones de Diseño (Gang of Four)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 Patrones de Diseño (Gang of Four)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#patrones-creacionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patrones Creacionales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patrones-estructurales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patrones Estructurales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patrones-comportamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patrones Comportamiento
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patrones-arquitectonicos-avanzados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ Patrones Arquitectónicos Avanzados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finite-state-machines-fsm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎭 Finite State Machines (FSM)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principios-de-arquitectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 Principios de Arquitectura
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distribucion-de-carpetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗂️ Distribución de Carpetas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-patrones-arquitectonicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚫 Anti-patrones Arquitectónicos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Recursos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-sesgos-falacias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 - Sesgos Cognitivos, Falacias y Leyes a Evitar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-devops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 - DevOps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-seguridad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 - Seguridad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-observabilidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Observabilidad y Telemetría
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-herramientas-problemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Herramientas de Análisis de Problemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-mejora-continua/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Metodologías de Mejora Continua
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Optimización de Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-checklist-produccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Checklist de Producción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-bases-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Bases de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-apis-protocolos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - APIs y Protocolos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-mobile-ui-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Mobile, UI y UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-infraestructura-cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Infraestructura y Arquitectura Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-cost-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - Optimización de Costos (FinOps)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-machine-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - Machine Learning y Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-ciencia-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21 - Ciencia de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22 - Data Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-analisis-estrategico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 - Análisis Estratégico y de Negocio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-product-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24 - Product Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-metricas-kpis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25 - Métricas y KPIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-roles-responsabilidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26 - Roles y Responsabilidades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-colaboracion-cultura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27 - Colaboración y Cultura de Desarrollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-documentacion-diagramas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28 - Documentación y Diagramas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-convenciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29 - Convenciones y Estándares
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-prompts-agentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30 - Prompts y Agentes de IA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-estrategia-ia-automatizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31 - Estrategia de IA y Automatización
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32-etica-gobernanza-ia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32 - Ética y Gobernanza de IA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-comunicacion-contenido/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33 - Comunicación y Contenido Técnico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../34-plantillas-artefactos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34 - Plantillas y Artefactos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-dependencias-deuda-tecnica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35 - Gestión de Dependencias y Deuda Técnica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../36-priorizacion-roadmapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36 - Priorización y Roadmapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../37-gestion-secretos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37 - Gestión de Secretos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../38-chaos-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38 - Chaos Engineering y Resiliencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../39-data-literacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39 - Data Literacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-lowcode-nocode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    40 - Gobernanza Low-Code/No-Code (LCNC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98-recursos-entrevistas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    98 - Recursos de práctica de código y preparación para entrevistas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../99-glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    99 - Glosario de Términos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_45" >
+        
+          
+          <label class="md-nav__link" for="__nav_45" id="__nav_45_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_45_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_45">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agents
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/the-gentleman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Gentleman - Agente Principal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_45_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_45_2" id="__nav_45_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture devops
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_45_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_45_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture devops
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/architecture-devops/api-design-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Design Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/architecture-devops/cicd-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/architecture-devops/event-driven-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event-Driven Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/architecture-devops/iac-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IaC Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/architecture-devops/kubernetes-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/architecture-devops/microservices-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microservices Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/architecture-devops/observability-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observability Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/architecture-devops/security-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/architecture-devops/software-architecture-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_45_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_45_3" id="__nav_45_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_45_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_45_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/backend/django-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Django Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/backend/express-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Express Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/backend/fastapi-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FastAPI Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/backend/java-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/backend/nestjs-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NestJS Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/backend/nodejs-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node.js Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/backend/python-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/backend/spring-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spring Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_45_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_45_4" id="__nav_45_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business roles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_45_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_45_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Business roles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/business-roles/devrel-developer-advocate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevRel / Developer Advocate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/business-roles/pm-po-advisor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PM/PO Advisor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/business-roles/scrum-master-agile-coach/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scrum Master / Agile Coach
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/business-roles/sre-advisor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SRE Advisor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/business-roles/tech-lead-em-advisor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Lead / EM Advisor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/business-roles/ux-research-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UX Research Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/business-roles/ux-ui-designer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UX/UI Designer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_45_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_45_5" id="__nav_45_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_45_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_45_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compliance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/compliance/accessibility-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessibility Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/compliance/compliance-governance-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance &amp; Governance Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_45_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_45_6" id="__nav_45_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data ml finance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_45_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_45_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data ml finance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/data-ml-finance/computer-vision-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Vision Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/data-ml-finance/data-science-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Science Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/data-ml-finance/data-visualization-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/data-ml-finance/ml-dl-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ML/DL Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/data-ml-finance/nlp-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLP Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/data-ml-finance/quant-finance-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quant Finance Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/data-ml-finance/rl-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RL Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/data-ml-finance/trading-systems-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trading Systems Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_45_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_45_7" id="__nav_45_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_45_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_45_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Databases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/databases/mongodb-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MongoDB Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/databases/mssql-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSSQL Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/databases/postgresql-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgreSQL Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/databases/redis-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redis Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/databases/sqlite-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQLite Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_45_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_45_8" id="__nav_45_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_45_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_45_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Debugging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/debugging/code-review-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Review Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/debugging/debugging-root-cause-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging &amp; Root Cause Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/debugging/migration-specialist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Specialist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_45_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_45_9" id="__nav_45_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_45_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_45_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/documentation/api-documentation-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Documentation Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/documentation/content-creator-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content Creator Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/documentation/diagram-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagram Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/documentation/technical-writer-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Writer Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_45_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_45_10" id="__nav_45_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_45_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_45_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Frontend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/frontend/angular-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Angular Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/frontend/css-styling-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSS/Styling Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/frontend/nextjs-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Next.js Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/frontend/react-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    React Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/frontend/typescript-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TypeScript Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/frontend/vue-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vue Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_45_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_45_11" id="__nav_45_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_45_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_45_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/testing/bdd-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BDD Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/testing/e2e-testing-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2E Testing Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/testing/performance-testing-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance Testing Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/testing/qa-automation-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QA Automation Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/testing/tdd-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TDD Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_46" >
+        
+          
+          <label class="md-nav__link" for="__nav_46" id="__nav_46_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_46_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_46">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_46_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_46_1" id="__nav_46_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_46_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_46_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/bug-report-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🐞 Bug Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/feature-request-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💡 Feature Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/new-feature-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✨ Feature Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/post-mortem-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💀 Post-Mortem Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/examples/rfc-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📝 RFC: Implementación de Redis para Caching de Sesiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_46_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_46_2" id="__nav_46_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_46_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_46_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/bug-report-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🐞 Bug Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/feature-request-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💡 Feature Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/new-feature-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✨ Feature Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/post-mortem-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💀 Post-Mortem Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/templates/rfc-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📝 RFC: Request for Comments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Índice Rápido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitecturas-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ Arquitecturas de Software
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitectura-hexagonal-ports-adapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔷 Arquitectura Hexagonal (Ports &amp; Adapters)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔷 Arquitectura Hexagonal (Ports &amp; Adapters)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes Principales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama de Dependencias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relacion-con-screaming-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relación con Screaming Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screaming-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📢 Screaming Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📢 Screaming Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-sistema-de-salud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo - Sistema de Salud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principio-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principio Clave
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beneficios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beneficios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-aplicar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cuándo Aplicar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patrones-de-diseno-gang-of-four" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 Patrones de Diseño (Gang of Four)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 Patrones de Diseño (Gang of Four)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#patrones-creacionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patrones Creacionales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patrones-estructurales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patrones Estructurales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patrones-comportamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patrones Comportamiento
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patrones-arquitectonicos-avanzados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ Patrones Arquitectónicos Avanzados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finite-state-machines-fsm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎭 Finite State Machines (FSM)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principios-de-arquitectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 Principios de Arquitectura
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distribucion-de-carpetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗂️ Distribución de Carpetas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-patrones-arquitectonicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚫 Anti-patrones Arquitectónicos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Recursos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="06-arquitectura-y-patrones">06 - Arquitectura y Patrones</h1>
+<blockquote>
+<p>Estructuras de alto nivel y soluciones probadas para organizar sistemas complejos, escalables y mantenibles.</p>
+</blockquote>
+<p><a href="../00-indice/">🏠 Volver al índice</a></p>
+<hr />
+<h2 id="indice-rapido">📋 Índice Rápido</h2>
+<ul>
+<li><a href="#arquitecturas-de-software">🏗️ Arquitecturas de Software</a></li>
+<li><a href="#arquitectura-hexagonal-ports-adapters">🔷 Arquitectura Hexagonal (Ports &amp; Adapters)</a></li>
+<li><a href="#screaming-architecture">📢 Screaming Architecture</a></li>
+<li><a href="#patrones-de-diseno-gang-of-four">🧩 Patrones de Diseño (Gang of Four)</a></li>
+<li><a href="#patrones-arquitectonicos-avanzados">🏗️ Patrones Arquitectónicos Avanzados</a></li>
+<li><a href="#finite-state-machines-fsm">🎭 Finite State Machines (FSM)</a></li>
+<li><a href="#principios-de-arquitectura">📐 Principios de Arquitectura</a></li>
+<li><a href="#distribucion-de-carpetas">🗂️ Distribución de Carpetas</a></li>
+<li><a href="#anti-patrones-arquitectonicos">🚫 Anti-patrones Arquitectónicos</a></li>
+<li><a href="#recursos">📚 Recursos</a></li>
+</ul>
+<hr />
+<h2 id="arquitecturas-de-software">🏗️ Arquitecturas de Software</h2>
+<p><strong>Qué:</strong> Decisiones estructurales fundamentales sobre cómo organizar un sistema.</p>
+<p><strong>Por qué:</strong> Define cómo el sistema crece, se mantiene y responde al cambio. Una mala arquitectura puede matar un proyecto exitoso.</p>
+<p><strong>Quién:</strong> Arquitectos de software, tech leads, senior developers.</p>
+<p><strong>Costo:</strong> Decisión temprana de alto impacto. Cambiar arquitectura en sistema maduro = 6-18 meses.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Arquitectura</th>
+<th style="text-align: left;">Qué</th>
+<th style="text-align: left;">Por qué</th>
+<th style="text-align: left;">Cuándo</th>
+<th style="text-align: left;">Dónde</th>
+<th style="text-align: left;">Cómo</th>
+<th style="text-align: left;">Trade-offs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Monolítica</strong></td>
+<td style="text-align: left;">Aplicación única con todos los módulos integrados</td>
+<td style="text-align: left;">Simplicidad, deployment único, debugging fácil</td>
+<td style="text-align: left;">MVPs, equipos pequeños, dominios simples</td>
+<td style="text-align: left;">Startups, sistemas internos</td>
+<td style="text-align: left;">Todo en un proceso, shared DB, deployment único</td>
+<td style="text-align: left;">✅ Simple, rápido desarrollo inicial; ✅ Si esta bien estructurado puede escalar horizontalmente duplicando el proceso; ❌ Escalado vertical; ❌ Acoplamiento y la dificultad de escalar componentes específicos de manera independiente</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MVC</strong></td>
+<td style="text-align: left;">Model-View-Controller: separar datos, UI y control</td>
+<td style="text-align: left;">Claridad en responsabilidades</td>
+<td style="text-align: left;">Apps web tradicionales, dashboards</td>
+<td style="text-align: left;">Backend + templates</td>
+<td style="text-align: left;">Modelos (datos), Vistas (UI), Controladores (lógica coordinación)</td>
+<td style="text-align: left;">✅ Patrón conocido; ❌ Controllers crecen (fat controllers)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Microservicios</strong></td>
+<td style="text-align: left;">Sistema distribuido con servicios independientes</td>
+<td style="text-align: left;">Escalado independiente, equipos autónomos</td>
+<td style="text-align: left;">Sistemas complejos, múltiples equipos</td>
+<td style="text-align: left;">Netflix, Uber, Amazon</td>
+<td style="text-align: left;">Servicios pequeños, comunicación API/eventos, DB por servicio</td>
+<td style="text-align: left;">✅ Escalabilidad, fault isolation; ❌ Complejidad operacional, latencia</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Hexagonal</strong></td>
+<td style="text-align: left;">Lógica central aislada de interfaces externas (ports &amp; adapters)</td>
+<td style="text-align: left;">Testability, independencia de frameworks</td>
+<td style="text-align: left;">Dominios complejos, larga vida</td>
+<td style="text-align: left;">Backend crítico</td>
+<td style="text-align: left;">Core (lógica) + Puertos (interfaces) + Adaptadores (implementaciones)</td>
+<td style="text-align: left;">✅ Testeo fácil, cambiar DB/UI sin tocar core; ❌ Más código inicial</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Capas</strong></td>
+<td style="text-align: left;">Separación horizontal: presentación, negocio, datos</td>
+<td style="text-align: left;">Modularidad, responsabilidades claras</td>
+<td style="text-align: left;">Sistemas empresariales tradicionales</td>
+<td style="text-align: left;">Monolitos estructurados</td>
+<td style="text-align: left;">Capas solo conocen la inferior, DTO entre capas</td>
+<td style="text-align: left;">✅ Organización clara; ❌ Puede ser rígido</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Event-Driven</strong></td>
+<td style="text-align: left;">Comunicación basada en eventos asincrónicos</td>
+<td style="text-align: left;">Desacoplamiento, escalabilidad</td>
+<td style="text-align: left;">Sistemas con workflows complejos, integraciones</td>
+<td style="text-align: left;">E-commerce, IoT, streaming</td>
+<td style="text-align: left;">Event Bus/Broker, productores/consumidores</td>
+<td style="text-align: left;">✅ Desacoplamiento total; ❌ Debugging complejo, eventual consistency</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Serverless</strong></td>
+<td style="text-align: left;">Funciones sin servidor dedicado, auto-scaling</td>
+<td style="text-align: left;">Costo por uso, cero gestión servidores</td>
+<td style="text-align: left;">Tareas puntuales, APIs sencillas, jobs</td>
+<td style="text-align: left;">AWS Lambda, Cloud Functions</td>
+<td style="text-align: left;">Funciones stateless, triggers (HTTP, eventos), short-lived</td>
+<td style="text-align: left;">✅ Escalado automático, low cost; ❌ Cold starts, vendor lock-in</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="arquitectura-hexagonal-ports-adapters">🔷 Arquitectura Hexagonal (Ports &amp; Adapters)</h2>
+<p><strong>Qué:</strong> Patrón arquitectónico que aísla la lógica de negocio (Core) de los detalles de implementación (UI, DB, Frameworks) mediante Puertos y Adaptadores.</p>
+<p><strong>Objetivo:</strong> Permitir que la aplicación sea dirigida por usuarios, programas, pruebas automatizadas o scripts por igual, y ser desarrollada y probada aisladamente de sus dispositivos de ejecución y bases de datos.</p>
+<h3 id="componentes-principales">Componentes Principales</h3>
+<ol>
+<li><strong>Dominio (Core):</strong> Entidades y reglas de negocio puras. No depende de nada externo.</li>
+<li><strong>Aplicación (Use Cases):</strong> Orquesta el flujo de datos desde/hacia el dominio. Define qué hace el sistema.</li>
+<li><strong>Puertos (Interfaces):</strong><ul>
+<li><strong>Primarios (Driver):</strong> API pública que expone la aplicación (ej. <code>IUserService</code>).</li>
+<li><strong>Secundarios (Driven):</strong> Interfaces que la aplicación necesita (ej. <code>IUserRepository</code>, <code>IEmailSender</code>).</li>
+</ul>
+</li>
+<li><strong>Adaptadores (Infraestructura):</strong> Implementaciones concretas.<ul>
+<li><strong>Driver Adapters:</strong> Controladores REST, CLI, GUI.</li>
+<li><strong>Driven Adapters:</strong> Repositorio SQL, Cliente SMTP.</li>
+</ul>
+</li>
+</ol>
+<h3 id="diagrama-de-dependencias">Diagrama de Dependencias</h3>
+<pre class="mermaid"><code>flowchart TD
+    subgraph Infrastructure[Capa de Infraestructura]
+        Controller[REST Controller]
+        DB[SQL Repository]
+        Mail[SMTP Service]
+    end
+
+    subgraph Core[Capa de Dominio &amp; Aplicación]
+        UseCase[Use Case Interactor]
+        PortIn[Input Port &lt;br&gt; (Interface)]
+        PortOut[Output Port &lt;br&gt; (Interface)]
+        Entity[Domain Entity]
+    end
+
+    Controller --&gt; PortIn
+    PortIn -.-&gt; UseCase
+    UseCase --&gt; Entity
+    UseCase --&gt; PortOut
+    DB -.-&gt; PortOut
+    Mail -.-&gt; PortOut
+
+    style Infrastructure fill:#f9f,stroke:#333
+    style Core fill:#ccf,stroke:#333</code></pre>
+<blockquote>
+<p><strong>Nota:</strong> Observa cómo las flechas de dependencia cruzan los límites <strong>hacia adentro</strong>. La Infraestructura depende del Core/Puertos, nunca al revés.</p>
+</blockquote>
+<h3 id="relacion-con-screaming-architecture">Relación con Screaming Architecture</h3>
+<p>La <strong>Screaming Architecture</strong> (ver abajo) es la forma ideal de organizar las carpetas para implementar Arquitectura Hexagonal, agrupando por contexto y segregando la infraestructura.</p>
+<h2 id="screaming-architecture">📢 Screaming Architecture</h2>
+<p><strong>Qué:</strong> Arquitectura que hace obvio el dominio/propósito de la aplicación desde la estructura de carpetas y nombres, no el framework usado.</p>
+<p><strong>Por qué:</strong> Cuando mirás la estructura del proyecto, debería "gritar" qué hace la aplicación (ej: healthcare, e-commerce), no qué framework usa (ej: Rails, Angular).</p>
+<p><strong>Quién:</strong> Acuñado por Robert C. Martin (Uncle Bob)</p>
+<p><strong>Cuándo:</strong> Todos los proyectos, especialmente aplicaciones domain-driven</p>
+<p><strong>Cómo:</strong></p>
+<ul>
+<li>Carpetas de nivel superior representan dominios de negocio, no capas técnicas</li>
+<li>El framework es un detalle, aislado en capa de infraestructura</li>
+<li>Los casos de uso son explícitos y visibles en la estructura</li>
+</ul>
+<h3 id="ejemplo-sistema-de-salud">Ejemplo - Sistema de Salud</h3>
+<p><strong>✅ Screaming Architecture (Grita "Healthcare"):</strong></p>
+<div class="highlight"><pre><span></span><code>/src
+  /patients
+    /use-cases
+      - RegisterPatient.ts
+      - ScheduleAppointment.ts
+      - UpdateMedicalHistory.ts
+    /entities
+      - Patient.ts
+      - MedicalRecord.ts
+    /repositories
+      - IPatientRepository.ts
+  /appointments
+    /use-cases
+      - BookAppointment.ts
+      - CancelAppointment.ts
+    /entities
+      - Appointment.ts
+  /billing
+    /use-cases
+      - GenerateInvoice.ts
+      - ProcessPayment.ts
+  /infrastructure  # Framework vive acá
+    /express
+    /database
+    /email
+</code></pre></div>
+<p><strong>❌ Framework-Centric (Grita "Express/MVC"):</strong></p>
+<div class="highlight"><pre><span></span><code>/src
+  /controllers
+    - PatientController.ts
+    - AppointmentController.ts
+  /services
+    - PatientService.ts
+    - AppointmentService.ts
+  /models
+    - Patient.ts
+    - Appointment.ts
+  /views
+  /routes
+</code></pre></div>
+<h3 id="principio-clave">Principio Clave</h3>
+<blockquote>
+<p>"Your architecture should tell readers about the system, not about the frameworks you used in your system."
+— Robert C. Martin</p>
+</blockquote>
+<h3 id="beneficios">Beneficios</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Beneficio</th>
+<th style="text-align: left;">Explicación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Claridad de dominio</strong></td>
+<td style="text-align: left;">Nuevos devs entienden el negocio mirando carpetas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Independencia de framework</strong></td>
+<td style="text-align: left;">Cambiar de Express a Fastify no afecta estructura core</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Testability</strong></td>
+<td style="text-align: left;">Casos de uso son testables sin framework</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mantenibilidad</strong></td>
+<td style="text-align: left;">Features relacionadas están juntas, no dispersas por capas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Onboarding rápido</strong></td>
+<td style="text-align: left;">La estructura documenta el sistema</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cuando-aplicar">Cuándo Aplicar</h3>
+<ul>
+<li>✅ <strong>Aplicaciones de negocio complejas</strong>: E-commerce, healthcare, fintech</li>
+<li>✅ <strong>Proyectos de larga vida</strong>: Sistemas que evolucionarán años</li>
+<li>✅ <strong>Equipos grandes</strong>: Múltiples devs trabajando en paralelo</li>
+<li>⚠️ <strong>MVPs simples</strong>: Puede ser over-engineering para prototipos</li>
+<li>⚠️ <strong>CRUD básicos</strong>: Si solo es ABM, capas tradicionales pueden bastar</li>
+</ul>
+<hr />
+<h2 id="patrones-de-diseno-gang-of-four">🧩 Patrones de Diseño (Gang of Four)</h2>
+<p><strong>Qué:</strong> Soluciones reutilizables a problemas recurrentes de diseño OOP.</p>
+<p><strong>Por qué:</strong> No reinventar la rueda, vocabulario común entre developers.</p>
+<p><a href="https://refactoring.guru/design-patterns">Ver todos los patrones explicados en Refactoring Guru</a></p>
+<h3 id="patrones-creacionales">Patrones Creacionales</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Patrón</th>
+<th style="text-align: left;">Qué</th>
+<th style="text-align: left;">Por qué</th>
+<th style="text-align: left;">Cuándo</th>
+<th style="text-align: left;">Cómo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Factory Method</strong></td>
+<td style="text-align: left;">Crea objetos sin especificar clase exacta</td>
+<td style="text-align: left;">Delegar creación a subclases</td>
+<td style="text-align: left;">Crear objetos de familias similares</td>
+<td style="text-align: left;">Interface <code>create()</code>, subclases deciden tipo concreto</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Abstract Factory</strong></td>
+<td style="text-align: left;">Crea familias de objetos relacionados</td>
+<td style="text-align: left;">Consistencia entre productos</td>
+<td style="text-align: left;">UI con temas (Dark/Light)</td>
+<td style="text-align: left;">Factory retorna conjunto de objetos relacionados</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Builder</strong></td>
+<td style="text-align: left;">Construye objetos complejos paso a paso</td>
+<td style="text-align: left;">Muchas opciones de configuración</td>
+<td style="text-align: left;">DTOs complejos, requests HTTP</td>
+<td style="text-align: left;"><code>builder.setName().setAge().build()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Prototype</strong></td>
+<td style="text-align: left;">Clona objetos existentes</td>
+<td style="text-align: left;">Creación costosa, muchas variaciones</td>
+<td style="text-align: left;">Clonar configuraciones, templates</td>
+<td style="text-align: left;">Implementar <code>clone()</code>, copiar estado</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Singleton</strong></td>
+<td style="text-align: left;">Garantiza única instancia global</td>
+<td style="text-align: left;">Un punto de acceso (config, logger)</td>
+<td style="text-align: left;">Recursos compartidos únicos</td>
+<td style="text-align: left;">Constructor privado, <code>getInstance()</code> estática</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patrones-estructurales">Patrones Estructurales</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Patrón</th>
+<th style="text-align: left;">Qué</th>
+<th style="text-align: left;">Por qué</th>
+<th style="text-align: left;">Cuándo</th>
+<th style="text-align: left;">Cómo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Adapter</strong></td>
+<td style="text-align: left;">Convierte interfaz incompatible</td>
+<td style="text-align: left;">Integrar código legacy/third-party</td>
+<td style="text-align: left;">Librerías externas con APIs distintas</td>
+<td style="text-align: left;">Wrapper que traduce llamadas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Bridge</strong></td>
+<td style="text-align: left;">Separa abstracción de implementación</td>
+<td style="text-align: left;">Variar ambas independientemente</td>
+<td style="text-align: left;">UI multiplataforma (misma lógica, distinto render)</td>
+<td style="text-align: left;">Abstracción tiene referencia a implementación</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Composite</strong></td>
+<td style="text-align: left;">Composición jerárquica (árbol)</td>
+<td style="text-align: left;">Tratar individual y compuesto igual</td>
+<td style="text-align: left;">Menús, file systems, org charts</td>
+<td style="text-align: left;">Interface común, contenedor tiene lista de hijos</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Decorator</strong></td>
+<td style="text-align: left;">Añade funcionalidades dinámicamente</td>
+<td style="text-align: left;">Extender sin modificar clase</td>
+<td style="text-align: left;">Logging, caching, autenticación en requests</td>
+<td style="text-align: left;">Wrapper que implementa misma interface</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Facade</strong></td>
+<td style="text-align: left;">Interfaz simplificada a subsistema complejo</td>
+<td style="text-align: left;">Ocultar complejidad interna</td>
+<td style="text-align: left;">APIs complejas (AWS SDK → helper simple)</td>
+<td style="text-align: left;">Clase que expone métodos high-level</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Flyweight</strong></td>
+<td style="text-align: left;">Minimiza memoria compartiendo datos</td>
+<td style="text-align: left;">Muchos objetos similares</td>
+<td style="text-align: left;">Renderizar 10k íconos (compartir imagen)</td>
+<td style="text-align: left;">Separar estado intrínseco (compartido) de extrínseco</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Proxy</strong></td>
+<td style="text-align: left;">Controla acceso a objeto</td>
+<td style="text-align: left;">Lazy loading, caching, seguridad</td>
+<td style="text-align: left;">Imágenes pesadas, permisos</td>
+<td style="text-align: left;">Proxy implementa misma interface, delega a real</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patrones-comportamiento">Patrones Comportamiento</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Patrón</th>
+<th style="text-align: left;">Qué</th>
+<th style="text-align: left;">Por qué</th>
+<th style="text-align: left;">Cuándo</th>
+<th style="text-align: left;">Cómo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Strategy</strong></td>
+<td style="text-align: left;">Familia de algoritmos intercambiables</td>
+<td style="text-align: left;">Cambiar comportamiento en runtime</td>
+<td style="text-align: left;">Ordenamiento (bubble, quick, merge)</td>
+<td style="text-align: left;">Interface <code>execute()</code>, contexto recibe estrategia</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Observer</strong></td>
+<td style="text-align: left;">Notifica cambios a múltiples objetos</td>
+<td style="text-align: left;">Reacción automática ante eventos</td>
+<td style="text-align: left;">UI reactiva (state → re-render)</td>
+<td style="text-align: left;">Sujeto tiene lista de observadores, <code>notify()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Command</strong></td>
+<td style="text-align: left;">Encapsula solicitud como objeto</td>
+<td style="text-align: left;">Parametrizar, deshacer, encolar</td>
+<td style="text-align: left;">Undo/Redo, job queues</td>
+<td style="text-align: left;">Interface <code>execute()</code>, receiver realiza acción</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>State</strong></td>
+<td style="text-align: left;">Cambia comportamiento según estado interno</td>
+<td style="text-align: left;">Manejar estados complejos</td>
+<td style="text-align: left;">Workflows (draft→review→published)</td>
+<td style="text-align: left;">Context delega a objeto State actual</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Template Method</strong></td>
+<td style="text-align: left;">Esqueleto de algoritmo, pasos personalizables</td>
+<td style="text-align: left;">Reutilizar estructura</td>
+<td style="text-align: left;">Conectar a DB (común: connect, query, close)</td>
+<td style="text-align: left;">Clase abstracta define pasos, subclases implementan</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Chain of Responsibility</strong></td>
+<td style="text-align: left;">Pasa solicitud por cadena de manejadores</td>
+<td style="text-align: left;">Procesamiento flexible</td>
+<td style="text-align: left;">Middleware (auth → logging → handler)</td>
+<td style="text-align: left;">Cada handler procesa o pasa al siguiente</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Visitor</strong></td>
+<td style="text-align: left;">Añade operaciones sin modificar clases</td>
+<td style="text-align: left;">Operaciones sobre estructura compleja</td>
+<td style="text-align: left;">Export (HTML, PDF, JSON) de mismo árbol</td>
+<td style="text-align: left;">Interface <code>visit()</code>, elementos aceptan visitor</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mediator</strong></td>
+<td style="text-align: left;">Centraliza comunicación entre objetos</td>
+<td style="text-align: left;">Reducir acoplamiento</td>
+<td style="text-align: left;">UI forms (campos se habilitan según otros)</td>
+<td style="text-align: left;">Componentes se comunican vía mediador</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Memento</strong></td>
+<td style="text-align: left;">Guarda y restaura estado</td>
+<td style="text-align: left;">Undo/Redo, snapshots</td>
+<td style="text-align: left;">Editores, juegos</td>
+<td style="text-align: left;">Originator crea memento, caretaker lo guarda</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Iterator</strong></td>
+<td style="text-align: left;">Recorre elementos sin exponer estructura</td>
+<td style="text-align: left;">Acceso secuencial estándar</td>
+<td style="text-align: left;">Colecciones custom</td>
+<td style="text-align: left;">Interface <code>next()</code>, <code>hasNext()</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="patrones-arquitectonicos-avanzados">🏗️ Patrones Arquitectónicos Avanzados</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Patrón</th>
+<th style="text-align: left;">Qué</th>
+<th style="text-align: left;">Por qué</th>
+<th style="text-align: left;">Cuándo</th>
+<th style="text-align: left;">Dónde</th>
+<th style="text-align: left;">Cómo</th>
+<th style="text-align: left;">Herramientas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Event Sourcing</strong></td>
+<td style="text-align: left;">Persistir cambios como secuencia de eventos inmutables</td>
+<td style="text-align: left;">Auditoría completa, time travel, proyecciones</td>
+<td style="text-align: left;">Sistemas financieros, compliance</td>
+<td style="text-align: left;">Event Store</td>
+<td style="text-align: left;">Cada cambio → evento (<code>OrderPlaced</code>), reconstruir estado reproduciendo</td>
+<td style="text-align: left;"><a href="https://www.eventstore.com/">EventStore</a>, <a href="https://kafka.apache.org/">Kafka</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CQRS</strong></td>
+<td style="text-align: left;">Separar modelos de lectura (Query) y escritura (Command)</td>
+<td style="text-align: left;">Optimizar cada uno independientemente</td>
+<td style="text-align: left;">Escrituras complejas + lecturas frecuentes</td>
+<td style="text-align: left;">APIs de alta carga</td>
+<td style="text-align: left;">Commands modifican, Queries leen vistas desnormalizadas</td>
+<td style="text-align: left;"><a href="https://github.com/jbogard/MediatR">MediatR</a>, <a href="https://axoniq.io/">Axon</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Saga Pattern</strong></td>
+<td style="text-align: left;">Transacciones distribuidas con compensación</td>
+<td style="text-align: left;">Consistencia eventual entre microservicios</td>
+<td style="text-align: left;">Workflows multi-servicio (order→payment→shipping)</td>
+<td style="text-align: left;">Microservicios</td>
+<td style="text-align: left;">Orquestada (coordinador) o Coreografiada (eventos)</td>
+<td style="text-align: left;"><a href="https://temporal.io/">Temporal</a>, <a href="https://camunda.com/">Camunda</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Circuit Breaker</strong></td>
+<td style="text-align: left;">Prevenir cascadas de fallos</td>
+<td style="text-align: left;">Sistema resiliente ante servicios caídos</td>
+<td style="text-align: left;">Llamadas a APIs externas inestables</td>
+<td style="text-align: left;">Clientes HTTP</td>
+<td style="text-align: left;">Closed→Open (tras N fallos)→Half-Open (test)→Closed</td>
+<td style="text-align: left;"><a href="https://resilience4j.readme.io/">Resilience4j</a>, <a href="https://github.com/Netflix/Hystrix">Hystrix</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Strangler Fig</strong></td>
+<td style="text-align: left;">Migrar legacy gradualmente</td>
+<td style="text-align: left;">Reemplazo sin big bang</td>
+<td style="text-align: left;">Modernizar monolito → microservicios</td>
+<td style="text-align: left;">Proxy/Gateway</td>
+<td style="text-align: left;">Nuevo código intercepta requests, delega a legacy o nuevo</td>
+<td style="text-align: left;"><a href="https://nginx.org/">nginx</a>, <a href="https://www.envoyproxy.io/">Envoy</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>API Gateway</strong></td>
+<td style="text-align: left;">Punto de entrada único para múltiples servicios</td>
+<td style="text-align: left;">Routing, auth, rate limiting centralizado</td>
+<td style="text-align: left;">Microservicios con necesidades cross-cutting</td>
+<td style="text-align: left;">Edge de la red</td>
+<td style="text-align: left;">Gateway maneja auth, transforma requests, agrega respuestas</td>
+<td style="text-align: left;"><a href="https://konghq.com/">Kong</a>, <a href="https://aws.amazon.com/api-gateway/">AWS API Gateway</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Bulkhead Pattern</strong></td>
+<td style="text-align: left;">Aislar recursos para prevenir fallo total</td>
+<td style="text-align: left;">Un servicio lento no consume todo</td>
+<td style="text-align: left;">Pools de conexiones, threads</td>
+<td style="text-align: left;">Thread pools, circuit breakers</td>
+<td style="text-align: left;">Separar pools por tipo de operación</td>
+<td style="text-align: left;"><a href="https://resilience4j.readme.io/docs/bulkhead">Resilience4j Bulkhead</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="finite-state-machines-fsm">🎭 Finite State Machines (FSM)</h2>
+<p><strong>Qué:</strong> Modelar sistemas con estados finitos y transiciones explícitas.</p>
+<p><strong>Por qué:</strong> Elimina bugs de estados inválidos, documentación visual ejecutable.</p>
+<p><strong>Cuándo:</strong> Workflows complejos (pedidos, aprobaciones, onboarding), procesos con múltiples actores.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Concepto</th>
+<th style="text-align: left;">Qué</th>
+<th style="text-align: left;">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Estados</strong></td>
+<td style="text-align: left;">Conjunto finito de condiciones</td>
+<td style="text-align: left;"><code>Pending</code>, <code>Paid</code>, <code>Shipped</code>, <code>Delivered</code>, <code>Cancelled</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Transiciones</strong></td>
+<td style="text-align: left;">Cambios entre estados con condiciones</td>
+<td style="text-align: left;"><code>Pending → Paid</code> (al recibir pago)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eventos</strong></td>
+<td style="text-align: left;">Triggers que activan transiciones</td>
+<td style="text-align: left;"><code>PaymentReceived</code>, <code>ShipmentDispatched</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Guards</strong></td>
+<td style="text-align: left;">Condiciones para permitir transición</td>
+<td style="text-align: left;"><code>Paid → Shipped</code> solo si <code>inventory &gt; 0 &amp;&amp; address_valid</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Acciones</strong></td>
+<td style="text-align: left;">Side effects al entrar/salir</td>
+<td style="text-align: left;">Al entrar en <code>Paid</code>: enviar email, decrementar stock</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Herramientas:</strong> <a href="https://xstate.js.org/">XState</a>, <a href="https://spring.io/projects/spring-statemachine">Spring State Machine</a>, <a href="https://github.com/pytransitions/transitions">Python transitions</a></p>
+<p><strong>Ejemplo XState:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createMachine</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;xstate&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">orderMachine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createMachine</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;order&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">initial</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pending&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">states</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">pending</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">on</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PAYMENT_RECEIVED</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;paid&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">paid</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">on</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">SHIP</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">          </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;shipped&#39;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">          </span><span class="nx">cond</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hasInventory&#39;</span><span class="w"> </span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">entry</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;sendConfirmationEmail&#39;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">shipped</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">on</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">DELIVER</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;delivered&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">delivered</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;final&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<hr />
+<h2 id="principios-de-arquitectura">📐 Principios de Arquitectura</h2>
+<blockquote>
+<p><strong>Nota:</strong> Estos principios se aplican a nivel arquitectónico. Para ver su definición fundamental y aplicación a nivel de código, consultar <a href="../01-fundamentos/#reglas-generales-de-codigo">Reglas Generales de Código</a>.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Principio</th>
+<th style="text-align: left;">Qué</th>
+<th style="text-align: left;">Por qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Separation of Concerns</strong></td>
+<td style="text-align: left;">Separar responsabilidades en módulos/capas</td>
+<td style="text-align: left;">Mantenimiento, testing, escalabilidad</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Single Responsibility</strong></td>
+<td style="text-align: left;">Cada módulo/clase tiene una razón para cambiar</td>
+<td style="text-align: left;">Cohesión alta, bajo acoplamiento</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Dependency Inversion</strong></td>
+<td style="text-align: left;">Depender de abstracciones, no concreciones</td>
+<td style="text-align: left;">Testability, flexibilidad</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Open/Closed</strong></td>
+<td style="text-align: left;">Abierto a extensión, cerrado a modificación</td>
+<td style="text-align: left;">Agregar features sin romper existente</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Least Knowledge</strong></td>
+<td style="text-align: left;">Módulos conocen lo mínimo necesario</td>
+<td style="text-align: left;">Reduce fragilidad</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="distribucion-de-carpetas">🗂️ Distribución de Carpetas</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Enfoque</th>
+<th style="text-align: left;">Qué</th>
+<th style="text-align: left;">Cuándo</th>
+<th style="text-align: left;">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Por tipo</strong></td>
+<td style="text-align: left;">Separar por categoría técnica</td>
+<td style="text-align: left;">Proyectos pequeños</td>
+<td style="text-align: left;"><code>/controllers</code>, <code>/services</code>, <code>/models</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Por feature</strong></td>
+<td style="text-align: left;">Agrupar por funcionalidad</td>
+<td style="text-align: left;">Proyectos medianos/grandes</td>
+<td style="text-align: left;"><code>/auth</code>, <code>/dashboard</code>, <code>/billing</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Por dominio</strong></td>
+<td style="text-align: left;">Agrupar por contexto de negocio</td>
+<td style="text-align: left;">DDD</td>
+<td style="text-align: left;"><code>/sales</code>, <code>/inventory</code>, <code>/shipping</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Monorepo modular</strong></td>
+<td style="text-align: left;">Múltiples apps/packages en un repo</td>
+<td style="text-align: left;">Microservicios, libs compartidas</td>
+<td style="text-align: left;"><code>/apps/web</code>, <code>/apps/api</code>, <code>/packages/ui</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="anti-patrones-arquitectonicos">🚫 Anti-patrones Arquitectónicos</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Anti-patrón</th>
+<th style="text-align: left;">Problema</th>
+<th style="text-align: left;">Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Big Ball of Mud</strong></td>
+<td style="text-align: left;">Sin estructura clara, todo acoplado</td>
+<td style="text-align: left;">Refactorizar incremental, definir módulos</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>God Object</strong></td>
+<td style="text-align: left;">Una clase hace todo</td>
+<td style="text-align: left;">Aplicar SRP, extraer responsabilidades</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Spaghetti Code</strong></td>
+<td style="text-align: left;">Flujo imposible de seguir</td>
+<td style="text-align: left;">Linealizar, extraer funciones, FSM</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Golden Hammer</strong></td>
+<td style="text-align: left;">Usar misma solución para todo</td>
+<td style="text-align: left;">Evaluar trade-offs por caso</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Premature Generalization</strong></td>
+<td style="text-align: left;">Abstracciones sin casos de uso reales</td>
+<td style="text-align: left;">Esperar 3 casos antes de generalizar</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recursos">📚 Recursos</h2>
+<ul>
+<li><a href="https://refactoring.guru/design-patterns">Refactoring Guru - Patrones</a></li>
+<li><a href="https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/">Software Architecture Patterns - O'Reilly</a></li>
+<li><a href="https://samnewman.io/books/building_microservices_2nd_edition/">Building Microservices - Sam Newman</a></li>
+<li><a href="https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164">Clean Architecture - Robert Martin</a></li>
+</ul>
+<hr />
+<p><a href="../05-gestion-calidad/">⬅️ Anterior: Gestión de Calidad</a> | <a href="#06-arquitectura-y-patrones">⬆️ Volver arriba</a> | <a href="../07-sesgos-falacias/">➡️ Siguiente: Sesgos, Falacias y Leyes</a></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="10 de diciembre de 2025 16:52:27 UTC">10 de diciembre de 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>
