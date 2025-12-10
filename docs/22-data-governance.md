@@ -12,6 +12,7 @@
 - [📊 Pilares de Data Governance](#pilares-de-data-governance)
 - [📋 Data Quality Framework](#data-quality-framework)
 - [🔍 Data Lineage](#data-lineage)
+- [⚙️ Implementación Operacional](#implementacion-operacional)
 - [📚 Data Catalog](#data-catalog)
 - [🔐 Data Security & Privacy](#data-security-privacy)
 - [🗄️ Master Data Management (MDM)](#master-data-management-mdm)
@@ -129,6 +130,52 @@ graph TD
 **Herramientas:** [Apache Atlas](https://atlas.apache.org/), [Amundsen](https://www.amundsen.io/), [DataHub](https://datahubproject.io/)
 
 ---
+
+## ⚙️ Implementación Operacional
+
+### Enforcing Data Contracts
+
+ Cómo implementar contratos estrictos en el pipeline:
+
+ 1. **Definición:** Contratos en repositorio Git central (`schemas/`). Formato JSON Schema, Protobuf o YAML.
+ 2. **CI Check:** En el PR de un cambio de schema, validar backward compatibility.
+ 3. **Producer Check (Runtime):** Librería en el productor valida datos antes de emitir (Blocking).
+ 4. **Consumer Check (Runtime):** Validar en ingestión. Si falla → Dead Letter Queue (DLQ).
+
+ **Pipeline Ejemplo:**
+
+ ```mermaid
+ flowchart LR
+     A[App Producer] -->|Valida Schema| B{Pass?}
+     B -- No --> C[Log Error & Drop]
+     B -- Yes --> D[Kafka Topic]
+     D --> E[ETL Consumer]
+     E -->|Valida Contrato| F{Pass?}
+     F -- No --> G[Dead Letter Queue]
+     F -- Yes --> H[Data Warehouse]
+ ```
+
+### Automatización de Lineage
+
+ Cómo lograr lineage a nivel de columna sin intervención manual:
+
+ 1. **SQL Parsing:** Herramientas analizan logs de queries para inferir dependencias (`SELECT a FROM table_b`).
+ 2. **Integración con Orquestadores:** Airflow/Dagster envían eventos de OpenLineage en cada run.
+ 3. **Metadata Injection:** Dbt genera lineage automáticamente (`ref()`).
+
+ **Captura con OpenLineage:**
+
+ ```json
+ {
+   "eventType": "COMPLETE",
+   "run": { "runId": "uuid..." },
+   "job": { "name": "daily_etl_users" },
+   "inputs": [{ "name": "raw_users", "namespace": "postgres" }],
+   "outputs": [{ "name": "dim_users", "namespace": "snowflake" }]
+ }
+ ```
+
+ ---
 
 ## 📚 Data Catalog
 

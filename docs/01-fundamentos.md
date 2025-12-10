@@ -33,6 +33,7 @@ Ver [Tabla de Niveles de Criticidad](./00-indice.md#niveles-de-criticidad) en el
 | Nivel | Principio | Qué es | Por qué | Cuándo aplicarlo | Dónde | Cómo | Recurso |
 |:------|:----------|:--------------|:--------------|:------------------------|:--------------|:-----------|:--------|
 | 🔴 | **SOLID** | Conjunto de 5 principios para diseño OOP mantenible: SRP, OCP, LSP, ISP, DIP | Reduce acoplamiento, aumenta cohesión, facilita testing y extensibilidad | En toda clase, servicio o módulo con responsabilidades | Servicios, controladores, clases de dominio | SRP: una clase = una razón para cambiar. OCP: abierto a extensión, cerrado a modificación | [Clean Coder](https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html) |
+| 🔴 | **HC/LC** | High Cohesion, Low Coupling - Objetos enfocados y poco dependientes | Cohesión: código relacionado junto. Acoplamiento: dependencias mínimas. Es la meta de SOLID y GRASP. | Al diseñar cualquier módulo o asignar responsabilidades | Arquitectura, paquetes, clases | Alta Cohesión: Clase hace una sola cosa bien. Bajo Acoplamiento: Cambiar A no rompe B. | [GeeksforGeeks](https://www.geeksforgeeks.org/software-engineering-coupling-and-cohesion/) |
 | 🟢 | **KISS** | Keep It Simple, Stupid - Favorecer soluciones simples | Código simple es más fácil de entender, mantener y depurar | Siempre, al diseñar cualquier solución | Toda lógica de negocio, algoritmos | Evitar condicionales anidados, abstracciones innecesarias, over-engineering | [FreeCodeCamp](https://www.freecodecamp.org/news/keep-it-simple-stupid-how-to-use-the-kiss-principle-in-design/) |
 | 🟠 | **DRY** | Don't Repeat Yourself - Evitar duplicación de lógica | Cambios se hacen en un solo lugar, reduce bugs por inconsistencias | Al detectar código o lógica duplicada (regla de 3) | Funciones, componentes, servicios | Extraer a función reutilizable, usar composición, herencia con cuidado | [TechTarget](https://www.techtarget.com/whatis/definition/DRY-principle) |
 | 🟠 | **YAGNI** | You Aren't Gonna Need It - No implementar funcionalidades futuras | Reduce complejidad, ahorra tiempo, evita código muerto | Ante tentación de agregar "por las dudas" | Todo el código | Implementar solo lo que pide el requisito actual, iterar después | [C2 Wiki](https://wiki.c2.com/?YouArentGonnaNeedIt) |
@@ -78,7 +79,7 @@ Ver [Tabla de Niveles de Criticidad](./00-indice.md#niveles-de-criticidad) en el
 
 | Framework | Qué es | Por qué | Cuándo | Cómo | Herramientas |
 |:----------|:--------------|:--------------|:--------------|:-----------|:-------------|
-| [Angular](https://angular.dev/) | Framework frontend con enfoque en componentes y signals | Escalabilidad, arquitectura clara, TypeScript nativo | SPAs empresariales, dashboards complejos | Usar `signals` (v16+), `@for` en templates, zoneless rendering, `RxJS` para async, `NgRx` para estado, estructura modular | Angular CLI, Nx |
+| [Angular](https://angular.dev/) | Framework frontend con enfoque en componentes y signals | Escalabilidad, arquitectura clara, TypeScript nativo | SPAs empresariales, dashboards complejos | Usar `signals` (v17+), `@for` en templates, zoneless rendering, `RxJS` para async, `NgRx` para estado, estructura modular | Angular CLI, Nx |
 | [React](https://es.react.dev/) | Librería para UIs declarativas | Flexibilidad, ecosistema gigante, performance | SPAs, mobile (React Native), SSR (Next.js) | Usar `hooks`, `signals` (experimental), `context` para estado, `Suspense` para async, `Server Components` (Next.js), tipado con TS | Vite, Next.js, ESLint React |
 | [Django](https://www.djangoproject.com/) | Framework Python full-stack con ORM y admin | Productividad, "batteries included", comunidad madura | Backends complejos, CMS, dashboards admin | Usar `models`, `forms`, `signals`, `class-based views`, `DRF` para APIs REST. Separar lógica en `views`, `serializers` | Django Debug Toolbar, pytest-django |
 | [FastAPI](https://fastapi.tiangolo.com/) | Framework Python moderno para APIs con tipado fuerte | Performance (async), documentación auto (OpenAPI), validación Pydantic | APIs REST/GraphQL, microservicios Python | Usar `Depends` para inyección, `Pydantic` para DTOs, `async/await`, `BackgroundTasks` para jobs | Uvicorn, SQLAlchemy 2.0 |
@@ -196,6 +197,7 @@ Antes de cada commit, verificar:
 - [ ] Sin magic numbers (usar constantes con nombres)
 - [ ] Tests unitarios para lógica no trivial
 - [ ] Documentación para funciones públicas
+- [ ] Principio de Bajo Acoplamiento y Alta Cohesión respetado
 - [ ] Sin warnings del linter/compiler
 - [ ] Código formateado con herramienta del equipo
 

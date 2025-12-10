@@ -9,6 +9,7 @@
 ## 📋 Índice Rápido
 
 - [📱 Mobile Development](#mobile-development)
+- [🏗️ Arquitectura Mobile Avanzada](#arquitectura-mobile-avanzada)
 - [🎨 UI (Interfaz de Usuario)](#ui-interfaz-de-usuario)
 - [🧭 UX (Experiencia de Usuario)](#ux-experiencia-de-usuario)
 - [🚫 Anti-patrones](#anti-patrones)
@@ -61,6 +62,42 @@
 | **Biometric Auth** | Face ID, Touch ID | Seguridad + UX | Local Authentication framework |
 
 ---
+
+## 🏗️ Arquitectura Mobile Avanzada
+
+### Offline-First
+
+ **Concepto:** La aplicación funciona completamente sin conexión y se sincroniza cuando es posible. La base de datos local es la "source of truth" para la UI.
+
+ **Estrategias de Sincronización:**
+
+ 1. **Optimistic UI:** Actualizar UI inmediatamente, revertir si falla sync.
+ 2. **Sync Queue:** Encolar mutaciones (POST/PUT/DELETE) en persistencia local. Worker de background las procesa.
+ 3. **Conflict Resolution:** ¿Qué pasa si el servidor cambió?
+    - *Last-write-wins:* El último gana (simple, riesgo de perder datos).
+    - *CRDTs:* Conflict-free Replicated Data Types (matemáticamente consistente, complejo).
+    - *Manual Merge:* Preguntar al usuario (UX intrusiva).
+
+ **Tools:** [WatermelonDB](https://watermelon.db/), [RxDB](https://rxdb.info/), [Realm](https://realm.io/), [SQLite](https://www.sqlite.org/).
+
+### Gestión de Estado (State Management)
+
+ **Principio:** Separar UI (render) de Lógica de Negocio (state).
+
+ | Patrón | Framework | Descripción |
+ |:-------|:----------|:------------|
+ | **BLoC (Business Logic Component)** | Flutter | Streams de inputs (eventos) y outputs (estados). UI reactiva pura. |
+ | **Redux / Toolkit** | React Native | Store global inmutable, actions, reducers. Time-travel debugging. |
+ | **MVVM** | Nativo (Android/iOS) | Model-View-ViewModel. ViewModel expone datos observables a la View. |
+ | **Provider / Context** | Cross-platform | Inyección de dependencias y estado en el árbol de widgets/componentes. |
+
+ **Niveles de Estado:**
+
+- **Ephemeral:** Estado UI local (input focus, animation value).
+- **App State:** Datos globales (user session, settings).
+- **Server State:** Cache de datos remotos (React Query, SWR).
+
+ ---
 
 ## 🎨 UI (Interfaz de Usuario)
 

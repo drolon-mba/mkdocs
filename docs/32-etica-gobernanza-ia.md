@@ -10,6 +10,7 @@
 
 - [⚖️ Introducción](#introduccion)
 - [🎯 Bias en Machine Learning](#bias-en-machine-learning)
+- [👮‍♂️ Gestión de Riesgo y Auditoría Humana](#gestion-de-riesgo-y-auditoria-humana)
 - [📊 Fairness Metrics](#fairness-metrics)
 - [🔍 Explicabilidad (XAI)](#explicabilidad-xai)
 - [🔐 Privacy](#privacy)
@@ -49,6 +50,31 @@
 | **Measurement Bias** | Features usadas como proxies para atributos protegidos | Usar código postal como proxy para raza/ingresos |
 | **Aggregation Bias** | Modelo único para grupos diversos con necesidades diferentes | Modelo de diagnóstico médico entrenado solo en adultos, usado en niños |
 | **Evaluation Bias** | Benchmark no representa población real | Evaluar modelo de NLP solo en inglés formal, usar en slang |
+
+ ---
+
+## 👮‍♂️ Gestión de Riesgo y Auditoría Humana
+
+### Clasificación de Riesgo (EU AI Act)
+
+ | Nivel | Descripción | Ejemplos | Requisito de Auditoría |
+ |:------|:------------|:---------|:-----------------------|
+ | **Riesgo Inaceptable** | Amenaza a seguridad o derechos | Social scoring, manipulación subliminal | 🛑 **Prohibido** |
+ | **Alto Riesgo** | Infraestructura crítica, empleo, servicios esenciales | Auth, Crypto, Hiring, Crédito | 👮 **Auditoría Humana Obligatoria** |
+ | **Riesgo Limitado** | Chatbots, deepfakes | Customer service, generación de contenido | ⚠️ **Transparencia** (avisar que es IA) |
+ | **Riesgo Mínimo** | Filtros de spam, juegos | Videojuegos, filtros de correo | ✅ **Libre** (sin requisitos extra) |
+
+### Protocolo de Auditoría Humana (Human-in-the-loop)
+
+ Para componentes de **Alto Riesgo** (ej: Autenticación, Cifrado, Pagos):
+
+ 1. **Prohibición de Commit Directo:** IA no puede commitear a `main` sin review humano.
+ 2. **Review de Seguridad:** Experto humano debe validar línea por línea (no "LGTM" rápido).
+ 3. **Sandboxing:** Código generado corre en entorno aislado primero.
+ 4. **Firma Digital:** El humano firma que revisó y asume responsabilidad (Accountability).
+
+ > [!IMPORTANT]
+ > **Nunca delegues decisiones arquitectónicas críticas o de seguridad a la IA.** La IA es un copiloto, el humano es el capitán.
 
 ---
 

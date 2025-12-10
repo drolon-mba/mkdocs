@@ -12,6 +12,7 @@
 - [💳 Technical Debt Tracking](#technical-debt-tracking)
 - [🔄 Refactoring Strategies](#refactoring-strategies)
 - [⚠️ Breaking Changes](#breaking-changes)
+- [📋 Artefactos](#artefactos)
 
 ---
 
@@ -51,7 +52,7 @@
 | **Java** | `gradle.lockfile` | Gradle |
 | **Ruby** | `Gemfile.lock` | Bundler |
 
-**Best practice:**
+### Best practice
 
 - ✅ Commitear lock files a git
 - ✅ Usar lock files en CI/CD
@@ -150,6 +151,29 @@ Technical Debt = (Tiempo para implementar feature con deuda) - (Tiempo si no hub
 
 ---
 
+### Estrategia de Asignación de Tiempo
+
+No basta con listar la deuda, hay que pagarla.
+
+#### 1. La Regla del 20% (Boy Scout Rule constante)
+
+- Dedicar 20% del tiempo de desarrollo a pagar deuda técnica.
+- **Sprint de 2 semanas:** 8 días features, 2 días deuda técnica.
+- **Viernes de Calidad:** Usar viernes por la tarde para refactors pequeños.
+
+#### 2. Deuda en el Roadmap
+
+- **P0 (Crítica):** Se trata como un **Bug Bloqueante**. Entra en el sprint actual o siguiente obligatoriamente.
+- **P1 (Alta):** Se planifica como una **Feature**. Compite con nuevas funcionalidades en el Q-Planning.
+- **P2 (Media):** Se ataca con el "20% tax" o en semanas de "Cool-down" entre proyectos.
+
+#### 3. Negociación con Negocio
+
+- Hablar en términos de **Riesgo** y **Velocidad**, no de "código limpio".
+- *"Si refactorizamos X ahora (2 días), la feature Y tomará 3 días en vez de 7."*
+
+---
+
 ## 🔄 Refactoring Strategies
 
 ### Strangler Pattern
@@ -163,7 +187,7 @@ Technical Debt = (Tiempo para implementar feature con deuda) - (Tiempo si no hub
 3. Migrar features una a una
 4. Deprecar legacy cuando todo esté migrado
 
-**Ejemplo:**
+### Ejemplo
 
 ```text
 [Request] → [Router]
@@ -234,7 +258,7 @@ gateway.process_payment(100)
 | **Ops toggle** | Largo plazo | Circuit breakers, kill switches |
 | **Permission toggle** | Permanente | Features por rol/plan |
 
-**Best practices:**
+### Best practices
 
 - ✅ Remover toggles cuando no se usan
 - ✅ Documentar qué hace cada toggle

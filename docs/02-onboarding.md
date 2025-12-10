@@ -105,6 +105,17 @@
 
 **Contenido:**
 
+ **Estructura Esperada:**
+
+ 1. **Prerrequisitos:** Versiones exactas de lenguajes, DBs y herramientas (Docker).
+ 2. **Instalación:** Comandos paso a paso para levantar el entorno desde cero.
+ 3. **Configuración:** Explicación de variables de entorno (`.env`) y secrets.
+ 4. **Ejecución:** Cómo correr la app, tests y linters.
+ 5. **Troubleshooting:** Solución a errores comunes de setup.
+ 6. **Verificación:** Cómo confirmar que todo está funcionando ("It works!").
+
+ **Ejemplo:**
+
 ```markdown
 # Getting Started
 
@@ -157,7 +168,14 @@
 
 ### 4. ONBOARDING_TASKS.md
 
-**Checklist interactivo:**
+**Estructura Esperada:**
+
+- **Por Tiempo:** Dividir tareas por Día 1, Semana 1, Mes 1.
+- **Accionables:** Tareas concretas (leer X, instalar Y, deployar Z).
+- **Social:** Incluir interacciones con el equipo (café, pair programming).
+- **Checkboxes:** Formato interactivo para dar sensación de progreso.
+
+ **Checklist interactivo (Ejemplo):**
 
 ```markdown
 ## Week 1

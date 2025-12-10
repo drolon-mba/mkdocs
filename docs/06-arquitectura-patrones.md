@@ -9,6 +9,7 @@
 ## 📋 Índice Rápido
 
 - [🏗️ Arquitecturas de Software](#arquitecturas-de-software)
+- [🔷 Arquitectura Hexagonal (Ports & Adapters)](#arquitectura-hexagonal-ports-adapters)
 - [📢 Screaming Architecture](#screaming-architecture)
 - [🧩 Patrones de Diseño (Gang of Four)](#patrones-de-diseno-gang-of-four)
 - [🏗️ Patrones Arquitectónicos Avanzados](#patrones-arquitectonicos-avanzados)
@@ -41,6 +42,57 @@
 | **Serverless** | Funciones sin servidor dedicado, auto-scaling | Costo por uso, cero gestión servidores | Tareas puntuales, APIs sencillas, jobs | AWS Lambda, Cloud Functions | Funciones stateless, triggers (HTTP, eventos), short-lived | ✅ Escalado automático, low cost; ❌ Cold starts, vendor lock-in |
 
 ---
+
+## 🔷 Arquitectura Hexagonal (Ports & Adapters)
+
+ **Qué:** Patrón arquitectónico que aísla la lógica de negocio (Core) de los detalles de implementación (UI, DB, Frameworks) mediante Puertos y Adaptadores.
+
+ **Objetivo:** Permitir que la aplicación sea dirigida por usuarios, programas, pruebas automatizadas o scripts por igual, y ser desarrollada y probada aisladamente de sus dispositivos de ejecución y bases de datos.
+
+### Componentes Principales
+
+ 1. **Dominio (Core):** Entidades y reglas de negocio puras. No depende de nada externo.
+ 2. **Aplicación (Use Cases):** Orquesta el flujo de datos desde/hacia el dominio. Define qué hace el sistema.
+ 3. **Puertos (Interfaces):**
+    - **Primarios (Driver):** API pública que expone la aplicación (ej. `IUserService`).
+    - **Secundarios (Driven):** Interfaces que la aplicación necesita (ej. `IUserRepository`, `IEmailSender`).
+ 4. **Adaptadores (Infraestructura):** Implementaciones concretas.
+    - **Driver Adapters:** Controladores REST, CLI, GUI.
+    - **Driven Adapters:** Repositorio SQL, Cliente SMTP.
+
+### Diagrama de Dependencias
+
+ ```mermaid
+ flowchart TD
+     subgraph Infrastructure[Capa de Infraestructura]
+         Controller[REST Controller]
+         DB[SQL Repository]
+         Mail[SMTP Service]
+     end
+ 
+     subgraph Core[Capa de Dominio & Aplicación]
+         UseCase[Use Case Interactor]
+         PortIn[Input Port <br> (Interface)]
+         PortOut[Output Port <br> (Interface)]
+         Entity[Domain Entity]
+     end
+ 
+     Controller --> PortIn
+     PortIn -.-> UseCase
+     UseCase --> Entity
+     UseCase --> PortOut
+     DB -.-> PortOut
+     Mail -.-> PortOut
+     
+     style Infrastructure fill:#f9f,stroke:#333
+     style Core fill:#ccf,stroke:#333
+ ```
+
+ > **Nota:** Observa cómo las flechas de dependencia cruzan los límites **hacia adentro**. La Infraestructura depende del Core/Puertos, nunca al revés.
+
+### Relación con Screaming Architecture
+
+ La **Screaming Architecture** (ver abajo) es la forma ideal de organizar las carpetas para implementar Arquitectura Hexagonal, agrupando por contexto y segregando la infraestructura.
 
 ## 📢 Screaming Architecture
 

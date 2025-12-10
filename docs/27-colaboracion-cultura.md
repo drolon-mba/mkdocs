@@ -17,6 +17,7 @@
 - [🎯 Working Agreements](#working-agreements)
 - [🗣️ Comunicación Efectiva](#comunicacion-efectiva)
 - [🎓 Knowledge Sharing](#knowledge-sharing)
+- [📝 Cultura de Contribución](#cultura-de-contribucion)
 - [🚫 Anti-patrones](#anti-patrones)
 - [📚 Recursos](#recursos)
 
@@ -345,6 +346,29 @@
 | **Book Club** | Leer y discutir libro tech | Trimestral |
 
 ---
+
+## 📝 Cultura de Contribución
+
+ **Principio:** "La documentación es responsabilidad de todos, no solo de un equipo de docs."
+
+### Cómo Contribuir
+
+ 1. **Pequeñas mejoras:** (typos, links rotos) → Editar directamente en GitHub/GitLab y abrir PR.
+ 2. **Dudas o falta de claridad:** → Abrir Issue con etiqueta `docs`. Si tuviste que preguntar en Slack, falta en la doc.
+ 3. **Nueva Feature:** → La PR de código **debe** incluir cambios en doc (README, API docs).
+
+ **Docs as Code:**
+
+ Tratar la documentación como código:
+
+- Versionada en Git
+- Revisada en PRs (Code Review)
+- Validada por CI (Linters, link checkers)
+
+ > [!TIP]
+ > **Regla de Boy Scout aplicada a Docs:** Si lees una doc y encuentras un error, arréglalo o repórtalo. No lo ignores.
+
+ ---
 
 ## 🚫 Anti-patrones
 
