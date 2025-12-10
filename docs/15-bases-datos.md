@@ -27,41 +27,41 @@
 
 ## 🎯 Elegir Base de Datos
 
-**What:** Decisión arquitectónica fundamental sobre cómo persistir datos.
+**Qué:** Decisión arquitectónica fundamental sobre cómo persistir datos.
 
-**Why:** Cada tipo optimiza diferentes trade-offs (ACID, escalabilidad, flexibilidad).
+**Por qué:** Cada tipo optimiza diferentes trade-offs (ACID, escalabilidad, flexibilidad).
 
-**Who:** Arquitectos, DBAs, tech leads.
+**Quién:** Arquitectos, DBAs, tech leads.
 
-**How much:** Decisión crítica difícil de revertir. Evaluar con PoC.
+**Esfuerzo:** Decisión crítica difícil de revertir. Evaluar con PoC.
 
 ---
 
 ## 🗄️ SQL (Relacionales)
 
-**What:** Bases con esquema fijo, relaciones explícitas, ACID garantizado.
+**Qué:** Bases con esquema fijo, relaciones explícitas, ACID garantizado.
 
-**Why:** Integridad referencial, transacciones complejas, queries potentes.
+**Por qué:** Integridad referencial, transacciones complejas, queries potentes.
 
-| DB | What | Why | When | Trade-offs |
+| DB | Qué | Por qué | Cuándo | Trade-offs |
 |:---|:-----|:----|:-----|:-----------|
-| [PostgreSQL](https://www.postgresql.org/) | RDBMS open-source más avanzado | JSONB, full-text search, extensiones | Default para apps modernas | ✅ Feature-rich, performance<br>❌ Scaling vertical |
-| [MySQL](https://www.mysql.com/) | RDBMS popular, ecosistema maduro | Simplicidad, InnoDB engine | WordPress, apps web tradicionales | ✅ Simple, ampliamente conocido<br>❌ Menos features que PostgreSQL |
-| [SQL Server](https://www.microsoft.com/sql-server) | RDBMS de Microsoft | Integración .NET, herramientas enterprise | Ecosistema Microsoft | ✅ Herramientas gráficas potentes<br>❌ Licencia costosa |
-| [Oracle](https://www.oracle.com/database/) | RDBMS enterprise líder | Features avanzadas, soporte 24/7 | Grandes corporaciones, compliance | ✅ Robusto, compliance<br>❌ Muy costoso |
-| [MariaDB](https://mariadb.org/) | Fork de MySQL con mejoras | Drop-in replacement MySQL | Migrar desde MySQL | ✅ Open source puro<br>❌ Comunidad más pequeña |
+| [PostgreSQL](https://www.postgresql.org/) | RDBMS open-source más avanzado | JSONB, full-text search, extensiones | Default para apps modernas | ✅ Feature-rich, performance; ❌ Scaling vertical |
+| [MySQL](https://www.mysql.com/) | RDBMS popular, ecosistema maduro | Simplicidad, InnoDB engine | WordPress, apps web tradicionales | ✅ Simple, ampliamente conocido; ❌ Menos features que PostgreSQL |
+| [SQL Server](https://www.microsoft.com/sql-server) | RDBMS de Microsoft | Integración .NET, herramientas enterprise | Ecosistema Microsoft | ✅ Herramientas gráficas potentes; ❌ Licencia costosa |
+| [Oracle](https://www.oracle.com/database/) | RDBMS enterprise líder | Features avanzadas, soporte 24/7 | Grandes corporaciones, compliance | ✅ Robusto, compliance; ❌ Muy costoso |
+| [MariaDB](https://mariadb.org/) | Fork de MySQL con mejoras | Drop-in replacement MySQL | Migrar desde MySQL | ✅ Open source puro; ❌ Comunidad más pequeña |
 
 ---
 
 ## 📄 NoSQL
 
-**What:** Bases schema-less, escalabilidad horizontal, eventual consistency.
+**Qué:** Bases schema-less, escalabilidad horizontal, eventual consistency.
 
-**Why:** Flexibilidad de esquema, performance en lecturas masivas.
+**Por qué:** Flexibilidad de esquema, performance en lecturas masivas.
 
 ### Document Stores
 
-| DB | What | When | Use Case |
+| DB | Qué | Cuándo | Caso de Uso |
 |:---|:-----|:-----|:---------|
 | [MongoDB](https://www.mongodb.com/) | Documentos JSON con índices | Esquema flexible, prototipos rápidos | CMS, catálogos, perfiles usuario |
 | [CouchDB](https://couchdb.apache.org/) | Documentos con sync multi-master | Offline-first, replicación | Apps móviles con sync |
@@ -69,7 +69,7 @@
 
 ### Key-Value Stores
 
-| DB | What | When | Use Case |
+| DB | Qué | Cuándo | Caso de Uso |
 |:---|:-----|:-----|:---------|
 | [Redis](https://redis.io/) | In-memory con persistencia opcional | Caching, sesiones, pub/sub | Cache, rate limiting, leaderboards |
 | [Memcached](https://memcached.org/) | In-memory puro (no persistencia) | Cache simple, ultra-rápido | Cache de objetos |
@@ -77,7 +77,7 @@
 
 ### Columnar
 
-| DB | What | When | Use Case |
+| DB | Qué | Cuándo | Caso de Uso |
 |:---|:-----|:-----|:---------|
 | [ClickHouse](https://clickhouse.com/) | Columnar para analítica | Queries agregadas en TB de datos | Analytics, logs, eventos |
 | [Apache Druid](https://druid.apache.org/) | Real-time analytics | Queries sub-segundo en streams | Dashboards en tiempo real |
@@ -85,7 +85,7 @@
 
 ### Graph
 
-| DB | What | When | Use Case |
+| DB | Qué | Cuándo | Caso de Uso |
 |:---|:-----|:-----|:---------|
 | [Neo4j](https://neo4j.com/) | Graph DB líder | Relaciones complejas | Redes sociales, recomendaciones, fraude |
 | [ArangoDB](https://www.arangodb.com/) | Multi-model (document + graph) | Flexibilidad model | Apps con datos relacionales y grafo |
@@ -94,7 +94,7 @@
 
 ## ⏱️ Time Series
 
-**What:** Optimizadas para datos con timestamp (métricas, logs, sensores).
+**Qué:** Optimizadas para datos con timestamp (métricas, logs, sensores).
 
 | DB | What | When | Features |
 |:---|:-----|:-----|:---------|
@@ -106,7 +106,7 @@
 
 ## 🔍 Search Engines
 
-**What:** Optimizadas para búsqueda full-text y analítica.
+**Qué:** Optimizadas para búsqueda full-text y analítica.
 
 | DB | What | When | Features |
 |:---|:-----|:-----|:---------|
@@ -118,9 +118,9 @@
 
 ## 🗃️ Embedded
 
-**What:** Bases livianas embebidas en la aplicación.
+**Qué:** Bases livianas embebidas en la aplicación.
 
-| DB | What | When | Use Case |
+| DB | Qué | Cuándo | Caso de Uso |
 |:---|:-----|:-----|:---------|
 | [SQLite](https://www.sqlite.org/) | SQL embebido, single-file | Apps móviles, tests, prototipos | Local storage, demos |
 | [H2](https://www.h2database.com/) | SQL Java embebido | Tests Java | In-memory testing |
@@ -130,13 +130,13 @@
 
 ## 🔄 NewSQL
 
-**What:** SQL con escalabilidad horizontal (mejor de ambos mundos).
+**Qué:** SQL con escalabilidad horizontal (mejor de ambos mundos).
 
 | DB | What | When | Trade-offs |
 |:---|:-----|:-----|:-----------|
-| [CockroachDB](https://www.cockroachlabs.com/) | PostgreSQL distribuido | Global apps, alta disponibilidad | ✅ Geo-distributed<br>❌ Latencia mayor |
-| [Google Spanner](https://cloud.google.com/spanner/) | SQL global con TrueTime | Transacciones globales | ✅ Consistencia fuerte global<br>❌ Costoso |
-| [YugabyteDB](https://www.yugabyte.com/) | PostgreSQL + Cassandra | PostgreSQL con scale-out | ✅ Compatible PostgreSQL<br>❌ Operacionalmente complejo |
+| [CockroachDB](https://www.cockroachlabs.com/) | PostgreSQL distribuido | Global apps, alta disponibilidad | ✅ Geo-distributed; ❌ Latencia mayor |
+| [Google Spanner](https://cloud.google.com/spanner/) | SQL global con TrueTime | Transacciones globales | ✅ Consistencia fuerte global; ❌ Costoso |
+| [YugabyteDB](https://www.yugabyte.com/) | PostgreSQL + Cassandra | PostgreSQL con scale-out | ✅ Compatible PostgreSQL; ❌ Operacionalmente complejo |
 
 ---
 
@@ -159,7 +159,7 @@
 
 ### SQL
 
-| Principio | What | Ejemplo |
+| Principio | Qué | Ejemplo |
 |:----------|:-----|:--------|
 | **Normalización** | Eliminar redundancia | 3NF: sin dependencias transitivas |
 | **Denormalización** | Duplicar para performance | Agregar campos calculados |
@@ -168,7 +168,7 @@
 
 ### NoSQL
 
-| Principio | What | Ejemplo |
+| Principio | Qué | Ejemplo |
 |:----------|:-----|:--------|
 | **Modelar por queries** | Diseñar según lectura | Duplicar datos si optimiza queries |
 | **Desnormalizar** | Embeber documentos relacionados | User con embedded addresses |
@@ -178,7 +178,7 @@
 
 ## 🔧 Optimización
 
-| Técnica | What | When | How |
+| Técnica | Qué | Cuándo | Cómo |
 |:--------|:-----|:-----|:----|
 | **Indexing** | Acelerar búsquedas | Columnas en WHERE, JOIN | Evitar sobre-indexar (slow writes) |
 | **Partitioning** | Dividir tabla en chunks | Tablas > 10M rows | Por fecha, rango de IDs |
@@ -190,7 +190,7 @@
 
 ## 🔒 Transacciones
 
-| Concepto | What | Ejemplo |
+| Concepto | Qué | Ejemplo |
 |:---------|:-----|:--------|
 | **ACID** | Atomicity, Consistency, Isolation, Durability | PostgreSQL, MySQL InnoDB |
 | **Isolation Levels** | Read Uncommitted < Read Committed < Repeatable Read < Serializable | Trade-off: consistency vs performance |
@@ -202,7 +202,7 @@
 
 ## 🔄 Migraciones
 
-| Herramienta | What | When |
+| Herramienta | Qué | Cuándo |
 |:------------|:-----|:-----|
 | [Flyway](https://flywaydb.org/) | Versionado SQL scripts | Java ecosystem |
 | [Liquibase](https://www.liquibase.org/) | Migraciones XML/YAML | Multi-DB support |
@@ -210,6 +210,7 @@
 | [TypeORM](https://typeorm.io/) | Migraciones TypeScript | Node.js + TypeScript |
 
 **Best Practices:**
+
 - Migraciones en un solo sentido (forward-only)
 - Testear en staging primero
 - Migraciones idempotentes

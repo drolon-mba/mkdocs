@@ -22,31 +22,32 @@
 - [📊 Dashboards](#dashboards)
 - [🚫 Errores Comunes](#errores-comunes)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 🎯 Métricas vs KPIs
 
-**What:** Métricas = cualquier dato medible. KPIs = métricas críticas para objetivos estratégicos.
+**Qué:** Métricas = cualquier dato medible. KPIs = métricas críticas para objetivos estratégicos.
 
-**Why:** Enfoque en lo que importa. "What gets measured gets managed."
+**Por qué:** Enfoque en lo que importa. "What gets measured gets managed."
 
-**Who:** PMs, founders, data analysts, leadership.
+**Quién:** PMs, founders, data analysts, leadership.
 
-**When:** Definir al lanzar producto, revisar mensual/trimestral.
+**Cuándo:** Definir al lanzar producto, revisar mensual/trimestral.
 
-**How much:** 5-7 KPIs máximo por producto. Menos es más.
+**Esfuerzo:** 5-7 KPIs máximo por producto. Menos es más.
 
 ---
 
 ## ❤️ HEART Framework (Google)
 
-**What:** Framework de Google para medir UX y engagement.
+**Qué:** Framework de Google para medir UX y engagement.
 
-**Why:** Estructura completa para product health.
+**Por qué:** Estructura completa para product health.
 
-**When:** Definir métricas de producto, dashboards.
+**Cuándo:** Definir métricas de producto, dashboards.
 
-| Dimensión | What | Métricas Ejemplo | Cuándo usar |
+| Dimensión | Qué | Métricas Ejemplo | Cuándo usar |
 |:----------|:-----|:-----------------|:------------|
 | **Happiness** | Satisfacción y actitud | NPS, CSAT, app store rating | Productos consumer, SaaS |
 | **Engagement** | Nivel de actividad | DAU/MAU, sesiones/usuario, tiempo en app | Apps sociales, contenido |
@@ -55,6 +56,7 @@
 | **Task Success** | Eficiencia completando tareas | Tasa completación, tiempo por tarea, error rate | Herramientas, utilities |
 
 **Ejemplo - App de Fitness:**
+
 - **Happiness:** App store rating 4.5★, NPS 45
 - **Engagement:** 3.5 workouts/semana, 25 min/sesión
 - **Adoption:** 60% usuarios probaron feature "Challenges"
@@ -65,13 +67,13 @@
 
 ## 🏴‍☠️ AARRR (Pirate Metrics)
 
-**What:** Framework de Dave McClure para medir funnel de producto.
+**Qué:** Framework de Dave McClure para medir funnel de producto.
 
-**Why:** Optimizar cada etapa del customer journey.
+**Por qué:** Optimizar cada etapa del customer journey.
 
-**When:** Startups growth, optimización conversión.
+**Cuándo:** Startups growth, optimización conversión.
 
-| Etapa | What | Métricas | Optimizar |
+| Etapa | Qué | Métricas | Optimizar |
 |:------|:-----|:---------|:----------|
 | **Acquisition** | Cómo llegan usuarios | Tráfico, cost per acquisition (CPA), canales | SEO, ads, referrals |
 | **Activation** | Primera experiencia positiva | % completan onboarding, time to value | Onboarding, aha moment |
@@ -80,7 +82,8 @@
 | **Referral** | Usuarios invitan otros | Referral rate, K-factor, viral coefficient | Sharing, incentivos |
 
 **Funnel típico:**
-```
+
+```text
 1000 visitantes
   ↓ 20% signup
 200 usuarios
@@ -100,13 +103,13 @@
 
 ## 📊 Métricas DORA (DevOps)
 
-**What:** Métricas para evaluar performance de engineering teams.
+**Qué:** Métricas para evaluar performance de engineering teams.
 
-**Why:** Correlación demostrada con business outcomes.
+**Por qué:** Correlación demostrada con business outcomes.
 
-**When:** Evaluar madurez DevOps, benchmarking.
+**Cuándo:** Evaluar madurez DevOps, benchmarking.
 
-| Métrica | What | Elite | High | Medium | Low |
+| Métrica | Qué | Elite | High | Medium | Low |
 |:--------|:-----|:------|:-----|:-------|:----|
 | **Deployment Frequency** | Frecuencia de deploys a prod | On-demand | Semanal-mensual | Mensual-semestral | < Semestral |
 | **Lead Time for Changes** | Commit → producción | < 1 hora | < 1 día | < 1 semana | > 1 semana |
@@ -114,6 +117,7 @@
 | **MTTR** | Mean Time To Recover | < 1 hora | < 1 día | < 1 semana | > 1 semana |
 
 **Cómo mejorar:**
+
 - **Deployment Frequency:** CI/CD automático, feature flags
 - **Lead Time:** Trunk-based development, automatización
 - **Change Failure Rate:** Tests, code review, staging
@@ -125,11 +129,12 @@
 
 ### NPS (Net Promoter Score)
 
-**What:** "¿Qué tan probable recomendarías [producto] a un amigo?" (0-10)
+**Qué:** "¿Qué tan probable recomendarías [producto] a un amigo?" (0-10)
 
 **Cálculo:** % Promotores (9-10) - % Detractores (0-6)
 
 **Interpretación:**
+
 - **> 50:** Excelente
 - **30-50:** Bueno
 - **0-30:** Mejorar
@@ -139,7 +144,7 @@
 
 ### CSAT (Customer Satisfaction)
 
-**What:** "¿Qué tan satisfecho estás con [experiencia]?" (1-5)
+**Qué:** "¿Qué tan satisfecho estás con [experiencia]?" (1-5)
 
 **Cálculo:** (Respuestas 4-5 / Total) × 100
 
@@ -147,7 +152,7 @@
 
 ### CES (Customer Effort Score)
 
-**What:** "¿Qué tan fácil fue resolver tu problema?" (1-7)
+**Qué:** "¿Qué tan fácil fue resolver tu problema?" (1-7)
 
 **Cálculo:** Promedio de respuestas (menor = mejor)
 
@@ -167,7 +172,7 @@
 
 ### SaaS Metrics
 
-| Métrica | What | Fórmula | Target |
+| Métrica | Qué | Fórmula | Target |
 |:--------|:-----|:--------|:-------|
 | **MRR** | Monthly Recurring Revenue | Suma suscripciones mensuales | Crecimiento 10%+ MoM |
 | **ARR** | Annual Recurring Revenue | MRR × 12 | - |
@@ -178,6 +183,7 @@
 | **CAC Payback** | Meses para recuperar CAC | CAC / (ARPU × Margen bruto) | < 12 meses |
 
 **Ejemplo:**
+
 - MRR: $100k
 - ARPU: $50/mes
 - Churn: 5%/mes
@@ -187,7 +193,7 @@
 
 ### E-commerce
 
-| Métrica | What | Fórmula |
+| Métrica | Qué | Fórmula |
 |:--------|:-----|:--------|
 | **Conversion Rate** | % visitantes que compran | Compras / Visitantes × 100 |
 | **AOV** | Average Order Value | Revenue / # Órdenes |
@@ -198,7 +204,7 @@
 
 ## 📈 Métricas de Engagement
 
-| Métrica | What | Cálculo | Interpretación |
+| Métrica | Qué | Cálculo | Interpretación |
 |:--------|:-----|:--------|:---------------|
 | **DAU/MAU** | Daily/Monthly Active Users | Ratio DAU/MAU | >20% = sticky product |
 | **Sessions/User** | Frecuencia de uso | Sesiones totales / Usuarios | Engagement alto |
@@ -207,6 +213,7 @@
 | **Stickiness** | Hábito de uso | DAU / MAU | >0.2 = sticky |
 
 **DAU/MAU Benchmark:**
+
 - **>40%:** Redes sociales top (Facebook, Instagram)
 - **20-40%:** Productos con buen engagement
 - **<20%:** Engagement débil
@@ -215,9 +222,9 @@
 
 ## 🔄 Retention Cohorts
 
-**What:** Tabla que muestra % usuarios activos por cohorte en el tiempo.
+**Qué:** Tabla que muestra % usuarios activos por cohorte en el tiempo.
 
-**Why:** Identificar si retention mejora con cambios de producto.
+**Por qué:** Identificar si retention mejora con cambios de producto.
 
 **Ejemplo:**
 
@@ -251,7 +258,7 @@
 
 **Estructura:**
 
-```
+```text
         [North Star Metric]
          /      |      \
     Input 1  Input 2  Input 3
@@ -260,6 +267,7 @@
 ```
 
 **Ejemplo - Spotify:**
+
 - **North Star:** Tiempo escuchando música
 - **Input Metrics:**
   - Frecuencia uso (sesiones/semana)
@@ -274,7 +282,7 @@
 
 ## 🔬 A/B Testing Metrics
 
-| Concepto | What | Ejemplo |
+| Concepto | Qué | Ejemplo |
 |:---------|:-----|:--------|
 | **Primary Metric** | Métrica principal a mover | Conversion rate |
 | **Secondary Metrics** | Otras métricas a monitorear | AOV, retention |
@@ -290,22 +298,26 @@
 
 ### Dashboard de Producto
 
-**Sección 1: Health Overview**
+### Sección 1: Health Overview
+
 - MAU, DAU, DAU/MAU
 - Churn rate
 - NPS
 
-**Sección 2: Engagement**
+### Sección 2: Engagement
+
 - Sesiones/usuario
 - Session duration
 - Feature adoption
 
-**Sección 3: Growth**
+### Sección 3: Growth
+
 - New users
 - Activation rate
 - Retention cohorts
 
-**Sección 4: Business**
+### Sección 4: Business
+
 - MRR, ARR
 - LTV, CAC
 - Conversion funnel

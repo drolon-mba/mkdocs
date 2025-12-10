@@ -20,13 +20,15 @@
 ## 🎯 RICE Framework
 
 **Componentes:**
+
 - **R**each: Cuántos usuarios afecta (por período)
 - **I**mpact: Qué tanto impacta (0.25 = mínimo, 3 = masivo)
 - **C**onfidence: Qué tan seguros estamos (0% - 100%)
 - **E**ffort: Cuánto esfuerzo requiere (person-months)
 
 **Fórmula:**
-```
+
+```text
 RICE Score = (Reach × Impact × Confidence) / Effort
 ```
 
@@ -45,6 +47,7 @@ RICE Score = (Reach × Impact × Confidence) / Effort
 ## 📊 MoSCoW
 
 **Categorías:**
+
 - **M**ust have: Crítico, sin esto no lanzamos
 - **S**hould have: Importante, pero podemos lanzar sin esto
 - **C**ould have: Nice to have, si hay tiempo
@@ -72,6 +75,7 @@ RICE Score = (Reach × Impact × Confidence) / Effort
 | **Excitement** | Inesperadas, causan deleite | Recomendaciones personalizadas |
 
 **Estrategia:**
+
 1. **Basic**: Implementar primero (table stakes)
 2. **Performance**: Optimizar continuamente
 3. **Excitement**: Diferenciador competitivo
@@ -82,7 +86,7 @@ RICE Score = (Reach × Impact × Confidence) / Effort
 
 **Cuadrantes:**
 
-```
+```text
 Alto Valor
     │
     │  Quick Wins     │  Major Projects
@@ -110,20 +114,23 @@ Bajo Valor
 ### Now-Next-Later
 
 **Estructura:**
+
 - **Now** (0-3 meses): Features en desarrollo
 - **Next** (3-6 meses): Features planificadas
 - **Later** (6-12 meses): Ideas, exploración
 
 **Ventajas:**
+
 - ✅ Flexible (no commitea fechas específicas)
 - ✅ Fácil de comunicar
 - ❌ Poco preciso para planning detallado
 
 ---
 
-### Theme-Based Roadmap
+### Roadmap Basado en Temas
 
 **Estructura:**
+
 - Organizar por themes (ej: "Performance", "UX", "Security")
 - Cada theme tiene múltiples initiatives
 - Timeline aproximado por theme
@@ -132,13 +139,14 @@ Bajo Valor
 
 | Q1 2024 | Q2 2024 | Q3 2024 |
 |:--------|:--------|:--------|
-| **Performance**<br>- Optimizar DB<br>- CDN | **UX**<br>- Redesign checkout<br>- Mobile app | **Security**<br>- 2FA<br>- Audit logs |
+| **Performance**; - Optimizar DB; - CDN | **UX**; - Redesign checkout; - Mobile app | **Security**; - 2FA; - Audit logs |
 
 ---
 
-### Outcome-Driven Roadmap
+### Roadmap Basado en Resultados
 
 **Estructura:**
+
 - Definir outcomes (resultados de negocio)
 - Features son medios para lograr outcomes
 
@@ -191,10 +199,12 @@ Escala:
 
 ## RICE Score
 ```
+
 (Reach × Impact × Confidence) / Effort
 = ([R] × [I] × [C]%) / [E]
 = [RICE Score]
-```
+
+```text
 
 ## Prioridad
 [Alta / Media / Baja] basado en RICE score

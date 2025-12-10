@@ -25,21 +25,21 @@
 
 ## 🎯 Calidad de Software
 
-**What:** Conjunto de características que determinan si el software cumple requisitos y es mantenible.
+**Qué:** Conjunto de características que determinan si el software cumple requisitos y es mantenible.
 
-**Why:** Reduce bugs, facilita evolución, acelera desarrollo a largo plazo.
+**Por qué:** Reduce bugs, facilita evolución, acelera desarrollo a largo plazo.
 
-**Who:** Todo el equipo, especialmente developers y QA.
+**Quién:** Todo el equipo, especialmente developers y QA.
 
-**How much:** 15-20% del tiempo en configurar y mantener, previene costosas correcciones posteriores.
+**Costo:** 15-20% del tiempo en configurar y mantener, previene costosas correcciones posteriores.
 
 ---
 
 ## 📊 Code Coverage
 
-**What:** Porcentaje de código ejecutado por tests.
+**Qué:** Porcentaje de código ejecutado por tests.
 
-| Métrica | What | Target | Herramienta |
+| Métrica | Qué | Target | Herramienta |
 |:--------|:-----|:-------|:------------|
 | **Line Coverage** | % líneas ejecutadas | ≥80% lógica crítica | [JaCoCo](https://www.eclemma.org/jacoco/), [Coverage.py](https://coverage.readthedocs.io/) |
 | **Branch Coverage** | % ramas if/else ejecutadas | ≥70% | [Istanbul](https://istanbul.js.org/) |
@@ -52,11 +52,11 @@
 
 ## 🔍 Static Analysis
 
-**What:** Analizar código sin ejecutarlo.
+**Qué:** Analizar código sin ejecutarlo.
 
-**Why:** Detectar bugs, vulnerabilidades, code smells tempranamente.
+**Por qué:** Detectar bugs, vulnerabilidades, code smells tempranamente.
 
-| Herramienta | What | When |
+| Herramienta | Qué | Cuándo |
 |:------------|:-----|:-----|
 | [SonarQube](https://www.sonarsource.com/products/sonarqube/) | Plataforma calidad multi-lenguaje | CI/CD, pre-merge |
 | [ESLint](https://eslint.org/) | Linter JavaScript/TypeScript | Pre-commit, IDE |
@@ -69,9 +69,9 @@
 
 ## ✨ Code Formatting
 
-**What:** Formateo automático consistente.
+**Qué:** Formateo automático consistente.
 
-**Why:** Elimina debates de estilo, diffs limpios, legibilidad.
+**Por qué:** Elimina debates de estilo, diffs limpios, legibilidad.
 
 | Lenguaje | Herramienta | Config |
 |:---------|:------------|:-------|
@@ -87,7 +87,7 @@
 
 ## 🔐 Security Scanning
 
-| Tipo | What | Herramienta |
+| Tipo | Qué | Herramienta |
 |:-----|:-----|:------------|
 | **SAST** | Static Application Security Testing | [SonarQube](https://www.sonarsource.com/), [Checkmarx](https://checkmarx.com/) |
 | **Dependency Scan** | Vulnerabilidades en librerías | [Snyk](https://snyk.io/), [Dependabot](https://github.com/dependabot) |
@@ -98,9 +98,9 @@
 
 ## 👥 Code Review
 
-**What:** Revisión de código por pares antes de merge.
+**Qué:** Revisión de código por pares antes de merge.
 
-**Why:** Detecta bugs, mejora diseño, comparte conocimiento.
+**Por qué:** Detecta bugs, mejora diseño, comparte conocimiento.
 
 ### Checklist
 
@@ -117,7 +117,7 @@
 
 ### Best Practices
 
-| Práctica | Why |
+| Práctica | Por qué |
 |:---------|:----|
 | **PRs pequeños** | < 400 líneas, fácil revisar |
 | **Descripción clara** | Qué, por qué, cómo testear |
@@ -129,7 +129,7 @@
 
 ## 🔄 CI Validation
 
-**What:** Validaciones automáticas en CI/CD.
+**Qué:** Validaciones automáticas en CI/CD.
 
 ### Pipeline Típico
 
@@ -152,7 +152,7 @@
 
 ## 📏 Complexity Metrics
 
-| Métrica | What | Target | Herramienta |
+| Métrica | Qué | Target | Herramienta |
 |:--------|:-----|:-------|:------------|
 | **Cyclomatic Complexity** | Número de caminos independientes | < 10 por función | SonarQube, ESLint |
 | **Cognitive Complexity** | Dificultad para entender | < 15 | SonarQube |
@@ -163,7 +163,7 @@
 
 ## 🎨 Design Quality
 
-| Aspecto | What | Cómo medir |
+| Aspecto | Qué | Cómo medir |
 |:--------|:-----|:-----------|
 | **Cohesión** | Qué tan relacionados están elementos | Alta cohesión = bueno |
 | **Acoplamiento** | Dependencias entre módulos | Bajo acoplamiento = bueno |

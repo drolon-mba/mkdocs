@@ -13,6 +13,7 @@
 - [🧱 Reglas por Lenguaje](#reglas-por-lenguaje)
 - [🧩 Reglas por Framework](#reglas-por-framework)
 - [🎯 Checklist de Código Limpio](#checklist-de-codigo-limpio)
+
 ---
 
 ## 📊 Niveles de Criticidad
@@ -29,7 +30,7 @@ Ver [Tabla de Niveles de Criticidad](./00-indice.md#niveles-de-criticidad) en el
 
 **¿Cuánto cuesta?** Inversión inicial en aprendizaje (1-2 semanas), ahorro exponencial en mantenimiento.
 
-| Nivel | Principio | What (Qué es) | Why (Por qué) | When (Cuándo aplicarlo) | Where (Dónde) | How (Cómo) | Recurso |
+| Nivel | Principio | Qué es | Por qué | Cuándo aplicarlo | Dónde | Cómo | Recurso |
 |:------|:----------|:--------------|:--------------|:------------------------|:--------------|:-----------|:--------|
 | 🔴 | **SOLID** | Conjunto de 5 principios para diseño OOP mantenible: SRP, OCP, LSP, ISP, DIP | Reduce acoplamiento, aumenta cohesión, facilita testing y extensibilidad | En toda clase, servicio o módulo con responsabilidades | Servicios, controladores, clases de dominio | SRP: una clase = una razón para cambiar. OCP: abierto a extensión, cerrado a modificación | [Clean Coder](https://blog.cleancoder.com/uncle-bob/2020/10/18/Solid-Relevance.html) |
 | 🟢 | **KISS** | Keep It Simple, Stupid - Favorecer soluciones simples | Código simple es más fácil de entender, mantener y depurar | Siempre, al diseñar cualquier solución | Toda lógica de negocio, algoritmos | Evitar condicionales anidados, abstracciones innecesarias, over-engineering | [FreeCodeCamp](https://www.freecodecamp.org/news/keep-it-simple-stupid-how-to-use-the-kiss-principle-in-design/) |
@@ -63,7 +64,7 @@ Ver [Tabla de Niveles de Criticidad](./00-indice.md#niveles-de-criticidad) en el
 
 **¿Por qué?** Cada lenguaje tiene idioms y herramientas específicas que mejoran calidad y productividad.
 
-| Lenguaje | What (Qué es) | Why (Por qué) | When (Cuándo) | How (Cómo) | Herramientas de Validación |
+| Lenguaje | Qué es | Por qué | Cuándo | Cómo | Herramientas de Validación |
 |:---------|:--------------|:--------------|:--------------|:-----------|:---------------------------|
 | [Python](https://www.python.org/) | Lenguaje dinámico con tipado opcional | Productividad alta, ecosistema rico | Backend APIs, scripts, ML/Data Science | Usar `typing`, `pydantic` para validación, `dataclasses` para estructuras, `mypy` para chequeo estático | `mypy`, `ruff`, `black`, `pylint` |
 | [Java](https://www.java.com/es/) | Lenguaje fuertemente tipado y OOP | Robustez, performance, ecosistema enterprise | Backend enterprise, Android, sistemas distribuidos | Usar `Optional` evitando `null`, `Streams` para colecciones, `Records` (Java 14+), aplicar SOLID | `Checkstyle`, `SpotBugs`, `SonarQube` |
@@ -75,7 +76,7 @@ Ver [Tabla de Niveles de Criticidad](./00-indice.md#niveles-de-criticidad) en el
 
 **¿Por qué?** Los frameworks establecen patrones que, si se siguen, maximizan productividad y maintainability.
 
-| Framework | What (Qué es) | Why (Por qué) | When (Cuándo) | How (Cómo) | Herramientas |
+| Framework | Qué es | Por qué | Cuándo | Cómo | Herramientas |
 |:----------|:--------------|:--------------|:--------------|:-----------|:-------------|
 | [Angular](https://angular.dev/) | Framework frontend con enfoque en componentes y signals | Escalabilidad, arquitectura clara, TypeScript nativo | SPAs empresariales, dashboards complejos | Usar `signals` (v16+), `@for` en templates, zoneless rendering, `RxJS` para async, `NgRx` para estado, estructura modular | Angular CLI, Nx |
 | [React](https://es.react.dev/) | Librería para UIs declarativas | Flexibilidad, ecosistema gigante, performance | SPAs, mobile (React Native), SSR (Next.js) | Usar `hooks`, `signals` (experimental), `context` para estado, `Suspense` para async, `Server Components` (Next.js), tipado con TS | Vite, Next.js, ESLint React |
@@ -87,11 +88,11 @@ Ver [Tabla de Niveles de Criticidad](./00-indice.md#niveles-de-criticidad) en el
 
 ### Spring Boot - Features Avanzados
 
-**What:** Funcionalidades avanzadas de Spring Boot para acelerar desarrollo y mejorar mantenibilidad.
+**Qué es:** Funcionalidades avanzadas de Spring Boot para acelerar desarrollo y mejorar mantenibilidad.
 
-**When:** Proyectos empresariales que necesitan auditoría, REST rápido, y tareas batch.
+**Cuándo:** Proyectos empresariales que necesitan auditoría, REST rápido, y tareas batch.
 
-| Feature | What | When | How |
+| Feature | Qué es | Cuándo | Cómo |
 |:--------|:-----|:-----|:----|
 | **@EntityListeners** | Callbacks en ciclo de vida de entidad | Auditoría, validaciones pre-persist | `@PrePersist`, `@PreUpdate`, `@PreRemove`, `@PostLoad` |
 | **AuditorAware** | Auditoría automática global | Trackear quién modificó qué | Implementar `AuditorAware<String>`, retornar username actual |
@@ -108,6 +109,7 @@ Ver [Tabla de Niveles de Criticidad](./00-indice.md#niveles-de-criticidad) en el
 | **HAL Explorer** | UI para explorar APIs HATEOAS | Testing, documentación interactiva | Incluir `spring-data-rest-hal-explorer`, navegar a `/` |
 
 **Ejemplo @EntityListeners:**
+
 ```java
 @Entity
 @EntityListeners(AuditingEntityListener.class)
@@ -139,6 +141,7 @@ public class JpaConfig {
 ```
 
 **Ejemplo Specifications:**
+
 ```java
 // Repository
 public interface UserRepository extends JpaRepository<User, Long>, 
@@ -165,6 +168,7 @@ List<User> users = userRepository.findAll(spec);
 ```
 
 **Ejemplo Spring Data REST:**
+
 ```java
 @RepositoryRestResource(path = "users", excerptProjection = UserSummary.class)
 public interface UserRepository extends JpaRepository<User, Long> {
@@ -197,4 +201,4 @@ Antes de cada commit, verificar:
 
 ---
 
-[⬆️ Volver arriba](#) | [➡️ Siguiente: Onboarding](./02-onboarding.md)
+[⬅️ Anterior: Índice General](./00-indice.md) | [⬆️ Volver arriba](#01-fundamentos) | [➡️ Siguiente: Onboarding](./02-onboarding.md)

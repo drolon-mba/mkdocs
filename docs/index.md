@@ -11,9 +11,10 @@ Más que un simple manual de reglas, esta guía busca ser un compendio de **sabi
 Esta documentación abarca todo el ciclo de vida del desarrollo de software, desde los **fundamentos del código limpio** hasta estrategias avanzadas de **arquitectura**, **DevOps**, **seguridad** y **gestión de producto**.
 
 Está estructurada para ser útil tanto para:
-*   **Nuevos ingresos**: Como hoja de ruta para el onboarding y entendimiento de nuestra cultura técnica.
-*   **Desarrolladores experimentados**: Como referencia rápida de patrones, estándares y herramientas.
-*   **Líderes técnicos**: Como base para la toma de decisiones y la mentoría.
+
+* **Nuevos ingresos**: Como hoja de ruta para el onboarding y entendimiento de nuestra cultura técnica.
+* **Desarrolladores experimentados**: Como referencia rápida de patrones, estándares y herramientas.
+* **Líderes técnicos**: Como base para la toma de decisiones y la mentoría.
 
 ### 🧭 Navegación
 

@@ -24,21 +24,22 @@
 - [🎯 Casos Prácticos en Tecnología](#casos-practicos-en-tecnologia)
 - [📚 Recursos](#recursos)
 - [💡 Clave para Semi-Seniors](#clave-para-semi-seniors)
+
 ---
 
 ## 🧠 ¿Por qué importan los Sesgos?
 
-**What:** Atajos mentales (heurísticos) que sistemáticamente desvían el juicio de la racionalidad.
+**Qué:** Atajos mentales (heurísticos) que sistemáticamente desvían el juicio de la racionalidad.
 
-**Why:** Todos tenemos sesgos. Reconocerlos previene malas decisiones en producto, inversión, arquitectura y management.
+**Por qué:** Todos tenemos sesgos. Reconocerlos previene malas decisiones en producto, inversión, arquitectura y management.
 
-**Who:** Product Managers, founders, investors, developers, leaders.
+**Quién:** Product Managers, founders, investors, developers, leaders.
 
-**When:** Diseño de producto, decisiones de inversión, evaluación de performance, priorización.
+**Cuándo:** Diseño de producto, decisiones de inversión, evaluación de performance, priorización.
 
-**How:** Awareness, procesos estructurados, devil's advocate, datos sobre intuición.
+**Cómo:** Awareness, procesos estructurados, devil's advocate, datos sobre intuición.
 
-**How much:** Un sesgo no detectado puede costar millones en producto fallido o inversión perdida.
+**Costo:** Un sesgo no detectado puede costar millones en producto fallido o inversión perdida.
 
 ---
 
@@ -66,7 +67,7 @@
 
 ## 🎯 Sesgos de Decisión y Juicio
 
-| Sesgo | What | Why ocurre | When aparece | Impacto | Cómo Mitigar |
+| Sesgo | Qué | Causa | Apariciones | Impacto | Cómo Mitigar |
 |:------|:-----|:-----------|:-------------|:--------|:-------------|
 | **Confirmation Bias (Confirmación)** | Buscar solo evidencia que confirme creencias pre-existentes | Cerebro busca coherencia y evita disonancia cognitiva | Evaluar nuevas tecnologías, revisar métricas, code review | Ignorar señales de que el producto no funciona, mantener código legacy innecesariamente | Pre-mortem: "¿Por qué podría fallar esto?", buscar evidencia contradictoria activamente |
 | **Anchoring Bias (Anclaje)** | Sobre-ponderar la primera información recibida | La información inicial establece un punto de referencia mental | Estimaciones de tiempo, negociaciones salariales, planning de sprints | Estimaciones sesgadas por número inicial, presupuestos irreales | Múltiples estimaciones independientes, usar base rates históricos |
@@ -84,7 +85,7 @@
 
 ## 📊 Sesgos en Datos y Análisis
 
-| Sesgo | What | Why ocurre | Impacto | Ejemplo | Cómo Mitigar |
+| Sesgo | Qué | Causa | Impacto | Ejemplo | Cómo Mitigar |
 |:------|:-----|:-----------|:--------|:--------|:-------------|
 | **Survivorship Bias (Supervivencia)** | Analizar solo lo que "sobrevivió", ignorar lo que falló | Los fracasos son menos visibles y se olvidan | Conclusiones erróneas sobre causas de éxito | Estudiar startups exitosas sin analizar las que fallaron | Incluir data de failures, buscar casos de estudio negativos |
 | **Selection Bias (Selección)** | Muestra no representativa de población | Acceso limitado a ciertos grupos de datos | Decisiones basadas en data sesgada | User surveys solo responden los muy satisfechos/insatisfechos | Random sampling, analizar non-responders, múltiples fuentes |
@@ -131,7 +132,7 @@
 
 ### Sesgos Adicionales de Percepción y Memoria
 
-| Sesgo | What | Ejemplo | Mitigación |
+| Sesgo | Qué | Ejemplo | Mitigación |
 |:------|:-----|:--------|:-----------|
 | **Sesgo de Atención** | Atender selectivamente a ciertos estímulos | Notar solo bugs en framework que no te gusta | Systematic observation, checklists |
 | **Sesgo de Distinción** | Valorar más cuando comparamos opciones lado a lado | Feature parece mejor en comparación directa | Evaluar absolutamente también |
@@ -145,7 +146,7 @@
 
 ## ⚖️ Falacias Lógicas Críticas
 
-| Falacia | What | Ejemplo en Tech | Por qué es problema | Cómo Refutar |
+| Falacia | Qué | Ejemplo en Tech | Por qué es problema | Cómo Refutar |
 |:--------|:-----|:----------------|:-------------------|:-------------|
 | **Straw Man (Hombre de paja)** | Distorsionar argumento del oponente para refutarlo fácil | "¿Quieres microservicios? ¿Quieres 100 repos imposibles de mantener?" | Evita discusión real, crea conflictos artificiales | "Estoy proponiendo servicios bounded context, no microservicios extremos" |
 | **Ad Hominem** | Atacar a la persona, no al argumento | "No le hagas caso, es junior/no tiene experiencia" | Ignora méritos del argumento | "Evaluemos la idea por sus méritos técnicos" |
@@ -173,7 +174,7 @@
 
 ## ⚠️ Leyes y Efectos Paradójicos
 
-| Efecto/Ley | What | Por qué es paradójico | Ejemplo en Tech | Mitigación |
+| Efecto/Ley | Qué | Por qué es paradójico | Ejemplo en Tech | Mitigación |
 |:-----------|:-----|:---------------------|:----------------|:-----------|
 | **Goodhart's Law** | "Cuando una medida se convierte en objetivo, deja de ser buena medida" | Optimizar métricas corrompe su validez | Optimizar lines of code → código inflado | Métricas múltiples, auditorías, qualitative + quantitative |
 | **Campbell's Law** | Similar a Goodhart: indicador social bajo presión corrompe procesos | Medición bajo presión se corrompe | Teaching to the test, gaming de KPIs | Auditorías, métricas difíciles de gamear |
@@ -189,7 +190,7 @@
 
 ## 📊 Sesgos en Data Science y ML
 
-| Sesgo | What | Fase del proceso | Impacto | Mitigación |
+| Sesgo | Qué | Fase del proceso | Impacto | Mitigación |
 |:------|:-----|:-----------------|:--------|:-----------|
 | **Training Data Bias** | Data no representa población real | Data collection | Modelo discrimina grupos subrepresentados | Audit datasets, fairness metrics, data augmentation |
 | **Label Bias** | Labels incorrectos o sesgados | Data labeling | Modelo aprende sesgos humanos | Multiple labelers, blind labeling, consensus protocols |
@@ -229,26 +230,31 @@ X_train, X_test, y_train, y_test = train_test_split(
 ## 🛡️ Estrategias de Mitigación
 
 ### 1. Pre-Mortem
-**What:** Antes de decidir, asumir que falló y explicar por qué.
+
+**Qué:** Antes de decidir, asumir que falló y explicar por qué.
 
 **When:** Planning de proyectos, decisiones arquitectónicas grandes.
 
 **How:**
+
 1. "Es un año después, el proyecto falló. ¿Por qué?"
 2. Equipo genera razones de fallo
 3. Mitigar top 3 razones identificadas
 
 ### 2. Red Team / Devil's Advocate
-**What:** Asignar persona/equipo para atacar plan.
+
+**Qué:** Asignar persona/equipo para atacar plan.
 
 **When:** Decisiones críticas, cambios arquitectónicos.
 
 **How:** Rotar rol, requiere argumentos contra con evidencia, no solo opinión.
 
 ### 3. Decision Journal
-**What:** Documentar decisiones antes de conocer outcomes.
+
+**Qué:** Documentar decisiones antes de conocer outcomes.
 
 **How:** Registrar:
+
 - Decisión tomada
 - Razones y contexto
 - Expectativas y predicciones
@@ -256,37 +262,44 @@ X_train, X_test, y_train, y_test = train_test_split(
 - Métricas de éxito
 
 ### 4. Checklists Anti-sesgos
+
 **What:** Forzar considerar múltiples factores antes de decidir.
 
 **How:** Checklist pre-decisión con preguntas desafiantes (ver abajo).
 
 ### 5. Diverse Teams
-**What:** Equipos heterogéneos cuestionan assumptions.
+
+**Qué:** Equipos heterogéneos cuestionan assumptions.
 
 **How:** Diversidad cognitiva, backgrounds, experiencias, perspectivas.
 
 ### 6. Base Rates First
-**What:** Siempre empezar con probabilidad base.
+
+**Qué:** Siempre empezar con probabilidad base.
 
 **How:** "De 100 startups similares, ¿cuántos tienen éxito?" antes de evaluar caso específico.
 
 ### 7. Prospective Hindsight
-**What:** Imaginar futuro como si fuera pasado.
+
+**Qué:** Imaginar futuro como si fuera pasado.
 
 **How:** "Es 2026, ¿cómo llegamos aquí?" más concreto que "¿Qué haremos?"
 
 ### 8. Blind Reviews
-**What:** Evaluaciones sin conocer identidad del autor.
+
+**Qué:** Evaluaciones sin conocer identidad del autor.
 
 **How:** Anonymous RFCs, code reviews ciegos, evaluaciones de candidatos sin CV.
 
 ### 9. Calibration Sessions
-**What:** Comparar predicciones con resultados reales.
+
+**Qué:** Comparar predicciones con resultados reales.
 
 **How:** Mensual, comparar estimaciones vs real en retrospectivas.
 
 ### 10. Multiple Perspectives
-**What:** Analizar desde diferentes ángulos.
+
+**Qué:** Analizar desde diferentes ángulos.
 
 **How:** Framing positivo y negativo, diferentes stakeholders, múltiples métricas.
 
@@ -295,6 +308,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 ## 🚫 Señales de Alerta: Cómo Reconocer Estás Sesgado
 
 ### Red Flags Cognitivas (Individual)
+
 - ❌ Buscar solo evidencia que confirme tu creencia
 - ❌ Justificar decisión post-hoc (racionalizando)
 - ❌ "Todos piensan como yo" (sin verificar)
@@ -305,6 +319,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 - ❌ No documentar predicciones antes de saber resultado
 
 ### Red Flags en Equipos
+
 - ❌ Groupthink - consenso rápido sin debate
 - ❌ Síndrome del "not invented here"
 - ❌ Cultura de "siempre lo hicimos así"
@@ -384,6 +399,7 @@ Antes de decisión importante:
 ### Caso 1: Migración de Monolito a Microservicios
 
 **Sesgos detectados:**
+
 - Optimismo en estimaciones (Planning Fallacy)
 - Anclaje a arquitectura anterior
 - Aversión a pérdida de control centralizado
@@ -417,11 +433,13 @@ def migration_strategy():
 ### Caso 2: Selección de Framework para IA
 
 **Sesgos evitados:**
+
 - Efecto halo por hype (ej: "todos usan PyTorch")
 - Autoridad (opinión de un senior sin pruebas)
 - Falso consenso ("todos en el equipo están de acuerdo")
 
 **Proceso seguido:**
+
 1. Definir requisitos técnicos específicos (latencia, escalabilidad, habilidades del equipo)
 2. Ejecutar benchmarks objetivos con datos reales
 3. Calcular TCO (Total Cost of Ownership) incluyendo mantenimiento
@@ -430,6 +448,7 @@ def migration_strategy():
 ### Caso 3: Priorización de Features con RICE
 
 **Sesgos mitigados:**
+
 - Voz del cliente ruidosa (un cliente enterprise pide feature compleja)
 - Sunk cost en features
 - Efecto de encuadre
@@ -454,6 +473,7 @@ def rice_score(feature):
 ## 📚 Recursos
 
 ### Libros Fundamentales
+
 - [Thinking, Fast and Slow - Daniel Kahneman](https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555) - Fundamentos de sesgos cognitivos
 - [Predictably Irrational - Dan Ariely](https://www.amazon.com/Predictably-Irrational-Revised-Expanded-Decisions/dp/0061353248) - Economía del comportamiento
 - [The Art of Thinking Clearly - Rolf Dobelli](https://www.amazon.com/Art-Thinking-Clearly-Rolf-Dobelli/dp/0062219693) - 99 sesgos explicados
@@ -462,6 +482,7 @@ def rice_score(feature):
 - [Weapons of Math Destruction - Cathy O'Neil](https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418815) - Ética en algoritmos
 
 ### Recursos Online
+
 - [Wikipedia: List of Cognitive Biases](https://es.wikipedia.org/wiki/Anexo:Sesgos_cognitivos)
 - [Farnam Street - Mental Models](https://fs.blog/mental-models/)
 - [ML Checklist by Google](https://ml-ops.org)
@@ -475,6 +496,7 @@ def rice_score(feature):
 Reconocer sesgos y falacias no es teoría abstracta: **es lo que evita bugs estratégicos en producto, arquitectura y negocio.**
 
 Los mejores tech leads y PMs no son los que no tienen sesgos (todos los tenemos), sino los que:
+
 1. **Reconocen** sus propios sesgos
 2. **Implementan procesos** para mitigarlos
 3. **Crean cultura** donde cuestionar assumptions es valorado

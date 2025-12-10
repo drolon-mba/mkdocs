@@ -1,12 +1,12 @@
-## 🐞 Bug Report
+# 🐞 Bug Report
 
-### 📌 Título
+## 📌 Título
 
 Login – NullPointerException al autenticar en staging
 
 ---
 
-### 📋 Contexto
+## 📋 Contexto
 
 - **Producto/servicio:** AuthService
 - **Versión/commit:** v2.3.1 – commit 8f3a9c2
@@ -15,7 +15,7 @@ Login – NullPointerException al autenticar en staging
 
 ---
 
-### 🔄 Reproducibilidad
+## 🔄 Reproducibilidad
 
 1. Ir a `/login`
 2. Enviar credenciales válidas de usuario con rol `ADMIN`
@@ -25,14 +25,14 @@ Login – NullPointerException al autenticar en staging
 
 ---
 
-### ✅ Expected vs ❌ Actual
+## ✅ Expected vs ❌ Actual
 
 - **Expected:** Respuesta 200 con token JWT válido
 - **Actual:** Error 500 con stacktrace `NullPointerException at JwtTokenProvider.createToken`
 
 ---
 
-### 📂 Evidencia
+## 📂 Evidencia
 
 - Log: `2025-09-29T14:32:11Z ERROR ... NullPointerException at JwtTokenProvider.createToken`
 - Correlation ID: `auth-req-20250929-143211-xyz`
@@ -41,7 +41,7 @@ Login – NullPointerException al autenticar en staging
 
 ---
 
-### 📊 Impacto
+## 📊 Impacto
 
 - Usuarios afectados: 12 admins en staging
 - Transacciones fallidas: 40% de intentos de login ADMIN
@@ -49,7 +49,7 @@ Login – NullPointerException al autenticar en staging
 
 ---
 
-### 💡 Hipótesis
+## 💡 Hipótesis
 
 - Sospecha en módulo `JwtTokenProvider`
 - Posible regresión por actualización de librería JWT 0.11.5 → 0.12.0
@@ -57,7 +57,7 @@ Login – NullPointerException al autenticar en staging
 
 ---
 
-### 🛠️ Acciones iniciales
+## 🛠️ Acciones iniciales
 
 - **Rule out:** verificado que DB responde, permisos correctos, colas no saturadas
 - **Próximo paso:** reproducir en local con misma versión de librería, habilitar logs DEBUG en `JwtTokenProvider`

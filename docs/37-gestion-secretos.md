@@ -8,16 +8,16 @@
 
 ## 📋 Índice Rápido
 
-- [🔐 Secret Management Tools](#secret-management-tools)
-- [🔄 Secret Rotation](#secret-rotation)
-- [🔒 Least Privilege](#least-privilege)
-- [🚀 Secrets en CI/CD](#secrets-en-cicd)
+- [🔐 Herramientas de Gestión de Secretos](#herramientas-de-gestion-de-secretos)
+- [🔄 Rotación de Secretos](#rotacion-de-secretos)
+- [🔒 Mínimo Privilegio](#minimo-privilegio)
+- [🚀 Secretos en CI/CD](#secretos-en-cicd)
 - [🔍 Detección de Secretos](#deteccion-de-secretos)
 - [📋 Artefactos](#artefactos)
 
 ---
 
-## 🔐 Secret Management Tools
+## 🔐 Herramientas de Gestión de Secretos
 
 ### Comparación
 
@@ -66,7 +66,7 @@ vault token create -policy=app-policy
 
 ---
 
-## 🔄 Secret Rotation
+## 🔄 Rotación de Secretos
 
 ### Por Qué Rotar Secretos
 
@@ -79,7 +79,7 @@ vault token create -policy=app-policy
 
 ---
 
-### Automated Rotation
+### Rotación Automatizada
 
 **Ejemplo con AWS Secrets Manager:**
 
@@ -130,9 +130,10 @@ def lambda_handler(event, context):
 
 ---
 
-### Zero-Downtime Rotation
+### Rotación Sin Downtime
 
 **Estrategia:**
+
 1. Crear nueva credencial (sin invalidar la vieja)
 2. Deployar aplicación con nueva credencial
 3. Verificar que funciona
@@ -140,11 +141,12 @@ def lambda_handler(event, context):
 
 ---
 
-## 🔒 Least Privilege
+## 🔒 Mínimo Privilegio
 
 ### IAM Policies (AWS)
 
 **❌ MAL (demasiado permisivo):**
+
 ```json
 {
   "Version": "2012-10-17",
@@ -157,6 +159,7 @@ def lambda_handler(event, context):
 ```
 
 **✅ BIEN (least privilege):**
+
 ```json
 {
   "Version": "2012-10-17",
@@ -206,7 +209,7 @@ roleRef:
 
 ---
 
-## 🚀 Secrets en CI/CD
+## 🚀 Secretos en CI/CD
 
 ### GitHub Actions
 
@@ -359,6 +362,7 @@ docker run -d --name=vault \
 ```
 
 ### Producción (Kubernetes)
+
 ```bash
 helm repo add hashicorp https://helm.releases.hashicorp.com
 helm install vault hashicorp/vault \
@@ -422,7 +426,6 @@ client = hvac.Client(url='http://localhost:8200', token='<app-token>')
 # Leer secreto
 secret = client.secrets.kv.v2.read_secret_version(path='myapp/config')
 db_password = secret['data']['data']['db_password']
-```
 ```
 
 ---

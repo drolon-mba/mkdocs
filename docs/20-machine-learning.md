@@ -23,23 +23,24 @@
 - [🚫 Problemas Comunes](#problemas-comunes)
 - [🔐 Ética y Fairness](#etica-y-fairness)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 🤖 Machine Learning
 
-**What:** Algoritmos que mejoran con experiencia sin ser programados explícitamente.
+**Qué:** Algoritmos que mejoran con experiencia sin ser programados explícitamente.
 
-**Why:** Automatizar decisiones, encontrar patrones, personalización.
+**Por qué:** Automatizar decisiones, encontrar patrones, personalización.
 
-**Who:** Data Scientists, ML Engineers, Research Engineers.
+**Quién:** Data Scientists, ML Engineers, Research Engineers.
 
-**How much:** Alta inversión inicial (datos, entrenamiento), ROI variable según caso de uso.
+**Esfuerzo:** Alta inversión inicial (datos, entrenamiento), ROI variable según caso de uso.
 
 ---
 
 ## 📊 Tipos de Aprendizaje
 
-| Tipo | What | When | Algoritmos |
+| Tipo | Qué | Cuándo | Algoritmos |
 |:-----|:-----|:-----|:-----------|
 | **Supervisado** | Aprender de datos etiquetados | Clasificación, regresión | Linear Regression, Random Forest, XGBoost, SVM |
 | **No Supervisado** | Encontrar patrones sin etiquetas | Clustering, reducción dimensionalidad | K-Means, DBSCAN, PCA, t-SNE |
@@ -50,16 +51,16 @@
 
 ## 🧠 Algoritmos Clásicos (ML)
 
-| Algoritmo | What | When | Pros/Cons |
+| Algoritmo | Qué | Cuándo | Pros/Contras |
 |:----------|:-----|:-----|:----------|
-| **Linear Regression** | Predecir valor continuo | Relación lineal | ✅ Simple, interpretable<br>❌ Solo lineal |
-| **Logistic Regression** | Clasificación binaria | Baseline classification | ✅ Rápido, probabilístico<br>❌ Solo linealmente separable |
-| **Decision Trees** | Árbol de decisiones | Interpretabilidad | ✅ Fácil explicar<br>❌ Overfitting |
-| **Random Forest** | Ensemble de árboles | Clasificación/regresión robusta | ✅ Reduce overfitting<br>❌ Menos interpretable |
-| **XGBoost** | Gradient boosting optimizado | Competencias Kaggle | ✅ SOTA en tabular<br>❌ Tuning complejo |
-| **SVM** | Support Vector Machines | Clasificación con kernel | ✅ Efectivo high-dim<br>❌ Lento en big data |
-| **K-Means** | Clustering por centroides | Segmentación clientes | ✅ Simple<br>❌ Requiere K predefinido |
-| **PCA** | Reducción dimensionalidad | Visualización, preprocessing | ✅ Elimina colinealidad<br>❌ Pierde interpretabilidad |
+| **Linear Regression** | Predecir valor continuo | Relación lineal | ✅ Simple, interpretable; ❌ Solo lineal |
+| **Logistic Regression** | Clasificación binaria | Baseline classification | ✅ Rápido, probabilístico; ❌ Solo linealmente separable |
+| **Decision Trees** | Árbol de decisiones | Interpretabilidad | ✅ Fácil explicar; ❌ Overfitting |
+| **Random Forest** | Ensemble de árboles | Clasificación/regresión robusta | ✅ Reduce overfitting; ❌ Menos interpretable |
+| **XGBoost** | Gradient boosting optimizado | Competencias Kaggle | ✅ SOTA en tabular; ❌ Tuning complejo |
+| **SVM** | Support Vector Machines | Clasificación con kernel | ✅ Efectivo high-dim; ❌ Lento en big data |
+| **K-Means** | Clustering por centroides | Segmentación clientes | ✅ Simple; ❌ Requiere K predefinido |
+| **PCA** | Reducción dimensionalidad | Visualización, preprocessing | ✅ Elimina colinealidad; ❌ Pierde interpretabilidad |
 
 **Herramientas:** [scikit-learn](https://scikit-learn.org/), [XGBoost](https://xgboost.readthedocs.io/), [LightGBM](https://lightgbm.readthedocs.io/)
 
@@ -67,11 +68,11 @@
 
 ## 🧠 Deep Learning
 
-**What:** Redes neuronales con múltiples capas.
+**Qué:** Redes neuronales con múltiples capas.
 
-**Why:** Aprende representaciones complejas, SOTA en visión, NLP, audio.
+**Por qué:** Aprende representaciones complejas, SOTA en visión, NLP, audio.
 
-| Arquitectura | What | When | Use Cases |
+| Arquitectura | Qué | Cuándo | Casos de Uso |
 |:-------------|:-----|:-----|:----------|
 | **CNN** (Convolutional) | Redes para datos espaciales | Imágenes, video | Clasificación imágenes, detección objetos |
 | **RNN** (Recurrent) | Redes para secuencias | Series temporales, texto | Predicción series, sentiment analysis |
@@ -87,7 +88,7 @@
 
 ## 🗣️ NLP (Natural Language Processing)
 
-| Tarea | What | Modelos |
+| Tarea | Qué | Modelos |
 |:------|:-----|:--------|
 | **Clasificación texto** | Categorizar documentos | BERT, RoBERTa, DistilBERT |
 | **NER** (Named Entity Recognition) | Extraer entidades | spaCy, Flair |
@@ -103,7 +104,7 @@
 
 ## 👁️ Computer Vision
 
-| Tarea | What | Modelos |
+| Tarea | Qué | Modelos |
 |:------|:-----|:--------|
 | **Clasificación** | Etiquetar imagen | ResNet, EfficientNet, Vision Transformer |
 | **Detección objetos** | Ubicar objetos en imagen | YOLO, Faster R-CNN |
@@ -118,11 +119,11 @@
 
 ## 🔄 MLOps
 
-**What:** DevOps para Machine Learning (automatizar pipeline ML).
+**Qué:** DevOps para Machine Learning (automatizar pipeline ML).
 
-**Why:** Reproducibilidad, deployment continuo, monitoreo modelos.
+**Por qué:** Reproducibilidad, deployment continuo, monitoreo modelos.
 
-| Fase | What | Herramientas |
+| Fase | Qué | Herramientas |
 |:-----|:-----|:-------------|
 | **Experiment Tracking** | Registrar entrenamientos | [MLflow](https://mlflow.org/), [Weights & Biases](https://wandb.ai/) |
 | **Feature Store** | Centralizar features | [Feast](https://feast.dev/), [Tecton](https://www.tecton.ai/) |
@@ -135,7 +136,7 @@
 
 ## 📊 Pipeline ML
 
-```
+```text
 1. Problem Definition
    ↓
 2. Data Collection
@@ -161,7 +162,7 @@
 
 ### Clasificación
 
-| Métrica | What | When |
+| Métrica | Qué | Cuándo |
 |:--------|:-----|:-----|
 | **Accuracy** | % correctos | Clases balanceadas |
 | **Precision** | % de positivos correctos | Minimizar falsos positivos |
@@ -172,7 +173,7 @@
 
 ### Regresión
 
-| Métrica | What | When |
+| Métrica | Qué | Cuándo |
 |:--------|:-----|:-----|
 | **MAE** | Mean Absolute Error | Interpretar error promedio |
 | **MSE** | Mean Squared Error | Penalizar errores grandes |
@@ -183,7 +184,7 @@
 
 ## 🔧 Feature Engineering
 
-| Técnica | What | Ejemplo |
+| Técnica | Qué | Ejemplo |
 |:--------|:-----|:--------|
 | **Encoding** | Convertir categóricas | One-hot, label encoding |
 | **Scaling** | Normalizar rangos | StandardScaler, MinMaxScaler |
@@ -196,7 +197,7 @@
 
 ## ⚙️ Optimización Hiperparámetros
 
-| Método | What | When |
+| Método | Qué | Cuándo |
 |:-------|:-----|:-----|
 | **Grid Search** | Probar todas combinaciones | Pocos hiperparámetros |
 | **Random Search** | Sampling aleatorio | Más hiperparámetros |
@@ -209,7 +210,7 @@
 
 ## 🧪 Validación
 
-| Técnica | What | When |
+| Técnica | Qué | Cuándo |
 |:--------|:-----|:-----|
 | **Train/Test Split** | 80-20 o 70-30 | Dataset suficientemente grande |
 | **K-Fold CV** | K subsets, entrenar K veces | Datasets pequeños |
@@ -232,7 +233,7 @@
 
 ## 🔐 Ética y Fairness
 
-| Aspecto | What | Cómo mitigar |
+| Aspecto | Qué | Cómo mitigar |
 |:--------|:-----|:-------------|
 | **Bias** | Modelo discrimina grupos | Auditar datasets, fairness metrics |
 | **Privacy** | Datos sensibles | Differential privacy, federated learning |

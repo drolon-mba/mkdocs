@@ -20,11 +20,11 @@
 
 ## ⚖️ Introducción
 
-**What:** Principios y prácticas para construir sistemas de IA éticos, justos y transparentes.
+**Qué:** Principios y prácticas para construir sistemas de IA éticos, justos y transparentes.
 
-**Why:** IA sin ética puede amplificar sesgos, discriminar y causar daño a escala. Regulaciones (GDPR, AI Act) exigen responsabilidad.
+**Por qué:** IA sin ética puede amplificar sesgos, discriminar y causar daño a escala. Regulaciones (GDPR, AI Act) exigen responsabilidad.
 
-**How:** Detectar y mitigar bias, medir fairness, explicar decisiones, proteger privacy, documentar modelos.
+**Cómo:** Detectar y mitigar bias, medir fairness, explicar decisiones, proteger privacy, documentar modelos.
 
 ### Principios Fundamentales
 
@@ -146,11 +146,13 @@ debiased_model.fit(dataset)
 **Definición:** Probabilidad de outcome positivo debe ser igual para todos los grupos.
 
 **Fórmula:**
-```
+
+```text
 P(Y_pred=1 | A=0) = P(Y_pred=1 | A=1)
 ```
 
 **Ejemplo:**
+
 ```python
 # Calcular demographic parity
 def demographic_parity(y_pred, protected_attr):
@@ -168,9 +170,11 @@ def demographic_parity(y_pred, protected_attr):
 ```
 
 **Cuándo usar:**
+
 - Cuando queremos igualdad de oportunidades (ej: contratación, admisiones)
 
 **Limitación:**
+
 - Puede forzar igualdad de outcomes incluso si hay diferencias legítimas en inputs
 
 ---
@@ -180,12 +184,14 @@ def demographic_parity(y_pred, protected_attr):
 **Definición:** True positive rate y false positive rate deben ser iguales para todos los grupos.
 
 **Fórmula:**
-```
+
+```text
 P(Y_pred=1 | Y_true=1, A=0) = P(Y_pred=1 | Y_true=1, A=1)  # TPR
 P(Y_pred=1 | Y_true=0, A=0) = P(Y_pred=1 | Y_true=0, A=1)  # FPR
 ```
 
 **Ejemplo:**
+
 ```python
 from sklearn.metrics import confusion_matrix
 
@@ -207,6 +213,7 @@ def equalized_odds(y_true, y_pred, protected_attr):
 ```
 
 **Cuándo usar:**
+
 - Cuando queremos igualdad en accuracy para todos los grupos (ej: diagnóstico médico, predicción de riesgo)
 
 ---
@@ -216,11 +223,13 @@ def equalized_odds(y_true, y_pred, protected_attr):
 **Definición:** Entre individuos con misma probabilidad predicha, la fracción de outcomes positivos debe ser igual para todos los grupos.
 
 **Fórmula:**
-```
+
+```text
 P(Y_true=1 | Y_pred=p, A=0) = P(Y_true=1 | Y_pred=p, A=1)
 ```
 
 **Cuándo usar:**
+
 - Cuando las probabilidades predichas se usan para tomar decisiones (ej: scoring de crédito)
 
 ---
@@ -231,9 +240,11 @@ P(Y_true=1 | Y_pred=p, A=0) = P(Y_true=1 | Y_pred=p, A=1)
 > Es matemáticamente imposible satisfacer todas las fairness metrics simultáneamente (excepto en casos triviales).
 
 **Ejemplo:**
+
 - Demographic parity vs Equalized odds: Si hay diferencias reales en base rates entre grupos, no se pueden satisfacer ambas.
 
 **Solución:**
+
 - Elegir la métrica más apropiada para el contexto de negocio y regulaciones aplicables.
 
 ---
@@ -256,6 +267,7 @@ P(Y_true=1 | Y_pred=p, A=0) = P(Y_true=1 | Y_pred=p, A=1)
 **Qué hace:** Explica contribución de cada feature a la predicción.
 
 **Ejemplo:**
+
 ```python
 import shap
 
@@ -272,6 +284,7 @@ shap.summary_plot(shap_values, X_test)
 ```
 
 **Interpretación:**
+
 - Features con SHAP values positivos → aumentan probabilidad de clase positiva
 - Features con SHAP values negativos → disminuyen probabilidad
 
@@ -282,6 +295,7 @@ shap.summary_plot(shap_values, X_test)
 **Qué hace:** Explica predicciones individuales aproximando modelo complejo con modelo simple local.
 
 **Ejemplo:**
+
 ```python
 from lime.lime_tabular import LimeTabularExplainer
 
@@ -308,6 +322,7 @@ exp.show_in_notebook()
 **Qué hace:** Ranking de features por importancia global.
 
 **Ejemplo:**
+
 ```python
 from sklearn.inspection import permutation_importance
 
@@ -330,6 +345,7 @@ plt.xlabel("Permutation Importance")
 **Qué es:** Garantía matemática de que agregar/remover un individuo del dataset no cambia significativamente el output.
 
 **Ejemplo:**
+
 ```python
 from diffprivlib.models import LogisticRegression
 
@@ -341,6 +357,7 @@ model.fit(X_train, y_train)
 ```
 
 **Trade-off:**
+
 - ✅ Privacy garantizada matemáticamente
 - ❌ Accuracy reducida (más privacy → menos accuracy)
 
@@ -351,6 +368,7 @@ model.fit(X_train, y_train)
 **Qué es:** Entrenar modelo sin centralizar datos (modelo viaja a los datos, no al revés).
 
 **Ejemplo:**
+
 ```python
 # Pseudocódigo
 # Servidor central
@@ -367,10 +385,12 @@ for round in range(num_rounds):
 ```
 
 **Ventajas:**
+
 - ✅ Datos nunca salen del dispositivo del usuario
 - ✅ Compliance con GDPR, HIPAA
 
 **Desafíos:**
+
 - ❌ Heterogeneidad de datos entre clientes
 - ❌ Comunicación costosa
 
@@ -395,6 +415,7 @@ for round in range(num_rounds):
 **Qué es:** Documentación estandarizada de modelos ML.
 
 **Contenido:**
+
 - **Model Details**: Tipo, arquitectura, versión
 - **Intended Use**: Para qué fue diseñado, limitaciones
 - **Factors**: Variables que afectan performance (demografía, contexto)
@@ -403,6 +424,7 @@ for round in range(num_rounds):
 - **Ethical Considerations**: Riesgos, mitigaciones
 
 **Ejemplo:**
+
 ```markdown
 # Model Card: Credit Approval Model
 
@@ -441,6 +463,7 @@ for round in range(num_rounds):
 **Qué es:** Documentación estandarizada de datasets.
 
 **Contenido:**
+
 - **Motivation**: Por qué se creó el dataset
 - **Composition**: Qué contiene, cuántos ejemplos, missing data
 - **Collection Process**: Cómo se recolectaron los datos
@@ -456,12 +479,14 @@ for round in range(num_rounds):
 **Qué es:** Comité que revisa proyectos de IA para identificar riesgos éticos.
 
 **Composición:**
+
 - Técnicos (ML engineers, data scientists)
 - Expertos en ética
 - Legal/compliance
 - Representantes de grupos afectados
 
 **Proceso:**
+
 1. **Submission**: Equipo envía propuesta de proyecto de IA
 2. **Review**: Ethics board evalúa riesgos (bias, privacy, safety)
 3. **Decision**: Aprobar, aprobar con condiciones, rechazar

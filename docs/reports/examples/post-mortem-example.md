@@ -1,6 +1,7 @@
-## 💀 Post-Mortem Report
+# 💀 Post-Mortem Report
 
-### ℹ️ Meta Información
+## ℹ️ Meta Información
+
 - **Incidente:** Caída de Checkout en Black Friday
 - **Fecha:** 2025-11-24
 - **Estado:** Final
@@ -9,12 +10,14 @@
 
 ---
 
-### 📝 Resumen Ejecutivo
+## 📝 Resumen Ejecutivo
+
 Durante el pico de tráfico de Black Friday, el servicio de Checkout comenzó a responder con errores 503 debido a agotamiento de conexiones a la base de datos. El incidente duró 15 minutos, afectando al 100% de los intentos de compra. Se resolvió aumentando el pool de conexiones y reiniciando los pods.
 
 ---
 
-### 📊 Impacto
+## 📊 Impacto
+
 - **Duración:** 15 minutos (14:00 - 14:15 UTC)
 - **Usuarios afectados:** ~5,000 intentos de compra fallidos
 - **Pérdida estimada:** ~$150,000 USD
@@ -22,8 +25,9 @@ Durante el pico de tráfico de Black Friday, el servicio de Checkout comenzó a 
 
 ---
 
-### 🕒 Timeline
-_Todas las horas en UTC_
+## 🕒 Timeline
+
+Todas las horas en UTC
 
 - **[14:00]** - Alerta de "High Error Rate" en Checkout Service dispara en PagerDuty.
 - **[14:02]** - On-call (Juan) reconoce alerta y entra al war room.
@@ -35,7 +39,8 @@ _Todas las horas en UTC_
 
 ---
 
-### 🔍 Causa Raíz (5 Whys)
+## 🔍 Causa Raíz (5 Whys)
+
 1. **¿Por qué falló el checkout?**
    La base de datos rechazó nuevas conexiones.
 2. **¿Por qué rechazó conexiones?**
@@ -49,23 +54,28 @@ _Todas las horas en UTC_
 
 ---
 
-### 🛠️ Resolución y Recuperación
+## 🛠️ Resolución y Recuperación
+
 Se aumentó temporalmente el límite de conexiones de la DB y del pool de la aplicación. Se identificó el endpoint problemático y se deshabilitó temporalmente hasta fixearlo.
 
 ---
 
-### 🎓 Lecciones Aprendidas
+## 🎓 Lecciones Aprendidas
+
 **Lo que salió bien:**
+
 - El equipo reaccionó en < 2 minutos.
 - El dashboard de métricas de DB fue claro.
 
 **Lo que salió mal:**
+
 - No teníamos un "Kill Switch" para el endpoint legado.
 - Las pruebas de carga no cubrieron escenarios legacy.
 
 ---
 
-### ✅ Action Items
+## ✅ Action Items
+
 | Tarea | Tipo | Dueño | Prioridad | Ticket |
 |:------|:-----|:------|:----------|:-------|
 | Fix connection leak en LegacyCheckout | Reparación | @backend | Crítica | JIRA-501 |

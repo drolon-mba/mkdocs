@@ -1,6 +1,7 @@
-## 💀 Post-Mortem Report
+# 💀 Post-Mortem Report
 
-### ℹ️ Meta Información
+## ℹ️ Meta Información
+
 - **Incidente:** [Título del incidente]
 - **Fecha:** [YYYY-MM-DD]
 - **Estado:** [Draft / Review / Final]
@@ -9,12 +10,14 @@
 
 ---
 
-### 📝 Resumen Ejecutivo
+## 📝 Resumen Ejecutivo
+
 [Resumen de 1 párrafo: qué pasó, impacto, y cómo se resolvió. Para lectura de ejecutivos.]
 
 ---
 
-### 📊 Impacto
+## 📊 Impacto
+
 - **Duración:** [Tiempo total de caída/degradación]
 - **Usuarios afectados:** [% o número absoluto]
 - **Pérdida estimada:** [Si aplica]
@@ -22,8 +25,9 @@
 
 ---
 
-### 🕒 Timeline
-_Todas las horas en UTC_
+## 🕒 Timeline
+
+Todas las horas en UTC
 
 - **[HH:MM]** - Inicio del incidente (alerta disparada o reporte de usuario).
 - **[HH:MM]** - Ingeniero on-call recibe alerta.
@@ -34,7 +38,8 @@ _Todas las horas en UTC_
 
 ---
 
-### 🔍 Causa Raíz (5 Whys)
+## 🔍 Causa Raíz (5 Whys)
+
 1. **¿Por qué falló el sistema?**
    [Respuesta]
 2. **¿Por qué ocurrió eso?**
@@ -48,26 +53,32 @@ _Todas las horas en UTC_
 
 ---
 
-### 🛠️ Resolución y Recuperación
+## 🛠️ Resolución y Recuperación
+
 [Qué se hizo para mitigar y resolver. Qué funcionó y qué no.]
 
 ---
 
-### 🎓 Lecciones Aprendidas
+## 🎓 Lecciones Aprendidas
+
 **Lo que salió bien:**
+
 - [ ] Alertas funcionaron rápido.
 - [ ] Rollback fue exitoso.
 
 **Lo que salió mal:**
+
 - [ ] Logs insuficientes para debuggear rápido.
 - [ ] Nadie tenía acceso a la DB de producción.
 
 **Donde tuvimos suerte:**
+
 - [ ] Ocurrió en horario de bajo tráfico.
 
 ---
 
-### ✅ Action Items
+## ✅ Action Items
+
 | Tarea | Tipo | Dueño | Prioridad | Ticket |
 |:------|:-----|:------|:----------|:-------|
 | Agregar alerta de latencia | Preventivo | @dev | Alta | JIRA-101 |

@@ -19,23 +19,24 @@
 - [📝 Comentarios y Documentación](#comentarios-y-documentacion)
 - [🚫 Anti-patrones](#anti-patrones)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 🔤 Nomenclatura
 
-**What:** Reglas consistentes para nombrar variables, funciones, archivos y componentes.
+**Qué:** Reglas consistentes para nombrar variables, funciones, archivos y componentes.
 
-**Why:** Código se lee 10x más que se escribe. Buenos nombres = documentación viva.
+**Por qué:** Código se lee 10x más que se escribe. Buenos nombres = documentación viva.
 
-**Who:** Todo el equipo, enforcement vía linters.
+**Quién:** Todo el equipo, enforcement vía linters.
 
-**When:** Siempre, desde el primer archivo.
+**Cuándo:** Siempre, desde el primer archivo.
 
-**Where:** Todo el codebase sin excepciones.
+**Dónde:** Todo el codebase sin excepciones.
 
-**How:** Style guides + linters automáticos + code review.
+**Cómo:** Style guides + linters automáticos + code review.
 
-**How much:** Inversión inicial configurar linters (2-4h), ahorra horas en code review.
+**Esfuerzo:** Inversión inicial configurar linters (2-4h), ahorra horas en code review.
 
 ### Por Lenguaje
 
@@ -59,6 +60,7 @@
 | **Funciones verbos** | `email()`, `user()` | `sendEmail()`, `getUser()` |
 
 **Excepciones aceptables:**
+
 - Loops: `i`, `j`, `k` (si contexto claro)
 - Callbacks: `e` (event), `err` (error)
 - Math: `x`, `y`, `z`
@@ -67,30 +69,30 @@
 
 ## 📁 Estructura de Carpetas
 
-**What:** Organización lógica de archivos y directorios en el proyecto.
+**Qué:** Organización lógica de archivos y directorios en el proyecto.
 
-**Why:** Estructura clara = onboarding rápido, ubicación predecible de archivos, escalabilidad.
+**Por qué:** Estructura clara = onboarding rápido, ubicación predecible de archivos, escalabilidad.
 
-**Who:** Architects definen, equipo mantiene.
+**Quién:** Architects definen, equipo mantiene.
 
-**When:** Al inicio del proyecto, evolucionando según necesidad.
+**Cuándo:** Al inicio del proyecto, evolucionando según necesidad.
 
-**Where:** Todo el repositorio.
+**Dónde:** Todo el repositorio.
 
-**How:** Elegir patrón según tamaño y complejidad del proyecto.
+**Cómo:** Elegir patrón según tamaño y complejidad del proyecto.
 
-**How much:** Decisión temprana de alto impacto, difícil cambiar después.
+**Esfuerzo:** Decisión temprana de alto impacto, difícil cambiar después.
 
 ### Backend - Por Tipo de Fichero
 
-**What:** Agrupar por categoría técnica (controllers, services, models).
+**Qué:** Agrupar por categoría técnica (controllers, services, models).
 
-**When:** Proyectos pequeños-medianos (< 20 endpoints), equipo único.
+**Cuándo:** Proyectos pequeños-medianos (< 20 endpoints), equipo único.
 
 **Pros:** ✅ Simple, ✅ Intuitivo para juniors  
 **Cons:** ❌ Escala mal, ❌ Difícil encontrar features
 
-```
+```text
 src/
 ├── controllers/     # HTTP handlers
 │   ├── userController.js
@@ -124,14 +126,14 @@ src/
 
 ### Backend - Por Funcionalidad/Módulo
 
-**What:** Agrupar por feature/bounded context de negocio.
+**Qué:** Agrupar por feature/bounded context de negocio.
 
-**When:** Proyectos medianos-grandes, múltiples equipos, microservicios.
+**Cuándo:** Proyectos medianos-grandes, múltiples equipos, microservicios.
 
 **Pros:** ✅ Escalable, ✅ Features autónomas, ✅ Ideal para equipos  
 **Cons:** ❌ Duplicación inicial, ❌ Puede confundir a juniors
 
-```
+```text
 src/
 ├── auth/                    # Feature: Authentication
 │   ├── controllers/
@@ -161,14 +163,14 @@ src/
 
 ### Backend - Por Arquitectura Hexagonal
 
-**What:** Separar lógica de negocio (core) de infraestructura (adaptadores).
+**Qué:** Separar lógica de negocio (core) de infraestructura (adaptadores).
 
-**When:** Dominios complejos, testability crítica, independencia de frameworks.
+**Cuándo:** Dominios complejos, testability crítica, independencia de frameworks.
 
 **Pros:** ✅ Testeable sin infra, ✅ Cambiar DB/framework sin tocar core  
 **Cons:** ❌ Más archivos, ❌ Curva de aprendizaje
 
-```
+```text
 src/
 ├── domain/                  # Core: Business logic
 │   ├── entities/           # Pure domain objects
@@ -202,14 +204,14 @@ src/
 
 ### Backend - Por DDD (Domain-Driven Design)
 
-**What:** Organizar por bounded contexts y agregados del dominio.
+**Qué:** Organizar por bounded contexts y agregados del dominio.
 
-**When:** Dominios muy complejos, múltiples subdominios, enterprise.
+**Cuándo:** Dominios muy complejos, múltiples subdominios, enterprise.
 
 **Pros:** ✅ Refleja negocio, ✅ Ubiquitous language, ✅ Boundaries claros  
 **Cons:** ❌ Requiere expertise DDD, ❌ Over-engineering en dominios simples
 
-```
+```text
 src/
 ├── contexts/                    # Bounded Contexts
 │   ├── sales/                  # Subdominio: Ventas
@@ -241,14 +243,14 @@ src/
 
 ### Frontend - Por Tipo de Fichero
 
-**What:** Agrupar por categoría técnica (components, pages, hooks).
+**Qué:** Agrupar por categoría técnica (components, pages, hooks).
 
-**When:** Proyectos pequeños (< 30 componentes), prototipado rápido.
+**Cuándo:** Proyectos pequeños (< 30 componentes), prototipado rápido.
 
 **Pros:** ✅ Simple, ✅ Flat structure  
 **Cons:** ❌ Difícil escalar, ❌ Componentes relacionados separados
 
-```
+```text
 src/
 ├── components/          # Todos los componentes
 │   ├── Button.tsx
@@ -277,14 +279,14 @@ src/
 
 ### Frontend - Por Funcionalidad/Módulo
 
-**What:** Agrupar por feature de negocio.
+**Qué:** Agrupar por feature de negocio.
 
-**When:** Apps medianas-grandes (> 30 componentes), múltiples features.
+**Cuándo:** Apps medianas-grandes (> 30 componentes), múltiples features.
 
 **Pros:** ✅ Escalable, ✅ Features autónomas, ✅ Fácil eliminar features  
 **Cons:** ❌ Puede tener duplicación compartida
 
-```
+```text
 src/
 ├── features/                # Features de negocio
 │   ├── auth/               # Feature: Autenticación
@@ -323,14 +325,14 @@ src/
 
 ### Frontend - Por Atomic Design
 
-**What:** Jerarquía de componentes: Atoms → Molecules → Organisms → Templates → Pages.
+**Qué:** Jerarquía de componentes: Atoms → Molecules → Organisms → Templates → Pages.
 
-**When:** Design systems, componentes altamente reutilizables, equipos design+dev.
+**Cuándo:** Design systems, componentes altamente reutilizables, equipos design+dev.
 
 **Pros:** ✅ Reutilización máxima, ✅ Storybook friendly, ✅ Consistencia visual  
 **Cons:** ❌ Over-engineering para apps simples, ❌ Puede ser rígido
 
-```
+```text
 src/
 ├── components/
 │   ├── atoms/              # Componentes básicos indivisibles
@@ -368,14 +370,14 @@ src/
 
 ### Frontend - Híbrido (Features + Atomic para Shared)
 
-**What:** Features por módulo + Atomic Design para componentes compartidos.
+**Qué:** Features por módulo + Atomic Design para componentes compartidos.
 
-**When:** Mejor de ambos mundos para apps grandes con design system.
+**Cuándo:** Mejor de ambos mundos para apps grandes con design system.
 
 **Pros:** ✅ Escalable, ✅ Reutilización, ✅ Features aisladas  
 **Cons:** ❌ Más complejo inicialmente
 
-```
+```text
 src/
 ├── features/                # Por módulo de negocio
 │   ├── auth/
@@ -396,14 +398,14 @@ src/
 
 ### Monorepo
 
-**What:** Múltiples apps/packages en un repositorio.
+**Qué:** Múltiples apps/packages en un repositorio.
 
-**When:** Microservicios, múltiples frontends, librerías compartidas.
+**Cuándo:** Microservicios, múltiples frontends, librerías compartidas.
 
 **Pros:** ✅ Código compartido fácil, ✅ Atomic commits cross-repo  
 **Cons:** ❌ Build más complejo, ❌ Requiere tooling (Nx, Turborepo)
 
-```
+```text
 monorepo/
 ├── apps/                    # Aplicaciones
 │   ├── web/                # Frontend web (Next.js)
@@ -438,6 +440,7 @@ monorepo/
 | **Monorepo** | Múltiples apps relacionadas | Alta ⭐⭐⭐⭐ | Muy Alta ⭐⭐⭐⭐⭐ | Alta ⭐⭐⭐⭐ |
 
 **Recomendación general:**
+
 - **Startup/MVP:** Por Tipo (simple y rápido)
 - **Producto creciendo:** Por Funcionalidad (escala mejor)
 - **Enterprise:** DDD o Hexagonal (testability, complejidad)
@@ -478,6 +481,7 @@ monorepo/
 **Formato:** `<type>(<scope>): <description>`
 
 **Tipos:**
+
 - `feat`: Nueva feature
 - `fix`: Bug fix
 - `docs`: Solo documentación
@@ -488,6 +492,7 @@ monorepo/
 - `perf`: Mejora performance
 
 **Ejemplos:**
+
 ```bash
 feat(auth): add JWT authentication
 fix(api): handle null user in /profile endpoint
@@ -495,7 +500,7 @@ docs(readme): update installation instructions
 refactor(user-service): extract validation logic
 test(auth): add unit tests for login flow
 chore(deps): upgrade React to 18.2
-```
+```text
 
 **Herramientas:** [commitlint](https://commitlint.js.org/), [husky](https://typicode.github.io/husky/)
 
@@ -509,7 +514,8 @@ chore(deps): upgrade React to 18.2
 | **Cuándo usar** | Releases planificados, equipos grandes | CI/CD continuo, deploy frecuente |
 
 **Trunk-Based (recomendado moderno):**
-```
+
+```text
 main ─────●─────●─────●────→ (siempre deployable)
            ↖    ↗
          feature (merge rápido)
@@ -531,7 +537,7 @@ main ─────●─────●─────●────→ (siem
 
 ### Best Practices
 
-| Práctica | Why | Cómo |
+| Práctica | Por qué | Cómo |
 |:---------|:----|:-----|
 | **Pin versions** | Reproducibilidad | `react@18.2.0` no `react@^18.0.0` (prod) |
 | **Commit lock files** | Builds deterministas | Git add `package-lock.json` |
@@ -540,7 +546,8 @@ main ─────●─────●─────●────→ (siem
 | **Minimizar deps** | Menos superficie ataque | Evaluar cada nueva dep |
 
 **Versioning (SemVer):**
-```
+
+```text
 1.2.3
 │ │ └─ PATCH: Bug fixes
 │ └─── MINOR: New features (backward compatible)
@@ -548,6 +555,7 @@ main ─────●─────●─────●────→ (siem
 ```
 
 **Ranges:**
+
 - `1.2.3`: Exacto
 - `^1.2.3`: Compatible con 1.x.x (>= 1.2.3 < 2.0.0)
 - `~1.2.3`: Patch updates (>= 1.2.3 < 1.3.0)
@@ -583,7 +591,7 @@ main ─────●─────●─────●────→ (siem
 }
 ```
 
-### Best Practices
+### Best Practices - i18n
 
 | Práctica | Cómo |
 |:---------|:-----|
@@ -594,6 +602,7 @@ main ─────●─────●─────●────→ (siem
 | **RTL support** | CSS con `dir="auto"` |
 
 **Herramientas:**
+
 - [i18next](https://www.i18next.com/) (JS)
 - [react-intl](https://formatjs.io/docs/react-intl/) (React)
 - [django-modeltranslation](https://django-modeltranslation.readthedocs.io/) (Django)
@@ -625,6 +634,7 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 ```
 
 **`.env` (solo local, no commitear):**
+
 ```bash
 DATABASE_URL=postgresql://localhost/mydb
 SECRET_KEY=dev-secret-key-not-for-prod
@@ -694,6 +704,7 @@ coverage/
 | **Java** | Checkstyle | `checkstyle.xml` |
 
 **Setup:**
+
 ```json
 // package.json
 {
@@ -724,6 +735,7 @@ coverage/
 | Algoritmos no obvios | TODOs sin contexto |
 
 **Ejemplo:**
+
 ```typescript
 // ❌ Mal: restating
 // Incrementa contador
@@ -738,6 +750,7 @@ const uniqueUsers = [...new Set(users)];
 ### JSDoc / Docstrings
 
 **Python:**
+
 ```python
 def calculate_discount(price: float, discount_percent: float) -> float:
     """
@@ -759,6 +772,7 @@ def calculate_discount(price: float, discount_percent: float) -> float:
 ```
 
 **TypeScript:**
+
 ```typescript
 /**
  * Validates email format using RFC 5322 regex

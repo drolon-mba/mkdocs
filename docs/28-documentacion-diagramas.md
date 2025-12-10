@@ -16,25 +16,26 @@
 - [✍️ Best Practices Documentación](#best-practices-documentacion)
 - [🚫 Anti-patrones](#anti-patrones)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 📝 Documentación de Software
 
-**What:** Información escrita o visual que explica cómo funciona, se usa o se mantiene un sistema.
+**Qué:** Información escrita o visual que explica cómo funciona, se usa o se mantiene un sistema.
 
-**Why:** Código se lee 10x más de lo que se escribe. Buena doc = onboarding rápido, menos bugs, mejor mantenimiento.
+**Por qué:** Código se lee 10x más de lo que se escribe. Buena doc = onboarding rápido, menos bugs, mejor mantenimiento.
 
-**Who:** Developers, technical writers, architects.
+**Quién:** Developers, technical writers, architects.
 
-**When:** Continuo, como parte del desarrollo (no después).
+**Cuándo:** Continuo, como parte del desarrollo (no después).
 
-**How much:** 10-15% del tiempo de desarrollo, paga dividendos en mantenimiento.
+**Esfuerzo:** 10-15% del tiempo de desarrollo, paga dividendos en mantenimiento.
 
 ---
 
 ## 📖 Lenguajes de Documentación
 
-| Lenguaje | What | When | Ejemplo |
+| Lenguaje | Qué | Cuándo | Ejemplo |
 |:---------|:-----|:-----|:--------|
 | [Markdown](https://www.markdownguide.org/) | Formato texto plano ligero | READMEs, wikis, docs generales | `# Título\n**negrita**` |
 | [AsciiDoc](https://asciidoc.org/) | Markdown con esteroides | Docs técnicas complejas, libros | Soporte tablas, includes |
@@ -48,7 +49,7 @@
 
 ### Diagramas como Código
 
-| Herramienta | What | Sintaxis | Use Case |
+| Herramienta | Qué | Sintaxis | Caso de Uso |
 |:------------|:-----|:---------|:---------|
 | [Mermaid](https://mermaid.js.org/) | Diagramas en Markdown | Texto declarativo | Flowcharts, secuencia, Gantt, ER |
 | [PlantUML](https://plantuml.com/) | UML y más | Texto declarativo | Clases, secuencia, componentes |
@@ -56,6 +57,7 @@
 | [Graphviz](https://graphviz.org/) | Layout automático de grafos | DOT language | Dependencias, grafos |
 
 **Ventajas diagrams-as-code:**
+
 - ✅ Versionado en Git
 - ✅ Diffs legibles
 - ✅ CI/CD automation
@@ -63,7 +65,7 @@
 
 ### Herramientas Visuales
 
-| Herramienta | What | When |
+| Herramienta | Qué | Cuándo |
 |:------------|:-----|:-----|
 | [draw.io](https://www.draw.io/) | Diagramas drag-and-drop free | Prototipado rápido |
 | [Lucidchart](https://www.lucidchart.com/) | Diagramas profesionales | Colaboración, org charts |
@@ -77,11 +79,12 @@
 
 ### Diagrama de Flujo (Flowchart)
 
-**What:** Representa proceso con pasos y decisiones.
+**Qué:** Representa proceso con pasos y decisiones.
 
-**When:** Algoritmos, procesos de negocio, workflows.
+**Cuándo:** Algoritmos, procesos de negocio, workflows.
 
 **Mermaid:**
+
 ```mermaid
 graph TD
     A[Start] --> B{Usuario autenticado?}
@@ -92,6 +95,7 @@ graph TD
 ```
 
 **Símbolos:**
+
 - Óvalo: Inicio/Fin
 - Rectángulo: Proceso
 - Rombo: Decisión
@@ -101,9 +105,9 @@ graph TD
 
 ### C4 Model (Context, Containers, Components, Code)
 
-**What:** Niveles de abstracción para arquitectura de software.
+**Qué:** Niveles de abstracción para arquitectura de software.
 
-**Why:** Comunicar arquitectura a diferentes audiencias.
+**Por qué:** Comunicar arquitectura a diferentes audiencias.
 
 **Niveles:**
 
@@ -115,6 +119,7 @@ graph TD
 | **C4: Code** | Developers | Clases, métodos | UML class diagram |
 
 **Ejemplo C2 (Mermaid):**
+
 ```mermaid
 C4Container
     Person(user, "Usuario", "Cliente de e-commerce")
@@ -137,11 +142,12 @@ C4Container
 
 ### Diagrama Entidad-Relación (ER)
 
-**What:** Modela entidades, atributos y relaciones de base de datos.
+**Qué:** Modela entidades, atributos y relaciones de base de datos.
 
-**When:** Diseñar schema de BD, documentar modelo de datos.
+**Cuándo:** Diseñar schema de BD, documentar modelo de datos.
 
 **Mermaid:**
+
 ```mermaid
 erDiagram
     USER ||--o{ ORDER : places
@@ -172,6 +178,7 @@ erDiagram
 ```
 
 **Cardinalidad:**
+
 - `||--||`: One-to-one
 - `||--o{`: One-to-many
 - `}o--o{`: Many-to-many
@@ -180,11 +187,12 @@ erDiagram
 
 ### Diagrama de Clases (UML)
 
-**What:** Muestra clases, atributos, métodos y relaciones OOP.
+**Qué:** Muestra clases, atributos, métodos y relaciones OOP.
 
-**When:** Diseñar arquitectura OOP, refactoring.
+**Cuándo:** Diseñar arquitectura OOP, refactoring.
 
 **PlantUML:**
+
 ```puml
 @startuml
 class User {
@@ -214,6 +222,7 @@ Order "1" *-- "*" OrderItem : contains
 ```
 
 **Relaciones:**
+
 - `-->`: Asociación
 - `*--`: Composición
 - `o--`: Agregación
@@ -224,11 +233,12 @@ Order "1" *-- "*" OrderItem : contains
 
 ### Diagrama de Secuencia
 
-**What:** Muestra interacciones entre objetos en el tiempo.
+**Qué:** Muestra interacciones entre objetos en el tiempo.
 
-**When:** Documentar flujos complejos, API calls, async operations.
+**Cuándo:** Documentar flujos complejos, API calls, async operations.
 
 **Mermaid:**
+
 ```mermaid
 sequenceDiagram
     participant U as Usuario
@@ -249,6 +259,7 @@ sequenceDiagram
 ```
 
 **Símbolos:**
+
 - `->`: Llamada síncrona
 - `-->`: Respuesta
 - `->>`: Llamada asíncrona
@@ -258,11 +269,12 @@ sequenceDiagram
 
 ### Diagrama de Componentes
 
-**What:** Muestra organización y dependencias entre componentes del sistema.
+**Qué:** Muestra organización y dependencias entre componentes del sistema.
 
-**When:** Arquitectura modular, microservicios.
+**Cuándo:** Arquitectura modular, microservicios.
 
 **PlantUML:**
+
 ```puml
 @startuml
 package "Frontend" {
@@ -296,11 +308,12 @@ package "Data" {
 
 ### Diagrama de Estados (State Machine)
 
-**What:** Muestra estados posibles de un objeto y transiciones.
+**Qué:** Muestra estados posibles de un objeto y transiciones.
 
-**When:** Workflows, FSM, ciclos de vida.
+**Cuándo:** Workflows, FSM, ciclos de vida.
 
 **Mermaid:**
+
 ```mermaid
 stateDiagram-v2
     [*] --> Draft
@@ -317,11 +330,12 @@ stateDiagram-v2
 
 ### Diagrama de Arquitectura (System Design)
 
-**What:** Vista de alto nivel de arquitectura del sistema.
+**Qué:** Vista de alto nivel de arquitectura del sistema.
 
-**When:** Onboarding, design reviews, documentación.
+**Cuándo:** Onboarding, design reviews, documentación.
 
 **Ejemplo (texto Mermaid):**
+
 ```mermaid
 graph TB
     subgraph "Client Layer"
@@ -357,11 +371,12 @@ graph TB
 
 ### Diagrama de Despliegue
 
-**What:** Muestra infraestructura física/lógica donde corre el sistema.
+**Qué:** Muestra infraestructura física/lógica donde corre el sistema.
 
-**When:** DevOps, infraestructura, deployment planning.
+**Cuándo:** DevOps, infraestructura, deployment planning.
 
 **PlantUML:**
+
 ```puml
 @startuml
 node "AWS" {
@@ -401,7 +416,7 @@ be --> s3
 
 ## ✍️ Best Practices Documentación
 
-| Práctica | Why | Cómo |
+| Práctica | Por qué | Cómo |
 |:---------|:----|:-----|
 | **Docs como código** | Versionado, CI/CD | Markdown en repo, auto-deploy |
 | **Single Source of Truth** | Evitar duplicación | Una ubicación canónica |

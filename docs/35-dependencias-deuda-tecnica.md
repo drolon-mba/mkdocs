@@ -52,6 +52,7 @@
 | **Ruby** | `Gemfile.lock` | Bundler |
 
 **Best practice:**
+
 - ✅ Commitear lock files a git
 - ✅ Usar lock files en CI/CD
 - ❌ Editar lock files manualmente
@@ -61,11 +62,13 @@
 ### Deprecation Policy
 
 **Proceso:**
+
 1. **Announce** (v1.0): Deprecar feature, documentar alternativa
 2. **Warn** (v1.1-v1.9): Logs de warning cuando se usa feature deprecated
 3. **Remove** (v2.0): Remover feature en próximo major version
 
 **Ejemplo:**
+
 ```python
 # v1.0: Announce deprecation
 import warnings
@@ -116,11 +119,13 @@ def old_function():
 ### Cómo Cuantificar
 
 **Fórmula simple:**
-```
+
+```text
 Technical Debt = (Tiempo para implementar feature con deuda) - (Tiempo si no hubiera deuda)
 ```
 
 **Ejemplo:**
+
 - Feature nueva toma 5 días
 - Si el código estuviera refactorizado, tomaría 2 días
 - **Technical Debt = 3 días**
@@ -137,6 +142,7 @@ Technical Debt = (Tiempo para implementar feature con deuda) - (Tiempo si no hub
 | **Bajo Impacto** | 🟡 **P2: Backlog** | 🟢 **P3: No hacer** |
 
 **Ejemplo:**
+
 - **P0**: Refactorizar módulo de pagos (alto impacto, bajo esfuerzo)
 - **P1**: Migrar de monolito a microservicios (alto impacto, alto esfuerzo)
 - **P2**: Renombrar variables (bajo impacto, bajo esfuerzo)
@@ -151,13 +157,15 @@ Technical Debt = (Tiempo para implementar feature con deuda) - (Tiempo si no hub
 **Qué es:** Reemplazar gradualmente sistema legacy con nuevo sistema.
 
 **Proceso:**
+
 1. Crear nuevo sistema en paralelo
 2. Routing dual (legacy + nuevo)
 3. Migrar features una a una
 4. Deprecar legacy cuando todo esté migrado
 
 **Ejemplo:**
-```
+
+```text
 [Request] → [Router]
                 ├─→ [Legacy System] (80% tráfico)
                 └─→ [New System]    (20% tráfico)
@@ -178,12 +186,14 @@ Finalmente:
 **Qué es:** Refactorizar sin feature branches largos.
 
 **Proceso:**
+
 1. Crear abstracción sobre código legacy
 2. Implementar nueva versión detrás de abstracción
 3. Switchear gradualmente de legacy a nuevo
 4. Remover legacy
 
 **Ejemplo:**
+
 ```python
 # 1. Crear abstracción
 class PaymentGateway(ABC):
@@ -225,6 +235,7 @@ gateway.process_payment(100)
 | **Permission toggle** | Permanente | Features por rol/plan |
 
 **Best practices:**
+
 - ✅ Remover toggles cuando no se usan
 - ✅ Documentar qué hace cada toggle
 - ❌ Tener >10 toggles activos (complejidad)
@@ -236,6 +247,7 @@ gateway.process_payment(100)
 ### Cómo Introducir Breaking Changes
 
 **Proceso:**
+
 1. **Announce** (3-6 meses antes): Comunicar breaking change
 2. **Deprecate** (1-3 meses antes): Marcar como deprecated, proveer alternativa
 3. **Migrate** (1 mes antes): Proveer migration guide
@@ -245,7 +257,7 @@ gateway.process_payment(100)
 
 ### Migration Guide Template
 
-```markdown
+`````markdown
 # Migration Guide: [Feature X] → [Feature Y]
 
 ## Breaking Changes
@@ -258,6 +270,7 @@ gateway.process_payment(100)
 ```
 
 ## After (v2.x)
+
 ```[language]
 // New code
 ```
@@ -265,25 +278,31 @@ gateway.process_payment(100)
 ## Step-by-Step Migration
 
 ### 1. Update dependencies
+
 ```bash
 npm install package@2.0.0
 ```
 
 ### 2. Replace deprecated calls
+
 [Instrucciones]
 
 ### 3. Test
+
 [Cómo verificar que la migración funcionó]
 
 ## Automated Migration (if available)
+
 ```bash
 npx @package/migrate
 ```
 
 ## Support
+
 - **Deprecated version support:** Until YYYY-MM-DD
 - **Questions:** [Slack channel / GitHub Discussions]
-```
+
+`````
 
 ---
 
@@ -371,7 +390,7 @@ Extraer a `CreditCardValidator` service reutilizable
 
 ### Breaking Change Communication Template
 
-```markdown
+````markdown
 # Breaking Change Announcement: [Feature X]
 
 **Affected versions:** v2.0.0+
@@ -401,18 +420,22 @@ npx @package/migrate
 ```
 
 ### Option 2: Manual Migration
+
 [Step-by-step guide]
 
 ## Timeline
+
 - **YYYY-MM-DD**: Deprecation announced
 - **YYYY-MM-DD**: Warning logs added
 - **YYYY-MM-DD**: Feature removed in v2.0.0
 
 ## Support
+
 - **Migration help:** [Slack channel]
 - **Questions:** [GitHub Discussions]
 - **Extended support:** Contact sales for extended v1.x support
-```
+
+````
 
 ---
 

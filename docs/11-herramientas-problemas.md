@@ -29,22 +29,24 @@
 
 ## 🌳 Issue Trees (Árbol de Problemas)
 
-**What:** Descomposición estructurada de problema en sub-problemas mutuamente excluyentes.
+**Qué:** Descomposición estructurada de problema en sub-problemas mutuamente excluyentes.
 
-**Why:** Evitar análisis caótico, asegurar exhaustividad, priorizar mejor.
+**Por qué:** Evitar análisis caótico, asegurar exhaustividad, priorizar mejor.
 
-**When:** Problemas complejos, consultancy, análisis de causa raíz.
+**Cuándo:** Problemas complejos, consultancy, análisis de causa raíz.
 
-**Where:** Whiteboards, Miro, papel.
+**Dónde:** Whiteboards, Miro, papel.
 
-**How:**
+**Cómo:**
+
 1. Definir problema en la raíz (root)
 2. Descomponer en categorías MECE (ver abajo)
 3. Sub-dividir cada categoría hasta llegar a causas accionables
 4. Priorizar ramas por impacto/factibilidad
 
 **Ejemplo - "Performance del sistema es lenta":**
-```
+
+```text
            [Performance Lenta]
                   |
       ┌──────────┼──────────┐
@@ -57,6 +59,7 @@
 ```
 
 **Reglas:**
+
 - Cada nivel debe ser MECE (Mutually Exclusive, Collectively Exhaustive)
 - Profundizar solo ramas relevantes
 - Usar datos para priorizar ramas
@@ -67,30 +70,34 @@
 
 ## 🔍 MECE Principle
 
-**What:** Mutually Exclusive, Collectively Exhaustive (Mutuamente Excluyente, Colectivamente Exhaustivo).
+**Qué:** Mutually Exclusive, Collectively Exhaustive (Mutuamente Excluyente, Colectivamente Exhaustivo).
 
-**Why:** Evitar overlaps y gaps en análisis, claridad en categorización.
+**Por qué:** Evitar overlaps y gaps en análisis, claridad en categorización.
 
-**When:** Segmentar mercados, organizar análisis, estructurar presentaciones.
+**Cuándo:** Segmentar mercados, organizar análisis, estructurar presentaciones.
 
 **Reglas:**
+
 - **Mutually Exclusive:** Sin overlap entre categorías
 - **Collectively Exhaustive:** Cubre todos los casos posibles
 
 **Ejemplo - Segmentar usuarios:**
 
 ❌ **No MECE:**
+
 - Usuarios nuevos
 - Usuarios pagos
 - Usuarios activos
 (Problema: Un usuario puede ser nuevo Y pago Y activo = overlap)
 
 ✅ **MECE:**
+
 - Por antigüedad: Nuevo (< 30 días) / Establecido (≥ 30 días)
 - Por pago: Free / Pago
 - Por actividad: Activo (login última semana) / Inactivo
 
 **Frameworks MECE comunes:**
+
 - Tiempo: Pasado / Presente / Futuro
 - Geográfico: Region A / Region B / Region C
 - Tipo de cliente: B2B / B2C
@@ -100,40 +107,45 @@
 
 ## ✅ Phoenix Checklist
 
-**What:** Lista de preguntas desarrollada por la CIA para resolver problemas complejos.
+**Qué:** Lista de preguntas desarrollada por la CIA para resolver problemas complejos.
 
-**Why:** Fuerza pensar desde múltiples ángulos, evita soluciones superficiales.
+**Por qué:** Fuerza pensar desde múltiples ángulos, evita soluciones superficiales.
 
-**When:** Problemas críticos, decisiones estratégicas, brainstorming estructurado.
+**Cuándo:** Problemas críticos, decisiones estratégicas, brainstorming estructurado.
 
 **Categorías de Preguntas:**
 
 ### 1. El Problema
+
 - ¿Por qué es necesario resolver este problema?
 - ¿Cuáles son los beneficios de resolverlo?
 - ¿Qué pasa si no lo resolvemos?
 - ¿Quién decide si está resuelto?
 
 ### 2. Definición
-- ¿Cómo lo explicarías a un niño de 10 años?
+
+- ¿Cómo se explicaría a un niño de 10 años?
 - ¿Qué palabras clave describen el problema?
 - ¿Qué analogías aplican?
 - ¿Puedes dibujarlo?
 
 ### 3. Soluciones
+
 - ¿Cómo lo resolverían expertos de otros campos?
 - ¿Qué haría [persona admirable]?
-- ¿Y si tuvieras recursos ilimitados?
-- ¿Y si tuvieras que resolver en 1 hora?
+- Si se tuvieran recursos ilimitados
+- Si se tuviera que resolver en 1 hora
 - ¿Cuál es la solución opuesta/inversa?
 
 ### 4. Plan
+
 - ¿Qué información necesitas?
 - ¿Qué no sabes que necesitas saber?
 - ¿Dónde está la información?
 - ¿Qué asunciones estás haciendo?
 
 ### 5. Revisión
+
 - ¿Hay un patrón en soluciones anteriores?
 - ¿Qué puedes generalizar?
 - ¿Cómo esto se relaciona con otros problemas?
@@ -141,6 +153,7 @@
 
 **Ejemplo de uso:**
 Problema: "Churn alto de usuarios"
+
 - **Definición:** "Usuarios dejan de usar el producto después de 2 meses"
 - **Analogía:** "Como un gimnasio donde la gente paga pero no va"
 - **¿Qué haría Netflix?** Personalización, contenido constante, recordatorios
@@ -150,11 +163,11 @@ Problema: "Churn alto de usuarios"
 
 ## ⚠️ AMFE (Análisis de Modos de Fallo y Efectos)
 
-**What:** Método sistemático para identificar fallos potenciales y su impacto.
+**Qué:** Método sistemático para identificar fallos potenciales y su impacto.
 
-**Why:** Prevención proactiva, priorizar riesgos por severidad.
+**Por qué:** Prevención proactiva, priorizar riesgos por severidad.
 
-**When:** Diseño de sistemas críticos, nuevas features riesgosas, compliance.
+**Cuándo:** Diseño de sistemas críticos, nuevas features riesgosas, compliance.
 
 **Componentes:**
 
@@ -168,6 +181,7 @@ Problema: "Churn alto de usuarios"
 | **RPN** | Risk Priority Number | S × O × D |
 
 **Proceso:**
+
 1. Identificar componente/proceso
 2. Listar modos de fallo posibles
 3. Analizar efectos
@@ -184,6 +198,7 @@ Problema: "Churn alto de usuarios"
 | Webhook falla | Merchant no notificado | 8 | 5 | 4 | 160 🔴 | **Queue + retry exponencial** |
 
 **Acciones según RPN:**
+
 - **> 200:** Crítico, actuar inmediatamente
 - **100-200:** Alto riesgo, priorizar
 - **< 100:** Monitorear
@@ -194,29 +209,30 @@ Problema: "Churn alto de usuarios"
 
 ## 🎯 ¿Por qué usar herramientas estructuradas?
 
-**What:** Frameworks probados para resolver problemas de forma sistemática.
+**Qué:** Frameworks probados para resolver problemas de forma sistemática.
 
-**Why:** Evitar soluciones superficiales (tratar síntomas en vez de causas), tomar decisiones basadas en datos.
+**Por qué:** Evitar soluciones superficiales (tratar síntomas en vez de causas), tomar decisiones basadas en datos.
 
-**Who:** Todo el equipo - developers, PMs, QAs, managers.
+**Quién:** Todo el equipo - developers, PMs, QAs, managers.
 
-**When:** Cuando hay un problema recurrente, incident post-mortem, planning de features.
+**Cuándo:** Cuando hay un problema recurrente, incident post-mortem, planning de features.
 
-**How much:** Inversión 30min-2h por sesión, previene semanas de trabajo en dirección incorrecta.
+**Esfuerzo:** Inversión 30min-2h por sesión, previene semanas de trabajo en dirección incorrecta.
 
 ---
 
 ## 🐟 Diagrama de Ishikawa (Espina de Pescado)
 
-**What:** Diagrama causa-efecto que identifica múltiples causas potenciales de un problema.
+**Qué:** Diagrama causa-efecto que identifica múltiples causas potenciales de un problema.
 
-**Why:** Visualiza relaciones entre causas y efecto, pensamiento estructurado.
+**Por qué:** Visualiza relaciones entre causas y efecto, pensamiento estructurado.
 
-**When:** Problemas complejos con múltiples causas posibles, post-mortems.
+**Cuándo:** Problemas complejos con múltiples causas posibles, post-mortems.
 
-**Where:** Whiteboards, Miro, FigJam, papel.
+**Dónde:** Whiteboards, Miro, FigJam, papel.
 
-**How:** 
+**Cómo:**
+
 1. Dibujar línea horizontal (espina) con problema en la derecha
 2. Dibujar espinas principales (categorías): Personas, Procesos, Tecnología, Ambiente, Métodos, Materiales
 3. Para cada categoría, hacer brainstorming de causas
@@ -224,7 +240,8 @@ Problema: "Churn alto de usuarios"
 5. Analizar e investigar causas más probables
 
 **Ejemplo:**
-```
+
+```text
               Personas          Procesos
                  |                 |
                  |                 |
@@ -235,6 +252,7 @@ Problema: "Churn alto de usuarios"
 ```
 
 **Caso de uso real:** Sistema lento en producción
+
 - **Personas:** Falta capacitación en optimización, equipo nuevo
 - **Procesos:** Sin code review de performance, no hay load testing
 - **Tecnología:** DB sin índices, queries N+1, instancias pequeñas
@@ -244,13 +262,14 @@ Problema: "Churn alto de usuarios"
 
 ## ❓ 5 Porqués
 
-**What:** Preguntar "¿Por qué?" 5 veces consecutivas para llegar a la causa raíz.
+**Qué:** Preguntar "¿Por qué?" 5 veces consecutivas para llegar a la causa raíz.
 
-**Why:** Profundizar más allá del síntoma obvio.
+**Por qué:** Profundizar más allá del síntoma obvio.
 
-**When:** Problemas con causa no clara, post-mortems, retrospectivas.
+**Cuándo:** Problemas con causa no clara, post-mortems, retrospectivas.
 
-**How:**
+**Cómo:**
+
 1. Definir problema claramente
 2. Preguntar "¿Por qué ocurrió?"
 3. Responder basándose en hechos
@@ -258,6 +277,7 @@ Problema: "Churn alto de usuarios"
 5. Repetir hasta llegar a causa raíz (típicamente 5 veces)
 
 **Ejemplo - Deploy fallido:**
+
 1. **Problema:** Deploy a producción falló
 2. **¿Por qué?** → Tests E2E fallaron
 3. **¿Por qué?** → Endpoint /users retorna 500
@@ -275,13 +295,14 @@ Problema: "Churn alto de usuarios"
 
 ## 📊 Diagrama de Pareto (Regla 80/20)
 
-**What:** Principio que dice que 80% de los efectos vienen de 20% de las causas.
+**Qué:** Principio que dice que 80% de los efectos vienen de 20% de las causas.
 
-**Why:** Priorizar esfuerzos en lo que más impacta.
+**Por qué:** Priorizar esfuerzos en lo que más impacta.
 
-**When:** Múltiples problemas, priorizar bugs, optimizar performance.
+**Cuándo:** Múltiples problemas, priorizar bugs, optimizar performance.
 
-**How:**
+**Cómo:**
+
 1. Listar todos los problemas/causas
 2. Medir frecuencia o impacto de cada uno
 3. Ordenar de mayor a menor
@@ -305,13 +326,14 @@ Problema: "Churn alto de usuarios"
 
 ## 💡 Lluvia de Ideas (Brainstorming)
 
-**What:** Generación libre de ideas sin juicio inicial.
+**Qué:** Generación libre de ideas sin juicio inicial.
 
-**Why:** Explorar todas las posibilidades, creatividad colectiva.
+**Por qué:** Explorar todas las posibilidades, creatividad colectiva.
 
-**When:** Buscar soluciones, diseño de features, naming, arquitectura.
+**Cuándo:** Buscar soluciones, diseño de features, naming, arquitectura.
 
-**How:**
+**Cómo:**
+
 1. Definir problema/objetivo claramente
 2. Timeboxear (15-30 min)
 3. Reglas: No juzgar, todas las ideas valen, cantidad > calidad
@@ -320,6 +342,7 @@ Problema: "Churn alto de usuarios"
 6. Votar o priorizar después
 
 **Variantes:**
+
 - **Brainwriting:** Escribir ideas en post-its en silencio (mejor para introverts)
 - **Round Robin:** Cada persona aporta una idea por turno
 - **Starbursting:** Generar preguntas en vez de respuestas
@@ -330,13 +353,14 @@ Problema: "Churn alto de usuarios"
 
 ## 🌳 Árbol Lógico de Fallos (FTA - Fault Tree Analysis)
 
-**What:** Diagrama top-down que descompone un fallo en causas más básicas.
+**Qué:** Diagrama top-down que descompone un fallo en causas más básicas.
 
-**Why:** Analizar fallos críticos de forma exhaustiva, encontrar puntos únicos de falla.
+**Por qué:** Analizar fallos críticos de forma exhaustiva, encontrar puntos únicos de falla.
 
-**When:** Sistemas críticos (salud, finanzas, aeroespacial), análisis de riesgo.
+**Cuándo:** Sistemas críticos (salud, finanzas, aeroespacial), análisis de riesgo.
 
-**How:**
+**Cómo:**
+
 1. Identificar evento no deseado (top)
 2. Preguntar: "¿Qué puede causar esto?"
 3. Usar compuertas lógicas:
@@ -346,7 +370,8 @@ Problema: "Churn alto de usuarios"
 5. Calcular probabilidades si se tienen datos
 
 **Ejemplo - Sistema caído:**
-```
+
+```text
           [Sistema Caído]
                 |
           ----- OR -----
@@ -364,13 +389,14 @@ Problema: "Churn alto de usuarios"
 
 ## 📈 Diagrama de Flujo
 
-**What:** Representación gráfica de proceso paso a paso.
+**Qué:** Representación gráfica de proceso paso a paso.
 
-**Why:** Visualizar proceso completo, identificar cuellos de botella, documentar.
+**Por qué:** Visualizar proceso completo, identificar cuellos de botella, documentar.
 
-**When:** Diseñar algoritmos, documentar procesos, onboarding.
+**Cuándo:** Diseñar algoritmos, documentar procesos, onboarding.
 
 **Símbolos:**
+
 - **Óvalo:** Inicio/Fin
 - **Rectángulo:** Proceso/Acción
 - **Rombo:** Decisión (if)
@@ -378,7 +404,8 @@ Problema: "Churn alto de usuarios"
 - **Flecha:** Flujo
 
 **Ejemplo - Proceso de login:**
-```
+
+```text
 (Inicio) → [Ingresar credenciales] → <¿Válidas?> 
                                           |
                                     No ----+---- Sí
@@ -396,13 +423,14 @@ Problema: "Churn alto de usuarios"
 
 ## 🔍 5W2H
 
-**What:** Framework de 7 preguntas para definir problema/solución completamente.
+**Qué:** Framework de 7 preguntas para definir problema/solución completamente.
 
 **Why:** Asegurar que se consideraron todos los aspectos importantes.
 
 **When:** Planning de features, escribir user stories, post-mortems.
 
 **Las 7 preguntas:**
+
 1. **What** (Qué): ¿Qué es el problema/solución?
 2. **Why** (Por qué): ¿Por qué es importante resolverlo?
 3. **Who** (Quién): ¿Quién está involucrado/afectado?
@@ -412,6 +440,7 @@ Problema: "Churn alto de usuarios"
 7. **How much** (Cuánto): ¿Cuánto costará en tiempo/dinero/esfuerzo?
 
 **Ejemplo - Feature: Export de reportes:**
+
 - **What:** Permitir exportar dashboard a PDF
 - **Why:** Clientes necesitan compartir reportes con stakeholders
 - **Who:** Usuarios premium, equipo de analytics (desarrollo)
@@ -431,12 +460,14 @@ Problema: "Churn alto de usuarios"
 **When:** Implementar mejoras, optimizar procesos.
 
 **Fases:**
+
 1. **Plan:** Identificar problema, analizar, planear solución
 2. **Do:** Implementar solución en pequeña escala (piloto)
 3. **Check:** Medir resultados, comparar con objetivo
 4. **Act:** Si funciona → estandarizar. Si no → ajustar y repetir
 
 **Ejemplo:**
+
 - **Plan:** Reducir bugs en producción
 - **Do:** Implementar pre-commit hooks + code review obligatorio
 - **Check:** Medir bugs/semana durante 1 mes: -40%
@@ -453,6 +484,7 @@ Problema: "Churn alto de usuarios"
 **When:** Elegir tecnología, priorizar features, seleccionar vendor.
 
 **How:**
+
 1. Listar opciones (columnas)
 2. Listar criterios (filas)
 3. Asignar peso a cada criterio (1-5)

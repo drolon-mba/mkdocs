@@ -20,11 +20,11 @@
 
 ## 🤖 Introducción
 
-**What:** Estrategia para integrar IA en workflows de desarrollo sin perder control ni calidad.
+**Qué:** Estrategia para integrar IA en workflows de desarrollo sin perder control ni calidad.
 
-**Why:** IA bien usada amplifica productividad 10x. Mal usada genera código frágil, inseguro y difícil de mantener.
+**Por qué:** IA bien usada amplifica productividad 10x. Mal usada genera código frágil, inseguro y difícil de mantener.
 
-**How:** Definir casos de uso, límites claros, validación rigurosa e integración en procesos existentes.
+**Cómo:** Definir casos de uso, límites claros, validación rigurosa e integración en procesos existentes.
 
 ### Filosofía: IA como Amplificador, No Reemplazo
 
@@ -40,16 +40,19 @@
 ### 1. Code Review Automatizado
 
 **Qué hace:**
+
 - Detectar code smells (duplicación, complejidad ciclomática alta)
 - Identificar vulnerabilidades (SQL injection, XSS, secrets expuestos)
 - Sugerir refactorings (extract method, rename variable)
 
 **Herramientas:**
+
 - **SonarQube** + IA: Análisis estático con sugerencias contextuales
 - **GitHub Copilot** en PRs: Sugerencias de mejoras
 - **Custom agents**: Agentes especializados en tu stack
 
 **Integración:**
+
 ```yaml
 # .github/workflows/ai-code-review.yml
 - name: AI Code Review
@@ -61,6 +64,7 @@
 ```
 
 **Límites:**
+
 - ✅ Detectar patterns obvios (duplicación, complejidad)
 - ❌ Entender contexto de negocio (por qué se tomó una decisión)
 
@@ -69,12 +73,14 @@
 ### 2. Generación de Tests
 
 **Qué hace:**
+
 - Generar unit tests para funciones puras
 - Generar test cases (happy path, edge cases, error handling)
 - Generar mocks y fixtures
 
 **Ejemplo de prompt:**
-```
+
+```text
 Genera unit tests con pytest para esta función:
 
 [código]
@@ -87,6 +93,7 @@ Incluye:
 ```
 
 **Validación:**
+
 - ✅ Ejecutar tests generados y verificar que pasen
 - ✅ Revisar coverage (debe ser >80%)
 - ❌ Aceptar tests que solo testean implementación (no comportamiento)
@@ -96,11 +103,13 @@ Incluye:
 ### 3. Documentación Auto-Generada
 
 **Qué hace:**
+
 - Generar docstrings a partir de código
 - Generar README a partir de estructura de proyecto
 - Generar API documentation (OpenAPI) a partir de código
 
 **Ejemplo:**
+
 ```python
 # Antes (sin docstring)
 def calculate_discount(price, customer_type):
@@ -144,12 +153,14 @@ def calculate_discount(price: float, customer_type: str) -> float:
 ### 4. Refactoring Asistido
 
 **Qué hace:**
+
 - Detectar código duplicado y sugerir extracción
 - Renombrar variables/funciones con nombres más descriptivos
 - Aplicar design patterns (Strategy, Factory, etc.)
 
 **Ejemplo de prompt:**
-```
+
+```text
 Refactoriza este código aplicando el patrón Strategy para eliminar el switch statement:
 
 [código]
@@ -165,11 +176,13 @@ Requisitos:
 ### 5. Migración de Código
 
 **Qué hace:**
+
 - Migrar de un lenguaje a otro (JS → TS, Python 2 → 3)
 - Migrar de un framework a otro (AngularJS → Angular, Class components → Hooks)
 - Actualizar a nuevas APIs (deprecated → current)
 
 **Validación crítica:**
+
 - 🔴 **NUNCA** migrar sin tests existentes
 - 🔴 **SIEMPRE** revisar código migrado línea por línea
 - 🔴 **EJECUTAR** tests antes y después de migración
@@ -180,7 +193,7 @@ Requisitos:
 
 ### ❌ Qué NO Delegar a IA
 
-| Tarea | Por Qué NO |
+| Tarea | Por qué NO |
 |:------|:-----------|
 | **Decisiones arquitectónicas críticas** | IA no entiende trade-offs de negocio, escalabilidad futura, constraints organizacionales |
 | **Compliance y regulaciones** | IA puede generar código que viola GDPR, HIPAA, SOC2 sin saberlo |
@@ -208,7 +221,8 @@ Requisitos:
 Hacer que la IA "piense en voz alta" antes de generar código.
 
 **Ejemplo:**
-```
+
+```text
 Antes de generar código, explica paso a paso:
 1. Qué problema estamos resolviendo
 2. Qué alternativas consideraste
@@ -227,7 +241,8 @@ Luego genera el código.
 Dar ejemplos de lo que querés antes de pedir la tarea.
 
 **Ejemplo:**
-```
+
+```text
 Genera unit tests siguiendo este estilo:
 
 # Ejemplo 1:
@@ -263,7 +278,8 @@ Ahora genera tests para esta función:
 Proveer contexto relevante antes de generar código.
 
 **Ejemplo:**
-```
+
+```text
 Contexto del proyecto:
 - Stack: FastAPI + PostgreSQL + SQLAlchemy
 - Convenciones: 
@@ -422,6 +438,7 @@ Decidir si usar IA para una tarea:
 | **Validación** | Fácil de validar (tests, linters) | Difícil de validar (ethical decisions) |
 
 **Ejemplo:**
+
 - ✅ **Usar IA**: Generar unit tests para función pura
 - ❌ **NO usar IA**: Decidir arquitectura de microservices vs monolito
 
@@ -431,7 +448,7 @@ Decidir si usar IA para una tarea:
 
 #### Template: Code Review
 
-```
+```text
 Revisa este código y proporciona feedback organizado por prioridad:
 
 [código]
@@ -458,7 +475,7 @@ Formato de salida:
 
 #### Template: Test Generation
 
-```
+```text
 Genera unit tests para esta función:
 
 [código]
@@ -478,7 +495,7 @@ Requisitos:
 
 #### Template: Documentation
 
-```
+```text
 Genera documentación para este código:
 
 [código]
@@ -497,7 +514,7 @@ Audiencia: [junior/senior/stakeholders]
 
 #### Template: Refactoring
 
-```
+```text
 Refactoriza este código:
 
 [código]

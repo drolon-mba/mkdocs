@@ -20,11 +20,11 @@
 
 ## 📢 Introducción
 
-**What:** Estrategia para comunicar conceptos técnicos de forma efectiva a diferentes audiencias.
+**Qué:** Estrategia para comunicar conceptos técnicos de forma efectiva a diferentes audiencias.
 
-**Why:** Comunicación clara es crítica para alineación, adopción de decisiones y visibilidad profesional.
+**Por qué:** Comunicación clara es crítica para alineación, adopción de decisiones y visibilidad profesional.
 
-**How:** Adaptar tono, profundidad y formato según audiencia y objetivo.
+**Cómo:** Adaptar tono, profundidad y formato según audiencia y objetivo.
 
 ---
 
@@ -33,11 +33,13 @@
 ### Juniors
 
 **Características:**
+
 - Poco contexto técnico
 - Necesitan explicaciones paso a paso
 - Aprenden mejor con ejemplos concretos
 
 **Estrategia:**
+
 - ✅ Explicar conceptos desde cero
 - ✅ Usar analogías y ejemplos del mundo real
 - ✅ Incluir código completo (no snippets)
@@ -46,6 +48,7 @@
 - ❌ Usar jerga sin explicar
 
 **Ejemplo:**
+
 ```markdown
 # ❌ MAL (asume conocimiento)
 "Usa un circuit breaker para manejar fallos en servicios downstream."
@@ -67,11 +70,13 @@ Ejemplo con código:
 ### Seniors
 
 **Características:**
+
 - Alto contexto técnico
 - Valoran precisión y profundidad
 - Buscan trade-offs y edge cases
 
 **Estrategia:**
+
 - ✅ Ir directo al punto
 - ✅ Discutir trade-offs y alternativas
 - ✅ Incluir edge cases y limitaciones
@@ -80,6 +85,7 @@ Ejemplo con código:
 - ❌ Ser superficial
 
 **Ejemplo:**
+
 ```markdown
 # ✅ BIEN (directo, trade-offs, referencias)
 "Implementamos circuit breaker con estado distribuido en Redis (vs in-memory)
@@ -101,11 +107,13 @@ Ref: [Hystrix design](https://github.com/Netflix/Hystrix/wiki)"
 ### Stakeholders No Técnicos
 
 **Características:**
+
 - Poco o nulo conocimiento técnico
 - Interesan resultados de negocio, no implementación
 - Valoran claridad y brevedad
 
 **Estrategia:**
+
 - ✅ Enfocarse en impacto de negocio
 - ✅ Usar analogías no técnicas
 - ✅ Visualizaciones (gráficos, diagramas simples)
@@ -114,6 +122,7 @@ Ref: [Hystrix design](https://github.com/Netflix/Hystrix/wiki)"
 - ❌ Asumir contexto técnico
 
 **Ejemplo:**
+
 ```markdown
 # ✅ BIEN (impacto de negocio, analogía simple)
 "Problema: Cuando el servicio de pagos falla, nuestro checkout se queda esperando
@@ -133,11 +142,13 @@ Impacto:
 ### Ejecutivos (C-Level)
 
 **Características:**
+
 - Tiempo limitado
 - Interesan métricas, ROI, riesgos
 - Decisiones estratégicas, no tácticas
 
 **Estrategia:**
+
 - ✅ Executive summary (3-5 bullets)
 - ✅ Métricas de negocio (revenue, cost, risk)
 - ✅ Recomendación clara (qué hacer)
@@ -146,6 +157,7 @@ Impacto:
 - ❌ Más de 1 página (o 5 slides)
 
 **Ejemplo:**
+
 ```markdown
 # ✅ BIEN (executive summary, métricas, recomendación)
 ## Propuesta: Migración a Microservicios
@@ -236,13 +248,14 @@ Con 5x tráfico, DB no pudo manejar la carga.
 
 | Formato Original | Formatos Derivados | Audiencia |
 |:-----------------|:-------------------|:----------|
-| **RFC** (5 páginas) | → Blog post (800 palabras)<br>→ LinkedIn post (300 palabras)<br>→ Twitter thread (10 tweets)<br>→ Conference talk (30 min) | Engineers → General tech audience → Broader audience → Conference attendees |
+| **RFC** (5 páginas) | → Blog post (800 palabras); → LinkedIn post (300 palabras); → Twitter thread (10 tweets); → Conference talk (30 min) | Engineers → General tech audience → Broader audience → Conference attendees |
 
 ---
 
 ### Ejemplo: RFC → Blog Post
 
 **RFC (extracto):**
+
 ```markdown
 # RFC-042: Migración a Microservicios
 
@@ -262,6 +275,7 @@ Migración gradual usando strangler pattern:
 ```
 
 **Blog Post (adaptado):**
+
 ```markdown
 # Cómo Migramos de Monolito a Microservicios Sin Downtime
 
@@ -294,12 +308,14 @@ se redujo 80%. Acá te cuento cómo lo hicimos.
 ### LinkedIn Post
 
 **Características:**
+
 - 1300 caracteres óptimo (300-500 palabras)
 - Hook en primera línea
 - Formato: problema → solución → resultado
 - CTA (call to action) al final
 
 **Template:**
+
 ```markdown
 [HOOK - Problema o resultado sorprendente]
 
@@ -317,6 +333,7 @@ se redujo 80%. Acá te cuento cómo lo hicimos.
 ```
 
 **Ejemplo:**
+
 ```markdown
 Redujimos el tiempo de deployment de 2 horas a 15 minutos. 🚀
 
@@ -346,13 +363,15 @@ Cuando deployment es fácil, deployamos más seguido, con menos riesgo.
 ### Twitter Thread
 
 **Características:**
+
 - 280 caracteres por tweet
 - Tweet 1: Hook + promesa de valor
 - Tweets 2-N: Contenido (1 idea por tweet)
 - Tweet final: Resumen + CTA
 
 **Template:**
-```
+
+```text
 1/ [HOOK + Promesa]
 Ejemplo: "Aprendí 5 lecciones migrando a microservicios que me hubiera gustado saber antes. 🧵"
 
@@ -371,6 +390,7 @@ Ejemplo: "Resumen: [3 bullets]. ¿Qué agregarías? 💬"
 ### Conference Talk (30 min)
 
 **Estructura:**
+
 - **Intro (3 min)**: Hook, quién sos, qué van a aprender
 - **Problem (5 min)**: Contexto, problema, por qué importa
 - **Solution (15 min)**: Cómo lo resolviste (con demos/ejemplos)
@@ -378,6 +398,7 @@ Ejemplo: "Resumen: [3 bullets]. ¿Qué agregarías? 💬"
 - **Q&A (2 min)**: Preguntas
 
 **Tips:**
+
 - ✅ Máximo 20 slides (1 slide/min + buffer)
 - ✅ Demos en vivo (o videos si es riesgoso)
 - ✅ Storytelling (no lista de features)
@@ -391,11 +412,13 @@ Ejemplo: "Resumen: [3 bullets]. ¿Qué agregarías? 💬"
 ### Keywords
 
 **Estrategia:**
+
 - Usar herramientas: Google Keyword Planner, Ahrefs, SEMrush
 - Buscar keywords con alto volumen, baja competencia
 - Incluir keywords en: título, H1, H2, primeros 100 palabras, URL
 
 **Ejemplo:**
+
 ```markdown
 # ❌ MAL (título genérico)
 "Cómo Mejorar tu Sistema"
@@ -410,6 +433,7 @@ Keywords: migrar monolito microservicios, spring boot microservices, microservic
 ### Estructura
 
 **SEO-friendly:**
+
 - H1: 1 por página (título principal)
 - H2-H6: Jerarquía clara
 - Párrafos cortos (2-3 líneas)
@@ -421,6 +445,7 @@ Keywords: migrar monolito microservicios, spring boot microservices, microservic
 ### Backlinks
 
 **Estrategia:**
+
 - Linkear a recursos autoritativos (papers, docs oficiales)
 - Guest posts en blogs relevantes
 - Compartir en comunidades (Reddit, HackerNews, Dev.to)

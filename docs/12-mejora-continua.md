@@ -20,33 +20,34 @@
 - [📊 Comparación de Metodologías](#comparacion-de-metodologias)
 - [🚫 Anti-patrones](#anti-patrones)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 🎯 Mejora Continua
 
-**What:** Filosofía de optimización incremental constante en procesos y productos.
+**Qué:** Filosofía de optimización incremental constante en procesos y productos.
 
-**Why:** Pequeñas mejoras sostenidas > grandes cambios esporádicos. Cultura de excelencia.
+**Por qué:** Pequeñas mejoras sostenidas > grandes cambios esporádicos. Cultura de excelencia.
 
-**Who:** Todo el equipo, liderado por management.
+**Quién:** Todo el equipo, liderado por management.
 
-**When:** Siempre, como parte de la cultura organizacional.
+**Cuándo:** Siempre, como parte de la cultura organizacional.
 
-**How much:** Inversión en tiempo y cambio cultural, ROI acumulativo a largo plazo.
+**Esfuerzo:** Inversión en tiempo y cambio cultural, ROI acumulativo a largo plazo.
 
 ---
 
 ## 📊 Six Sigma
 
-**What:** Metodología estadística para reducir defectos a 3.4 por millón de oportunidades.
+**Qué:** Metodología estadística para reducir defectos a 3.4 por millón de oportunidades.
 
-**Why:** Calidad extrema, reducción de variabilidad, decisiones basadas en datos.
+**Por qué:** Calidad extrema, reducción de variabilidad, decisiones basadas en datos.
 
-**When:** Procesos con alta variabilidad, manufactura, servicios críticos.
+**Cuándo:** Procesos con alta variabilidad, manufactura, servicios críticos.
 
 ### DMAIC (Metodología Six Sigma)
 
-| Fase | What | How | Herramientas |
+| Fase | Qué | Cómo | Herramientas |
 |:-----|:-----|:----|:-------------|
 | **Define** (Definir) | Identificar problema y objetivo | Project charter, VOC (Voice of Customer) | Diagrama Ishikawa, 5W2H |
 | **Measure** (Medir) | Recopilar datos actuales | Métricas baseline, capability analysis | Control charts, histogramas |
@@ -55,6 +56,7 @@
 | **Control** (Controlar) | Sostener mejoras | SOP, monitoreo continuo | Control charts, auditorías |
 
 **Ejemplo en software:** Reducir bugs en producción
+
 - **Define:** Meta = reducir 50% bugs críticos en 3 meses
 - **Measure:** Actual = 20 bugs/mes, 60% en validaciones
 - **Analyze:** Causa = falta de validación backend, tests insuficientes
@@ -67,11 +69,11 @@
 
 ## 🔄 Kaizen (改善)
 
-**What:** Filosofía japonesa de "mejora continua" mediante pequeños cambios incrementales.
+**Qué:** Filosofía japonesa de "mejora continua" mediante pequeños cambios incrementales.
 
-**Why:** Involucra a todos, cambios pequeños = menos resistencia, mejora sostenida.
+**Por qué:** Involucra a todos, cambios pequeños = menos resistencia, mejora sostenida.
 
-**When:** Siempre, como cultura organizacional.
+**Cuándo:** Siempre, como cultura organizacional.
 
 ### Principios Kaizen
 
@@ -85,6 +87,7 @@
 **Kaizen Event:** Workshop de 3-5 días para mejorar un proceso específico.
 
 **Aplicación en software:**
+
 - Daily standups enfocados en mejoras
 - Retrospectivas con acción concreta
 - Sugerencias de mejora siempre bienvenidas
@@ -96,15 +99,17 @@
 
 ## 🏭 Lean Manufacturing
 
-**What:** Filosofía de eliminación de desperdicios (Muda) y maximización de valor.
+**Qué:** Filosofía de eliminación de desperdicios (Muda) y maximización de valor.
 
-**Why:** Hacer más con menos, enfocarse en lo que agrega valor al cliente.
+**Por qué:** Hacer más con menos, enfocarse en lo que agrega valor al cliente.
 
-**When:** Procesos con desperdicio evidente, optimización de flujo.
+**Cuándo:** Procesos con desperdicio evidente, optimización de flujo.
 
 ### 8 Tipos de Desperdicio (DOWNTIME)
 
-| Desperdicio | What | Ejemplo Software |
+El acrónimo **DOWNTIME** ayuda a recordar los 8 desperdicios de Lean:
+
+| Desperdicio | Qué | Ejemplo Software |
 |:------------|:-----|:-----------------|
 | **Defects** | Errores, retrabajos | Bugs, hotfixes |
 | **Overproduction** | Producir más de lo necesario | Features no usadas |
@@ -116,6 +121,7 @@
 | **Extra processing** | Trabajo que no agrega valor | Documentación que nadie lee |
 
 **Herramientas Lean:**
+
 - **Value Stream Mapping:** Visualizar flujo de valor
 - **5S:** Ver abajo
 - **Pull System:** Producir solo cuando hay demanda (Kanban)
@@ -125,13 +131,13 @@
 
 ## 🔄 Ciclo PDCA (Plan-Do-Check-Act)
 
-**What:** Ciclo iterativo de mejora continua (también conocido como Deming Cycle).
+**Qué:** Ciclo iterativo de mejora continua (también conocido como Deming Cycle).
 
-**Why:** Estructura para implementar mejoras de forma controlada.
+**Por qué:** Estructura para implementar mejoras de forma controlada.
 
-**When:** Implementar cualquier mejora, resolver problemas.
+**Cuándo:** Implementar cualquier mejora, resolver problemas.
 
-| Fase | What | How | Output |
+| Fase | Qué | Cómo | Output |
 |:-----|:-----|:----|:-------|
 | **Plan** | Identificar oportunidad, planear cambio | Análisis causa raíz, definir objetivo SMART | Plan de acción |
 | **Do** | Ejecutar plan en pequeña escala | Piloto, experimento controlado | Datos de prueba |
@@ -139,6 +145,7 @@
 | **Act** | Estandarizar si funciona, ajustar si no | Documentar, entrenar, escalar | Nueva baseline |
 
 **Ejemplo:** Reducir tiempo de deploy
+
 - **Plan:** Objetivo = deploy en <5 min (actual: 20 min). Cambio: paralelizar tests
 - **Do:** Implementar en 1 repo piloto durante 1 semana
 - **Check:** Tiempo promedio = 4.5 min ✅
@@ -150,13 +157,13 @@
 
 ## 🧹 5S (5 Eses)
 
-**What:** Metodología japonesa para organizar y mantener un espacio de trabajo.
+**Qué:** Metodología japonesa para organizar y mantener un espacio de trabajo.
 
-**Why:** Eficiencia, calidad, seguridad mediante orden y limpieza.
+**Por qué:** Eficiencia, calidad, seguridad mediante orden y limpieza.
 
-**When:** Organizar codebase, repos, herramientas, espacios físicos.
+**Cuándo:** Organizar codebase, repos, herramientas, espacios físicos.
 
-| Fase | Japonés | Español | What | How (Software) |
+| Fase | Japonés | Español | Qué | Cómo (Software) |
 |:-----|:--------|:--------|:-----|:---------------|
 | **1** | Seiri | **Clasificar** | Separar necesario de innecesario | Borrar código muerto, deps sin usar |
 | **2** | Seiton | **Ordenar** | Un lugar para cada cosa | Estructura de carpetas lógica, naming conventions |
@@ -165,6 +172,7 @@
 | **5** | Shitsuke | **Sostener** | Disciplina para mantener | Code reviews, auditorías, cultura |
 
 **Beneficios en software:**
+
 - Onboarding más rápido
 - Menos bugs por confusión
 - Búsqueda más eficiente
@@ -174,13 +182,13 @@
 
 ## 🔧 8D (Eight Disciplines)
 
-**What:** Metodología de 8 pasos para resolver problemas complejos en equipo.
+**Qué:** Metodología de 8 pasos para resolver problemas complejos en equipo.
 
-**Why:** Enfoque estructurado que asegura solución definitiva.
+**Por qué:** Enfoque estructurado que asegura solución definitiva.
 
-**When:** Problemas críticos recurrentes, post-mortems importantes.
+**Cuándo:** Problemas críticos recurrentes, post-mortems importantes.
 
-| Disciplina | What | Output |
+| Disciplina | Qué | Output |
 |:-----------|:-----|:-------|
 | **D0** | Preparar | Reconocer problema, decidir usar 8D |
 | **D1** | Formar equipo | Equipo multifuncional con conocimiento relevante |
@@ -193,6 +201,7 @@
 | **D8** | Felicitar equipo | Reconocer contribuciones, celebrar |
 
 **Ejemplo - Outage en producción:**
+
 - **D1:** Equipo: 2 devs, 1 SRE, 1 PM
 - **D2:** Outage 45 min, afectó 10k usuarios, pérdida $5k
 - **D3:** Rollback inmediato, comunicar a clientes
@@ -206,11 +215,11 @@
 
 ## 📋 Kanban
 
-**What:** Sistema visual de gestión de flujo basado en pull.
+**Qué:** Sistema visual de gestión de flujo basado en pull.
 
-**Why:** Visualizar trabajo, limitar WIP, optimizar throughput.
+**Por qué:** Visualizar trabajo, limitar WIP, optimizar throughput.
 
-**When:** Gestión de tareas, workflow continuo sin sprints.
+**Cuándo:** Gestión de tareas, workflow continuo sin sprints.
 
 ### Principios Kanban
 
@@ -222,6 +231,7 @@
 6. **Mejorar colaborativamente:** Kaizen
 
 **Métricas Kanban:**
+
 - **Lead Time:** Tiempo desde request hasta entrega
 - **Cycle Time:** Tiempo desde inicio hasta completado
 - **Throughput:** Items completados por periodo
@@ -233,9 +243,9 @@
 
 ## ⚙️ MTBF y MTTR
 
-**What:** Métricas de confiabilidad y mantenibilidad de sistemas.
+**Qué:** Métricas de confiabilidad y mantenibilidad de sistemas.
 
-| Métrica | What | Fórmula | Objetivo |
+| Métrica | Qué | Fórmula | Objetivo |
 |:--------|:-----|:--------|:---------|
 | **MTBF** (Mean Time Between Failures) | Tiempo promedio entre fallos | Tiempo operativo / # de fallos | ↑ Maximizar |
 | **MTTR** (Mean Time To Repair) | Tiempo promedio para reparar | Tiempo downtime / # de incidents | ↓ Minimizar |
@@ -243,12 +253,14 @@
 | **MTTA** (Mean Time To Acknowledge) | Tiempo hasta reconocer incident | - | ↓ Minimizar |
 
 **Ejemplo:**
+
 - Sistema operó 720 horas en un mes
 - Tuvo 3 fallos de 2h, 1h, 3h
 - **MTBF** = 720 / 3 = 240 horas
 - **MTTR** = (2+1+3) / 3 = 2 horas
 
 **Cómo mejorar:**
+
 - **MTBF:** Mejor testing, code reviews, monitoring
 - **MTTR:** Runbooks, alertas, rollback automático
 

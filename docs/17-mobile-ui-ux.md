@@ -13,32 +13,33 @@
 - [🧭 UX (Experiencia de Usuario)](#ux-experiencia-de-usuario)
 - [🚫 Anti-patrones](#anti-patrones)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 📱 Mobile Development
 
-**What:** Desarrollo de aplicaciones para dispositivos móviles (iOS, Android).
+**Qué:** Desarrollo de aplicaciones para dispositivos móviles (iOS, Android).
 
-**Why:** 60%+ del tráfico web es móvil. UX nativa crítica para engagement.
+**Por qué:** 60%+ del tráfico web es móvil. UX nativa crítica para engagement.
 
-**Who:** Mobile developers, full-stack developers.
+**Quién:** Mobile developers, full-stack developers.
 
 ---
 
 ### Enfoques de Desarrollo
 
-| Enfoque | What | Why | When | Trade-offs |
+| Enfoque | Qué | Por qué | Cuándo | Trade-offs |
 |:--------|:-----|:----|:-----|:-----------|
-| **Nativo** | Lenguaje específico por plataforma | Máxima performance, acceso completo a APIs | Apps complejas, alta calidad | ✅ Performance, UX nativa<br>❌ 2 codebases, costoso |
-| **Multiplataforma** | Un código para iOS + Android | Ahorro tiempo/costo, consistencia | Mayoría de apps comerciales | ✅ Velocidad desarrollo<br>❌ Limitaciones platform-specific |
-| **Híbrido** | Web app en webview nativo | Reutilizar web skills | MVPs, apps simples | ✅ Rapidez<br>❌ Performance inferior |
-| **PWA** | Web app con features nativas | Sin app stores, updates automáticos | Web-first con funcionalidad offline | ✅ Sin aprobación stores<br>❌ Limitaciones iOS |
+| **Nativo** | Lenguaje específico por plataforma | Máxima performance, acceso completo a APIs | Apps complejas, alta calidad | ✅ Performance, UX nativa; ❌ 2 codebases, costoso |
+| **Multiplataforma** | Un código para iOS + Android | Ahorro tiempo/costo, consistencia | Mayoría de apps comerciales | ✅ Velocidad desarrollo; ❌ Limitaciones platform-specific |
+| **Híbrido** | Web app en webview nativo | Reutilizar web skills | MVPs, apps simples | ✅ Rapidez; ❌ Performance inferior |
+| **PWA** | Web app con features nativas | Sin app stores, updates automáticos | Web-first con funcionalidad offline | ✅ Sin aprobación stores; ❌ Limitaciones iOS |
 
 ---
 
 ### Tecnologías
 
-| Stack | What | When | Features |
+| Stack | Qué | Cuándo | Features |
 |:------|:-----|:-----|:---------|
 | **iOS Nativo** | [SwiftUI](https://developer.apple.com/xcode/swiftui/) + Swift | Apps solo iOS, máxima calidad | Declarative UI, Combine, async/await |
 | **Android Nativo** | [Jetpack Compose](https://developer.android.com/jetpack/compose) + Kotlin | Apps solo Android | Declarative UI, Kotlin coroutines |
@@ -51,7 +52,7 @@
 
 ### Patrones Mobile
 
-| Patrón | What | Why | How |
+| Patrón | Qué | Por qué | Cómo |
 |:-------|:-----|:----|:----|
 | **Offline-First** | App funciona sin internet | UX resiliente | SQLite, sync cuando online |
 | **Deep Linking** | Links abren secciones específicas | Navigation desde web/notifs | URL schemes, Universal Links |
@@ -63,15 +64,15 @@
 
 ## 🎨 UI (Interfaz de Usuario)
 
-**What:** Capa visual con la que usuarios interactúan.
+**Qué:** Capa visual con la que usuarios interactúan.
 
-**Why:** Primera impresión, usabilidad, brand.
+**Por qué:** Primera impresión, usabilidad, brand.
 
 ---
 
 ### Principios de Diseño
 
-| Principio | What | How |
+| Principio | Qué | Cómo |
 |:----------|:-----|:----|
 | **Consistencia** | Patrones repetibles | Mismo estilo para acciones similares |
 | **Jerarquía Visual** | Guiar la atención | Tamaños, colores, contraste |
@@ -83,7 +84,7 @@
 
 ### Design Systems
 
-| Sistema | What | When |
+| Sistema | Qué | Cuándo |
 |:--------|:-----|:-----|
 | [Material Design](https://m3.material.io/) | Sistema de Google | Apps Android, web moderna |
 | [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/) | Guidelines de Apple | Apps iOS |
@@ -95,7 +96,7 @@
 
 ### Componentización
 
-| Aspecto | What | Ejemplo |
+| Aspecto | Qué | Ejemplo |
 |:--------|:-----|:--------|
 | **Atomic Design** | Átomos → Moléculas → Organismos | Button → SearchBar → Header |
 | **Props/State** | Configuración vs estado interno | `<Button variant="primary" />` |
@@ -106,7 +107,7 @@
 
 ### Responsividad
 
-| Técnica | What | When |
+| Técnica | Qué | Cuándo |
 |:--------|:-----|:-----|
 | **Media Queries** | CSS condicional por pantalla | Layouts diferentes mobile/desktop |
 | **Fluid Typography** | Tamaños escalables | `clamp(1rem, 2.5vw, 2rem)` |
@@ -117,15 +118,15 @@
 
 ## 🧭 UX (Experiencia de Usuario)
 
-**What:** Cómo se siente usar el producto.
+**Qué:** Cómo se siente usar el producto.
 
-**Why:** UX pobre = abandono. UX excelente = lealtad.
+**Por qué:** UX pobre = abandono. UX excelente = lealtad.
 
 ---
 
 ### Principios UX
 
-| Principio | What | How |
+| Principio | Qué | Cómo |
 |:----------|:-----|:----|
 | **Don't Make Me Think** | Interfaz intuitiva | Patrones conocidos, etiquetas claras |
 | **Prevención de Errores** | Evitar errores del usuario | Validaciones, deshabilitación, confirmaciones |
@@ -137,7 +138,7 @@
 
 ### Research & Testing
 
-| Método | What | When | Output |
+| Método | Qué | Cuándo | Output |
 |:-------|:-----|:-----|:-------|
 | **User Interviews** | Entrevistas 1:1 | Discovery, validación | Insights, pain points |
 | **Usability Testing** | Observar usuarios usando prototipo | Pre-lanzamiento | Fricciones, confusiones |
@@ -149,11 +150,11 @@
 
 ### Accesibilidad (a11y)
 
-**What:** Diseño inclusivo para todos los usuarios, incluyendo discapacidades.
+**Qué:** Diseño inclusivo para todos los usuarios, incluyendo discapacidades.
 
-**Why:** Ético, legal (WCAG), amplía audiencia.
+**Por qué:** Ético, legal (WCAG), amplía audiencia.
 
-| Aspecto | What | How | Herramientas |
+| Aspecto | Qué | Cómo | Herramientas |
 |:--------|:-----|:----|:-------------|
 | **Contraste** | Texto legible | Min 4.5:1 (AA), 7:1 (AAA) | [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) |
 | **Keyboard Nav** | Navegable sin mouse | Tab order, Enter/Space | Test manual |
@@ -166,7 +167,7 @@
 
 ### Performance UX
 
-| Métrica | What | Target | Impacto |
+| Métrica | Qué | Target | Impacto |
 |:--------|:-----|:-------|:--------|
 | **FCP** | First Contentful Paint | < 1.8s | Primera impresión |
 | **LCP** | Largest Contentful Paint | < 2.5s | Contenido principal visible |
@@ -178,7 +179,7 @@
 
 ### Animaciones
 
-| Uso | What | When | Duración |
+| Uso | Qué | Cuándo | Duración |
 |:----|:-----|:-----|:---------|
 | **Micro-interactions** | Feedback sutil | Hover, click | 100-200ms |
 | **Transiciones** | Cambios suaves | Cambios de estado | 200-400ms |
@@ -191,7 +192,7 @@
 
 ### Patterns UX
 
-| Pattern | What | When |
+| Pattern | Qué | Cuándo |
 |:--------|:-----|:-----|
 | **Progressive Disclosure** | Mostrar gradualmente | Wizards, formularios largos |
 | **Skeleton Screens** | Placeholder mientras carga | Listas, cards |

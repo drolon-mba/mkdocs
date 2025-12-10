@@ -18,11 +18,11 @@
 
 ## 📝 Introducción
 
-**What:** Templates reutilizables para documentar decisiones, procedimientos y respuestas a incidentes.
+**Qué:** Templates reutilizables para documentar decisiones, procedimientos y respuestas a incidentes.
 
-**Why:** Evitar reinventar la rueda, mantener consistencia, facilitar onboarding.
+**Por qué:** Evitar reinventar la rueda, mantener consistencia, facilitar onboarding.
 
-**How:** Usar templates como punto de partida, adaptar según necesidad.
+**Cómo:** Usar templates como punto de partida, adaptar según necesidad.
 
 ---
 
@@ -31,6 +31,7 @@
 **Qué es:** Registro de decisiones técnicas con contexto, alternativas y outcome.
 
 **Cuándo usar:**
+
 - Decisiones arquitectónicas importantes
 - Trade-offs no obvios
 - Cambios que afectan múltiples equipos
@@ -196,11 +197,12 @@ Necesitamos elegir DB para nuevo sistema de pagos. Requisitos:
 **Qué es:** Ejercicio de anticipar qué puede salir mal ANTES de lanzar.
 
 **Cuándo usar:**
+
 - Antes de lanzar features críticas
 - Antes de migraciones complejas
 - Antes de eventos de alto tráfico
 
-### Template
+### Template Pre-Mortem
 
 ```markdown
 # Pre-Mortem: [Proyecto/Feature]
@@ -243,11 +245,12 @@ Necesitamos elegir DB para nuevo sistema de pagos. Requisitos:
 **Qué es:** Procedimiento operacional paso a paso.
 
 **Cuándo usar:**
+
 - Deployments
 - Rollbacks
 - Tareas operacionales repetitivas
 
-### Template
+### Template Runbook
 
 ```markdown
 # Runbook: [Título del Procedimiento]
@@ -272,20 +275,24 @@ comando --flag valor
 ```
 
 **Output esperado:**
-```
+
+```text
 [Output esperado]
 ```
 
 **Si falla:**
+
 - [Qué hacer]
 - [A quién contactar]
 
 ### 2. [Título del paso]
+
 [Mismo formato]
 
 ## Rollback
 
-### Si algo sale mal en paso X:
+### Si algo sale mal en paso X
+
 ```bash
 # Comandos de rollback
 ```
@@ -299,14 +306,17 @@ comando --flag valor
 ## Troubleshooting
 
 ### Problema: [Descripción]
+
 **Síntomas:** [Cómo se manifiesta]
 **Causa:** [Por qué pasa]
 **Solución:** [Cómo arreglarlo]
 
 ## Contactos
+
 - **On-call:** [Slack channel / PagerDuty]
 - **Escalation:** [Manager / Tech Lead]
-```
+
+```text
 
 ---
 
@@ -372,20 +382,24 @@ comando --flag valor
 
 ### Status Update (cada 30 min durante incidente)
 ```
+
 **Status:** [Investigating / Identified / Monitoring / Resolved]
 **Impact:** [Descripción]
 **ETA:** [Estimado]
 **Next update:** [Tiempo]
-```
+
+```text
 
 ### Resolution Message
 ```
+
 **Incident:** [Título]
 **Duration:** [Tiempo]
 **Impact:** [Descripción]
 **Root cause:** [Causa]
 **Prevention:** [Qué haremos para evitarlo]
-```
+
+```text
 
 ## Runbooks por Tipo de Incidente
 
@@ -420,11 +434,12 @@ comando --flag valor
 **Qué es:** Documento ligero para decisiones arquitectónicas.
 
 **Cuándo usar:**
+
 - Cambios arquitectónicos significativos
 - Elección de tecnologías
 - Patterns aplicados
 
-### Template
+### Template ADR
 
 ```markdown
 # ADR-[número]: [Título]
@@ -466,7 +481,7 @@ comando --flag valor
 
 ---
 
-### Ejemplo Real
+### Ejemplo Real ADR
 
 ```markdown
 # ADR-007: Usar Event Sourcing para Sistema de Auditoría

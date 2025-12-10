@@ -21,23 +21,24 @@
 - [🎯 Métricas de Negocio](#metricas-de-negocio)
 - [🚫 Errores Comunes](#errores-comunes)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 📊 Ciencia de Datos
 
-**What:** Disciplina que combina estadística, programación y conocimiento del dominio para extraer insights de datos.
+**Qué:** Disciplina que combina estadística, programación y conocimiento del dominio para extraer insights de datos.
 
-**Why:** Tomar decisiones data-driven, descubrir patrones, validar hipótesis.
+**Por qué:** Tomar decisiones data-driven, descubrir patrones, validar hipótesis.
 
-**Who:** Data Scientists, Data Analysts, Business Intelligence.
+**Quién:** Data Scientists, Data Analysts, Business Intelligence.
 
-**How much:** ROI variable según caso, requiere datos de calidad y stakeholder buy-in.
+**Esfuerzo:** ROI variable según caso, requiere datos de calidad y stakeholder buy-in.
 
 ---
 
 ## 🔄 Workflow Data Science
 
-```
+```text
 1. Problem Framing (¿Qué queremos saber?)
    ↓
 2. Data Collection (¿Dónde están los datos?)
@@ -57,11 +58,11 @@
 
 ## 🧹 Data Cleaning (Limpieza)
 
-**What:** Preparar datos crudos para análisis.
+**Qué:** Preparar datos crudos para análisis.
 
-**Why:** "Garbage in, garbage out" - datos sucios = análisis inválido.
+**Por qué:** "Garbage in, garbage out" - datos sucios = análisis inválido.
 
-| Problema | What | Solución | Herramientas |
+| Problema | Qué | Solución | Herramientas |
 |:---------|:-----|:---------|:-------------|
 | **Valores faltantes** | NaN, NULL, vacíos | Imputar (media, mediana), eliminar, flag | [pandas](https://pandas.pydata.org/) `fillna()`, `dropna()` |
 | **Duplicados** | Registros repetidos | Eliminar con lógica | `drop_duplicates()` |
@@ -76,9 +77,9 @@
 
 ## 🔍 EDA (Exploratory Data Analysis)
 
-**What:** Entender datos mediante estadística y visualización.
+**Qué:** Entender datos mediante estadística y visualización.
 
-**Why:** Encontrar patrones, anomalías, formular hipótesis.
+**Por qué:** Encontrar patrones, anomalías, formular hipótesis.
 
 ### Análisis Univariado
 
@@ -97,7 +98,7 @@
 
 ### Análisis Multivariado
 
-| Técnica | What | Herramienta |
+| Técnica | Qué | Herramienta |
 |:--------|:-----|:------------|
 | **PCA** | Reducción dimensionalidad | scikit-learn |
 | **t-SNE** | Visualizar high-dim data | scikit-learn |
@@ -107,11 +108,11 @@
 
 ## 📈 Visualización
 
-**What:** Representar datos gráficamente.
+**Qué:** Representar datos gráficamente.
 
-**Why:** "Un gráfico vale más que mil tablas".
+**Por qué:** "Un gráfico vale más que mil tablas".
 
-| Tipo | When | Herramienta |
+| Tipo | Cuándo | Herramienta |
 |:-----|:-----|:------------|
 | **Estática** | Reportes, papers | [Matplotlib](https://matplotlib.org/), [Seaborn](https://seaborn.pydata.org/) |
 | **Interactiva** | Dashboards, exploración | [Plotly](https://plotly.com/python/), [Altair](https://altair-viz.github.io/) |
@@ -120,7 +121,7 @@
 
 ### Tipos de Gráficos
 
-| Gráfico | When | Ejemplo |
+| Gráfico | Cuándo | Ejemplo |
 |:--------|:-----|:--------|
 | **Line** | Series temporales | Ventas por mes |
 | **Bar** | Comparar categorías | Ventas por región |
@@ -136,7 +137,7 @@
 
 ### Descriptiva
 
-| Métrica | What | Cuándo |
+| Métrica | Qué | Cuándo |
 |:--------|:-----|:-------|
 | **Media** | Promedio | Distribución normal |
 | **Mediana** | Valor medio | Outliers presentes |
@@ -146,7 +147,7 @@
 
 ### Inferencial
 
-| Concepto | What | Herramienta |
+| Concepto | Qué | Herramienta |
 |:---------|:-----|:------------|
 | **Hypothesis Testing** | Validar suposiciones | t-test, chi-squared |
 | **p-value** | Probabilidad resultado por azar | <0.05 = significativo |
@@ -157,11 +158,11 @@
 
 ## 🔬 Reproducibilidad
 
-**What:** Capacidad de replicar análisis.
+**Qué:** Capacidad de replicar análisis.
 
-**Why:** Ciencia requiere verificabilidad.
+**Por qué:** Ciencia requiere verificabilidad.
 
-| Aspecto | How | Herramientas |
+| Aspecto | Cómo | Herramientas |
 |:--------|:----|:-------------|
 | **Versionado datos** | Trackear cambios en datasets | [DVC](https://dvc.org/), [Git LFS](https://git-lfs.github.com/) |
 | **Versionado código** | Git para notebooks y scripts | Git, GitHub |
@@ -174,7 +175,7 @@
 
 ## 🧮 Herramientas Core
 
-| Herramienta | What | When |
+| Herramienta | Qué | Cuándo |
 |:------------|:-----|:-----|
 | [pandas](https://pandas.pydata.org/) | Manipulación tabular | Default para análisis |
 | [NumPy](https://numpy.org/) | Cálculo numérico | Operaciones matriciales |
@@ -187,7 +188,7 @@
 
 ## 📊 Tipos de Análisis
 
-| Tipo | What | Pregunta | Técnica |
+| Tipo | Qué | Pregunta | Técnica |
 |:-----|:-----|:---------|:--------|
 | **Descriptivo** | ¿Qué pasó? | Métricas históricas | Aggregations, visualización |
 | **Diagnóstico** | ¿Por qué pasó? | Causas | Correlaciones, comparaciones |
@@ -198,7 +199,7 @@
 
 ## 🔄 Data Quality
 
-| Dimensión | What | Cómo validar |
+| Dimensión | Qué | Cómo validar |
 |:----------|:-----|:-------------|
 | **Completeness** | Sin valores faltantes | `df.isnull().sum()` |
 | **Uniqueness** | Sin duplicados | `df.duplicated().sum()` |
@@ -212,7 +213,7 @@
 
 ## 🎯 Métricas de Negocio
 
-| Métrica | What | Fórmula |
+| Métrica | Qué | Fórmula |
 |:--------|:-----|:--------|
 | **Churn Rate** | % clientes que abandonan | Churned / Total × 100 |
 | **CAC** | Customer Acquisition Cost | Marketing Spend / New Customers |

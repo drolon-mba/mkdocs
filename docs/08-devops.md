@@ -19,17 +19,18 @@
 - [🔧 Herramientas Clave por Fase](#herramientas-clave-por-fase)
 - [🚫 Anti-patrones](#anti-patrones)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 🎯 ¿Qué es DevOps?
 
-**What:** Cultura y conjunto de prácticas que combinan desarrollo (Dev) y operaciones (Ops) para entregar software de forma rápida, confiable y segura.
+**Qué:** Cultura y conjunto de prácticas que combinan desarrollo (Dev) y operaciones (Ops) para entregar software de forma rápida, confiable y segura.
 
-**Why:** Reduce tiempo de entrega, aumenta frecuencia de deploys, mejora calidad, acelera recuperación ante fallos.
+**Por qué:** Reduce tiempo de entrega, aumenta frecuencia de deploys, mejora calidad, acelera recuperación ante fallos.
 
-**Who:** Developers, DevOps Engineers, SREs, Platform Engineers.
+**Quién:** Developers, DevOps Engineers, SREs, Platform Engineers.
 
-**How much:** Inversión inicial alta (3-6 meses setup), ROI continuo en velocidad y estabilidad.
+**Costo:** Inversión inicial alta (3-6 meses setup), ROI continuo en velocidad y estabilidad.
 
 ---
 
@@ -39,8 +40,8 @@
 
 **Why:** Detecta problemas temprano, reduce "works on my machine", deploys predecibles.
 
-| Componente | What | Why | When | How | Herramientas |
-|:-----------|:-----|:----|:-----|:----|:-------------|
+| Componente | Qué | Por qué | Cuándo | Cómo | Herramientas |
+|:-----------|:----|:--------|:-------|:-----|:-------------|
 | **CI** | Integrar cambios frecuentemente con tests automáticos | Detectar conflictos/bugs rápido | Cada push, cada PR | Pipeline: checkout → build → test → report | [GitHub Actions](https://github.com/features/actions), [GitLab CI](https://docs.gitlab.com/ee/ci/), [Jenkins](https://www.jenkins.io/) |
 | **CD** | Deploy automático a staging/producción | Reducir errores humanos, entregas rápidas | Tras merge a main (staging), manual/automático (prod) | Pipeline: build → test → package → deploy | [Argo CD](https://argo-cd.readthedocs.io/), [Spinnaker](https://spinnaker.io/) |
 | **Pipelines** | Secuencia de pasos automatizados | Reproducibilidad, auditoría | Definir en código (YAML) | Stages paralelos, artifacts entre stages | [Tekton](https://tekton.dev/), [CircleCI](https://circleci.com/) |
@@ -55,7 +56,7 @@
 
 **Why:** Reproducibilidad, auditoría, disaster recovery rápido.
 
-| Herramienta | What | Why | When | How |
+| Herramienta | Qué | Por qué | Cuándo | Cómo |
 |:------------|:-----|:----|:-----|:----|
 | [Terraform](https://www.terraform.io/) | Provisionar infraestructura multi-nube | Agnóstico de proveedor, state management | Infraestructura compleja, multi-cloud | HCL (`.tf`), plan → apply, state en S3/Terraform Cloud |
 | [Pulumi](https://www.pulumi.com/) | IaC en lenguajes generales (TS, Python, Go) | Reutilizar lógica de programación | Equipos con fuerte background dev | Código TypeScript/Python, `pulumi up` |
@@ -70,7 +71,7 @@
 
 **Why:** "Funciona en mi máquina" → "Funciona en producción", escalabilidad.
 
-| Tecnología | What | Why | When | How |
+| Tecnología | Qué | Por qué | Cuándo | Cómo |
 |:-----------|:-----|:----|:-----|:----|
 | [Docker](https://www.docker.com/) | Crear y ejecutar contenedores | Portabilidad, aislamiento | Toda app moderna | `Dockerfile` → `docker build` → `docker run` |
 | [Kubernetes](https://kubernetes.io/) | Orquestar contenedores a escala | Auto-healing, scaling, rolling updates | Producción con >3 servicios | Deployments, Services, Ingress, HPA |
@@ -83,7 +84,7 @@
 
 **What:** Estrategias para liberar código minimizando riesgo.
 
-| Patrón | What | Why | When | How |
+| Patrón | Qué | Por qué | Cuándo | Cómo |
 |:-------|:-----|:----|:-----|:----|
 | **Rolling** | Actualizar pods/instancias progresivamente | Alta disponibilidad, rollback fácil | Siempre | K8s actualiza 1 pod, espera health check, sigue |
 | **Blue-Green** | Dos entornos: blue (actual), green (nuevo) | Zero downtime, rollback instantáneo | Apps críticas | Cambiar tráfico de blue a green tras validación |
@@ -100,7 +101,8 @@
 
 **Why:** Auditoría completa, rollback vía git revert, declarativo.
 
-**How:** 
+**How:**
+
 1. Definir estado deseado en Git (YAML)
 2. Operator detecta drift (diferencia estado real vs deseado)
 3. Operator aplica cambios automáticamente
@@ -111,7 +113,7 @@
 
 ## 🛡️ Seguridad en CI/CD
 
-| Práctica | What | Why | How | Herramientas |
+| Práctica | Qué | Por qué | Cómo | Herramientas |
 |:---------|:-----|:----|:----|:-------------|
 | **SAST** | Static Application Security Testing | Detecta vulnerabilidades en código | Escanear código en CI | [SonarQube](https://www.sonarsource.com/products/sonarqube/), [Checkmarx](https://checkmarx.com/) |
 | **DAST** | Dynamic Application Security Testing | Detecta vulnerabilidades en runtime | Probar app desplegada | [OWASP ZAP](https://www.zaproxy.org/), [Burp Suite](https://portswigger.net/burp) |
@@ -123,7 +125,7 @@
 
 ## 📊 Métricas DORA (DevOps Research and Assessment)
 
-| Métrica | What | Elite | High | Medium | Low |
+| Métrica | Qué | Elite | High | Medium | Low |
 |:--------|:-----|:------|:-----|:-------|:----|
 | **Deployment Frequency** | Con qué frecuencia se deploya a prod | On-demand (múltiples por día) | Entre 1 día y 1 semana | Entre 1 semana y 1 mes | < 1 vez al mes |
 | **Lead Time for Changes** | Tiempo desde commit hasta producción | < 1 hora | < 1 día | < 1 semana | > 1 semana |
@@ -137,22 +139,26 @@
 ## 🔧 Herramientas Clave por Fase
 
 ### Build & Test
+
 - [Maven](https://maven.apache.org/), [Gradle](https://gradle.org/) (Java)
 - [npm](https://www.npmjs.com/), [pnpm](https://pnpm.io/) (Node.js)
 - [Poetry](https://python-poetry.org/), [pip](https://pip.pypa.io/) (Python)
 
 ### CI/CD
+
 - [GitHub Actions](https://github.com/features/actions)
 - [GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
 - [Jenkins](https://www.jenkins.io/)
 - [CircleCI](https://circleci.com/)
 
 ### Container Registry
+
 - [Docker Hub](https://hub.docker.com/)
 - [AWS ECR](https://aws.amazon.com/ecr/)
 - [Google Artifact Registry](https://cloud.google.com/artifact-registry)
 
 ### Orchestration
+
 - [Kubernetes](https://kubernetes.io/)
 - [Docker Swarm](https://docs.docker.com/engine/swarm/)
 - [Nomad](https://www.nomadproject.io/)

@@ -8,19 +8,20 @@
 
 ## 📋 Índice Rápido
 
-- [📊 Data Literacy Fundamentals](#data-literacy-fundamentals)
-- [🔧 Self-Service Analytics](#self-service-analytics)
+- [📊 Fundamentos de Data Literacy](#fundamentos-de-data-literacy)
+- [🔧 Analítica Autoservicio](#analitica-autoservicio)
 - [📋 Artefactos](#artefactos)
 
 ---
 
-## 📊 Data Literacy Fundamentals
+## 📊 Fundamentos de Data Literacy
 
 ### Qué es Data Literacy
 
 **Definición:** Capacidad de leer, trabajar con, analizar y comunicar con datos.
 
 **Componentes:**
+
 1. **Leer datos**: Interpretar gráficos, tablas, métricas
 2. **Trabajar con datos**: Filtrar, agrupar, calcular
 3. **Analizar datos**: Identificar patterns, correlaciones, outliers
@@ -36,6 +37,7 @@
 **Causalidad:** Una variable causa el cambio en otra.
 
 **Ejemplo:**
+
 - **Correlación**: Ventas de helado ↑ cuando ahogamientos ↑
 - **NO causalidad**: Helado no causa ahogamientos
 - **Variable oculta**: Temperatura (verano → más helado Y más gente en playas)
@@ -66,11 +68,13 @@
 | **p99** | 99% de valores están por debajo (tail latency) |
 
 **Por qué p99 > promedio:**
+
 - Promedio puede ser engañoso (outliers lo afectan mucho)
 - p99 muestra experiencia del 1% peor (usuarios frustrados)
 
 **Ejemplo:**
-```
+
+```text
 Latencies: [10ms, 12ms, 15ms, 18ms, 20ms, 25ms, 30ms, 50ms, 100ms, 500ms]
 
 Promedio: 78ms
@@ -84,7 +88,7 @@ p99: 500ms
 
 ---
 
-## 🔧 Self-Service Analytics
+## 🔧 Analítica Autoservicio
 
 ### Herramientas
 
@@ -102,7 +106,8 @@ p99: 500ms
 #### 1. Definir Métricas Clave
 
 **Ejemplo:**
-```markdown
+
+````markdown
 # Métrica: Monthly Active Users (MAU)
 
 **Definición:** Usuarios únicos que hicieron login en los últimos 30 días
@@ -118,7 +123,8 @@ WHERE event_type = 'login'
 **Owner:** Product team
 **Actualización:** Diaria
 **Alerta:** Si MAU cae >10% week-over-week
-```
+
+````
 
 ---
 
@@ -137,11 +143,12 @@ WHERE event_type = 'login'
 
 ---
 
-## 📖 Data Storytelling
+## 📖 Narrativa con Datos
 
 ### Estructura
 
-```
+```text
+
 1. Hook
    ↓
 2. Context
@@ -149,6 +156,7 @@ WHERE event_type = 'login'
 3. Insight
    ↓
 4. Action
+
 ```
 
 ---
@@ -156,12 +164,17 @@ WHERE event_type = 'login'
 ### Ejemplo: Presentar Insights a Stakeholders
 
 **❌ MAL (solo números):**
-```
+
+```text
+
 "Conversion rate es 2.5%"
+
 ```
 
 **✅ BIEN (storytelling):**
-```
+
+```text
+
 **Hook:** Estamos perdiendo $50K/mes en revenue.
 
 **Context:** Nuestro conversion rate es 2.5%, mientras que el benchmark de la industria es 4%.
@@ -171,6 +184,7 @@ Análisis cualitativo (user interviews) reveló que el formulario es confuso.
 
 **Action:** Propongo rediseñar el checkout. Estimamos que subir conversion a 3.5%
 generaría $200K/mes adicionales. ROI en 2 meses.
+
 ```
 
 ---
@@ -200,7 +214,7 @@ generaría $200K/mes adicionales. ROI en 2 meses.
 
 ---
 
-## ✅ Data Quality
+## ✅ Calidad de Datos
 
 ### Dimensiones de Calidad
 
@@ -218,6 +232,7 @@ generaría $200K/mes adicionales. ROI en 2 meses.
 **Qué es:** Analizar dataset para entender su estructura y calidad.
 
 **Ejemplo (Python):**
+
 ```python
 import pandas as pd
 
@@ -243,9 +258,10 @@ print(f"Outliers: {len(outliers)}")
 
 ---
 
-### Data Validation
+### Validación de Datos
 
 **Ejemplo (Great Expectations):**
+
 ```python
 import great_expectations as ge
 

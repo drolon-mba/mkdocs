@@ -22,27 +22,28 @@
 - [📊 Comparación](#comparacion)
 - [🚫 Anti-patrones](#anti-patrones)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 🎯 Elegir Protocolo
 
-**What:** Definir cómo sistemas se comunican.
+**Qué:** Definir cómo sistemas se comunican.
 
-**Why:** Impacta performance, developer experience, escalabilidad.
+**Por qué:** Impacta performance, developer experience, escalabilidad.
 
-**Who:** Arquitectos, backend developers.
+**Quién:** Arquitectos, backend developers.
 
-**How much:** Decisión difícil de cambiar una vez adoptada.
+**Esfuerzo:** Decisión difícil de cambiar una vez adoptada.
 
 ---
 
 ## 🌐 REST (Representational State Transfer)
 
-**What:** APIs basadas en HTTP con recursos y verbos.
+**Qué:** APIs basadas en HTTP con recursos y verbos.
 
-**Why:** Estándar universal, cacheable, stateless.
+**Por qué:** Estándar universal, cacheable, stateless.
 
-| Aspecto | What | How |
+| Aspecto | Qué | Cómo |
 |:--------|:-----|:----|
 | **Recursos** | Sustantivos (entidades) | `/users`, `/orders`, `/products` |
 | **Verbos HTTP** | Acciones sobre recursos | GET (leer), POST (crear), PUT (actualizar), DELETE (borrar) |
@@ -51,6 +52,7 @@
 | **HATEOAS** | Hypermedia as Engine of State | Responses incluyen links a recursos relacionados |
 
 **Ejemplo:**
+
 ```http
 GET /api/v1/users/123
 Authorization: Bearer <token>
@@ -71,11 +73,11 @@ Response 200:
 
 ## 🔍 GraphQL
 
-**What:** Query language para APIs con schema tipado.
+**Qué:** Query language para APIs con schema tipado.
 
-**Why:** Cliente pide exactamente lo que necesita, no más ni menos.
+**Por qué:** Cliente pide exactamente lo que necesita, no más ni menos.
 
-| Concepto | What | Ejemplo |
+| Concepto | Qué | Ejemplo |
 |:---------|:-----|:--------|
 | **Schema** | Tipos y relaciones | `type User { id: ID! name: String! posts: [Post] }` |
 | **Query** | Leer datos | `{ user(id: "123") { name email } }` |
@@ -84,11 +86,13 @@ Response 200:
 | **Resolver** | Función que obtiene datos | `User.posts: (parent) => fetchPosts(parent.id)` |
 
 **Ventajas:**
+
 - Sin overfetching/underfetching
 - Un endpoint para todo
 - Schema autodocumentado
 
 **Desventajas:**
+
 - Complejidad adicional
 - Caching difícil
 - Queries costosas (N+1)
@@ -99,11 +103,11 @@ Response 200:
 
 ## ⚡ gRPC
 
-**What:** RPC framework con Protocol Buffers binario.
+**Qué:** RPC framework con Protocol Buffers binario.
 
-**Why:** Performance, tipado fuerte, streaming nativo.
+**Por qué:** Performance, tipado fuerte, streaming nativo.
 
-| Aspecto | What | Ventaja |
+| Aspecto | Qué | Ventaja |
 |:--------|:-----|:--------|
 | **Protocol Buffers** | Serialización binaria | Más pequeño y rápido que JSON |
 | **HTTP/2** | Multiplexing, server push | Menos conexiones |
@@ -111,6 +115,7 @@ Response 200:
 | **Code generation** | Clientes/servers automáticos | Type-safe |
 
 **Ejemplo .proto:**
+
 ```protobuf
 service UserService {
   rpc GetUser (GetUserRequest) returns (User);
@@ -132,17 +137,18 @@ message User {
 
 ## 🔌 WebSockets
 
-**What:** Conexión bidireccional persistente sobre TCP.
+**Qué:** Conexión bidireccional persistente sobre TCP.
 
-**Why:** Real-time, baja latencia, push de servidor.
+**Por qué:** Real-time, baja latencia, push de servidor.
 
-| Aspecto | What | Cuándo |
+| Aspecto | Qué | Cuándo |
 |:--------|:-----|:-------|
 | **Full-duplex** | Cliente y servidor envían simultáneamente | Chat, gaming |
 | **Persistent** | Conexión abierta continuamente | Notificaciones en tiempo real |
 | **Binary/Text** | Soporta ambos formatos | Flexible |
 
 **Ejemplo:**
+
 ```javascript
 const ws = new WebSocket('wss://api.example.com/ws');
 
@@ -161,9 +167,9 @@ ws.send(JSON.stringify({ type: 'subscribe', channel: 'updates' }));
 
 ## 📨 Server-Sent Events (SSE)
 
-**What:** Streaming unidireccional server→client sobre HTTP.
+**Qué:** Streaming unidireccional server→client sobre HTTP.
 
-**Why:** Más simple que WebSockets para notificaciones.
+**Por qué:** Más simple que WebSockets para notificaciones.
 
 ```javascript
 const eventSource = new EventSource('/api/events');
@@ -176,6 +182,7 @@ eventSource.addEventListener('update', (event) => {
 **Cuándo usar:** Notificaciones, cotizaciones, progress updates.
 
 **Ventajas vs WebSockets:**
+
 - Más simple (HTTP estándar)
 - Reconnect automático
 - Event IDs para reanudar
@@ -184,9 +191,9 @@ eventSource.addEventListener('update', (event) => {
 
 ## 🎯 Event-Driven / Async
 
-**What:** Comunicación basada en eventos via message brokers.
+**Qué:** Comunicación basada en eventos via message brokers.
 
-| Broker | What | When |
+| Broker | Qué | Cuándo |
 |:-------|:-----|:-----|
 | [RabbitMQ](https://www.rabbitmq.com/) | Message queue con routing | Workflows complejos |
 | [Apache Kafka](https://kafka.apache.org/) | Event streaming distribuido | Alto throughput, logs |
@@ -194,6 +201,7 @@ eventSource.addEventListener('update', (event) => {
 | [Redis Pub/Sub](https://redis.io/docs/manual/pubsub/) | Publish/Subscribe en memoria | Eventos en tiempo real |
 
 **Patrones:**
+
 - **Pub/Sub:** Broadcast a múltiples consumidores
 - **Queues:** Work distribution, un consumidor procesa
 - **Event Sourcing:** Eventos como fuente de verdad
@@ -210,6 +218,7 @@ eventSource.addEventListener('update', (event) => {
 | **WebSockets** | [AsyncAPI](https://www.asyncapi.com/) | Spec para async APIs |
 
 **Ejemplo OpenAPI:**
+
 ```yaml
 openapi: 3.0.0
 paths:
@@ -235,7 +244,7 @@ paths:
 
 ## 🔐 Autenticación
 
-| Método | What | When | Header |
+| Método | Qué | Cuándo | Header |
 |:-------|:-----|:-----|:-------|
 | **API Key** | String estático | Integraciones internas | `X-API-Key: abc123` |
 | **Bearer Token** | JWT en header | SPAs, mobile apps | `Authorization: Bearer <jwt>` |
@@ -247,7 +256,7 @@ paths:
 
 ## 🎨 Diseño de APIs
 
-| Principio | What | Ejemplo |
+| Principio | Qué | Ejemplo |
 |:----------|:-----|:--------|
 | **Versionado** | Mantener compatibilidad | `/api/v1/`, `/api/v2/` o header |
 | **Paginación** | Evitar payloads gigantes | `?limit=20&offset=40` o cursor |
@@ -261,11 +270,12 @@ paths:
 
 ## 🔄 Webhooks
 
-**What:** HTTP callbacks cuando ocurre evento.
+**Qué:** HTTP callbacks cuando ocurre evento.
 
-**Why:** Integración event-driven sin polling.
+**Por qué:** Integración event-driven sin polling.
 
 **Ejemplo:**
+
 ```json
 POST https://yourapp.com/webhook
 X-Signature: sha256=...
@@ -280,6 +290,7 @@ X-Signature: sha256=...
 ```
 
 **Seguridad:**
+
 - Validar firma HMAC
 - HTTPS obligatorio
 - Retry exponential backoff

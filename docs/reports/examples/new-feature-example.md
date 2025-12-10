@@ -1,25 +1,25 @@
-## ✨ Feature Request
+# ✨ Feature Request
 
-### 📌 Título
+## 📌 Título
 
 Módulo de Reportes – Exportación a Excel
 
 ---
 
-### 📋 Descripción
+## 📋 Descripción
 
 Agregar la posibilidad de exportar los reportes de transacciones filtrados en la interfaz a un archivo Excel (.xlsx) descargable por el usuario.
 
 ---
 
-### 🎯 Objetivo / Valor
+## 🎯 Objetivo / Valor
 
 - **Problema que resuelve:** Actualmente los usuarios solo pueden visualizar los reportes en pantalla o exportarlos a PDF, lo que dificulta el análisis y la manipulación de datos en herramientas externas.
 - **Beneficio:** Permite a los usuarios trabajar con los datos en Excel, aplicar filtros adicionales, generar gráficos y compartir fácilmente la información con otras áreas.
 
 ---
 
-### 🖥️ Alcance
+## 🖥️ Alcance
 
 - **Incluye:**
 
@@ -34,7 +34,7 @@ Agregar la posibilidad de exportar los reportes de transacciones filtrados en la
 
 ---
 
-### 🔄 Flujo esperado / Ejemplo de uso
+## 🔄 Flujo esperado / Ejemplo de uso
 
 1. Usuario aplica filtros en la vista de reportes (ej. rango de fechas, tipo de transacción).
 2. Usuario hace clic en el botón “Exportar a Excel”.
@@ -42,7 +42,7 @@ Agregar la posibilidad de exportar los reportes de transacciones filtrados en la
 
 ---
 
-### 📂 Referencias
+## 📂 Referencias
 
 - Mockup en Figma: [link al diseño]
 - Documentación relacionada: [link a la wiki interna]
@@ -50,7 +50,7 @@ Agregar la posibilidad de exportar los reportes de transacciones filtrados en la
 
 ---
 
-### 📊 Impacto
+## 📊 Impacto
 
 - **Usuarios beneficiados:** Todos los analistas financieros (~50 usuarios activos).
 - **Prioridad:** Alta (solicitado por el área de Finanzas, bloquea procesos manuales).
@@ -58,7 +58,7 @@ Agregar la posibilidad de exportar los reportes de transacciones filtrados en la
 
 ---
 
-### ✅ Criterios de aceptación
+## ✅ Criterios de aceptación
 
 - [ ] El botón “Exportar a Excel” aparece en la vista de reportes.
 - [ ] El archivo generado contiene exactamente las columnas visibles en la tabla.

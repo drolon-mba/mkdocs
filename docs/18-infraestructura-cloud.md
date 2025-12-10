@@ -24,23 +24,24 @@
 - [🔄 Disaster Recovery](#disaster-recovery)
 - [🚫 Anti-patrones](#anti-patrones)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## ☁️ Cloud Computing
 
-**What:** Infraestructura y servicios on-demand vía internet.
+**Qué:** Infraestructura y servicios on-demand vía internet.
 
-**Why:** Escalabilidad, pago por uso, global deployment, menor gestión operativa.
+**Por qué:** Escalabilidad, pago por uso, global deployment, menor gestión operativa.
 
-**Who:** DevOps, Platform Engineers, Cloud Architects.
+**Quién:** DevOps, Platform Engineers, Cloud Architects.
 
-**How much:** OpEx vs CapEx, facturación mensual variable.
+**Esfuerzo:** OpEx vs CapEx, facturación mensual variable.
 
 ---
 
 ## 🌍 Proveedores Cloud
 
-| Proveedor | What | When | Fortalezas |
+| Proveedor | Qué | Cuándo | Fortalezas |
 |:----------|:-----|:-----|:-----------|
 | [AWS](https://aws.amazon.com/) | Líder del mercado, mayor catálogo | Default para mayoría de casos | Madurez, features, ecosistema |
 | [Azure](https://azure.microsoft.com/) | Cloud de Microsoft | Empresas Microsoft-centric | Integración .NET, AD, Office 365 |
@@ -52,7 +53,7 @@
 
 ## 🏗️ Modelos de Servicio
 
-| Modelo | What | Gestiona Provider | Gestiona Cliente | Use Case |
+| Modelo | Qué | Gestiona Provider | Gestiona Cliente | Use Case |
 |:-------|:-----|:------------------|:-----------------|:---------|
 | **IaaS** (Infrastructure) | VMs, networking, storage | Hardware, virtualización | OS, runtime, apps | Control total, lift-and-shift |
 | **PaaS** (Platform) | Runtime, escalado | Infra + OS + runtime | Solo código | Apps web, APIs |
@@ -64,11 +65,11 @@
 
 ## 🚀 Serverless
 
-**What:** Ejecutar código sin gestionar servidores.
+**Qué:** Ejecutar código sin gestionar servidores.
 
-**Why:** Cero gestión infra, escalado automático, pago por uso real.
+**Por qué:** Cero gestión infra, escalado automático, pago por uso real.
 
-| Servicio | What | When | Pricing |
+| Servicio | Qué | Cuándo | Pricing |
 |:---------|:-----|:-----|:--------|
 | [AWS Lambda](https://aws.amazon.com/lambda/) | Funciones event-driven | APIs, jobs, ETL | Por invocación + GB-segundo |
 | [Google Cloud Functions](https://cloud.google.com/functions) | Funciones GCP | Similar Lambda | Por invocación |
@@ -77,6 +78,7 @@
 | [Vercel](https://vercel.com/) | Deploy frontend + serverless | Next.js, frontend | Por función + bandwidth |
 
 **Limitaciones:**
+
 - Cold starts (50-500ms)
 - Timeout (típico 15min)
 - Stateless
@@ -86,7 +88,7 @@
 
 ## 🐳 Contenedores
 
-| Tecnología | What | When |
+| Tecnología | Qué | Cuándo |
 |:-----------|:-----|:-----|
 | [Docker](https://www.docker.com/) | Empaquetar apps con deps | Todo desarrollo moderno |
 | [Kubernetes](https://kubernetes.io/) | Orquestar contenedores | Prod con >5 servicios |
@@ -98,7 +100,7 @@
 
 ## 🗄️ Storage
 
-| Tipo | Servicio | When | Características |
+| Tipo | Servicio | Cuándo | Características |
 |:-----|:---------|:-----|:----------------|
 | **Object** | [S3](https://aws.amazon.com/s3/), [GCS](https://cloud.google.com/storage), [Azure Blob](https://azure.microsoft.com/en-us/products/storage/blobs) | Archivos, backups, assets | Infinito, económico, durable |
 | **Block** | [EBS](https://aws.amazon.com/ebs/), [Persistent Disk](https://cloud.google.com/persistent-disk) | Discos para VMs/containers | High IOPS, attached a instancia |
@@ -109,7 +111,7 @@
 
 ## 🌐 Networking
 
-| Concepto | What | Servicios |
+| Concepto | Qué | Servicios |
 |:---------|:-----|:----------|
 | **VPC** | Virtual Private Cloud | Aislar recursos, subnets públicas/privadas |
 | **Load Balancer** | Distribuir tráfico | [ALB](https://aws.amazon.com/elasticloadbalancing/), [NLB](https://aws.amazon.com/elasticloadbalancing/network-load-balancer/), [Cloud Load Balancing](https://cloud.google.com/load-balancing) |
@@ -122,7 +124,7 @@
 
 ## 🔐 Identity & Access
 
-| Concepto | What | Servicios |
+| Concepto | Qué | Servicios |
 |:---------|:-----|:----------|
 | **IAM** | Gestión permisos | [AWS IAM](https://aws.amazon.com/iam/), [GCP IAM](https://cloud.google.com/iam) |
 | **SSO** | Single Sign-On | [AWS SSO](https://aws.amazon.com/single-sign-on/), [Azure AD](https://azure.microsoft.com/en-us/products/active-directory) |
@@ -155,15 +157,15 @@
 
 ## 🌍 Multi-Cloud & Hybrid
 
-**What:** Usar múltiples proveedores o combinar on-prem + cloud.
+**Qué:** Usar múltiples proveedores o combinar on-prem + cloud.
 
-**Why:** Evitar vendor lock-in, redundancia, mejores precios.
+**Por qué:** Evitar vendor lock-in, redundancia, mejores precios.
 
-| Estrategia | What | When | Trade-offs |
+| Estrategia | Qué | Cuándo | Trade-offs |
 |:-----------|:-----|:-----|:-----------|
-| **Multi-Cloud** | AWS + GCP + Azure | Redundancia, pricing | ✅ Resiliencia<br>❌ Complejidad operativa |
-| **Hybrid** | On-prem + cloud | Compliance, legacy | ✅ Gradual migration<br>❌ Gestión dual |
-| **Cloud-Agnostic** | Herramientas neutrales | Flexibilidad futura | ✅ Portabilidad<br>❌ No usar features específicas |
+| **Multi-Cloud** | AWS + GCP + Azure | Redundancia, pricing | ✅ Resiliencia; ❌ Complejidad operativa |
+| **Hybrid** | On-prem + cloud | Compliance, legacy | ✅ Gradual migration; ❌ Gestión dual |
+| **Cloud-Agnostic** | Herramientas neutrales | Flexibilidad futura | ✅ Portabilidad; ❌ No usar features específicas |
 
 **Herramientas:** [Terraform](https://www.terraform.io/), [Pulumi](https://www.pulumi.com/), [Crossplane](https://www.crossplane.io/)
 
@@ -171,11 +173,11 @@
 
 ## 📍 Edge Computing
 
-**What:** Procesamiento cerca del usuario (edge locations).
+**Qué:** Procesamiento cerca del usuario (edge locations).
 
-**Why:** Baja latencia, menos bandwidth.
+**Por qué:** Baja latencia, menos bandwidth.
 
-| Servicio | What | Use Case |
+| Servicio | Qué | Caso de Uso |
 |:---------|:-----|:---------|
 | [Cloudflare Workers](https://workers.cloudflare.com/) | JS en edge global | APIs ultra-rápidas |
 | [AWS Lambda@Edge](https://aws.amazon.com/lambda/edge/) | Lambda en CloudFront | Personalización responses |
@@ -185,7 +187,7 @@
 
 ## 💰 Cost Optimization
 
-| Técnica | What | How | Ahorro |
+| Técnica | Qué | Cómo | Ahorro |
 |:--------|:-----|:----|:-------|
 | **Right-sizing** | Ajustar tamaño instancias | Monitorear uso, reducir oversized | 20-40% |
 | **Reserved Instances** | Compromiso 1-3 años | Comprar RIs para workloads estables | 30-70% |
@@ -200,7 +202,7 @@
 
 ### 5 Pilares (AWS)
 
-| Pilar | What | Principios Clave |
+| Pilar | Qué | Principios Clave |
 |:------|:-----|:-----------------|
 | **Operational Excellence** | Ejecutar y monitorear | IaC, CI/CD, runbooks |
 | **Security** | Proteger datos y sistemas | Least privilege, encryption, logging |

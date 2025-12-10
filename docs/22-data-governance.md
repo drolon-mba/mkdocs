@@ -20,25 +20,26 @@
 - [📋 Data Governance Roles](#data-governance-roles)
 - [🚫 Anti-patrones](#anti-patrones)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 🎯 Data Governance
 
-**What:** Framework de políticas, procesos y controles para gestionar datos como activo estratégico.
+**Qué:** Framework de políticas, procesos y controles para gestionar datos como activo estratégico.
 
-**Why:** Datos son el nuevo petróleo. Sin governance = caos, riesgos legales, decisiones incorrectas.
+**Por qué:** Datos son el nuevo petróleo. Sin governance = caos, riesgos legales, decisiones incorrectas.
 
-**Who:** Chief Data Officer, Data Stewards, compliance, engineering.
+**Quién:** Chief Data Officer, Data Stewards, compliance, engineering.
 
-**When:** Desde día 1 manejando datos sensibles o a escala.
+**Cuándo:** Desde día 1 manejando datos sensibles o a escala.
 
-**How much:** Inversión inicial alta, previene multas millonarias (GDPR hasta €20M).
+**Esfuerzo:** Inversión inicial alta, previene multas millonarias (GDPR hasta €20M).
 
 ---
 
 ## 📊 Pilares de Data Governance
 
-| Pilar | What | Cómo implementar |
+| Pilar | Qué | Cómo implementar |
 |:------|:-----|:-----------------|
 | **Data Quality** | Datos precisos, completos, consistentes | Validaciones, monitoreo, data contracts |
 | **Data Security** | Proteger de accesos no autorizados | Encryption, access control, auditoría |
@@ -52,7 +53,7 @@
 
 ### Dimensiones de Calidad
 
-| Dimensión | What | Validación |
+| Dimensión | Qué | Validación |
 |:----------|:-----|:-----------|
 | **Accuracy** | Datos reflejan realidad | Comparar con fuentes autoritativas |
 | **Completeness** | Sin valores faltantes críticos | % campos poblados |
@@ -63,9 +64,10 @@
 
 ### Data Contracts
 
-**What:** Acuerdo explícito entre producer y consumer sobre schema y calidad de datos.
+**Qué:** Acuerdo explícito entre producer y consumer sobre schema y calidad de datos.
 
 **Ejemplo:**
+
 ```yaml
 # user_events.contract.yml
 dataset: user_events
@@ -94,28 +96,32 @@ sla:
 
 ## 🔍 Data Lineage
 
-**What:** Mapa visual de origen, transformaciones y destino de datos.
+**Qué:** Mapa visual de origen, transformaciones y destino de datos.
 
-**Why:** Debugging, impact analysis, compliance.
+**Por qué:** Debugging, impact analysis, compliance.
 
-**When:** Sistemas complejos con múltiples transformaciones.
+**Cuándo:** Sistemas complejos con múltiples transformaciones.
 
 **Ejemplo de Lineage:**
-```
-[Users DB] → [ETL Job] → [Data Warehouse] → [BI Dashboard]
-                ↓
-         [ML Feature Store]
-                ↓
-         [Recommendation Model]
+
+```mermaid
+graph TD
+    A[Users DB] --> B[ETL Job]
+    B --> C[Data Warehouse]
+    C --> D[BI Dashboard]
+    B --> E[ML Feature Store]
+    E --> F[Recommendation Model]
 ```
 
 **Preguntas que responde:**
+
 - ¿De dónde vienen estos datos?
 - ¿Qué sistemas usan esta tabla?
 - Si cambio schema aquí, ¿qué se rompe?
 - ¿Por qué este reporte muestra X?
 
 **Niveles:**
+
 - **Column-level:** Trazabilidad campo por campo
 - **Table-level:** Dependencias entre tablas
 - **System-level:** Flujo entre sistemas
@@ -126,11 +132,11 @@ sla:
 
 ## 📚 Data Catalog
 
-**What:** Inventario searchable de todos los datasets de la organización.
+**Qué:** Inventario searchable de todos los datasets de la organización.
 
-**Why:** Descubrimiento, evitar duplicados, democratizar acceso.
+**Por qué:** Descubrimiento, evitar duplicados, democratizar acceso.
 
-**When:** >50 datasets o múltiples fuentes.
+**Cuándo:** >50 datasets o múltiples fuentes.
 
 **Metadata incluida:**
 
@@ -142,7 +148,8 @@ sla:
 | **Social** | Ratings, comments, popularidad |
 
 **Ejemplo Entry:**
-```
+
+```yaml
 Dataset: customer_transactions
 Description: Todas las transacciones de clientes desde 2020
 Owner: finance-team
@@ -165,7 +172,7 @@ Related: customer_profiles, product_catalog
 
 ### Access Control
 
-| Nivel | What | Implementación |
+| Nivel | Qué | Implementación |
 |:------|:-----|:---------------|
 | **Row-level** | Filtrar filas según usuario | `WHERE user_region = current_user_region` |
 | **Column-level** | Ocultar columnas sensibles | Views sin PII, field-level encryption |
@@ -174,6 +181,7 @@ Related: customer_profiles, product_catalog
 ### Privacy by Design
 
 **Principios:**
+
 1. **Data Minimization:** Solo recopilar lo necesario
 2. **Purpose Limitation:** Usar solo para fin declarado
 3. **Consent Management:** Opt-in explícito
@@ -194,7 +202,7 @@ Related: customer_profiles, product_catalog
 
 **Techniques:**
 
-| Técnica | What | Cuándo |
+| Técnica | Qué | Cuándo |
 |:--------|:-----|:-------|
 | **Hashing** | One-way transformation | Passwords, identificadores |
 | **Tokenization** | Reemplazar con token | Credit cards, referencias |
@@ -206,13 +214,14 @@ Related: customer_profiles, product_catalog
 
 ## 🗄️ Master Data Management (MDM)
 
-**What:** Proceso para crear "golden record" único y autoritativo de entidades críticas.
+**Qué:** Proceso para crear "golden record" único y autoritativo de entidades críticas.
 
-**Why:** Sin MDM = 10 sistemas con 10 versiones de "Cliente A".
+**Por qué:** Sin MDM = 10 sistemas con 10 versiones de "Cliente A".
 
-**When:** Múltiples sistemas con datos duplicados/conflictivos.
+**Cuándo:** Múltiples sistemas con datos duplicados/conflictivos.
 
 **Entidades típicas:**
+
 - **Clientes:** Deduplicar, consolidar info de CRM, Support, Sales
 - **Productos:** SKU único, jerarquía consistente
 - **Empleados:** HR system como source of truth
@@ -220,7 +229,7 @@ Related: customer_profiles, product_catalog
 
 **Proceso:**
 
-```
+```text
 Fuente 1: Cliente "John Smith", email: john@email.com
 Fuente 2: Cliente "J. Smith", phone: 555-1234
 Fuente 3: Cliente "Smith, John", address: 123 Main St
@@ -245,7 +254,7 @@ Golden Record:
 
 **Métricas:**
 
-| Métrica | What | Alert |
+| Métrica | Qué | Alert |
 |:--------|:-----|:------|
 | **Freshness** | Última actualización | >2h sin actualizar |
 | **Volume** | Cantidad de registros | Spike o drop >20% |
@@ -275,7 +284,7 @@ anomalies = daily_counts[daily_counts > threshold]
 
 ## 🔄 Data Lifecycle Management
 
-| Fase | What | Políticas |
+| Fase | Qué | Políticas |
 |:-----|:-----|:----------|
 | **Creation** | Ingesta inicial | Validación, classification |
 | **Storage** | Almacenamiento | Encryption, backup |
@@ -285,7 +294,7 @@ anomalies = daily_counts[daily_counts > threshold]
 
 **Retention Policy Ejemplo:**
 
-```
+```yaml
 Transaction Records:
   - Active: 2 años (hot storage)
   - Archive: 5 años (cold storage)

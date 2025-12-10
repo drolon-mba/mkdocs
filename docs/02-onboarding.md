@@ -22,19 +22,20 @@
 - [📝 Template: Feedback Survey](#template-feedback-survey)
 - [🌟 Onboarding Remoto](#onboarding-remoto)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 🎯 Onboarding Efectivo
 
-**What:** Proceso para que nuevo desarrollador sea productivo rápidamente y se sienta parte del equipo.
+**Qué:** Proceso para que nuevo desarrollador sea productivo rápidamente y se sienta parte del equipo.
 
-**Why:** Mal onboarding = 6 meses para ser productivo. Buen onboarding = 2-4 semanas.
+**Por qué:** Mal onboarding = 6 meses para ser productivo. Buen onboarding = 2-4 semanas.
 
-**Who:** Nuevo dev + buddy/mentor + tech lead.
+**Quién:** Nuevo dev + buddy/mentor + tech lead.
 
-**When:** Desde día 1, primeras 4-6 semanas.
+**Cuándo:** Desde día 1, primeras 4-6 semanas.
 
-**How much:** Inversión de 20-30 horas del equipo, reduce turnover y acelera productividad.
+**Cuánto:** Inversión de 20-30 horas del equipo, reduce turnover y acelera productividad.
 
 ---
 
@@ -43,12 +44,14 @@
 ### Día 1: Setup y Bienvenida
 
 **Mañana (9-12h):**
+
 - Welcome meeting con equipo
 - Setup laptop, accesos (email, Slack, GitHub, JIRA)
 - Tour de oficina (si presencial)
 - Lunch con equipo
 
 **Tarde (13-18h):**
+
 - Leer README principal del proyecto
 - Clonar repositorios
 - Setup ambiente de desarrollo local
@@ -59,6 +62,7 @@
 ### Semana 1: Contexto y Primeros Pasos
 
 **Lunes-Miércoles:**
+
 - Onboarding general empresa (HR, benefits, cultura)
 - Meeting 1-on-1 con manager
 - Leer docs de arquitectura
@@ -66,6 +70,7 @@
 - Shadowing: observar daily standup, planning
 
 **Jueves-Viernes:**
+
 - Primer ticket: bug fix pequeño o mejora de docs
 - Pair programming con buddy
 - Primera PR (con mucha ayuda)
@@ -99,6 +104,7 @@
 ### 1. GETTING_STARTED.md
 
 **Contenido:**
+
 ```markdown
 # Getting Started
 
@@ -114,7 +120,7 @@
 4. Start services: `docker-compose up -d`
 5. Run migrations: `npm run migrate`
 6. Start dev server: `npm run dev`
-7. Open http://localhost:3000
+7. Open http://localhost:3000 (verificar puerto en .env/README)
 
 ## Verify Setup
 - [ ] App loads sin errores
@@ -131,6 +137,7 @@
 ### 2. ARCHITECTURE.md
 
 **Secciones:**
+
 - Overview diagram (C4 Context)
 - Tech stack con versiones
 - Estructura de carpetas
@@ -141,6 +148,7 @@
 ### 3. CONTRIBUTING.md
 
 **Contenido:**
+
 - Branch naming
 - Commit messages (Conventional Commits)
 - PR template y checklist
@@ -150,6 +158,7 @@
 ### 4. ONBOARDING_TASKS.md
 
 **Checklist interactivo:**
+
 ```markdown
 ## Week 1
 - [ ] Setup ambiente local
@@ -179,6 +188,7 @@
 **What:** Asignar mentor/buddy al nuevo dev.
 
 **Responsabilidades del Buddy:**
+
 - Responder preguntas (no juzgar ninguna pregunta)
 - Pair programming primeras 2 semanas
 - Code review de primeras PRs
@@ -186,6 +196,7 @@
 - Check-in diario primera semana, 2x/semana después
 
 **Perfil ideal:**
+
 - Mid-senior level (no junior, no staff)
 - Paciente, buen comunicador
 - Conoce bien el codebase
@@ -209,12 +220,14 @@
 ### Primeros Tickets
 
 **Características:**
+
 - Bien definidos (acceptance criteria claros)
 - Scope pequeño (< 1 día)
 - No críticos (ok si toma más tiempo)
 - Varias opciones para elegir según interés
 
 **Ejemplos:**
+
 - Actualizar README con screenshots
 - Agregar tests a función existente
 - Fix typo en error messages
@@ -228,11 +241,13 @@
 **Técnicas:**
 
 ### 1. Code Reading Sessions
+
 - 30 min diarios leyendo código
 - Seguir un flujo completo (HTTP request → DB → response)
 - Anotar preguntas
 
 ### 2. Grep/Search Patterns
+
 ```bash
 # Encontrar todos los endpoints
 rg "@app.route\|@app.get" --type py
@@ -245,6 +260,7 @@ rg "TODO|FIXME"
 ```
 
 ### 3. Git Blame/History
+
 ```bash
 # Ver quién escribió línea X
 git blame archivo.py
@@ -257,6 +273,7 @@ git log -L :functionName:archivo.py
 ```
 
 ### 4. IDE Features
+
 - "Find all references"
 - "Go to definition"
 - "Show call hierarchy"
@@ -280,16 +297,19 @@ git log -L :functionName:archivo.py
 ### 1-on-1 con Manager
 
 **Semana 1:**
-- ¿Cómo te sentís?
+
+- ¿Cómo se siente en el equipo?
 - ¿Algo no quedó claro?
-- ¿Necesitás acceso a algo?
+- ¿Se necesita acceso a algo?
 
 **Semana 2:**
+
 - ¿Estás bloqueado en algo?
 - ¿El buddy está siendo útil?
 - ¿Qué podemos mejorar del onboarding?
 
 **Semana 4:**
+
 - ¿Te sentís integrado al equipo?
 - ¿Qué te gustaría aprender next?
 - Feedback del onboarding para mejorarlo
@@ -324,6 +344,7 @@ git log -L :functionName:archivo.py
 ## 📋 Onboarding Checklist (Manager/TL)
 
 ### Antes del día 1
+
 - [ ] Laptop y accesos configurados
 - [ ] Buddy asignado (y aceptó)
 - [ ] Primera tarea preparada
@@ -332,17 +353,20 @@ git log -L :functionName:archivo.py
 - [ ] Slack channels relevantes identificados
 
 ### Día 1
+
 - [ ] Welcome message en Slack
 - [ ] Intro con equipo completo
 - [ ] Tour de oficina/intro a herramientas
 - [ ] Setup completado exitosamente
 
 ### Semana 1
+
 - [ ] 1-on-1 inicial (30 min)
 - [ ] Primera PR revisada por buddy
 - [ ] Invitado a todos los meetings de equipo
 
 ### Mes 1
+
 - [ ] Check-in semanal
 - [ ] Primera feature merged
 - [ ] Participando activamente en discusiones
@@ -354,7 +378,7 @@ git log -L :functionName:archivo.py
 
 **Enviar después de 4-6 semanas:**
 
-```
+```text
 Onboarding Feedback
 
 1. En escala 1-5, ¿qué tan preparado te sentiste el día 1?
@@ -373,6 +397,7 @@ Onboarding Feedback
 ## 🌟 Onboarding Remoto
 
 **Desafíos extra:**
+
 - Menos interacciones casuales
 - Difícil leer ambiente/cultura
 - Setup puede ser más complejo

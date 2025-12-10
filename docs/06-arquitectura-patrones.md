@@ -17,41 +17,43 @@
 - [🗂️ Distribución de Carpetas](#distribucion-de-carpetas)
 - [🚫 Anti-patrones Arquitectónicos](#anti-patrones-arquitectonicos)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 🏗️ Arquitecturas de Software
 
-**What:** Decisiones estructurales fundamentales sobre cómo organizar un sistema.
+**Qué:** Decisiones estructurales fundamentales sobre cómo organizar un sistema.
 
-**Why:** Define cómo el sistema crece, se mantiene y responde al cambio. Una mala arquitectura puede matar un proyecto exitoso.
+**Por qué:** Define cómo el sistema crece, se mantiene y responde al cambio. Una mala arquitectura puede matar un proyecto exitoso.
 
-**Who:** Arquitectos de software, tech leads, senior developers.
+**Quién:** Arquitectos de software, tech leads, senior developers.
 
-**How much:** Decisión temprana de alto impacto. Cambiar arquitectura en sistema maduro = 6-18 meses.
+**Costo:** Decisión temprana de alto impacto. Cambiar arquitectura en sistema maduro = 6-18 meses.
 
-| Arquitectura | What | Why | When | Where | How | Trade-offs |
+| Arquitectura | Qué | Por qué | Cuándo | Dónde | Cómo | Trade-offs |
 |:-------------|:-----|:----|:-----|:------|:----|:-----------|
-| **Monolítica** | Aplicación única con todos los módulos integrados | Simplicidad, deployment único, debugging fácil | MVPs, equipos pequeños, dominios simples | Startups, sistemas internos | Todo en un proceso, shared DB, deployment único | ✅ Simple, rápido desarrollo inicial<br>❌ Escalado vertical, deploy riesgoso |
-| **MVC** | Model-View-Controller: separar datos, UI y control | Claridad en responsabilidades | Apps web tradicionales, dashboards | Backend + templates | Modelos (datos), Vistas (UI), Controladores (lógica coordinación) | ✅ Patrón conocido<br>❌ Controllers crecen (fat controllers) |
-| **Microservicios** | Sistema distribuido con servicios independientes | Escalado independiente, equipos autónomos | Sistemas complejos, múltiples equipos | Netflix, Uber, Amazon | Servicios pequeños, comunicación API/eventos, DB por servicio | ✅ Escalabilidad, fault isolation<br>❌ Complejidad operacional, latencia |
-| **Hexagonal** | Lógica central aislada de interfaces externas (ports & adapters) | Testability, independencia de frameworks | Dominios complejos, larga vida | Backend crítico | Core (lógica) + Puertos (interfaces) + Adaptadores (implementaciones) | ✅ Testeo fácil, cambiar DB/UI sin tocar core<br>❌ Más código inicial |
-| **Capas** | Separación horizontal: presentación, negocio, datos | Modularidad, responsabilidades claras | Sistemas empresariales tradicionales | Monolitos estructurados | Capas solo conocen la inferior, DTO entre capas | ✅ Organización clara<br>❌ Puede ser rígido |
-| **Event-Driven** | Comunicación basada en eventos asincrónicos | Desacoplamiento, escalabilidad | Sistemas con workflows complejos, integraciones | E-commerce, IoT, streaming | Event Bus/Broker, productores/consumidores | ✅ Desacoplamiento total<br>❌ Debugging complejo, eventual consistency |
-| **Serverless** | Funciones sin servidor dedicado, auto-scaling | Costo por uso, cero gestión servidores | Tareas puntuales, APIs sencillas, jobs | AWS Lambda, Cloud Functions | Funciones stateless, triggers (HTTP, eventos), short-lived | ✅ Escalado automático, low cost<br>❌ Cold starts, vendor lock-in |
+| **Monolítica** | Aplicación única con todos los módulos integrados | Simplicidad, deployment único, debugging fácil | MVPs, equipos pequeños, dominios simples | Startups, sistemas internos | Todo en un proceso, shared DB, deployment único | ✅ Simple, rápido desarrollo inicial; ❌ Escalado vertical, deploy riesgoso |
+| **MVC** | Model-View-Controller: separar datos, UI y control | Claridad en responsabilidades | Apps web tradicionales, dashboards | Backend + templates | Modelos (datos), Vistas (UI), Controladores (lógica coordinación) | ✅ Patrón conocido; ❌ Controllers crecen (fat controllers) |
+| **Microservicios** | Sistema distribuido con servicios independientes | Escalado independiente, equipos autónomos | Sistemas complejos, múltiples equipos | Netflix, Uber, Amazon | Servicios pequeños, comunicación API/eventos, DB por servicio | ✅ Escalabilidad, fault isolation; ❌ Complejidad operacional, latencia |
+| **Hexagonal** | Lógica central aislada de interfaces externas (ports & adapters) | Testability, independencia de frameworks | Dominios complejos, larga vida | Backend crítico | Core (lógica) + Puertos (interfaces) + Adaptadores (implementaciones) | ✅ Testeo fácil, cambiar DB/UI sin tocar core; ❌ Más código inicial |
+| **Capas** | Separación horizontal: presentación, negocio, datos | Modularidad, responsabilidades claras | Sistemas empresariales tradicionales | Monolitos estructurados | Capas solo conocen la inferior, DTO entre capas | ✅ Organización clara; ❌ Puede ser rígido |
+| **Event-Driven** | Comunicación basada en eventos asincrónicos | Desacoplamiento, escalabilidad | Sistemas con workflows complejos, integraciones | E-commerce, IoT, streaming | Event Bus/Broker, productores/consumidores | ✅ Desacoplamiento total; ❌ Debugging complejo, eventual consistency |
+| **Serverless** | Funciones sin servidor dedicado, auto-scaling | Costo por uso, cero gestión servidores | Tareas puntuales, APIs sencillas, jobs | AWS Lambda, Cloud Functions | Funciones stateless, triggers (HTTP, eventos), short-lived | ✅ Escalado automático, low cost; ❌ Cold starts, vendor lock-in |
 
 ---
 
 ## 📢 Screaming Architecture
 
-**What:** Arquitectura que hace obvio el dominio/propósito de la aplicación desde la estructura de carpetas y nombres, no el framework usado.
+**Qué:** Arquitectura que hace obvio el dominio/propósito de la aplicación desde la estructura de carpetas y nombres, no el framework usado.
 
-**Why:** Cuando mirás la estructura del proyecto, debería "gritar" qué hace la aplicación (ej: healthcare, e-commerce), no qué framework usa (ej: Rails, Angular).
+**Por qué:** Cuando mirás la estructura del proyecto, debería "gritar" qué hace la aplicación (ej: healthcare, e-commerce), no qué framework usa (ej: Rails, Angular).
 
-**Who:** Acuñado por Robert C. Martin (Uncle Bob)
+**Quién:** Acuñado por Robert C. Martin (Uncle Bob)
 
-**When:** Todos los proyectos, especialmente aplicaciones domain-driven
+**Cuándo:** Todos los proyectos, especialmente aplicaciones domain-driven
 
-**How:**
+**Cómo:**
+
 - Carpetas de nivel superior representan dominios de negocio, no capas técnicas
 - El framework es un detalle, aislado en capa de infraestructura
 - Los casos de uso son explícitos y visibles en la estructura
@@ -59,7 +61,8 @@
 ### Ejemplo - Sistema de Salud
 
 **✅ Screaming Architecture (Grita "Healthcare"):**
-```
+
+```text
 /src
   /patients
     /use-cases
@@ -88,7 +91,8 @@
 ```
 
 **❌ Framework-Centric (Grita "Express/MVC"):**
-```
+
+```text
 /src
   /controllers
     - PatientController.ts
@@ -105,7 +109,7 @@
 
 ### Principio Clave
 
-> "Your architecture should tell readers about the system, not about the frameworks you used in your system." 
+> "Your architecture should tell readers about the system, not about the frameworks you used in your system."
 > — Robert C. Martin
 
 ### Beneficios
@@ -130,15 +134,15 @@
 
 ## 🧩 Patrones de Diseño (Gang of Four)
 
-**What:** Soluciones reutilizables a problemas recurrentes de diseño OOP.
+**Qué:** Soluciones reutilizables a problemas recurrentes de diseño OOP.
 
-**Why:** No reinventar la rueda, vocabulario común entre developers.
+**Por qué:** No reinventar la rueda, vocabulario común entre developers.
 
 [Ver todos los patrones explicados en Refactoring Guru](https://refactoring.guru/design-patterns)
 
 ### Patrones Creacionales
 
-| Patrón | What | Why | When | How |
+| Patrón | Qué | Por qué | Cuándo | Cómo |
 |:-------|:-----|:----|:-----|:----|
 | **Factory Method** | Crea objetos sin especificar clase exacta | Delegar creación a subclases | Crear objetos de familias similares | Interface `create()`, subclases deciden tipo concreto |
 | **Abstract Factory** | Crea familias de objetos relacionados | Consistencia entre productos | UI con temas (Dark/Light) | Factory retorna conjunto de objetos relacionados |
@@ -148,7 +152,7 @@
 
 ### Patrones Estructurales
 
-| Patrón | What | Why | When | How |
+| Patrón | Qué | Por qué | Cuándo | Cómo |
 |:-------|:-----|:----|:-----|:----|
 | **Adapter** | Convierte interfaz incompatible | Integrar código legacy/third-party | Librerías externas con APIs distintas | Wrapper que traduce llamadas |
 | **Bridge** | Separa abstracción de implementación | Variar ambas independientemente | UI multiplataforma (misma lógica, distinto render) | Abstracción tiene referencia a implementación |
@@ -160,7 +164,7 @@
 
 ### Patrones Comportamiento
 
-| Patrón | What | Why | When | How |
+| Patrón | Qué | Por qué | Cuándo | Cómo |
 |:-------|:-----|:----|:-----|:----|
 | **Strategy** | Familia de algoritmos intercambiables | Cambiar comportamiento en runtime | Ordenamiento (bubble, quick, merge) | Interface `execute()`, contexto recibe estrategia |
 | **Observer** | Notifica cambios a múltiples objetos | Reacción automática ante eventos | UI reactiva (state → re-render) | Sujeto tiene lista de observadores, `notify()` |
@@ -177,7 +181,7 @@
 
 ## 🏗️ Patrones Arquitectónicos Avanzados
 
-| Patrón | What | Why | When | Where | How | Herramientas |
+| Patrón | Qué | Por qué | Cuándo | Dónde | Cómo | Herramientas |
 |:-------|:-----|:----|:-----|:------|:----|:-------------|
 | **Event Sourcing** | Persistir cambios como secuencia de eventos inmutables | Auditoría completa, time travel, proyecciones | Sistemas financieros, compliance | Event Store | Cada cambio → evento (`OrderPlaced`), reconstruir estado reproduciendo | [EventStore](https://www.eventstore.com/), [Kafka](https://kafka.apache.org/) |
 | **CQRS** | Separar modelos de lectura (Query) y escritura (Command) | Optimizar cada uno independientemente | Escrituras complejas + lecturas frecuentes | APIs de alta carga | Commands modifican, Queries leen vistas desnormalizadas | [MediatR](https://github.com/jbogard/MediatR), [Axon](https://axoniq.io/) |
@@ -191,13 +195,13 @@
 
 ## 🎭 Finite State Machines (FSM)
 
-**What:** Modelar sistemas con estados finitos y transiciones explícitas.
+**Qué:** Modelar sistemas con estados finitos y transiciones explícitas.
 
-**Why:** Elimina bugs de estados inválidos, documentación visual ejecutable.
+**Por qué:** Elimina bugs de estados inválidos, documentación visual ejecutable.
 
-**When:** Workflows complejos (pedidos, aprobaciones, onboarding), procesos con múltiples actores.
+**Cuándo:** Workflows complejos (pedidos, aprobaciones, onboarding), procesos con múltiples actores.
 
-| Concepto | What | Ejemplo |
+| Concepto | Qué | Ejemplo |
 |:---------|:-----|:--------|
 | **Estados** | Conjunto finito de condiciones | `Pending`, `Paid`, `Shipped`, `Delivered`, `Cancelled` |
 | **Transiciones** | Cambios entre estados con condiciones | `Pending → Paid` (al recibir pago) |
@@ -242,7 +246,7 @@ const orderMachine = createMachine({
 
 > **Nota:** Estos principios se aplican a nivel arquitectónico. Para ver su definición fundamental y aplicación a nivel de código, consultar [Reglas Generales de Código](./01-fundamentos.md#reglas-generales-de-codigo).
 
-| Principio | What | Why |
+| Principio | Qué | Por qué |
 |:----------|:-----|:----|
 | **Separation of Concerns** | Separar responsabilidades en módulos/capas | Mantenimiento, testing, escalabilidad |
 | **Single Responsibility** | Cada módulo/clase tiene una razón para cambiar | Cohesión alta, bajo acoplamiento |
@@ -254,7 +258,7 @@ const orderMachine = createMachine({
 
 ## 🗂️ Distribución de Carpetas
 
-| Enfoque | What | When | Ejemplo |
+| Enfoque | Qué | Cuándo | Ejemplo |
 |:--------|:-----|:-----|:--------|
 | **Por tipo** | Separar por categoría técnica | Proyectos pequeños | `/controllers`, `/services`, `/models` |
 | **Por feature** | Agrupar por funcionalidad | Proyectos medianos/grandes | `/auth`, `/dashboard`, `/billing` |

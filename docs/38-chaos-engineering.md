@@ -8,21 +8,22 @@
 
 ## 📋 Índice Rápido
 
-- [💥 Chaos Engineering Principles](#chaos-engineering-principles)
-- [🔧 Failure Injection](#failure-injection)
+- [💥 Principios de Chaos Engineering](#principios-de-chaos-engineering)
+- [🔧 Inyección de Fallos](#inyeccion-de-fallos)
 - [🎮 Game Days](#game-days)
-- [🛡️ Resiliencia Patterns](#resiliencia-patterns)
+- [🛡️ Patrones de Resiliencia](#patrones-de-resiliencia)
 - [📋 Artefactos](#artefactos)
 
 ---
 
-## 💥 Chaos Engineering Principles
+## 💥 Principios de Chaos Engineering
 
 ### Qué es Chaos Engineering
 
 **Definición:** Disciplina de experimentar en sistemas distribuidos para construir confianza en su capacidad de resistir condiciones turbulentas.
 
 **Principios:**
+
 1. **Hipótesis sobre steady state**: Definir qué es "normal"
 2. **Variar eventos del mundo real**: Simular fallos realistas
 3. **Ejecutar experimentos en producción**: Donde importa
@@ -33,7 +34,7 @@
 
 ### Proceso
 
-```
+```text
 1. Define Steady State
    ↓
 2. Hypothesize
@@ -47,7 +48,7 @@
 
 ---
 
-## 🔧 Failure Injection
+## 🔧 Inyección de Fallos
 
 ### Tipos de Fallos
 
@@ -129,6 +130,7 @@ spec:
 **Definición:** Simulación de incidente para entrenar equipos en respuesta.
 
 **Objetivos:**
+
 - Validar runbooks
 - Entrenar on-call
 - Identificar gaps en monitoring/alerting
@@ -174,18 +176,20 @@ Si experimento causa impacto real:
 
 ---
 
-## 🛡️ Resiliencia Patterns
+## 🛡️ Patrones de Resiliencia
 
 ### Circuit Breaker
 
 **Qué hace:** Detecta cuando servicio está fallando y deja de llamarlo temporalmente.
 
 **Estados:**
+
 - **Closed**: Normal, requests pasan
 - **Open**: Servicio fallando, requests fallan inmediatamente
 - **Half-Open**: Probar si servicio se recuperó
 
 **Ejemplo (Python):**
+
 ```python
 from pybreaker import CircuitBreaker
 
@@ -216,6 +220,7 @@ except CircuitBreakerError:
 **Qué hace:** Reintentar requests fallidos con delay exponencial.
 
 **Ejemplo:**
+
 ```python
 import time
 from functools import wraps
@@ -249,6 +254,7 @@ def call_api():
 **Qué hace:** Aislar recursos para que fallo en un área no afecte otras.
 
 **Ejemplo (Thread Pools):**
+
 ```python
 from concurrent.futures import ThreadPoolExecutor
 
@@ -268,6 +274,7 @@ notification_pool.submit(send_email, user_id)
 **Qué hace:** Limitar tiempo de espera para evitar bloqueos indefinidos.
 
 **Ejemplo:**
+
 ```python
 import requests
 
@@ -287,7 +294,7 @@ except requests.Timeout:
 
 ### Chaos Experiment Template
 
-```markdown
+````markdown
 # Chaos Experiment: [Título]
 
 **Date:** YYYY-MM-DD
@@ -326,11 +333,13 @@ kubectl delete pod -n staging -l app=payment-service --force
 ```
 
 ### 3. Observe
+
 - [ ] Monitor metrics
 - [ ] Check logs
 - [ ] Verify alerts fired
 
 ### 4. Verify Recovery
+
 - [ ] New pod created
 - [ ] Metrics back to steady state
 - [ ] No errors in logs
@@ -340,25 +349,29 @@ kubectl delete pod -n staging -l app=payment-service --force
 **Hypothesis:** [Confirmed / Rejected]
 
 **Observations:**
+
 - [Observation 1]
 - [Observation 2]
 
 **Metrics:**
+
 | Metric | Before | During | After |
 |:-------|:-------|:-------|:------|
 | Latency p99 | 150ms | 180ms | 155ms |
 | Error rate | 0.05% | 0.08% | 0.05% |
 
 ## Action Items
+
 - [ ] [Action 1]
 - [ ] [Action 2]
-```
+
+````
 
 ---
 
 ### Game Day Runbook
 
-```markdown
+````markdown
 # Game Day Runbook: [Scenario]
 
 **Scenario:** [Descripción del incidente simulado]
@@ -390,12 +403,14 @@ kubectl delete pod -n staging -l app=payment-service --force
 ```
 
 ### T+0-30: Observe
+
 - [ ] Equipo detecta incidente
 - [ ] Incident Commander asignado
 - [ ] Runbook ejecutado
 - [ ] Sistema recuperado
 
 ### T+30: Debrief
+
 - [ ] ¿Qué salió bien?
 - [ ] ¿Qué salió mal?
 - [ ] Action items
@@ -403,20 +418,23 @@ kubectl delete pod -n staging -l app=payment-service --force
 ## Post-Game Day
 
 ### Same Day
+
 - [ ] Escribir summary
 - [ ] Crear tickets para action items
 - [ ] Comunicar resultados a stakeholders
 
 ### 1 Week After
+
 - [ ] Verificar que action items están en progreso
 - [ ] Planear próximo Game Day
-```
+
+````
 
 ---
 
 ### Resiliencia Checklist
 
-```markdown
+````markdown
 # Resiliencia Checklist
 
 ## Patterns Implementados
@@ -468,7 +486,7 @@ kubectl delete pod -n staging -l app=payment-service --force
 - [ ] Alertas configuradas para degradación
 - [ ] On-call definido
 - [ ] Runbooks vinculados a alertas
-```
+````
 
 ---
 

@@ -23,25 +23,26 @@
 - [🔄 FinOps Culture](#finops-culture)
 - [🚫 Anti-patrones](#anti-patrones)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 💰 FinOps (Financial Operations)
 
-**What:** Disciplina de gestión financiera cloud que une finanzas, tecnología y negocio.
+**Qué:** Disciplina de gestión financiera cloud que une finanzas, tecnología y negocio.
 
-**Why:** Cloud = OpEx variable. Sin control, costos crecen exponencialmente.
+**Por qué:** Cloud = OpEx variable. Sin control, costos crecen exponencialmente.
 
-**Who:** DevOps, FinOps Engineers, CFO, engineering leads.
+**Quién:** DevOps, FinOps Engineers, CFO, engineering leads.
 
-**When:** Desde día 1 en cloud, revisar mensualmente.
+**Cuándo:** Desde día 1 en cloud, revisar mensualmente.
 
-**How much:** FinOps bien ejecutado ahorra 20-40% costos cloud.
+**Esfuerzo:** FinOps bien ejecutado ahorra 20-40% costos cloud.
 
 ---
 
 ## 📊 Fases FinOps
 
-| Fase | What | Actividades |
+| Fase | Qué | Actividades |
 |:-----|:-----|:------------|
 | **Inform** | Visibilidad total | Tagging, dashboards, chargeback |
 | **Optimize** | Reducir waste | Right-sizing, RIs, eliminar recursos idle |
@@ -51,11 +52,11 @@
 
 ## 🏷️ Tagging Strategy
 
-**What:** Etiquetar recursos cloud con metadata.
+**Qué:** Etiquetar recursos cloud con metadata.
 
-**Why:** Trackear costos por proyecto/equipo/ambiente, accountability.
+**Por qué:** Trackear costos por proyecto/equipo/ambiente, accountability.
 
-**When:** Aplicar tags en creación de recursos (policy enforcement).
+**Cuándo:** Aplicar tags en creación de recursos (policy enforcement).
 
 **Tags obligatorios:**
 
@@ -63,11 +64,12 @@
 |:----|:--------|:----|
 | `Environment` | prod, staging, dev | Separar ambientes |
 | `Project` | payments, analytics | Chargeback por proyecto |
-| `Owner` | team-platform, alice@company.com | Ownership |
+| `Owner` | team-platform, <alice@company.com> | Ownership |
 | `CostCenter` | engineering, marketing | Contabilidad |
 | `Application` | api, frontend | Agrupar componentes |
 
 **Ejemplo AWS:**
+
 ```json
 {
   "Environment": "production",
@@ -84,20 +86,22 @@
 
 ## 📏 Right-Sizing
 
-**What:** Ajustar tamaño de recursos al uso real.
+**Qué:** Ajustar tamaño de recursos al uso real.
 
-**Why:** Ahorro 20-40% eliminando over-provisioning.
+**Por qué:** Ahorro 20-40% eliminando over-provisioning.
 
-**When:** Revisar mensual, automatizar recomendaciones.
+**Cuándo:** Revisar mensual, automatizar recomendaciones.
 
 **Proceso:**
+
 1. Monitorear uso real (CPU, memoria, disk)
 2. Identificar recursos sobre-dimensionados (<40% uso)
 3. Cambiar a instancia más pequeña
 4. Validar performance
 
 **Ejemplo:**
-```
+
+```text
 EC2 m5.4xlarge (16 vCPU, 64GB RAM)
   Uso real: 20% CPU, 30% RAM
   → Cambiar a m5.xlarge (4 vCPU, 16GB)
@@ -110,7 +114,7 @@ EC2 m5.4xlarge (16 vCPU, 64GB RAM)
 
 ## 💳 Reserved Instances & Savings Plans
 
-**What:** Compromiso de uso 1-3 años a cambio de descuento.
+**Qué:** Compromiso de uso 1-3 años a cambio de descuento.
 
 | Tipo | Compromiso | Descuento | Flexibilidad | Cuándo |
 |:-----|:-----------|:----------|:-------------|:-------|
@@ -120,12 +124,14 @@ EC2 m5.4xlarge (16 vCPU, 64GB RAM)
 | **Spot Instances** | Puede terminar | 70-90% | Ninguna | Workloads tolerantes |
 
 **Estrategia recomendada:**
+
 - 60% Savings Plans (baseline predecible)
 - 20% On-Demand (flexibilidad)
 - 20% Spot (batch jobs, dev)
 
 **ROI Ejemplo:**
-```
+
+```text
 Workload: 10 instancias m5.large 24/7
 On-Demand: $700/mes × 10 = $7,000/mes
 
@@ -138,15 +144,15 @@ Ahorro: $2,800/mes = $33,600/año
 
 ## ⚡ Spot Instances
 
-**What:** Capacidad no utilizada con descuento masivo pero puede interrumpirse.
+**Qué:** Capacidad no utilizada con descuento masivo pero puede interrumpirse.
 
-**Why:** 70-90% descuento para workloads fault-tolerant.
+**Por qué:** 70-90% descuento para workloads fault-tolerant.
 
-**When:** Batch processing, CI/CD, big data, testing.
+**Cuándo:** Batch processing, CI/CD, big data, testing.
 
 **Patrones:**
 
-| Pattern | What | Ejemplo |
+| Pattern | Qué | Ejemplo |
 |:--------|:-----|:--------|
 | **Stateless apps** | Sin estado local | Workers procesando cola |
 | **Checkpointing** | Guardar estado periódicamente | ML training con S3 checkpoints |
@@ -154,6 +160,7 @@ Ahorro: $2,800/mes = $33,600/año
 | **Fallback a On-Demand** | Si no hay Spot disponible | ECS con Spot + On-Demand |
 
 **Interrupción:**
+
 - AWS da 2 min warning
 - Handler: checkpoint, guardar estado, shutdown graceful
 
@@ -161,7 +168,7 @@ Ahorro: $2,800/mes = $33,600/año
 
 ## 📉 Eliminar Waste
 
-| Waste | What | Cómo detectar | Solución |
+| Waste | Qué | Cómo detectar | Solución |
 |:------|:-----|:--------------|:---------|
 | **Recursos idle** | Recursos sin uso | CPU <5%, network mínimo | Apagar fuera horario, auto-stop |
 | **Snapshots antiguos** | Backups obsoletos | >90 días | Lifecycle policy automático |
@@ -170,7 +177,8 @@ Ahorro: $2,800/mes = $33,600/año
 | **IPs elásticas sin usar** | IPs no asociadas | Charges por IP sin asociar | Release IPs |
 
 **Ejemplo savings:**
-```
+
+```text
 10 snapshots viejos × $0.05/GB × 100GB = $50/mes
 5 EBS unattached × 100GB × $0.10/GB = $50/mes
 3 IPs elásticas × $3.6/mes = $10.8/mes
@@ -181,14 +189,15 @@ Total: $110.8/mes eliminado ✅
 
 ## ⏰ Scheduling (Apagar recursos)
 
-**What:** Apagar recursos en horarios sin uso.
+**Qué:** Apagar recursos en horarios sin uso.
 
-**Why:** Ahorro 50-70% en ambientes no-prod.
+**Por qué:** Ahorro 50-70% en ambientes no-prod.
 
-**When:** Dev, staging, QA (no 24/7 necesarios).
+**Cuándo:** Dev, staging, QA (no 24/7 necesarios).
 
 **Ejemplo:**
-```
+
+```text
 Ambiente Dev:
   - 20 instancias
   - Uso: Lunes-Viernes 8am-8pm (12h/día = 60h/semana)
@@ -199,6 +208,7 @@ $5,000/mes → $1,800/mes = $3,200/mes ahorro
 ```
 
 **Automatización:**
+
 - AWS Instance Scheduler
 - Lambda con CloudWatch Events
 - Tags: `AutoStop: true`, `Schedule: business-hours`
@@ -218,6 +228,7 @@ $5,000/mes → $1,800/mes = $3,200/mes ahorro
 | **Deep Archive** | horas | $0.00099/GB | Compliance 7+ años |
 
 **Lifecycle Policy:**
+
 ```json
 {
   "Rules": [{
@@ -242,14 +253,14 @@ $5,000/mes → $1,800/mes = $3,200/mes ahorro
 
 ## 🌐 Network Costs
 
-**What:** Data transfer OUT es costoso (típicamente $0.09/GB).
+**Qué:** Data transfer OUT es costoso (típicamente $0.09/GB).
 
-**Why:** Puede ser 10-30% de bill total.
+**Por qué:** Puede ser 10-30% de bill total.
 
 **Optimización:**
 
-| Técnica | Ahorro |
-|:--------|:-------|
+| Técnica | Qué | Ahorro |
+|:--------|:----|:-------|
 | **CloudFront CDN** | Cache assets, reduce origin requests | 60-80% |
 | **S3 Transfer Acceleration** | Optimiza uploads globales | Variable |
 | **VPC Endpoints** | Tráfico privado AWS (sin internet) | Evita $0.09/GB |
@@ -263,6 +274,7 @@ $5,000/mes → $1,800/mes = $3,200/mes ahorro
 ### Dashboards
 
 **Secciones clave:**
+
 1. **Spend by Service:** EC2, RDS, S3, etc.
 2. **Spend by Environment:** prod, staging, dev
 3. **Spend by Team:** Chargeback
@@ -271,7 +283,7 @@ $5,000/mes → $1,800/mes = $3,200/mes ahorro
 
 ### Alertas
 
-```
+```text
 Alert: Daily spend > $1,000
 Alert: MoM growth > 20%
 Alert: New service > $100/día

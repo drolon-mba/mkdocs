@@ -17,6 +17,7 @@
 - [🎯 ¿Cuándo usar cada disciplina?](#cuando-usar-cada-disciplina)
 - [🚫 Anti-patrones](#anti-patrones)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 🎯 ¿Qué son las Disciplinas de Desarrollo?
@@ -31,7 +32,7 @@ Enfoques metodológicos que establecen **cómo** escribir código, diseñar sist
 
 ## 🧪 Disciplinas Principales
 
-| Disciplina | What (Qué es) | Why (Por qué usarlo) | When (Cuándo aplicarlo) | Where (Dónde) | How (Cómo implementarlo) | How much (Esfuerzo) | Herramientas |
+| Disciplina | Qué es | Por qué usarlo | Cuándo aplicarlo | Dónde | Cómo implementarlo | Esfuerzo | Herramientas |
 |:-----------|:--------------|:---------------------|:------------------------|:--------------|:-------------------------|:-------------------|:-------------|
 | **TDD** (Test-Driven Development) | Escribir tests **antes** que el código de producción | Diseño emergente, cobertura 100%, refactoring seguro | En lógica de negocio compleja, funciones puras, algoritmos | Backend, utilidades, servicios | Ciclo Red→Green→Refactor: (1) Test falla, (2) Código mínimo que pase, (3) Refactorizar sin cambiar comportamiento | Alto inicial, reduce bugs 40-80% | [pytest](https://docs.pytest.org/), [JUnit 5](https://junit.org/junit5/), [Jest](https://jestjs.io/), [Vitest](https://vitest.dev/) |
 | **BDD** (Behavior-Driven Development) | Especificaciones ejecutables en lenguaje natural (Given-When-Then) | Colaboración negocio-tech, tests legibles para no-devs | Cuando stakeholders deben validar comportamiento | Features críticas, flujos de usuario | Escenarios Gherkin: `Given` (contexto), `When` (acción), `Then` (resultado esperado). Automatizar con step definitions | Medio, requiere disciplina en escritura | [Cucumber](https://cucumber.io/), [Behave](https://behave.readthedocs.io/), [SpecFlow](https://specflow.org/) |
@@ -45,7 +46,7 @@ Enfoques metodológicos que establecen **cómo** escribir código, diseñar sist
 
 ## 🔄 Ciclo TDD Detallado
 
-```
+```text
 1. RED (Test Falla)
    └─> Escribir test mínimo que falle
        Ejemplo: test_user_can_login()
@@ -63,6 +64,7 @@ Enfoques metodológicos que establecen **cómo** escribir código, diseñar sist
 ```
 
 **Reglas de oro TDD:**
+
 - No escribir código de producción sin test que lo requiera
 - No escribir más test del necesario para fallar
 - No escribir más código del necesario para pasar el test

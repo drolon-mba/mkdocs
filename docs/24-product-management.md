@@ -27,17 +27,19 @@
 - [🔍 Discovery Techniques](#discovery-techniques)
 - [🚫 Anti-patrones](#anti-patrones)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 🎯 SMART Goals
 
-**What:** Criterio para definir objetivos efectivos.
+**Qué:** Criterio para definir objetivos efectivos.
 
-**Why:** Objetivos vagos = no accionables. SMART = claridad y medición.
+**Por qué:** Objetivos vagos = no accionables. SMART = claridad y medición.
 
-**When:** Definir OKRs, roadmaps, user stories.
+**Cuándo:** Definir OKRs, roadmaps, user stories.
 
 **Criterios:**
+
 - **S**pecific (Específico): Claro y concreto
 - **M**easurable (Medible): Con métrica cuantificable
 - **A**chievable (Alcanzable): Desafiante pero posible
@@ -45,6 +47,7 @@
 - **T**ime-bound (Con plazo): Deadline definido
 
 **Ejemplo:**
+
 - ❌ Vago: "Mejorar performance"
 - ✅ SMART: "Reducir p95 latency de 800ms a 300ms en APIs críticas para fin de Q2"
 
@@ -52,12 +55,13 @@
 
 ## 📊 Goal Pyramid
 
-**What:** Estructura jerárquica de objetivos desde visión hasta hábitos diarios.
+**Qué:** Estructura jerárquica de objetivos desde visión hasta hábitos diarios.
 
-**Why:** Conectar visión long-term con acciones daily.
+**Por qué:** Conectar visión long-term con acciones daily.
 
 **Niveles:**
-```
+
+```text
         [Goal]
      Big Goal / BHAG
           ↓
@@ -72,6 +76,7 @@
 ```
 
 **Ejemplo:**
+
 - **BHAG:** Ser el CRM #1 para startups tech en 5 años
 - **Intermediate:** 100k usuarios activos en 18 meses
 - **Short-term:** Lanzar onboarding simplificado este quarter
@@ -81,19 +86,21 @@
 
 ## 🎯 BHAG (Big Hairy Audacious Goal)
 
-**What:** Objetivo grande, descabellado y audaz (10-30 años).
+**Qué:** Objetivo grande, descabellado y audaz (10-30 años).
 
-**Why:** Inspira, motiva, da dirección long-term.
+**Por qué:** Inspira, motiva, da dirección long-term.
 
-**When:** Definir visión de compañía, norte estratégico.
+**Cuándo:** Definir visión de compañía, norte estratégico.
 
 **Características:**
+
 - Claro y convincente
 - Ambicioso (50-70% probabilidad)
 - Timeframe: 10-30 años
 - Tangible, no aspiracional vago
 
 **Ejemplos reales:**
+
 - Google (1990s): "Organizar la información del mundo"
 - SpaceX: "Hacer la humanidad multi-planetaria"
 - Amazon (1990s): "Ser la tienda más customer-centric"
@@ -102,19 +109,21 @@
 
 ## 📋 SCQA Framework
 
-**What:** Estructura narrativa para presentar problemas/soluciones: Situation, Complication, Question, Answer.
+**Qué:** Estructura narrativa para presentar problemas/soluciones: Situation, Complication, Question, Answer.
 
-**Why:** Comunicación clara con stakeholders, alineación rápida.
+**Por qué:** Comunicación clara con stakeholders, alineación rápida.
 
-**When:** PRDs, presentaciones a liderazgo, pitches.
+**Cuándo:** PRDs, presentaciones a liderazgo, pitches.
 
 **Estructura:**
+
 1. **Situation:** Contexto actual (hechos, sin juicio)
 2. **Complication:** Problema, tensión, oportunidad
 3. **Question:** Pregunta clave a responder
 4. **Answer:** Solución propuesta
 
 **Ejemplo:**
+
 - **S:** Tenemos 50k usuarios pero NPS es 25 (bajo)
 - **C:** Onboarding actual tarda 10 pasos, 60% abandonan
 - **Q:** ¿Cómo reducir fricción en onboarding?
@@ -124,13 +133,14 @@
 
 ## 🔍 CIRCLES Method
 
-**What:** Framework para product design interviews/features: Comprehend, Identify, Report, Cut, List, Evaluate, Summarize.
+**Qué:** Framework para product design interviews/features: Comprehend, Identify, Report, Cut, List, Evaluate, Summarize.
 
-**Why:** Estructura para diseñar productos/features sistemáticamente.
+**Por qué:** Estructura para diseñar productos/features sistemáticamente.
 
-**When:** Discovery, design de features, entrevistas PM.
+**Cuándo:** Discovery, design de features, entrevistas PM.
 
 **Pasos:**
+
 1. **Comprehend:** Entender situación (What? Why? Who? How?)
 2. **Identify:** Identificar el customer específico
 3. **Report:** Reportar necesidades del customer
@@ -140,6 +150,7 @@
 7. **Summarize:** Resumir recomendación
 
 **Ejemplo - Diseñar feature de notificaciones:**
+
 1. **Comprehend:** Sistema actual sin notificaciones, usuarios piden updates
 2. **Identify:** Power users que revisan app 5+ veces/día
 3. **Report:** Quieren saber de updates sin revisar manualmente
@@ -152,22 +163,23 @@
 
 ## 📊 Lean Canvas
 
-**What:** Adaptación de Business Model Canvas para startups/productos.
+**Qué:** Adaptación de Business Model Canvas para startups/productos.
 
-**Why:** Capturar modelo de negocio en 1 página, iterable.
+**Por qué:** Capturar modelo de negocio en 1 página, iterable.
 
-**When:** Validar idea, pivots, comunicar a inversionistas.
+**Cuándo:** Validar idea, pivots, comunicar a inversionistas.
 
 **9 Bloques:**
 
 | | | |
 |:---|:---|:---|
-| **Problema**<br>Top 3 problemas | **Solución**<br>Top 3 features | **Propuesta de Valor Única**<br>Mensaje claro y convincente |
-| **Ventaja Especial**<br>No se puede copiar fácil | **Segmento de Clientes**<br>Target users | |
-| **Métricas Clave**<br>KPIs críticos | **Canales**<br>Path to customers | |
-| **Estructura de Costes**<br>Fixed + variable costs | **Flujo de Ingresos**<br>Revenue streams | |
+| **Problema**; Top 3 problemas | **Solución**; Top 3 features | **Propuesta de Valor Única**; Mensaje claro y convincente |
+| **Ventaja Especial**; No se puede copiar fácil | **Segmento de Clientes**; Target users | |
+| **Métricas Clave**; KPIs críticos | **Canales**; Path to customers | |
+| **Estructura de Costes**; Fixed + variable costs | **Flujo de Ingresos**; Revenue streams | |
 
 **Ejemplo - SaaS para equipos remotos:**
+
 - **Problema:** Comunicación async ineficiente, context switching
 - **Solución:** Workspace unificado, async-first, deep work
 - **Propuesta:** "Slack para deep work"
@@ -182,15 +194,15 @@
 
 ## 🧠 Mapa de Empatía
 
-**What:** Herramienta visual para entender profundamente al usuario.
+**Qué:** Herramienta visual para entender profundamente al usuario.
 
-**Why:** Diseñar productos que resuenan con necesidades reales.
+**Por qué:** Diseñar productos que resuenan con necesidades reales.
 
-**When:** Discovery, crear personas, validar assumptions.
+**Cuándo:** Discovery, crear personas, validar assumptions.
 
 **6 Cuadrantes:**
 
-```
+```text
         [Usuario: Laura, Lead Developer]
                     
     ┌──────────────────┬──────────────────┐
@@ -223,6 +235,7 @@
 ```
 
 **Cómo usarlo:**
+
 1. Definir usuario específico (persona)
 2. Llenar cada cuadrante con research (entrevistas, observación)
 3. Identificar contradicciones (dice vs hace)
@@ -232,43 +245,47 @@
 
 ## 🎯 Product Management
 
-**What:** Disciplina que conecta negocio, tecnología y UX para crear productos exitosos.
+**Qué:** Disciplina que conecta negocio, tecnología y UX para crear productos exitosos.
 
-**Why:** Productos sin PM = features aleatorias sin estrategia. PM asegura value delivery.
+**Por qué:** Productos sin PM = features aleatorias sin estrategia. PM asegura value delivery.
 
-**Who:** Product Managers, Product Owners, founders.
+**Quién:** Product Managers, Product Owners, founders.
 
-**When:** Desde ideación hasta sunset del producto.
+**Cuándo:** Desde ideación hasta sunset del producto.
 
-**How much:** PM típicamente gestiona $1M-$10M+ en inversión anual de desarrollo.
+**Esfuerzo:** PM típicamente gestiona $1M-$10M+ en inversión anual de desarrollo.
 
 ---
 
 ## 💡 JTBD (Jobs To Be Done)
 
-**What:** Framework que dice que clientes "contratan" productos para hacer un "trabajo".
+**Qué:** Framework que dice que clientes "contratan" productos para hacer un "trabajo".
 
-**Why:** Entender el trabajo real (no features) que cliente necesita.
+**Por qué:** Entender el trabajo real (no features) que cliente necesita.
 
-**When:** Discovery, definir producto, entender competencia.
+**Cuándo:** Discovery, definir producto, entender competencia.
 
 **Formato:** "Cuando [situación], quiero [motivación], para que [outcome esperado]"
 
 **Ejemplo:**
+
 - ❌ "Quiero taladro de 1/4 pulgada"
 - ✅ "Cuando quiero colgar un cuadro, necesito hacer un agujero, para que el cuadro quede en la pared"
 
 **Insights:**
+
 - El "trabajo" es colgar cuadro, no el taladro
 - Competidores: cinta adhesiva, clavos sin agujero, servicios de instalación
 
 **Aplicación:**
+
 1. Identificar el Job principal
 2. Entender contexto (cuándo, dónde)
 3. Identificar pain points del job actual
 4. Diseñar solución que haga el job mejor
 
 **Ejemplo real - Milkshake (Clayton Christensen):**
+
 - **Job:** Hacer commute menos aburrido y llenar estómago hasta almuerzo
 - **"Competidores":** Bagels (dejan manos sucias), bananas (no duran), café (termina rápido)
 - **Solución:** Milkshake espeso que dura 20min conduciendo
@@ -277,18 +294,20 @@
 
 ## 🗺️ User Story Mapping
 
-**What:** Técnica visual para planear releases organizando user stories en mapa 2D.
+**Qué:** Técnica visual para planear releases organizando user stories en mapa 2D.
 
-**Why:** Vista holística del journey del usuario, priorización colaborativa.
+**Por qué:** Vista holística del journey del usuario, priorización colaborativa.
 
-**When:** Planning de MVP, roadmap, sprint planning.
+**Cuándo:** Planning de MVP, roadmap, sprint planning.
 
 **Ejes:**
+
 - **Horizontal:** Journey del usuario (izq → der)
 - **Vertical:** Prioridad (arriba → abajo)
 
 **Estructura:**
-```
+
+```text
 [Activities] →  Login    →  Browse  →  Purchase  →  Track
                   |           |          |           |
 [Tasks]      Autenticar   Buscar     Pagar      Ver status
@@ -299,6 +318,7 @@
 ```
 
 **Releases:**
+
 - **MVP (línea 1):** Login básico, búsqueda simple, pago tarjeta, email
 - **V2 (línea 2):** Social login, filtros, PayPal, push
 - **V3 (línea 3):** 2FA, favoritos, crypto, tracking map
@@ -309,17 +329,19 @@
 
 ## 🎯 OKRs (Objectives & Key Results)
 
-**What:** Framework de goal-setting usado por Google, LinkedIn, Twitter.
+**Qué:** Framework de goal-setting usado por Google, LinkedIn, Twitter.
 
-**Why:** Alinear equipo, medir progreso, foco en outcomes no outputs.
+**Por qué:** Alinear equipo, medir progreso, foco en outcomes no outputs.
 
-**When:** Planning trimestral, anual.
+**Cuándo:** Planning trimestral, anual.
 
 **Estructura:**
+
 - **Objective:** Qué queremos lograr (cualitativo, inspiracional)
 - **Key Results:** Cómo medimos éxito (cuantitativo, 2-5 por objetivo)
 
 **Características:**
+
 - Ambiciosos (70% logro = éxito)
 - Temporales (típicamente trimestre)
 - Transparentes (públicos en org)
@@ -329,6 +351,7 @@
 **Objective:** Convertirnos en la herramienta #1 para equipos remotos
 
 **Key Results:**
+
 1. Crecer usuarios activos mensuales de 10k a 50k
 2. Aumentar NPS de 30 a 50
 3. Lograr 80% de equipos usen feature colaborativa
@@ -340,13 +363,14 @@
 
 ## ⭐ North Star Metric
 
-**What:** LA métrica que mejor predice éxito long-term del producto.
+**Qué:** LA métrica que mejor predice éxito long-term del producto.
 
-**Why:** Foco singular, alinea todos los equipos.
+**Por qué:** Foco singular, alinea todos los equipos.
 
-**When:** Definir estrategia producto, medir product-market fit.
+**Cuándo:** Definir estrategia producto, medir product-market fit.
 
 **Criterios buena North Star:**
+
 - Refleja value entregado al cliente
 - Mide progreso hacia visión
 - Leading indicator (predice revenue futuro)
@@ -363,35 +387,41 @@
 | **Uber** | Viajes completados | Core transaction |
 
 **Supporting Metrics:** Métricas que influencian la North Star
+
 - Para "Noches reservadas": Listings activos, tasa conversión búsqueda, reviews positivas
 
 ---
 
 ## 📊 Product-Market Fit
 
-**What:** Grado en que un producto satisface demanda de mercado.
+**Qué:** Grado en que un producto satisface demanda de mercado.
 
-**Why:** Sin PMF, scaling = desperdicio. Con PMF, crecer es más fácil.
+**Por qué:** Sin PMF, scaling = desperdicio. Con PMF, crecer es más fácil.
 
-**When:** Validar antes de escalar marketing/ventas.
+**Cuándo:** Validar antes de escalar marketing/ventas.
 
 **Cómo medir:**
 
 ### 1. Sean Ellis Test
+
 Pregunta a usuarios: "¿Qué tan decepcionado estarías si ya no pudieras usar este producto?"
+
 - **>40% responden "muy decepcionado"** → PMF ✅
 - <40% → seguir iterando
 
 ### 2. Retention Cohorts
+
 - Gráfico de retención por cohorte
 - Si curva se aplana (no llega a 0) → PMF
 - Si sigue bajendo → leaky bucket, no PMF
 
 ### 3. Organic Growth
+
 - % usuarios que vienen por referral/word-of-mouth
 - >40% → señal fuerte de PMF
 
 ### 4. Sales Velocity
+
 - Si cierras deals rápido sin convencer mucho → PMF
 - Si cada deal requiere custom pitch → no PMF
 
@@ -402,14 +432,15 @@ Pregunta a usuarios: "¿Qué tan decepcionado estarías si ya no pudieras usar e
 
 ## 🔄 Build-Measure-Learn
 
-**What:** Ciclo de Lean Startup para validar hipótesis rápidamente.
+**Qué:** Ciclo de Lean Startup para validar hipótesis rápidamente.
 
-**Why:** Reducir desperdicio, aprender rápido, pivotar si necesario.
+**Por qué:** Reducir desperdicio, aprender rápido, pivotar si necesario.
 
-**When:** Incertidumbre alta, nuevos productos/features.
+**Cuándo:** Incertidumbre alta, nuevos productos/features.
 
 **Ciclo:**
-```
+
+```text
 1. Build (MVP)
    ↓
 2. Measure (Datos)
@@ -422,6 +453,7 @@ Pregunta a usuarios: "¿Qué tan decepcionado estarías si ya no pudieras usar e
 ```
 
 **Ejemplo:**
+
 - **Hipótesis:** "Usuarios pagarían por export a PDF"
 - **Build:** Botón "Export PDF" que manda email pidiendo upgrade
 - **Measure:** 200 clicks en 1 semana, 30 respondieron email
@@ -429,6 +461,7 @@ Pregunta a usuarios: "¿Qué tan decepcionado estarías si ya no pudieras usar e
 - **Persevere:** Construir feature real
 
 **Tipo de MVPs:**
+
 - Landing page con signup
 - Wizard of Oz (manual behind scenes)
 - Concierge (servicio personalizado)
@@ -440,9 +473,9 @@ Pregunta a usuarios: "¿Qué tan decepcionado estarías si ya no pudieras usar e
 
 ### RICE Framework
 
-**What:** Modelo para priorizar features: Reach × Impact × Confidence / Effort
+**Qué:** Modelo para priorizar features: Reach × Impact × Confidence / Effort
 
-| Factor | What | Escala |
+| Factor | Qué | Escala |
 |:-------|:-----|:-------|
 | **Reach** | ¿Cuántos usuarios afecta? | Usuarios/trimestre |
 | **Impact** | ¿Qué tanto ayuda? | 3=Massive, 2=High, 1=Medium, 0.5=Low, 0.25=Minimal |
@@ -480,11 +513,12 @@ Pregunta a usuarios: "¿Qué tan decepcionado estarías si ya no pudieras usar e
 
 ### PRD (Product Requirements Document)
 
-**What:** Documento que define qué construir y por qué.
+**Qué:** Documento que define qué construir y por qué.
 
-**When:** Antes de iniciar desarrollo de features grandes.
+**Cuándo:** Antes de iniciar desarrollo de features grandes.
 
 **Secciones:**
+
 1. **Resumen ejecutivo:** One-pager
 2. **Problema:** JTBD, pain points, quotes usuarios
 3. **Objetivos:** OKRs, success metrics
@@ -501,7 +535,7 @@ Pregunta a usuarios: "¿Qué tan decepcionado estarías si ya no pudieras usar e
 
 ## 🔍 Discovery Techniques
 
-| Técnica | What | When |
+| Técnica | Qué | Cuándo |
 |:--------|:-----|:-----|
 | **User Interviews** | Conversaciones 1:1 | Entender problemas profundos |
 | **Surveys** | Cuestionarios masivos | Validar cuantitativamente |

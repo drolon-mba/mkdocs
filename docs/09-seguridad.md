@@ -20,23 +20,24 @@
 - [📋 Security Checklist](#security-checklist)
 - [🚫 Anti-patrones](#anti-patrones)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 🎯 Seguridad como Cultura
 
-**What:** Integrar seguridad en cada fase del desarrollo (Shift-Left Security).
+**Qué:** Integrar seguridad en cada fase del desarrollo (Shift-Left Security).
 
-**Why:** Detectar vulnerabilidades temprano cuesta 100x menos que en producción. Una brecha puede destruir reputación y negocio.
+**Por qué:** Detectar vulnerabilidades temprano cuesta 100x menos que en producción. Una brecha puede destruir reputación y negocio.
 
-**Who:** Todo el equipo: developers, DevOps, architects, QA.
+**Quién:** Todo el equipo: developers, DevOps, architects, QA.
 
-**How much:** Inversión 10-15% del tiempo de desarrollo, previene incidentes catastróficos.
+**Costo:** Inversión 10-15% del tiempo de desarrollo, previene incidentes catastróficos.
 
 ---
 
 ## 🔐 Principios Fundamentales
 
-| Principio | What | Why | When | How | Herramientas |
+| Principio | Qué | Por qué | Cuándo | Cómo | Herramientas |
 |:----------|:-----|:----|:-----|:----|:-------------|
 | **Least Privilege** | Acceso mínimo necesario | Limitar impacto de compromiso | Siempre | RBAC, políticas IAM granulares | [AWS IAM](https://aws.amazon.com/iam/), [Keycloak](https://www.keycloak.org/) |
 | **Zero Trust** | Nunca confiar, siempre verificar | No asumir red interna = segura | Redes corporativas, cloud | Autenticar cada request, micro-segmentación | [BeyondCorp](https://cloud.google.com/beyondcorp), [Istio](https://istio.io/) |
@@ -48,7 +49,7 @@
 
 ## 🛡️ OWASP Top 10 (2021)
 
-| Vulnerabilidad | What | Why crítico | Cómo prevenir | Ejemplo |
+| Vulnerabilidad | Qué | Por qué crítico | Cómo prevenir | Ejemplo |
 |:---------------|:-----|:------------|:--------------|:--------|
 | **A01: Broken Access Control** | Usuarios acceden a recursos no autorizados | Exposición de datos sensibles | Validar autorización en backend, no confiar en cliente | Usuario cambia `user_id` en URL y ve datos ajenos |
 | **A02: Cryptographic Failures** | Datos sensibles sin cifrado adecuado | Robo de datos en tránsito/reposo | TLS 1.3, cifrado AES-256, no almacenar contraseñas en claro | Contraseñas en texto plano en DB |
@@ -65,7 +66,7 @@
 
 ## 🔑 Autenticación y Autorización
 
-| Mecanismo | What | Why | When | How |
+| Mecanismo | Qué | Por qué | Cuándo | Cómo |
 |:----------|:-----|:----|:-----|:----|
 | **JWT** | JSON Web Token: token autofirmado | Stateless, escalable | APIs REST, microservicios | Firmar con secret (HS256) o keypair (RS256), validar en cada request |
 | **OAuth 2.0** | Delegación de autorización | No compartir contraseñas | Integraciones third-party (Login con Google) | Authorization Code Flow con PKCE |
@@ -78,9 +79,9 @@
 
 ## 🔒 Secrets Management
 
-**What:** Gestión centralizada de credenciales, API keys, certificados.
+**Qué:** Gestión centralizada de credenciales, API keys, certificados.
 
-**Why:** Evitar hardcodear secrets en código (Git history es eterno).
+**Por qué:** Evitar hardcodear secrets en código (Git history es eterno).
 
 **Ver [Capítulo 37 - Gestión de Secretos](./37-gestion-secretos.md) para implementación detallada de Vault, AWS Secrets Manager, Azure Key Vault y mejores prácticas.**
 
@@ -88,7 +89,7 @@
 
 ## 🛡️ Patrones de Seguridad Avanzados
 
-| Patrón | What | Why | When | How | Herramientas |
+| Patrón | Qué | Por qué | Cuándo | Cómo | Herramientas |
 |:-------|:-----|:----|:-----|:----|:-------------|
 | **WAF** | Web Application Firewall | Filtrar tráfico HTTP malicioso | Apps públicas | Reglas contra SQL injection, XSS, bots | [Cloudflare WAF](https://www.cloudflare.com/waf/), [AWS WAF](https://aws.amazon.com/waf/) |
 | **DDoS Protection** | Mitigar ataques de denegación | Mantener disponibilidad | Servicios públicos | Rate limiting, CDN, anycast | [Cloudflare](https://www.cloudflare.com/), [AWS Shield](https://aws.amazon.com/shield/) |
@@ -102,7 +103,7 @@
 
 ## 🔍 Security Testing
 
-| Tipo | What | Why | When | How | Herramientas |
+| Tipo | Qué | Por qué | Cuándo | Cómo | Herramientas |
 |:-----|:-----|:----|:-----|:----|:-------------|
 | **SAST** | Static Application Security Testing | Detectar bugs en código fuente | CI/CD pipeline | Analizar código sin ejecutarlo | [SonarQube](https://www.sonarsource.com/products/sonarqube/), [Checkmarx](https://checkmarx.com/) |
 | **DAST** | Dynamic Application Security Testing | Detectar vulnerabilidades en runtime | Staging, prod (controlled) | Testear app running como atacante | [OWASP ZAP](https://www.zaproxy.org/), [Burp Suite](https://portswigger.net/burp) |
@@ -114,7 +115,7 @@
 
 ## 🔐 Cifrado
 
-| Tipo | What | When | Algoritmos | Ejemplo |
+| Tipo | Qué | Cuándo | Algoritmos | Ejemplo |
 |:-----|:-----|:-----|:-----------|:--------|
 | **Simétrico** | Misma key para cifrar/descifrar | Datos en reposo, comunicación interna | AES-256-GCM | Cifrar DB backups |
 | **Asimétrico** | Keypair pública/privada | Firmas, intercambio de keys | RSA-4096, Ed25519 | HTTPS (TLS), SSH |
@@ -126,7 +127,7 @@
 
 ## 🚨 Incident Response
 
-| Fase | What | How |
+| Fase | Qué | Cómo |
 |:-----|:-----|:----|
 | **Preparation** | Plan, runbooks, contactos | Documentar escalation, access a logs |
 | **Detection** | Identificar brecha | SIEM, alertas, anomalías |
@@ -140,6 +141,7 @@
 ## 📋 Security Checklist
 
 ### Aplicación
+
 - [ ] HTTPS en todos los endpoints
 - [ ] Inputs validados y sanitizados (backend)
 - [ ] Outputs encoded (prevenir XSS)
@@ -152,6 +154,7 @@
 - [ ] Headers de seguridad (CSP, HSTS, X-Frame-Options)
 
 ### Infraestructura
+
 - [ ] Firewall configurado (allow list)
 - [ ] SSH con keys, no passwords
 - [ ] Ports innecesarios cerrados

@@ -19,31 +19,33 @@
 - [🎓 Knowledge Sharing](#knowledge-sharing)
 - [🚫 Anti-patrones](#anti-patrones)
 - [📚 Recursos](#recursos)
+
 ---
 
 ## 🤝 Colaboración en Desarrollo
 
-**What:** Trabajar juntos efectivamente para crear mejor software.
+**Qué:** Trabajar juntos efectivamente para crear mejor software.
 
-**Why:** Software complejo requiere múltiples perspectivas. Colaboración > suma individual.
+**Por qué:** Software complejo requiere múltiples perspectivas. Colaboración > suma individual.
 
-**Who:** Todo el equipo de desarrollo.
+**Quién:** Todo el equipo de desarrollo.
 
-**When:** Diario, en todas las fases del desarrollo.
+**Cuándo:** Diario, en todas las fases del desarrollo.
 
-**How much:** Inversión en comunicación y coordinación que multiplica productividad.
+**Esfuerzo:** Inversión en comunicación y coordinación que multiplica productividad.
 
 ---
 
 ## 👥 Pair Programming
 
-**What:** Dos desarrolladores trabajando juntos en la misma máquina/pantalla.
+**Qué:** Dos desarrolladores trabajando juntos en la misma máquina/pantalla.
 
-**Why:** Menos bugs, mejor diseño, conocimiento compartido, onboarding efectivo.
+**Por qué:** Menos bugs, mejor diseño, conocimiento compartido, onboarding efectivo.
 
-**When:** Código complejo, onboarding, debugging crítico, aprendizaje.
+**Cuándo:** Código complejo, onboarding, debugging crítico, aprendizaje.
 
 **Roles:**
+
 - **Driver:** Escribe código, foco en táctico
 - **Navigator:** Piensa estratégico, revisa, sugiere
 
@@ -51,13 +53,14 @@
 
 **Tipos:**
 
-| Estilo | What | When |
+| Estilo | Qué | Cuándo |
 |:-------|:-----|:-----|
 | **Driver-Navigator** | Clásico: uno escribe, otro guía | General |
 | **Ping Pong** | TDD: uno escribe test, otro implementa, alternan | TDD estricto |
 | **Strong-Style** | Navigator dicta ideas, Driver implementa sin cuestionar | Enseñar patterns |
 
 **Beneficios:**
+
 - 15% más lento escribir código
 - 15% menos bugs
 - Mejor diseño
@@ -69,29 +72,33 @@
 
 ## 👨‍👩‍👧‍👦 Mob Programming
 
-**What:** Todo el equipo (3-8 personas) trabajando en el mismo problema simultáneamente.
+**Qué:** Todo el equipo (3-8 personas) trabajando en el mismo problema simultáneamente.
 
-**Why:** Decisiones colaborativas, problemas complejos, alineación total.
+**Por qué:** Decisiones colaborativas, problemas complejos, alineación total.
 
-**When:** Arquitectura crítica, decisiones importantes, spikes, workshops.
+**Cuándo:** Arquitectura crítica, decisiones importantes, spikes, workshops.
 
 **Formato:**
+
 - **Typist/Driver:** Escribe sin decidir (15 min rotación)
 - **Mob:** Discute y decide qué escribir
 - **Facilitador:** Mantiene proceso, timekeeper
 
 **Proceso:**
+
 1. Problema claramente definido
 2. Rotación cada 15 min con timer
 3. Commits frecuentes (WIP OK)
 4. Breaks cada 90 min
 
 **Cuándo NO usar:**
+
 - Tareas simples, repetitivas
 - Features independientes
 - Solo para llenar tiempo
 
 **Ventajas:**
+
 - Decisiones de calidad inmediata
 - Cero handoffs
 - Todo el equipo con contexto completo
@@ -100,15 +107,15 @@
 
 ## 🔍 Code Review
 
-**What:** Revisión sistemática de código por pares antes de merge.
+**Qué:** Revisión sistemática de código por pares antes de merge.
 
-**Why:** Detectar bugs, mejorar diseño, compartir conocimiento, mantener estándares.
+**Por qué:** Detectar bugs, mejorar diseño, compartir conocimiento, mantener estándares.
 
-**When:** Todo código antes de merge a main (sin excepciones).
+**Cuándo:** Todo código antes de merge a main (sin excepciones).
 
 ### Best Practices - Autor
 
-| Práctica | Why | Cómo |
+| Práctica | Por qué | Cómo |
 |:---------|:----|:-----|
 | **PRs pequeños** | Más rápido revisar, menos errores | <400 líneas, 1 concepto |
 | **Descripción clara** | Contexto para reviewer | Qué, por qué, cómo testear |
@@ -118,7 +125,7 @@
 
 ### Best Practices - Reviewer
 
-| Práctica | Why | Cómo |
+| Práctica | Por qué | Cómo |
 |:---------|:----|:-----|
 | **Revisar pronto** | No bloquear | <24 horas, idealmente <4h |
 | **Ser constructivo** | Ambiente de confianza | "¿Consideraste X?" vs "Esto está mal" |
@@ -144,16 +151,17 @@
 
 ## 📋 Blameless Post-Mortems
 
-**What:** Análisis retrospectivo de incident sin culpar individuos.
+**Qué:** Análisis retrospectivo de incident sin culpar individuos.
 
-**Why:** Aprender de fallos, mejorar sistemas, cultura psicológicamente segura.
+**Por qué:** Aprender de fallos, mejorar sistemas, cultura psicológicamente segura.
 
-**When:** Después de cada outage/incident significativo.
+**Cuándo:** Después de cada outage/incident significativo.
 
 **Estructura:**
 
 ### 1. Timeline de Eventos
-```
+
+```text
 14:23 - Deploy v2.3.4 a producción
 14:31 - Alertas de error rate 15%
 14:35 - Equipo notificado vía PagerDuty
@@ -163,12 +171,14 @@
 ```
 
 ### 2. Impacto
+
 - Usuarios afectados: 5,000
 - Duración: 42 minutos
 - Revenue perdido: $2,500
 - Reputación: 23 quejas en redes
 
 ### 3. Causa Raíz (5 Porqués)
+
 1. Migration falló
 2. Script no validó datos existentes
 3. No había test para ese edge case
@@ -176,6 +186,7 @@
 5. **Causa raíz:** Proceso de migrations sin validación obligatoria
 
 ### 4. Qué funcionó bien
+
 - Monitoring detectó rápido (8 min)
 - Comunicación efectiva en Slack
 - Rollback funcionó correctamente
@@ -194,46 +205,53 @@
 
 ## 🔄 Retrospectivas
 
-**What:** Reunión regular para reflexionar sobre proceso y mejorar.
+**Qué:** Reunión regular para reflexionar sobre proceso y mejorar.
 
-**Why:** Mejora continua, equipo más feliz y productivo.
+**Por qué:** Mejora continua, equipo más feliz y productivo.
 
-**When:** Cada sprint (2 semanas), después de milestones.
+**Cuándo:** Cada sprint (2 semanas), después de milestones.
 
 **Formato:**
 
 ### 1. Set the Stage (5 min)
+
 - Check-in: "Una palabra que describe tu sprint"
 - Recordar Prime Directive: "Todos hicieron lo mejor con lo que sabían"
 
 ### 2. Gather Data (15 min)
-**Técnica: Start-Stop-Continue**
+
+#### Técnica: Start-Stop-Continue
 
 | Start | Stop | Continue |
 |:------|:-----|:---------|
 | Daily standups async | Meetings de 2h | Pair programming viernes |
 | Code reviews en <4h | Interrupciones constantes | Pizza Fridays 🍕 |
 
-**Alternativa: Mad-Sad-Glad**
+#### Alternativa: Mad-Sad-Glad
+
 - 😡 Mad: Frustraciones
 - 😢 Sad: Decepciones
 - 😊 Glad: Celebraciones
 
 ### 3. Generate Insights (15 min)
+
 - Agrupar temas similares
 - Votar (3 votos por persona)
 - Identificar patrones
 
 ### 4. Decide What To Do (15 min)
+
 - Elegir 1-3 acciones concretas
 - Asignar owner
 - Definir "done"
 
 ### 5. Close (5 min)
+
 - Resumen de acciones
 - Appreciation shoutouts
 
 **Facilitación:**
+
 - Rotar facilitador
 - Timeboxear estricto
 - Ambiente seguro (no managers si coarta)
@@ -243,33 +261,37 @@
 
 ## 🎯 Working Agreements
 
-**What:** Acuerdos explícitos de cómo trabaja el equipo.
+**Qué:** Acuerdos explícitos de cómo trabaja el equipo.
 
-**Why:** Expectativas claras, menos fricción, autonomía.
+**Por qué:** Expectativas claras, menos fricción, autonomía.
 
-**When:** Al formar equipo, revisar cada 6 meses.
+**Cuándo:** Al formar equipo, revisar cada 6 meses.
 
 **Ejemplos:**
 
 ### Comunicación
+
 - Slack: responder en <4h horas hábiles
 - Urgent: llamar directamente
 - Updates asíncronos en daily doc, no meetings
 - No mensajes fuera 9-18h salvo emergencia
 
 ### Code
+
 - Main branch siempre deployable
 - PR aprobado en <24h
 - Coverage >80% en features nuevas
 - Breaking changes requieren RFC
 
 ### Meetings
+
 - No meetings antes 10am
 - Máximo 2h focus time protegido (9-11am)
 - Todas las reuniones con agenda
 - Default 25/50 min (no 30/60)
 
 ### On-call
+
 - Rotación semanal
 - Handoff Lunes 10am
 - Runbooks actualizados
@@ -281,9 +303,10 @@
 
 ### Async-First
 
-**Why:** Respeta tiempo, permite deep work, inclusivo para time zones.
+**Por qué:** Respeta tiempo, permite deep work, inclusivo para time zones.
 
 **Cómo:**
+
 - Documentar decisiones por escrito
 - Updates en Slack/Notion vs meetings
 - Grabar meetings para ausentes
@@ -291,9 +314,10 @@
 
 ### RFC (Request for Comments)
 
-**What:** Documento para proponer cambios técnicos significativos.
+**Qué:** Documento para proponer cambios técnicos significativos.
 
 **Estructura:**
+
 1. **Summary:** One-liner
 2. **Motivation:** Por qué necesario
 3. **Proposal:** Solución propuesta
@@ -302,6 +326,7 @@
 6. **Timeline:** Cuándo implementar
 
 **Proceso:**
+
 - Autor publica RFC
 - Team comenta (1 semana)
 - Discusión en RFC review meeting
@@ -311,7 +336,7 @@
 
 ## 🎓 Knowledge Sharing
 
-| Práctica | What | When |
+| Práctica | Qué | Cuándo |
 |:---------|:-----|:-----|
 | **Tech Talks** | Presentaciones internas | Viernes 1h mensual |
 | **Brown Bags** | Lunch & learn informales | Ad-hoc |

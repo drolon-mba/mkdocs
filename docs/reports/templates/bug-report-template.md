@@ -1,13 +1,13 @@
-## 🐞 Bug Report
+# 🐞 Bug Report
 
-### 📌 Título
+## 📌 Título
 
 [Componente] [Error] al [acción] en [entorno]
 _Ejemplo: "Login – NullPointerException al autenticar en staging"_
 
 ---
 
-### 📋 Contexto
+## 📋 Contexto
 
 - **Producto/servicio:** [Nombre del sistema o microservicio]
 - **Versión/commit:** [Tag, hash de commit o versión desplegada]
@@ -26,7 +26,7 @@ flowchart LR
 
 ---
 
-### 🔄 Reproducibilidad
+## 🔄 Reproducibilidad
 
 1. Paso 1: [acción precisa]
 2. Paso 2: [input exacto]
@@ -36,14 +36,14 @@ flowchart LR
 
 ---
 
-### ✅ Expected vs ❌ Actual
+## ✅ Expected vs ❌ Actual
 
 - **Expected:** [qué debería ocurrir]
 - **Actual:** [qué ocurre realmente: error/log exacto, stacktrace, código de estado]
 
 ---
 
-### 📂 Evidencia
+## 📂 Evidencia
 
 - Logs con timestamps y correlation IDs
 - Métricas (CPU, latencia, GC) antes/durante/después
@@ -52,7 +52,7 @@ flowchart LR
 
 ---
 
-### 📊 Impacto
+## 📊 Impacto
 
 - Usuarios afectados: [# o %]
 - Transacciones fallidas: [# o %]
@@ -60,7 +60,7 @@ flowchart LR
 
 ---
 
-### 💡 Hipótesis
+## 💡 Hipótesis
 
 - Sospecha en módulo X
 - Posible regresión por cambio Y
@@ -68,7 +68,7 @@ flowchart LR
 
 ---
 
-### 🛠️ Acciones iniciales
+## 🛠️ Acciones iniciales
 
 - **Rule out:** [qué ya se descartó: recursos, permisos, colas, etc.]
 - **Próximo paso:** [ej. aislar en staging con mismos datos, habilitar debug]

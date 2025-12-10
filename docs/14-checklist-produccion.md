@@ -21,24 +21,25 @@
 - [🚨 Rollback Criteria](#rollback-criteria)
 - [🎯 Checklist por Tipo de Change](#checklist-por-tipo-de-change)
 - [📋 Sign-off](#sign-off)
-- [🚫 Common Mistakes](#common-mistakes)
+- [🚫 Errores Comunes](#errores-comunes)
 - [🎓 Mejora Continua](#mejora-continua)
 - [📚 Recursos](#recursos)
-- [✅ Final Approval](#final-approval)
+- [✅ Aprobación Final](#aprobacion-final)
 - [🎉 ¡Checklist Completo!](#checklist-completo)
+
 ---
 
 ## 🎯 Pre-Deploy Checklist
 
-**What:** Lista de verificación obligatoria antes de cualquier deploy a producción.
+**Qué:** Lista de verificación obligatoria antes de cualquier deploy a producción.
 
-**Why:** Un deploy fallido puede costar $100k+/hora en downtime y reputación.
+**Por qué:** Un deploy fallido puede costar $100k+/hora en downtime y reputación.
 
-**Who:** Developer + reviewer + DevOps (según org).
+**Quién:** Developer + reviewer + DevOps (según org).
 
-**When:** Antes de CADA deploy a producción, sin excepciones.
+**Cuándo:** Antes de CADA deploy a producción, sin excepciones.
 
-**How much:** 10-30 min de verificación previene horas/días de incident response.
+**Esfuerzo:** 10-30 min de verificación previene horas/días de incident response.
 
 ---
 
@@ -316,6 +317,7 @@
 ## 🚨 Rollback Criteria
 
 **Rollback inmediato si:**
+
 - Error rate > 10%
 - p95 latency > 2x baseline
 - Health checks failing > 5 min
@@ -324,6 +326,7 @@
 - Security vulnerability introducida
 
 **Proceso:**
+
 1. Ejecutar rollback command
 2. Verificar health checks
 3. Notificar stakeholders
@@ -368,7 +371,7 @@
 
 **Antes de deploy:**
 
-```
+```text
 Deploy Request: #1234
 Feature: User authentication with 2FA
 Deploy date: 2024-02-15 14:00 UTC
@@ -390,9 +393,9 @@ Proceed? YES / NO
 
 ---
 
-## 🚫 Common Mistakes
+## 🚫 Errores Comunes
 
-| Mistake | Consecuencia | Prevención |
+| Error | Consecuencia | Prevención |
 |:--------|:-------------|:-----------|
 | "Skip tests, bajo riesgo" | Bugs en producción | Nunca skip tests |
 | "Deploy viernes 17h" | Weekend debugging | Deploy martes-jueves AM |
@@ -428,7 +431,7 @@ Después de cada deploy:
 
 ---
 
-## ✅ Final Approval
+## ✅ Aprobación Final
 
 **Este checklist fue completado y aprobado por:**
 
@@ -437,11 +440,11 @@ Después de cada deploy:
 - Tech Lead: _________________ Fecha: _______
 - DevOps (si aplica): _________ Fecha: _______
 
-**Deploy autorizado: YES / NO**
+### Deploy autorizado: YES / NO
 
-**Hora estimada deploy: ____________**
+### Hora estimada deploy: ____________
 
-**Ventana de deploy: ____________**
+### Ventana de deploy: ____________
 
 ---
 
@@ -449,7 +452,7 @@ Después de cada deploy:
 
 ---
 
-## 🎉 ¡Checklist Completo!
+## 🎉 ¡Checklist Completo
 
 Si completaste todos los ítems, tu deploy tiene alta probabilidad de éxito. Recuerda:
 

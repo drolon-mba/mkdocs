@@ -17,11 +17,11 @@
 
 ## 🤖 Introducción
 
-**What:** Agentes de IA configurados con expertise específico para asistir en diferentes aspectos del desarrollo de software.
+**Qué:** Agentes de IA configurados con expertise específico para asistir en diferentes aspectos del desarrollo de software.
 
-**Why:** Un agente bien configurado actúa como un senior developer/architect disponible 24/7, proporcionando feedback de calidad, detectando problemas y sugiriendo mejores prácticas.
+**Por qué:** Un agente bien configurado actúa como un senior developer/architect disponible 24/7, proporcionando feedback de calidad, detectando problemas y sugiriendo mejores prácticas.
 
-**How:** Cada agente tiene un prompt base que define su personalidad, expertise, comportamiento y áreas de especialización.
+**Cómo:** Cada agente tiene un prompt base que define su personalidad, expertise, comportamiento y áreas de especialización.
 
 ### Filosofía: AI como Jarvis, Developer como Tony Stark
 
@@ -36,16 +36,17 @@
 
 > [!TIP]
 > **Definición completa disponible**: [the-gentleman.md](./agents/the-gentleman.md)
-> 
+>
 > El archivo incluye toda la configuración en formato Claude Code para usar directamente en `.claude/agents/`
 
-**Role:** Senior Architect & Code Reviewer con 15+ años de experiencia
+**Rol:** Senior Architect & Code Reviewer con 15+ años de experiencia
 
-**Expertise:** PSF Fellow, FastAPI/Django Core Contributors, Java Champion, Angular GDE, React Core Contributor, Kaggle Grandmaster, MySQL/MongoDB/PostgreSQL Community Contributors & Champions, Microsoft MVP (Data Platform), PMI-PMP/PMI-ACP, Scrum Alliance CSPO/CSM, ISTQB Certified, SREcon Speaker
+**Experiencia:** PSF Fellow, FastAPI/Django Core Contributors, Java Champion, Angular GDE, React Core Contributor, Kaggle Grandmaster, MySQL/MongoDB/PostgreSQL Community Contributors & Champions, Microsoft MVP (Data Platform), PMI-PMP/PMI-ACP, Scrum Alliance CSPO/CSM, ISTQB Certified, SREcon Speaker
 
 **Personalidad:** Apasionado por la educación pero harto de la mediocridad, atajos y contenido superficial. No busca caer bien, busca que aprendas de verdad.
 
 **Características clave:**
+
 - NUNCA es un yes-man - siempre verifica antes de acordar
 - Partner colaborativo, no subordinado
 - Lenguaje directo: Español Rioplatense + English sin filtros
@@ -54,7 +55,6 @@
 Para ver el comportamiento completo, reglas de lenguaje, áreas de expertise detalladas y ejemplos de interacción, consultar [the-gentleman.md](./agents/the-gentleman.md).
 
 ---
-
 
 ## 🔮 Agentes Especializados
 
@@ -81,6 +81,7 @@ Prompt del sistema y comportamiento del agente...
 ```
 
 **Beneficios del formato Claude Code:**
+
 - ✅ **Reutilizables**: Pueden usarse en diferentes proyectos
 - ✅ **Versionables**: Se mantienen en control de versiones
 - ✅ **Compartibles**: Fácil de compartir con el equipo
@@ -88,6 +89,7 @@ Prompt del sistema y comportamiento del agente...
 - ✅ **Mantenibles**: Definiciones separadas facilitan actualizaciones
 
 **Cómo usar estos agentes:**
+
 1. Copiar el archivo del agente a `.claude/agents/` (proyecto) o `~/.claude/agents/` (usuario)
 2. Claude Code los detectará automáticamente
 3. Invocar explícitamente: "Usa el agente java-expert para revisar este código"
