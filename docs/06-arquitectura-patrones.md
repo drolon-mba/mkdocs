@@ -9,6 +9,8 @@
 ## 📋 Índice Rápido
 
 - [🏗️ Arquitecturas de Software](#arquitecturas-de-software)
+- [⚖️ Teorema CAP](#teorema-cap)
+- [📈 Escalabilidad: Vertical vs Horizontal](#escalabilidad-vertical-vs-horizontal)
 - [🔷 Arquitectura Hexagonal (Ports & Adapters)](#arquitectura-hexagonal-ports-adapters)
 - [📢 Screaming Architecture](#screaming-architecture)
 - [🧩 Patrones de Diseño (Gang of Four)](#patrones-de-diseno-gang-of-four)
@@ -40,6 +42,146 @@
 | **Capas** | Separación horizontal: presentación, negocio, datos | Modularidad, responsabilidades claras | Sistemas empresariales tradicionales | Monolitos estructurados | Capas solo conocen la inferior, DTO entre capas | ✅ Organización clara; ❌ Puede ser rígido |
 | **Event-Driven** | Comunicación basada en eventos asincrónicos | Desacoplamiento, escalabilidad | Sistemas con workflows complejos, integraciones | E-commerce, IoT, streaming | Event Bus/Broker, productores/consumidores | ✅ Desacoplamiento total; ❌ Debugging complejo, eventual consistency |
 | **Serverless** | Funciones sin servidor dedicado, auto-scaling | Costo por uso, cero gestión servidores | Tareas puntuales, APIs sencillas, jobs | AWS Lambda, Cloud Functions | Funciones stateless, triggers (HTTP, eventos), short-lived | ✅ Escalado automático, low cost; ❌ Cold starts, vendor lock-in |
+
+---
+
+## ⚖️ Teorema CAP
+
+**Qué:** En un sistema distribuido, solo se pueden garantizar simultáneamente **dos de tres** propiedades: **Consistencia** (Consistency), **Disponibilidad** (Availability) y **Tolerancia a Particiones** (Partition Tolerance).
+
+**Por qué:** Es el pilar teórico que justifica las elecciones entre bases de datos SQL y NoSQL, y las arquitecturas distribuidas. Entender CAP permite tomar decisiones informadas sobre trade-offs.
+
+**Quién:** Arquitectos de software, tech leads, desarrolladores de sistemas distribuidos.
+
+**Cuándo:** Al diseñar sistemas distribuidos, elegir bases de datos, definir arquitecturas de microservicios.
+
+### Las Tres Propiedades
+
+| Propiedad | Qué significa | Ejemplo |
+|:----------|:--------------|:--------|
+| **Consistency (C)** | Todos los nodos ven los mismos datos al mismo tiempo. Lectura siempre retorna el valor más reciente | Sistemas bancarios: saldo debe ser exacto en todas las consultas |
+| **Availability (A)** | Toda solicitud recibe una respuesta (éxito o fallo), sin garantía de que contenga el dato más reciente | Redes sociales: mejor mostrar timeline ligeramente desactualizado que error |
+| **Partition Tolerance (P)** | El sistema continúa operando a pesar de pérdida de mensajes entre nodos (particiones de red) | Inevitable en sistemas distribuidos (red puede fallar) |
+
+### El Trade-off Fundamental
+
+```mermaid
+graph TD
+    CAP[Teorema CAP]
+    CAP --> CP[CP: Consistency + Partition Tolerance]
+    CAP --> AP[AP: Availability + Partition Tolerance]
+    CAP --> CA[CA: Consistency + Availability]
+    
+    CP --> CP_Ex["Sacrifica Availability<br/>Ejemplos: HBase, MongoDB (strong), Redis"]
+    AP --> AP_Ex["Sacrifica Consistency<br/>Ejemplos: Cassandra, DynamoDB, Riak"]
+    CA --> CA_Ex["Sacrifica Partition Tolerance<br/>Ejemplos: RDBMS tradicional (single-node)<br/>⚠️ No viable en sistemas distribuidos reales"]
+    
+    style CP fill:#ffcccc
+    style AP fill:#ccffcc
+    style CA fill:#ccccff
+```
+
+### Decisiones Prácticas
+
+| Escenario | Elección | Justificación | Tecnología |
+|:----------|:---------|:--------------|:-----------|
+| **Sistema bancario** | **CP** | Consistencia es crítica, mejor rechazar operación que mostrar saldo incorrecto | PostgreSQL (strong consistency), Spanner |
+| **Red social** | **AP** | Disponibilidad es clave, eventual consistency es aceptable | Cassandra, DynamoDB |
+| **E-commerce (carrito)** | **AP** | Mejor permitir agregar al carrito aunque inventario esté levemente desactualizado | DynamoDB, Riak |
+| **E-commerce (checkout)** | **CP** | Al finalizar compra, inventario debe ser exacto | PostgreSQL con locks, MongoDB transactions |
+
+### Consistencia Eventual
+
+**Qué:** En sistemas **AP**, los datos eventualmente convergen a un estado consistente, pero puede haber ventanas de inconsistencia.
+
+**Ejemplo:** Publicar un tweet puede tardar segundos en aparecer para todos los seguidores (eventual consistency), pero el sistema siempre está disponible.
+
+**Herramientas:** Cassandra, DynamoDB, Riak, CouchDB.
+
+### Recursos CAP
+
+- [CAP Theorem - Martin Kleppmann](https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html)
+- [Brewer's CAP Theorem](https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/)
+
+---
+
+## 📈 Escalabilidad: Vertical vs Horizontal
+
+**Qué:** Estrategias para aumentar la capacidad de un sistema ante mayor carga.
+
+**Por qué:** Entender este trade-off es fundamental para diseñar arquitecturas que crezcan eficientemente. La elección afecta costos, complejidad y límites de crecimiento.
+
+**Quién:** Arquitectos, DevOps, tech leads.
+
+**Cuándo:** Al planificar crecimiento, ante problemas de performance, diseñando nuevos sistemas.
+
+### Comparación
+
+| Aspecto | Escalabilidad Vertical (Scale Up) | Escalabilidad Horizontal (Scale Out) |
+|:--------|:----------------------------------|:-------------------------------------|
+| **Qué es** | Aumentar recursos de un solo servidor (más CPU, RAM, disco) | Añadir más servidores/instancias |
+| **Límite** | Físico (máximo hardware disponible) | Prácticamente ilimitado |
+| **Costo** | Exponencial (hardware high-end es desproporcionadamente caro) | Lineal (agregar commodity hardware) |
+| **Complejidad** | Baja (sin cambios arquitectónicos) | Alta (requiere load balancing, estado distribuido) |
+| **Downtime** | Sí (al reemplazar hardware) | No (agregar nodos sin downtime) |
+| **Arquitectura** | Favorece **Monolitos** | Favorece **Microservicios**, arquitecturas distribuidas |
+| **Ejemplos** | Servidor de 8GB RAM → 32GB RAM | 1 servidor → 10 servidores detrás de load balancer |
+
+### Cuándo Usar Cada Una
+
+| Escenario | Recomendación | Razón |
+|:----------|:--------------|:------|
+| **MVP, startup temprana** | **Vertical** | Simplicidad, menor overhead operacional |
+| **Base de datos SQL (PostgreSQL, MySQL)** | **Vertical primero**, luego read replicas (horizontal) | SQL escala mejor verticalmente, sharding es complejo |
+| **Aplicación stateless (API REST)** | **Horizontal** | Fácil replicar, load balancer distribuye |
+| **Procesamiento batch** | **Horizontal** | Paralelizar tareas independientes |
+| **Cache (Redis)** | **Vertical** hasta límite, luego **Horizontal** (sharding) | Redis es single-threaded, vertical es eficiente |
+| **Tráfico impredecible** | **Horizontal con auto-scaling** | Agregar/quitar nodos según demanda |
+
+### Ejemplo Visual
+
+```mermaid
+graph LR
+    subgraph Vertical["Escalabilidad Vertical"]
+        V1[Servidor<br/>4 CPU, 8GB RAM] -->|Upgrade| V2[Servidor<br/>16 CPU, 64GB RAM]
+    end
+    
+    subgraph Horizontal["Escalabilidad Horizontal"]
+        LB[Load Balancer]
+        LB --> H1[Servidor 1<br/>4 CPU, 8GB]
+        LB --> H2[Servidor 2<br/>4 CPU, 8GB]
+        LB --> H3[Servidor 3<br/>4 CPU, 8GB]
+        LB --> H4[Servidor N<br/>4 CPU, 8GB]
+    end
+    
+    style Vertical fill:#ffe6e6
+    style Horizontal fill:#e6f3ff
+```
+
+### Relación con Arquitecturas
+
+| Arquitectura | Escalabilidad Natural | Por qué |
+|:-------------|:---------------------|:--------|
+| **Monolito** | **Vertical** | Todo en un proceso, difícil distribuir. Puede escalar horizontalmente si es stateless y usa DB externa |
+| **Microservicios** | **Horizontal** | Servicios independientes, fácil replicar cada uno según necesidad |
+| **Serverless** | **Horizontal automático** | Provider escala funciones automáticamente |
+| **Event-Driven** | **Horizontal** | Consumidores de eventos se pueden replicar |
+
+### Estrategia Híbrida
+
+**Recomendación:** Combinar ambas estrategias según el componente.
+
+**Ejemplo:**
+
+- **API Gateway:** Horizontal (múltiples instancias)
+- **Base de datos:** Vertical (servidor potente) + Read Replicas (horizontal para lecturas)
+- **Workers de procesamiento:** Horizontal (escalar según cola)
+- **Cache (Redis):** Vertical hasta 64GB, luego sharding (horizontal)
+
+### Recursos Escalabilidad
+
+- [Vertical vs Horizontal Scaling - AWS](https://aws.amazon.com/compare/the-difference-between-horizontal-and-vertical-scaling/)
+- [Scalability - Martin Fowler](https://martinfowler.com/articles/scaling-architecture.html)
 
 ---
 

@@ -9,6 +9,7 @@
 ## 📋 Índice Rápido
 
 - [📊 Niveles de Criticidad](#niveles-de-criticidad)
+- [🌐 Fundamentos de Red](#fundamentos-de-red)
 - [🧠 Reglas Generales de Código](#reglas-generales-de-codigo)
 - [🧱 Reglas por Lenguaje](#reglas-por-lenguaje)
 - [🧩 Reglas por Framework](#reglas-por-framework)
@@ -19,6 +20,45 @@
 ## 📊 Niveles de Criticidad
 
 Ver [Tabla de Niveles de Criticidad](./00-indice.md#niveles-de-criticidad) en el Índice General.
+
+---
+
+## 🌐 Fundamentos de Red
+
+**¿Por qué?** Comprender cómo se comunican los sistemas es fundamental para desarrollar aplicaciones distribuidas, APIs y servicios en la nube.
+
+**¿Quién?** Todo desarrollador, especialmente aquellos trabajando con aplicaciones web, APIs y microservicios.
+
+**¿Cuánto cuesta?** Conocimiento base esencial, inversión de 1-2 días para conceptos fundamentales.
+
+| Concepto | Qué es | Por qué | Cuándo aplicarlo | Dónde | Cómo | Recurso |
+|:---------|:-------|:--------|:-----------------|:------|:-----|:--------|
+| **Modelo Cliente-Servidor** | Arquitectura donde clientes solicitan recursos/servicios y servidores los proveen | Base de la mayoría de aplicaciones web y distribuidas | En toda aplicación que requiera comunicación entre componentes | Web apps, APIs, microservicios | Cliente envía request (HTTP, gRPC), servidor procesa y responde | [MDN - Client-Server](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Client-Server_overview) |
+| **Dirección IP** | Identificador único de un dispositivo en una red (IPv4: `192.168.1.1`, IPv6: `2001:0db8::1`) | Permite enrutar paquetes al destino correcto | Configuración de servidores, debugging de red, seguridad | Networking, deployment, firewall rules | IPv4 (32 bits, 4 octetos), IPv6 (128 bits, 8 grupos hex). Privadas (10.x, 172.16-31.x, 192.168.x) vs Públicas | [Wikipedia - IP Address](https://en.wikipedia.org/wiki/IP_address) |
+| **DNS** | Domain Name System - Traduce nombres de dominio (`example.com`) a direcciones IP | Humanos recuerdan nombres, máquinas usan IPs | Al configurar dominios, troubleshooting de conectividad | Todos los servicios web, email, CDN | Cliente consulta DNS resolver → obtiene IP → conecta. Tipos: A (IPv4), AAAA (IPv6), CNAME (alias), MX (email) | [Cloudflare - What is DNS](https://www.cloudflare.com/learning/dns/what-is-dns/) |
+| **Puertos** | Número que identifica un servicio específico en un host (0-65535) | Múltiples servicios en misma IP | Al exponer servicios, configurar firewalls | Servidores, contenedores, load balancers | Well-known: HTTP (80), HTTPS (443), SSH (22), PostgreSQL (5432). Especificar en `IP:Puerto` | [Wikipedia - Port](https://en.wikipedia.org/wiki/Port_(computer_networking)) |
+| **Protocolo HTTP/HTTPS** | Protocolo de transferencia de hipertexto (seguro con TLS) | Comunicación estándar web | Toda API REST, aplicación web | Frontend-Backend, APIs públicas | Request (método, headers, body) → Response (status, headers, body). HTTPS cifra con TLS | [MDN - HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) |
+| **Load Balancer** | Distribuye tráfico entre múltiples servidores | Escalabilidad horizontal, alta disponibilidad | Aplicaciones con múltiples instancias | Arquitecturas escalables, microservicios | Algoritmos: Round Robin, Least Connections, IP Hash. Ver también [Networking en Cloud](./18-infraestructura-cloud.md#networking) | [NGINX - Load Balancing](https://www.nginx.com/resources/glossary/load-balancing/) |
+
+### Ejemplo: Flujo Cliente-Servidor con DNS
+
+```mermaid
+sequenceDiagram
+    participant Cliente
+    participant DNS
+    participant LoadBalancer
+    participant Servidor1
+    participant Servidor2
+    
+    Cliente->>DNS: ¿Cuál es la IP de api.example.com?
+    DNS-->>Cliente: 203.0.113.10
+    Cliente->>LoadBalancer: GET /users (203.0.113.10:443)
+    LoadBalancer->>Servidor1: Forward request
+    Servidor1-->>LoadBalancer: Response {users: [...]}
+    LoadBalancer-->>Cliente: Response {users: [...]}
+    
+    Note over Cliente,Servidor2: Siguiente request puede ir a Servidor2
+```
 
 ---
 

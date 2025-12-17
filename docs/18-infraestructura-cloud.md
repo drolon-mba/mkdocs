@@ -38,6 +38,8 @@
 **Esfuerzo:** OpEx vs CapEx, facturación mensual variable.
 
 > **Nota:** **OpEx** (Gastos Operativos) son costos recurrentes como la factura mensual de AWS. **CapEx** (Gastos de Capital) son inversiones iniciales grandes como comprar servidores físicos. Cloud mueve el gasto de CapEx a OpEx.
+>
+> **Conceptos Relacionados:** Para entender las estrategias de **Escalabilidad Vertical vs Horizontal** que son fundamentales en decisiones de infraestructura cloud, ver [Escalabilidad en Arquitectura](./06-arquitectura-patrones.md#escalabilidad-vertical-vs-horizontal).
 
 ---
 

@@ -14,6 +14,7 @@
 
 - [01 - Fundamentos](./01-fundamentos.md)
   - Niveles de criticidad
+  - Fundamentos de red (Cliente-Servidor, IP, DNS, Load Balancer)
   - Reglas generales de código
   - Reglas por lenguaje
   - Reglas por framework
@@ -33,6 +34,8 @@
 
 - [06 - Arquitectura y Patrones](./06-arquitectura-patrones.md)
   - Arquitecturas de software
+  - Teorema CAP (Consistency, Availability, Partition Tolerance)
+  - Escalabilidad: Vertical vs Horizontal
   - Patrones de diseño
   - Patrones arquitectónicos avanzados
   - FSM (Finite State Machines)
@@ -79,7 +82,7 @@
 ### ☁️ Infraestructura y Costos
 
 - [18 - Infraestructura y Cloud](./18-infraestructura-cloud.md)
-  - Multi-cloud, Serverless, Containerization, Edge computing
+  - Multi-cloud, Serverless, Containerization, Edge computing, Escalabilidad
 - [19 - Optimización de Costos (FinOps)](./19-cost-optimization.md)
   - FinOps, Right-sizing, Reserved Instances, Cloud cost monitoring
 
