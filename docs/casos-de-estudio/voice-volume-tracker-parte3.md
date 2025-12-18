@@ -569,15 +569,53 @@ public class AdaptiveVoiceProfile
 
 ---
 
-## 📈 11. Métricas de Éxito
+## 🏗️ 11. Guía de Construcción y Setup (2026)
 
-### 11.1 North Star Metric
+Este proyecto no es un `.exe` normal. Al tener un servicio de Windows, requiere un proceso específico:
+
+### 11.1 Cómo compilar el proyecto
+
+1. Abrir con **Visual Studio 2022**.
+2. Compilar la solución en modo **Release**.
+3. El resultado será un `VoiceTracker.Service.exe` y un `VoiceTracker.UI.exe`.
+
+### 11.2 Cómo instalar el servicio
+
+Para que el sistema rastree tu voz en segundo plano sin que la app esté abierta, debes registrar el servicio como administrador:
+
+```powershell
+# Abrir PowerShell como Admin
+sc.exe create "VoiceTrackerService" binPath= "C:\Ruta\Al\VoiceTracker.Service.exe" start= auto
+sc.exe start "VoiceTrackerService"
+```
+
+### 11.3 Comunicación Inter-Proceso (Named Pipes)
+
+La UI se conecta al servicio usando una "tubería" (Pipe). Si el servicio no está corriendo, la UI te avisará que no puede obtener datos en tiempo real.
+
+---
+
+## 🚀 12. Roadmap de Implementación Sugerida
+
+Si el año que viene decides construirlo, este es el orden "Senior" para no fallar:
+
+1. **Hito 1 (Audio)**: Crea un prototipo que solo detecte dB y los imprima en consola. Si esto falla (por latencia o permisos), no sigas con lo demás.
+2. **Hito 2 (ML)**: Integra ML.NET y prueba que el modelo corre en tu PC. Graba tu voz y verifica que el "Score" de similitud sea alto.
+3. **Hito 3 (Background)**: Convierte la lógica de audio en un `BackgroundService`.
+4. **Hito 4 (Visuals)**: Crea la UI y el overlay DirectX. Es la parte más gratificante visualmente.
+5. **Hito 5 (Hardening)**: Añade la encriptación de tu perfil de voz y las lecciones aprendidas sobre falsos positivos.
+
+---
+
+## 📈 13. Métricas de Éxito
+
+### 13.1 North Star Metric
 
 | Métrica | Objetivo | Resultado | Estado |
 |:--------|:---------|:----------|:-------|
 | **Tasa de Corrección de Volumen** | > 70% | 78% | ✅ |
 
-### 11.2 Métricas Técnicas
+### 13.2 Métricas Técnicas
 
 | Métrica | Objetivo | Resultado | Estado |
 |:--------|:---------|:----------|:-------|
@@ -588,7 +626,7 @@ public class AdaptiveVoiceProfile
 | **CPU (speaking)** | < 8% | 6.5% | ✅ |
 | **RAM** | < 150 MB | 120 MB | ✅ |
 
-### 11.3 Métricas de Negocio
+### 13.3 Métricas de Negocio
 
 | Métrica | Resultado |
 |:--------|:----------|
@@ -599,7 +637,7 @@ public class AdaptiveVoiceProfile
 
 ---
 
-## 🔗 Referencias
+## 🔗 14. Referencias
 
 ### Capítulos de la Guía Aplicados
 
@@ -627,10 +665,8 @@ public class AdaptiveVoiceProfile
 
 ---
 
-**Autor**: David Rolón
-
-**Fecha**: 2025-12-18
-
+**Autor**: David Rolón  
+**Fecha**: 2025-12-18  
 **Versión**: 1.0
 
 ---

@@ -35,9 +35,9 @@ Este caso de estudio documenta el desarrollo de una aplicación nativa de Window
 
 ---
 
-## 🎯 1. Contexto del Cliente y Producto
+## 🎯 1. PRD (Product Requirements Document)
 
-### 1.1 Job To Be Done (JTBD)
+### 1.1 Contexto y Job To Be Done (JTBD)
 
 **Cuando** trabajo o convivo en un espacio compartido (oficina, hogar),  
 **Lo contrato para** monitorear mi volumen de voz y recibir feedback discreto en tiempo real,  
@@ -129,7 +129,24 @@ Este caso de estudio documenta el desarrollo de una aplicación nativa de Window
 
 ---
 
-### 2.2 Arquitectura Hexagonal (Ports & Adapters)
+### 2.2 ¿Por qué NAudio para el manejo de Audio?
+
+**Decisión**: Usar la librería open-source `NAudio`.
+
+**Justificación**:
+
+- **Madurez**: Es el estándar de facto en .NET para audio desde hace >10 años.
+- **Bajo Nivel**: Permite acceso directo a **WASAPI** (Windows Audio Session API), lo cual es crítico para reducir la latencia a milisegundos.
+- **Flexibilidad**: Soporta captura de audio en buffers de bytes que podemos convertir a floats para el modelo de ML sin overhead innecesario.
+
+**Trade-offs**:
+
+- ✅ **Pro**: Control total sobre el dispositivo de entrada y el sample rate (16kHz requerido por ML).
+- ❌ **Contra**: La documentación oficial es escasa; requiere entender conceptos de DSP (Digital Signal Processing).
+
+---
+
+### 2.3 Arquitectura Hexagonal (Ports & Adapters)
 
 **Decisión**: Implementar Arquitectura Hexagonal con separación clara entre UI, Servicio y Core
 
@@ -213,7 +230,7 @@ VoiceVolumeTracker/
 
 ---
 
-### 2.3 Finite State Machine (FSM) para Modos Día/Noche
+### 2.4 Finite State Machine (FSM) para Modos Día/Noche
 
 **Decisión**: Implementar FSM para gestionar estados y transiciones
 
