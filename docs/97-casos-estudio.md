@@ -50,6 +50,12 @@ Los casos de estudio sirven para:
   - **Artefactos**: ADRs, Property-Based Testing, Performance Profiling, Anti-patrones documentados
   - **Partes**: [Parte 1 (Arquitectura)](./casos-de-estudio/voice-volume-tracker-windows.md) | [Parte 2 (ML y Alertas)](./casos-de-estudio/voice-volume-tracker-parte2.md) | [Parte 3 (Seguridad)](./casos-de-estudio/voice-volume-tracker-parte3.md)
 
+- [**Alarma por Ubicación (Geofencing Alarm)**](./casos-de-estudio/geofencing-alarm-mobile.md)
+  - **Stack**: Flutter, Kotlin/Swift (Nativo), SQLite, AWS Serverless
+  - **Conceptos**: Foreground Services, FSM (Máquina de Estados), Optimización de Batería, Offline-First
+  - **Decisiones clave**: Híbrido Optimizado (Flutter UI + Core Nativo), Muestreo Adaptativo de GPS, Arquitectura Hexagonal
+  - **Artefactos**: ADRs, Circuit Breaker Fallback, Pre-Mortem
+
 ---
 
 ## 🔗 Relación con otros Capítulos
