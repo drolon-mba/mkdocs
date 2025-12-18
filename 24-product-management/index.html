@@ -1,0 +1,5790 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../23-analisis-estrategico/">
+      
+      
+        <link rel="next" href="../25-metricas-kpis/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>24 - Product Management - Guía Integral de Ingeniería de Software</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="../assets/mkdocs_puml/interaction.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#24-product-management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Guía Integral de Ingeniería de Software" class="md-header__button md-logo" aria-label="Guía Integral de Ingeniería de Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guía Integral de Ingeniería de Software
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              24 - Product Management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Guía Integral de Ingeniería de Software" class="md-nav__button md-logo" aria-label="Guía Integral de Ingeniería de Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Guía Integral de Ingeniería de Software
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📘 Guía Integral de Ingeniería de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-indice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    00 - Índice General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-fundamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 - Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 - Onboarding de Nuevos Desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-disciplinas-desarrollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 - Disciplinas de Desarrollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 - Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-gestion-calidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 - Gestión de Calidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-arquitectura-patrones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 - Arquitectura y Patrones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-sesgos-falacias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 - Sesgos Cognitivos, Falacias y Leyes a Evitar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-devops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 - DevOps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-seguridad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 - Seguridad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-observabilidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Observabilidad y Telemetría
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-herramientas-problemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Herramientas de Análisis de Problemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-mejora-continua/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Metodologías de Mejora Continua
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Optimización de Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-checklist-produccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Checklist de Producción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-bases-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Bases de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-apis-protocolos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - APIs y Protocolos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-mobile-ui-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Mobile, UI y UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-infraestructura-cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Infraestructura y Arquitectura Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-cost-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - Optimización de Costos (FinOps)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-machine-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - Machine Learning y Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-ciencia-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21 - Ciencia de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22 - Data Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-analisis-estrategico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 - Análisis Estratégico y de Negocio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24 - Product Management
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24 - Product Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Índice Rápido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smart-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 SMART Goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal-pyramid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Goal Pyramid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bhag-big-hairy-audacious-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 BHAG (Big Hairy Audacious Goal)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scqa-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 SCQA Framework
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circles-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 CIRCLES Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lean-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Lean Canvas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapa-de-empatia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Mapa de Empatía
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Product Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jtbd-jobs-to-be-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 JTBD (Jobs To Be Done)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-story-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗺️ User Story Mapping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#okrs-objectives-key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 OKRs (Objectives &amp; Key Results)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#north-star-metric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⭐ North Star Metric
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-market-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Product-Market Fit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Product-Market Fit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sean-ellis-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Sean Ellis Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-retention-cohorts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Retention Cohorts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-organic-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Organic Growth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-sales-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Sales Velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-measure-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Build-Measure-Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#priorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Priorización
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Priorización">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rice-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RICE Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-vs-effort-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value vs Effort Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Product Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 Product Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prd-product-requirements-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRD (Product Requirements Document)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discovery-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Discovery Techniques
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-patrones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚫 Anti-patrones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Recursos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-metricas-kpis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25 - Métricas y KPIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-roles-responsabilidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26 - Roles y Responsabilidades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-colaboracion-cultura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27 - Colaboración y Cultura de Desarrollo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-documentacion-diagramas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28 - Documentación y Diagramas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-convenciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29 - Convenciones y Estándares
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-prompts-agentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30 - Prompts y Agentes de IA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-estrategia-ia-automatizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31 - Estrategia de IA y Automatización
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32-etica-gobernanza-ia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32 - Ética y Gobernanza de IA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-comunicacion-contenido/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33 - Comunicación y Contenido Técnico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../34-plantillas-artefactos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34 - Plantillas y Artefactos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-dependencias-deuda-tecnica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35 - Gestión de Dependencias y Deuda Técnica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../36-priorizacion-roadmapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36 - Priorización y Roadmapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../37-gestion-secretos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37 - Gestión de Secretos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../38-chaos-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38 - Chaos Engineering y Resiliencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../39-data-literacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39 - Data Literacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-lowcode-nocode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    40 - Gobernanza Low-Code/No-Code (LCNC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../97-casos-estudio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    97 - Casos de Estudio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98-recursos-entrevistas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    98 - Recursos de práctica de código y preparación para entrevistas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../99-glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    99 - Glosario de Términos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_46" >
+        
+          
+          <label class="md-nav__link" for="__nav_46" id="__nav_46_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_46_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_46">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agentes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/the-gentleman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Gentleman - Agente Principal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_46_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_46_2" id="__nav_46_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture devops
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_46_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_46_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture devops
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/architecture-devops/api-design-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Design Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/architecture-devops/cicd-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/architecture-devops/event-driven-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event-Driven Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/architecture-devops/iac-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IaC Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/architecture-devops/kubernetes-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/architecture-devops/microservices-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microservices Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/architecture-devops/observability-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observability Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/architecture-devops/security-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/architecture-devops/software-architecture-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_46_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_46_3" id="__nav_46_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_46_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_46_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/backend/django-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Django Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/backend/express-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Express Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/backend/fastapi-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FastAPI Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/backend/java-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/backend/nestjs-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NestJS Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/backend/nodejs-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node.js Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/backend/python-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/backend/spring-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spring Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_46_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_46_4" id="__nav_46_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business roles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_46_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_46_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Business roles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/business-roles/devrel-developer-advocate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevRel / Developer Advocate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/business-roles/pm-po-advisor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PM/PO Advisor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/business-roles/scrum-master-agile-coach/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scrum Master / Agile Coach
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/business-roles/sre-advisor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SRE Advisor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/business-roles/tech-lead-em-advisor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Lead / EM Advisor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/business-roles/ux-research-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UX Research Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/business-roles/ux-ui-designer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UX/UI Designer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_46_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_46_5" id="__nav_46_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_46_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_46_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compliance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/compliance/accessibility-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessibility Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/compliance/compliance-governance-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance &amp; Governance Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_46_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_46_6" id="__nav_46_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data ml finance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_46_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_46_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data ml finance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/data-ml-finance/computer-vision-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Vision Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/data-ml-finance/data-science-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Science Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/data-ml-finance/data-visualization-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/data-ml-finance/ml-dl-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ML/DL Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/data-ml-finance/nlp-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLP Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/data-ml-finance/quant-finance-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quant Finance Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/data-ml-finance/rl-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RL Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/data-ml-finance/trading-systems-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trading Systems Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_46_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_46_7" id="__nav_46_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_46_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_46_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Databases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/databases/mongodb-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MongoDB Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/databases/mssql-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSSQL Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/databases/postgresql-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgreSQL Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/databases/redis-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redis Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/databases/sqlite-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQLite Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_46_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_46_8" id="__nav_46_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_46_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_46_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Debugging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/debugging/code-review-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Review Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/debugging/debugging-root-cause-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging &amp; Root Cause Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/debugging/migration-specialist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Specialist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_46_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_46_9" id="__nav_46_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_46_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_46_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/documentation/api-documentation-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Documentation Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/documentation/content-creator-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content Creator Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/documentation/diagram-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagram Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/documentation/technical-writer-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Writer Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_46_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_46_10" id="__nav_46_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_46_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_46_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Frontend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/frontend/angular-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Angular Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/frontend/css-styling-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSS/Styling Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/frontend/nextjs-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Next.js Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/frontend/react-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    React Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/frontend/typescript-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TypeScript Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/frontend/vue-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vue Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_46_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_46_11" id="__nav_46_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_46_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_46_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/testing/bdd-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BDD Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/testing/e2e-testing-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2E Testing Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/testing/performance-testing-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance Testing Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/testing/qa-automation-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QA Automation Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentes/testing/tdd-expert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TDD Expert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_47" >
+        
+          
+          <label class="md-nav__link" for="__nav_47" id="__nav_47_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos de estudio
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_47_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_47">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Casos de estudio
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos-de-estudio/diario-emociones-mood-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso de Estudio: Diario Digital de Emociones (Mood Tracker)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos-de-estudio/geofencing-alarm-mobile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso de Estudio: Alarma por Ubicación (Geofencing Alarm)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos-de-estudio/portafolio-personal-ts-angular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso de Estudio: Portafolio Personal con TypeScript, Angular y SQLite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos-de-estudio/voice-volume-tracker-parte2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice Volume Tracker - Parte 2: ML, Alertas y Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos-de-estudio/voice-volume-tracker-parte3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice Volume Tracker - Parte 3: Seguridad, Anti-patrones y Conclusiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos-de-estudio/voice-volume-tracker-windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caso de Estudio: Voice Volume Tracker para Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_48" >
+        
+          
+          <label class="md-nav__link" for="__nav_48" id="__nav_48_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_48_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_48">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reportes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_48_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_48_1" id="__nav_48_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_48_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_48_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reportes/examples/bug-report-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🐞 Bug Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reportes/examples/feature-request-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💡 Feature Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reportes/examples/new-feature-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✨ Feature Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reportes/examples/post-mortem-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💀 Post-Mortem Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reportes/examples/rfc-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📝 RFC: Implementación de Redis para Caching de Sesiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_48_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_48_2" id="__nav_48_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_48_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_48_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reportes/templates/bug-report-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🐞 Bug Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reportes/templates/feature-request-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💡 Feature Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reportes/templates/new-feature-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✨ Feature Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reportes/templates/post-mortem-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💀 Post-Mortem Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reportes/templates/rfc-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📝 RFC: Request for Comments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Índice Rápido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smart-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 SMART Goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal-pyramid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Goal Pyramid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bhag-big-hairy-audacious-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 BHAG (Big Hairy Audacious Goal)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scqa-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 SCQA Framework
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circles-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 CIRCLES Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lean-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Lean Canvas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapa-de-empatia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Mapa de Empatía
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Product Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jtbd-jobs-to-be-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 JTBD (Jobs To Be Done)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-story-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗺️ User Story Mapping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#okrs-objectives-key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 OKRs (Objectives &amp; Key Results)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#north-star-metric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⭐ North Star Metric
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-market-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Product-Market Fit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Product-Market Fit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sean-ellis-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Sean Ellis Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-retention-cohorts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Retention Cohorts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-organic-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Organic Growth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-sales-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Sales Velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-measure-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Build-Measure-Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#priorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Priorización
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Priorización">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rice-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RICE Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-vs-effort-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value vs Effort Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Product Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 Product Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prd-product-requirements-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PRD (Product Requirements Document)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discovery-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Discovery Techniques
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-patrones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚫 Anti-patrones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Recursos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="24-product-management">24 - Product Management</h1>
+<blockquote>
+<p>Frameworks y técnicas para descubrir, priorizar y entregar productos que usuarios amen y negocio necesite.</p>
+</blockquote>
+<p><a href="../00-indice/">🏠 Volver al índice</a></p>
+<hr />
+<h2 id="indice-rapido">📋 Índice Rápido</h2>
+<ul>
+<li><a href="#smart-goals">🎯 SMART Goals</a></li>
+<li><a href="#goal-pyramid">📊 Goal Pyramid</a></li>
+<li><a href="#bhag-big-hairy-audacious-goal">🎯 BHAG (Big Hairy Audacious Goal)</a></li>
+<li><a href="#scqa-framework">📋 SCQA Framework</a></li>
+<li><a href="#circles-method">🔍 CIRCLES Method</a></li>
+<li><a href="#lean-canvas">📊 Lean Canvas</a></li>
+<li><a href="#mapa-de-empatia">🧠 Mapa de Empatía</a></li>
+<li><a href="#product-management">🎯 Product Management</a></li>
+<li><a href="#jtbd-jobs-to-be-done">💡 JTBD (Jobs To Be Done)</a></li>
+<li><a href="#user-story-mapping">🗺️ User Story Mapping</a></li>
+<li><a href="#okrs-objectives-key-results">🎯 OKRs (Objectives &amp; Key Results)</a></li>
+<li><a href="#north-star-metric">⭐ North Star Metric</a></li>
+<li><a href="#product-market-fit">📊 Product-Market Fit</a></li>
+<li><a href="#build-measure-learn">🔄 Build-Measure-Learn</a></li>
+<li><a href="#priorizacion">📋 Priorización</a></li>
+<li><a href="#product-requirements">📝 Product Requirements</a></li>
+<li><a href="#discovery-techniques">🔍 Discovery Techniques</a></li>
+<li><a href="#anti-patrones">🚫 Anti-patrones</a></li>
+<li><a href="#recursos">📚 Recursos</a></li>
+</ul>
+<hr />
+<h2 id="smart-goals">🎯 SMART Goals</h2>
+<p><strong>Qué:</strong> Criterio para definir objetivos efectivos.</p>
+<p><strong>Por qué:</strong> Objetivos vagos = no accionables. SMART = claridad y medición.</p>
+<p><strong>Cuándo:</strong> Definir OKRs, roadmaps, user stories.</p>
+<p><strong>Criterios:</strong></p>
+<ul>
+<li><strong>S</strong>pecific (Específico): Claro y concreto</li>
+<li><strong>M</strong>easurable (Medible): Con métrica cuantificable</li>
+<li><strong>A</strong>chievable (Alcanzable): Desafiante pero posible</li>
+<li><strong>R</strong>elevant (Relevante): Alineado con objetivos mayores</li>
+<li><strong>T</strong>ime-bound (Con plazo): Deadline definido</li>
+</ul>
+<p><strong>Ejemplo:</strong></p>
+<ul>
+<li>❌ Vago: "Mejorar performance"</li>
+<li>✅ SMART: "Reducir p95 latency de 800ms a 300ms en APIs críticas para fin de Q2"</li>
+</ul>
+<hr />
+<h2 id="goal-pyramid">📊 Goal Pyramid</h2>
+<p><strong>Qué:</strong> Estructura jerárquica de objetivos desde visión hasta hábitos diarios.</p>
+<p><strong>Por qué:</strong> Conectar visión long-term con acciones daily.</p>
+<p><strong>Niveles:</strong></p>
+<div class="highlight"><pre><span></span><code>        [Goal]
+     Big Goal / BHAG
+          ↓
+   [Intermediate Goals]
+     Quarterly OKRs
+          ↓
+   [Short-term Goals]
+     Sprint goals
+          ↓
+    [Sub-tasks]
+   Daily habits/tasks
+</code></pre></div>
+<p><strong>Ejemplo:</strong></p>
+<ul>
+<li><strong>BHAG:</strong> Ser el CRM #1 para startups tech en 5 años</li>
+<li><strong>Intermediate:</strong> 100k usuarios activos en 18 meses</li>
+<li><strong>Short-term:</strong> Lanzar onboarding simplificado este quarter</li>
+<li><strong>Daily:</strong> Hacer 3 user interviews/semana</li>
+</ul>
+<hr />
+<h2 id="bhag-big-hairy-audacious-goal">🎯 BHAG (Big Hairy Audacious Goal)</h2>
+<p><strong>Qué:</strong> Objetivo grande, descabellado y audaz (10-30 años).</p>
+<p><strong>Por qué:</strong> Inspira, motiva, da dirección long-term.</p>
+<p><strong>Cuándo:</strong> Definir visión de compañía, norte estratégico.</p>
+<p><strong>Características:</strong></p>
+<ul>
+<li>Claro y convincente</li>
+<li>Ambicioso (50-70% probabilidad)</li>
+<li>Timeframe: 10-30 años</li>
+<li>Tangible, no aspiracional vago</li>
+</ul>
+<p><strong>Ejemplos reales:</strong></p>
+<ul>
+<li>Google (1990s): "Organizar la información del mundo"</li>
+<li>SpaceX: "Hacer la humanidad multi-planetaria"</li>
+<li>Amazon (1990s): "Ser la tienda más customer-centric"</li>
+</ul>
+<hr />
+<h2 id="scqa-framework">📋 SCQA Framework</h2>
+<p><strong>Qué:</strong> Estructura narrativa para presentar problemas/soluciones: Situation, Complication, Question, Answer.</p>
+<p><strong>Por qué:</strong> Comunicación clara con stakeholders, alineación rápida.</p>
+<p><strong>Cuándo:</strong> PRDs, presentaciones a liderazgo, pitches.</p>
+<p><strong>Estructura:</strong></p>
+<ol>
+<li><strong>Situation:</strong> Contexto actual (hechos, sin juicio)</li>
+<li><strong>Complication:</strong> Problema, tensión, oportunidad</li>
+<li><strong>Question:</strong> Pregunta clave a responder</li>
+<li><strong>Answer:</strong> Solución propuesta</li>
+</ol>
+<p><strong>Ejemplo:</strong></p>
+<ul>
+<li><strong>S:</strong> Tenemos 50k usuarios pero NPS es 25 (bajo)</li>
+<li><strong>C:</strong> Onboarding actual tarda 10 pasos, 60% abandonan</li>
+<li><strong>Q:</strong> ¿Cómo reducir fricción en onboarding?</li>
+<li><strong>A:</strong> Simplificar a 3 pasos + wizard guiado</li>
+</ul>
+<hr />
+<h2 id="circles-method">🔍 CIRCLES Method</h2>
+<p><strong>Qué:</strong> Framework para product design interviews/features: Comprehend, Identify, Report, Cut, List, Evaluate, Summarize.</p>
+<p><strong>Por qué:</strong> Estructura para diseñar productos/features sistemáticamente.</p>
+<p><strong>Cuándo:</strong> Discovery, design de features, entrevistas PM.</p>
+<p><strong>Pasos:</strong></p>
+<ol>
+<li><strong>Comprehend:</strong> Entender situación (What? Why? Who? How?)</li>
+<li><strong>Identify:</strong> Identificar el customer específico</li>
+<li><strong>Report:</strong> Reportar necesidades del customer</li>
+<li><strong>Cut:</strong> Priorizar (through trade-offs)</li>
+<li><strong>List:</strong> Listar soluciones posibles</li>
+<li><strong>Evaluate:</strong> Evaluar trade-offs de cada solución</li>
+<li><strong>Summarize:</strong> Resumir recomendación</li>
+</ol>
+<p><strong>Ejemplo - Diseñar feature de notificaciones:</strong></p>
+<ol>
+<li><strong>Comprehend:</strong> Sistema actual sin notificaciones, usuarios piden updates</li>
+<li><strong>Identify:</strong> Power users que revisan app 5+ veces/día</li>
+<li><strong>Report:</strong> Quieren saber de updates sin revisar manualmente</li>
+<li><strong>Cut:</strong> Priorizar notificaciones críticas (no todo)</li>
+<li><strong>List:</strong> Push, email, in-app, SMS</li>
+<li><strong>Evaluate:</strong> Push = mejor engagement, email = fallback</li>
+<li><strong>Summarize:</strong> Implementar push con opt-in, email como backup</li>
+</ol>
+<hr />
+<h2 id="lean-canvas">📊 Lean Canvas</h2>
+<p><strong>Qué:</strong> Adaptación de Business Model Canvas para startups/productos.</p>
+<p><strong>Por qué:</strong> Capturar modelo de negocio en 1 página, iterable.</p>
+<p><strong>Cuándo:</strong> Validar idea, pivots, comunicar a inversionistas.</p>
+<p><strong>9 Bloques:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Problema</strong>; Top 3 problemas</td>
+<td style="text-align: left;"><strong>Solución</strong>; Top 3 features</td>
+<td style="text-align: left;"><strong>Propuesta de Valor Única</strong>; Mensaje claro y convincente</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ventaja Especial</strong>; No se puede copiar fácil</td>
+<td style="text-align: left;"><strong>Segmento de Clientes</strong>; Target users</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Métricas Clave</strong>; KPIs críticos</td>
+<td style="text-align: left;"><strong>Canales</strong>; Path to customers</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Estructura de Costes</strong>; Fixed + variable costs</td>
+<td style="text-align: left;"><strong>Flujo de Ingresos</strong>; Revenue streams</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo - SaaS para equipos remotos:</strong></p>
+<ul>
+<li><strong>Problema:</strong> Comunicación async ineficiente, context switching</li>
+<li><strong>Solución:</strong> Workspace unificado, async-first, deep work</li>
+<li><strong>Propuesta:</strong> "Slack para deep work"</li>
+<li><strong>Ventaja:</strong> AI que resume threads automáticamente</li>
+<li><strong>Clientes:</strong> Equipos remotos 10-50 personas</li>
+<li><strong>Métricas:</strong> DAU/MAU, messages/user, retention D30</li>
+<li><strong>Canales:</strong> Product Hunt, content marketing, referrals</li>
+<li><strong>Costes:</strong> Infra cloud, salarios, marketing</li>
+<li><strong>Ingresos:</strong> SaaS $15/user/mes</li>
+</ul>
+<hr />
+<h2 id="mapa-de-empatia">🧠 Mapa de Empatía</h2>
+<p><strong>Qué:</strong> Herramienta visual para entender profundamente al usuario.</p>
+<p><strong>Por qué:</strong> Diseñar productos que resuenan con necesidades reales.</p>
+<p><strong>Cuándo:</strong> Discovery, crear personas, validar assumptions.</p>
+<p><strong>6 Cuadrantes:</strong></p>
+<div class="highlight"><pre><span></span><code>        [Usuario: Laura, Lead Developer]
+
+    ┌──────────────────┬──────────────────┐
+    │   QUÉ PIENSA     │    QUÉ OYE       │
+    │   Y SIENTE       │                  │
+    │ &quot;Necesito más    │ Manager: &quot;ship   │
+    │  tiempo focus&quot;   │  faster&quot;         │
+    │ &quot;Impostor syn&quot;   │ Peers: &quot;burnt    │
+    │                  │  out&quot;            │
+    ├──────────────────┼──────────────────┤
+    │    QUÉ VE        │  QUÉ DICE Y HACE │
+    │                  │                  │
+    │ Slack con 50     │ &quot;Sí puedo hacer  │
+    │ notificaciones   │  eso&quot; (overcom)  │
+    │ Jira con 20      │ Trabaja hasta    │
+    │ tickets          │ las 10pm         │
+    ├──────────────────┴──────────────────┤
+    │         ESFUERZOS (Pains)            │
+    │ • Interrupciones constantes          │
+    │ • Reuniones innecesarias             │
+    │ • Expectations poco claras           │
+    │ • Legacy code sin docs               │
+    ├──────────────────────────────────────┤
+    │        RESULTADOS (Gains)            │
+    │ • Completar feature de impacto       │
+    │ • Aprender tecnología nueva          │
+    │ • Reconocimiento del equipo          │
+    │ • Work-life balance                  │
+    └──────────────────────────────────────┘
+</code></pre></div>
+<p><strong>Cómo usarlo:</strong></p>
+<ol>
+<li>Definir usuario específico (persona)</li>
+<li>Llenar cada cuadrante con research (entrevistas, observación)</li>
+<li>Identificar contradicciones (dice vs hace)</li>
+<li>Diseñar soluciones que alivien pains y maximicen gains</li>
+</ol>
+<hr />
+<h2 id="product-management">🎯 Product Management</h2>
+<p><strong>Qué:</strong> Disciplina que conecta negocio, tecnología y UX para crear productos exitosos.</p>
+<p><strong>Por qué:</strong> Productos sin PM = features aleatorias sin estrategia. PM asegura value delivery.</p>
+<p><strong>Quién:</strong> Product Managers, Product Owners, founders.</p>
+<p><strong>Cuándo:</strong> Desde ideación hasta sunset del producto.</p>
+<p><strong>Esfuerzo:</strong> PM típicamente gestiona $1M-$10M+ en inversión anual de desarrollo.</p>
+<hr />
+<h2 id="jtbd-jobs-to-be-done">💡 JTBD (Jobs To Be Done)</h2>
+<p><strong>Qué:</strong> Framework que dice que clientes "contratan" productos para hacer un "trabajo".</p>
+<p><strong>Por qué:</strong> Entender el trabajo real (no features) que cliente necesita.</p>
+<p><strong>Cuándo:</strong> Discovery, definir producto, entender competencia.</p>
+<p><strong>Formato:</strong> "Cuando [situación], quiero [motivación], para que [outcome esperado]"</p>
+<p><strong>Ejemplo:</strong></p>
+<ul>
+<li>❌ "Quiero taladro de 1/4 pulgada"</li>
+<li>✅ "Cuando quiero colgar un cuadro, necesito hacer un agujero, para que el cuadro quede en la pared"</li>
+</ul>
+<p><strong>Insights:</strong></p>
+<ul>
+<li>El "trabajo" es colgar cuadro, no el taladro</li>
+<li>Competidores: cinta adhesiva, clavos sin agujero, servicios de instalación</li>
+</ul>
+<p><strong>Aplicación:</strong></p>
+<ol>
+<li>Identificar el Job principal</li>
+<li>Entender contexto (cuándo, dónde)</li>
+<li>Identificar pain points del job actual</li>
+<li>Diseñar solución que haga el job mejor</li>
+</ol>
+<p><strong>Ejemplo real - Milkshake (Clayton Christensen):</strong></p>
+<ul>
+<li><strong>Job:</strong> Hacer commute menos aburrido y llenar estómago hasta almuerzo</li>
+<li><strong>"Competidores":</strong> Bagels (dejan manos sucias), bananas (no duran), café (termina rápido)</li>
+<li><strong>Solución:</strong> Milkshake espeso que dura 20min conduciendo</li>
+</ul>
+<hr />
+<h2 id="user-story-mapping">🗺️ User Story Mapping</h2>
+<p><strong>Qué:</strong> Técnica visual para planear releases organizando user stories en mapa 2D.</p>
+<p><strong>Por qué:</strong> Vista holística del journey del usuario, priorización colaborativa.</p>
+<p><strong>Cuándo:</strong> Planning de MVP, roadmap, sprint planning.</p>
+<p><strong>Ejes:</strong></p>
+<ul>
+<li><strong>Horizontal:</strong> Journey del usuario (izq → der)</li>
+<li><strong>Vertical:</strong> Prioridad (arriba → abajo)</li>
+</ul>
+<p><strong>Estructura:</strong></p>
+<div class="highlight"><pre><span></span><code>[Activities] →  Login    →  Browse  →  Purchase  →  Track
+                  |           |          |           |
+[Tasks]      Autenticar   Buscar     Pagar      Ver status
+                  |           |          |           |
+[Stories]    Crear cuenta  Filtrar   Tarjeta   Email notif
+             Social login  Ordenar   PayPal    Push notif
+             2FA           Favoritos Crypto    Tracking map
+</code></pre></div>
+<p><strong>Releases:</strong></p>
+<ul>
+<li><strong>MVP (línea 1):</strong> Login básico, búsqueda simple, pago tarjeta, email</li>
+<li><strong>V2 (línea 2):</strong> Social login, filtros, PayPal, push</li>
+<li><strong>V3 (línea 3):</strong> 2FA, favoritos, crypto, tracking map</li>
+</ul>
+<p><strong>Herramientas:</strong> <a href="https://miro.com/">Miro</a>, <a href="https://www.mural.co/">Mural</a>, post-its físicos.</p>
+<hr />
+<h2 id="okrs-objectives-key-results">🎯 OKRs (Objectives &amp; Key Results)</h2>
+<p><strong>Qué:</strong> Framework de goal-setting usado por Google, LinkedIn, Twitter.</p>
+<p><strong>Por qué:</strong> Alinear equipo, medir progreso, foco en outcomes no outputs.</p>
+<p><strong>Cuándo:</strong> Planning trimestral, anual.</p>
+<p><strong>Estructura:</strong></p>
+<ul>
+<li><strong>Objective:</strong> Qué queremos lograr (cualitativo, inspiracional)</li>
+<li><strong>Key Results:</strong> Cómo medimos éxito (cuantitativo, 2-5 por objetivo)</li>
+</ul>
+<p><strong>Características:</strong></p>
+<ul>
+<li>Ambiciosos (70% logro = éxito)</li>
+<li>Temporales (típicamente trimestre)</li>
+<li>Transparentes (públicos en org)</li>
+</ul>
+<p><strong>Ejemplo - Startup SaaS:</strong></p>
+<p><strong>Objective:</strong> Convertirnos en la herramienta #1 para equipos remotos</p>
+<p><strong>Key Results:</strong></p>
+<ol>
+<li>Crecer usuarios activos mensuales de 10k a 50k</li>
+<li>Aumentar NPS de 30 a 50</li>
+<li>Lograr 80% de equipos usen feature colaborativa</li>
+<li>Reducir churn de 10% a 5%</li>
+</ol>
+<p><strong>Diferencia con KPIs:</strong> OKRs cambian cada quarter, KPIs son permanentes.</p>
+<hr />
+<h2 id="north-star-metric">⭐ North Star Metric</h2>
+<p><strong>Qué:</strong> LA métrica que mejor predice éxito long-term del producto.</p>
+<p><strong>Por qué:</strong> Foco singular, alinea todos los equipos.</p>
+<p><strong>Cuándo:</strong> Definir estrategia producto, medir product-market fit.</p>
+<p><strong>Criterios buena North Star:</strong></p>
+<ul>
+<li>Refleja value entregado al cliente</li>
+<li>Mide progreso hacia visión</li>
+<li>Leading indicator (predice revenue futuro)</li>
+<li>Accionable por equipo</li>
+</ul>
+<p><strong>Ejemplos:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Producto</th>
+<th style="text-align: left;">North Star</th>
+<th style="text-align: left;">Por qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Airbnb</strong></td>
+<td style="text-align: left;">Noches reservadas</td>
+<td style="text-align: left;">Refleja value para host y guest</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Spotify</strong></td>
+<td style="text-align: left;">Tiempo escuchando</td>
+<td style="text-align: left;">Engagement = retención = suscripciones</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Slack</strong></td>
+<td style="text-align: left;">Mensajes enviados</td>
+<td style="text-align: left;">Core value = comunicación</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Medium</strong></td>
+<td style="text-align: left;">Tiempo leyendo</td>
+<td style="text-align: left;">Value = contenido de calidad consumido</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Uber</strong></td>
+<td style="text-align: left;">Viajes completados</td>
+<td style="text-align: left;">Core transaction</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Supporting Metrics:</strong> Métricas que influencian la North Star</p>
+<ul>
+<li>Para "Noches reservadas": Listings activos, tasa conversión búsqueda, reviews positivas</li>
+</ul>
+<hr />
+<h2 id="product-market-fit">📊 Product-Market Fit</h2>
+<p><strong>Qué:</strong> Grado en que un producto satisface demanda de mercado.</p>
+<p><strong>Por qué:</strong> Sin PMF, scaling = desperdicio. Con PMF, crecer es más fácil.</p>
+<p><strong>Cuándo:</strong> Validar antes de escalar marketing/ventas.</p>
+<p><strong>Cómo medir:</strong></p>
+<h3 id="1-sean-ellis-test">1. Sean Ellis Test</h3>
+<p>Pregunta a usuarios: "¿Qué tan decepcionado estarías si ya no pudieras usar este producto?"</p>
+<ul>
+<li><strong>&gt;40% responden "muy decepcionado"</strong> → PMF ✅</li>
+<li>&lt;40% → seguir iterando</li>
+</ul>
+<h3 id="2-retention-cohorts">2. Retention Cohorts</h3>
+<ul>
+<li>Gráfico de retención por cohorte</li>
+<li>Si curva se aplana (no llega a 0) → PMF</li>
+<li>Si sigue bajendo → leaky bucket, no PMF</li>
+</ul>
+<h3 id="3-organic-growth">3. Organic Growth</h3>
+<ul>
+<li>% usuarios que vienen por referral/word-of-mouth</li>
+<li>
+<blockquote>
+<p>40% → señal fuerte de PMF</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="4-sales-velocity">4. Sales Velocity</h3>
+<ul>
+<li>Si cierras deals rápido sin convencer mucho → PMF</li>
+<li>Si cada deal requiere custom pitch → no PMF</li>
+</ul>
+<p><strong>Pre-PMF:</strong> Focus en learning y iteración rápida<br />
+<strong>Post-PMF:</strong> Focus en scaling y optimización</p>
+<hr />
+<h2 id="build-measure-learn">🔄 Build-Measure-Learn</h2>
+<p><strong>Qué:</strong> Ciclo de Lean Startup para validar hipótesis rápidamente.</p>
+<p><strong>Por qué:</strong> Reducir desperdicio, aprender rápido, pivotar si necesario.</p>
+<p><strong>Cuándo:</strong> Incertidumbre alta, nuevos productos/features.</p>
+<p><strong>Ciclo:</strong></p>
+<div class="highlight"><pre><span></span><code>1. Build (MVP)
+   ↓
+2. Measure (Datos)
+   ↓
+3. Learn (Insights)
+   ↓
+4. Pivot or Persevere
+   ↓
+(Repeat)
+</code></pre></div>
+<p><strong>Ejemplo:</strong></p>
+<ul>
+<li><strong>Hipótesis:</strong> "Usuarios pagarían por export a PDF"</li>
+<li><strong>Build:</strong> Botón "Export PDF" que manda email pidiendo upgrade</li>
+<li><strong>Measure:</strong> 200 clicks en 1 semana, 30 respondieron email</li>
+<li><strong>Learn:</strong> 15% interesados → vale la pena construir</li>
+<li><strong>Persevere:</strong> Construir feature real</li>
+</ul>
+<p><strong>Tipo de MVPs:</strong></p>
+<ul>
+<li>Landing page con signup</li>
+<li>Wizard of Oz (manual behind scenes)</li>
+<li>Concierge (servicio personalizado)</li>
+<li>Prototype (Figma clickeable)</li>
+</ul>
+<hr />
+<h2 id="priorizacion">📋 Priorización</h2>
+<h3 id="rice-framework">RICE Framework</h3>
+<p><strong>Qué:</strong> Modelo para priorizar features: Reach × Impact × Confidence / Effort</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Factor</th>
+<th style="text-align: left;">Qué</th>
+<th style="text-align: left;">Escala</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Reach</strong></td>
+<td style="text-align: left;">¿Cuántos usuarios afecta?</td>
+<td style="text-align: left;">Usuarios/trimestre</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Impact</strong></td>
+<td style="text-align: left;">¿Qué tanto ayuda?</td>
+<td style="text-align: left;">3=Massive, 2=High, 1=Medium, 0.5=Low, 0.25=Minimal</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Confidence</strong></td>
+<td style="text-align: left;">¿Qué tan seguros?</td>
+<td style="text-align: left;">100%=High data, 80%=Medium, 50%=Low</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Effort</strong></td>
+<td style="text-align: left;">¿Cuánto trabajo?</td>
+<td style="text-align: left;">Person-months</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fórmula:</strong> <code>Score = (Reach × Impact × Confidence) / Effort</code></p>
+<p><strong>Ejemplo:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Reach</th>
+<th style="text-align: left;">Impact</th>
+<th style="text-align: left;">Confidence</th>
+<th style="text-align: left;">Effort</th>
+<th style="text-align: left;">Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Dark mode</td>
+<td style="text-align: left;">10k</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">80%</td>
+<td style="text-align: left;">0.5</td>
+<td style="text-align: left;">16</td>
+</tr>
+<tr>
+<td style="text-align: left;">AI suggestions</td>
+<td style="text-align: left;">50k</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">50%</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">18.75 ⭐</td>
+</tr>
+<tr>
+<td style="text-align: left;">Export PDF</td>
+<td style="text-align: left;">5k</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">100%</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">10</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Resultado:</strong> Priorizar AI suggestions.</p>
+<p><strong>⚠️ Sesgos Cognitivos a Evitar:</strong></p>
+<ul>
+<li>
+<p><strong><a href="../07-sesgos-falacias/#sesgos-de-decision-y-juicio">Planning Fallacy</a></strong>: Tendencia a subestimar el tiempo necesario para completar tareas. Al estimar "Effort" en RICE, considera agregar un buffer del 30-50%. <strong>Mitigación</strong>: Usar estimaciones de 3 puntos (optimista, realista, pesimista) y revisar estimaciones históricas.</p>
+</li>
+<li>
+<p><strong><a href="../07-sesgos-falacias/#sesgos-de-decision-y-juicio">Sunk Cost Fallacy</a></strong>: Continuar invirtiendo en algo porque ya invertiste mucho. No dejes que el trabajo previo influya en la priorización actual. <strong>Mitigación</strong>: Evaluar cada feature como si fuera nueva, ignorando el esfuerzo ya invertido.</p>
+</li>
+</ul>
+<h3 id="value-vs-effort-matrix">Value vs Effort Matrix</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>High Value</strong></th>
+<th style="text-align: left;"><strong>Low Value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Low Effort</strong></td>
+<td style="text-align: left;">🚀 <strong>Quick Wins</strong> - Hacer primero</td>
+<td style="text-align: left;">💤 <strong>Fill-ins</strong> - Cuando hay tiempo</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>High Effort</strong></td>
+<td style="text-align: left;">🎯 <strong>Big Bets</strong> - Planear bien</td>
+<td style="text-align: left;">❌ <strong>Money Pit</strong> - Evitar</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="product-requirements">📝 Product Requirements</h2>
+<h3 id="prd-product-requirements-document">PRD (Product Requirements Document)</h3>
+<p><strong>Qué:</strong> Documento que define qué construir y por qué.</p>
+<p><strong>Cuándo:</strong> Antes de iniciar desarrollo de features grandes.</p>
+<p><strong>Secciones:</strong></p>
+<ol>
+<li><strong>Resumen ejecutivo:</strong> One-pager</li>
+<li><strong>Problema:</strong> JTBD, pain points, quotes usuarios</li>
+<li><strong>Objetivos:</strong> OKRs, success metrics</li>
+<li><strong>Usuarios:</strong> Personas afectadas</li>
+<li><strong>Solución propuesta:</strong> Features, flows, mocks</li>
+<li><strong>Scope:</strong> In/Out, MVPs fases</li>
+<li><strong>Dependencias:</strong> APIs, teams, integraciones</li>
+<li><strong>Riesgos:</strong> Technical, market, regulatory</li>
+<li><strong>Timeline:</strong> Estimaciones, hitos</li>
+</ol>
+<p><strong>Tip:</strong> Usar template, iterar con stakeholders.</p>
+<hr />
+<h2 id="discovery-techniques">🔍 Discovery Techniques</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Técnica</th>
+<th style="text-align: left;">Qué</th>
+<th style="text-align: left;">Cuándo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>User Interviews</strong></td>
+<td style="text-align: left;">Conversaciones 1:1</td>
+<td style="text-align: left;">Entender problemas profundos</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Surveys</strong></td>
+<td style="text-align: left;">Cuestionarios masivos</td>
+<td style="text-align: left;">Validar cuantitativamente</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Usability Testing</strong></td>
+<td style="text-align: left;">Observar usuarios usando producto</td>
+<td style="text-align: left;">Identificar fricciones</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Analytics</strong></td>
+<td style="text-align: left;">Behavioral data</td>
+<td style="text-align: left;">Encontrar patrones uso real</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A/B Testing</strong></td>
+<td style="text-align: left;">Experimentos controlados</td>
+<td style="text-align: left;">Validar cambios</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Competitor Analysis</strong></td>
+<td style="text-align: left;">Estudiar competencia</td>
+<td style="text-align: left;">Identificar gaps, best practices</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="anti-patrones">🚫 Anti-patrones</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Anti-patrón</th>
+<th style="text-align: left;">Problema</th>
+<th style="text-align: left;">Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>HiPPO decisions</strong></td>
+<td style="text-align: left;">Highest Paid Person's Opinion</td>
+<td style="text-align: left;">User research, data-driven</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Feature factory</strong></td>
+<td style="text-align: left;">Construir sin strategy</td>
+<td style="text-align: left;">OKRs, JTBD, medir outcomes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Build it they will come</strong></td>
+<td style="text-align: left;">No validar demanda</td>
+<td style="text-align: left;">Discovery, MVPs, pre-sales</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>One size fits all</strong></td>
+<td style="text-align: left;">No segmentar</td>
+<td style="text-align: left;">Personas, ICP, priorizar</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Analysis paralysis</strong></td>
+<td style="text-align: left;">Investigar sin decidir</td>
+<td style="text-align: left;">Timeboxear, suficientemente bueno</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recursos">📚 Recursos</h2>
+<ul>
+<li><a href="https://www.svpg.com/books/inspired/">Inspired - Marty Cagan</a></li>
+<li><a href="http://theleanstartup.com/">The Lean Startup - Eric Ries</a></li>
+<li><a href="https://www.amazon.com/Crossing-Chasm-3rd-Disruptive-Mainstream/dp/0062292986">Crossing the Chasm - Geoffrey Moore</a></li>
+<li><a href="https://productschool.com/">Product School</a></li>
+</ul>
+<hr />
+<p><a href="../23-analisis-estrategico/">⬅️ Anterior: Análisis Estratégico</a> | <a href="#product-management">⬆️ Volver arriba</a> | <a href="../25-metricas-kpis/">➡️ Siguiente: Métricas y KPIs</a></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 de diciembre de 2025 17:14:49 UTC">18 de diciembre de 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="../assets/mkdocs_puml/interaction.js"></script>
+      
+    
+  </body>
+</html>
