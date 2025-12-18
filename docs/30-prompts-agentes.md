@@ -35,9 +35,9 @@
 ## 👔 The Gentleman - Agente Principal
 
 > [!TIP]
-> **Definición completa disponible**: [the-gentleman.md](./agents/the-gentleman.md)
+> **Definición completa disponible**: [the-gentleman.md](./agentes/the-gentleman.md)
 >
-> El archivo incluye toda la configuración en formato Claude Code para usar directamente en `.claude/agents/`
+> El archivo incluye toda la configuración en formato Claude Code para usar directamente en `.claude/agentes/`
 
 **Rol:** Senior Architect & Code Reviewer con 15+ años de experiencia
 
@@ -52,7 +52,7 @@
 - Lenguaje directo: Español Rioplatense + English sin filtros
 - Filosofía: Conceptos > Código, Fundamentos Sólidos, AI como herramienta
 
-Para ver el comportamiento completo, reglas de lenguaje, áreas de expertise detalladas y ejemplos de interacción, consultar [the-gentleman.md](./agents/the-gentleman.md).
+Para ver el comportamiento completo, reglas de lenguaje, áreas de expertise detalladas y ejemplos de interacción, consultar [the-gentleman.md](./agentes/the-gentleman.md).
 
 ---
 
@@ -90,7 +90,7 @@ Prompt del sistema y comportamiento del agente...
 
 **Cómo usar estos agentes:**
 
-1. Copiar el archivo del agente a `.claude/agents/` (proyecto) o `~/.claude/agents/` (usuario)
+1. Copiar el archivo del agente a `.claude/agentes/` (proyecto) o `~/.claude/agentes/` (usuario)
 2. Claude Code los detectará automáticamente
 3. Invocar explícitamente: "Usa el agente java-expert para revisar este código"
 4. O dejar que Claude los invoque automáticamente según el contexto
@@ -101,14 +101,14 @@ Prompt del sistema y comportamiento del agente...
 
 | Agent Name | Stack | Propósito | Definición |
 |:-----------|:------|:----------|:-----------|
-| **Java Expert** | Java 17+, Maven, Gradle, JUnit 5, Mockito | Diseño OOP, debugging, performance, best practices Java moderno | [java-expert.md](./agents/backend/java-expert.md) |
-| **Spring Expert** | Spring Boot 3.x, Spring Security, Spring Data, Actuator | Microservicios, seguridad OAuth2/JWT, reactive programming | [spring-expert.md](./agents/backend/spring-expert.md) |
-| **Python Expert** | Python 3.11+, pytest, black, mypy, ruff | Code review, patterns Pythonic, type hints, async/await | [python-expert.md](./agents/backend/python-expert.md) |
-| **FastAPI Expert** | FastAPI, Uvicorn, Pydantic v2, SQLAlchemy 2.0 | APIs rápidas, validación, async endpoints, dependency injection | [fastapi-expert.md](./agents/backend/fastapi-expert.md) |
-| **Django Expert** | Django 4.x+, DRF, Celery, Redis, pytest-django | Arquitectura monolítica, ORM avanzado, background tasks | [django-expert.md](./agents/backend/django-expert.md) |
-| **Node.js Expert** | Node.js 20+, npm/pnpm, ESM, streams, worker threads | Event loop, async patterns, streams, performance | [nodejs-expert.md](./agents/backend/nodejs-expert.md) |
-| **Express Expert** | Express 4.x, middleware, helmet, PM2, winston | APIs REST, middlewares, error handling, security | [express-expert.md](./agents/backend/express-expert.md) |
-| **NestJS Expert** | NestJS, TypeORM, Passport, Swagger, Jest | Arquitectura modular, DI, decorators, guards, interceptors | [nestjs-expert.md](./agents/backend/nestjs-expert.md) |
+| **Java Expert** | Java 17+, Maven, Gradle, JUnit 5, Mockito | Diseño OOP, debugging, performance, best practices Java moderno | [java-expert.md](./agentes/backend/java-expert.md) |
+| **Spring Expert** | Spring Boot 3.x, Spring Security, Spring Data, Actuator | Microservicios, seguridad OAuth2/JWT, reactive programming | [spring-expert.md](./agentes/backend/spring-expert.md) |
+| **Python Expert** | Python 3.11+, pytest, black, mypy, ruff | Code review, patterns Pythonic, type hints, async/await | [python-expert.md](./agentes/backend/python-expert.md) |
+| **FastAPI Expert** | FastAPI, Uvicorn, Pydantic v2, SQLAlchemy 2.0 | APIs rápidas, validación, async endpoints, dependency injection | [fastapi-expert.md](./agentes/backend/fastapi-expert.md) |
+| **Django Expert** | Django 4.x+, DRF, Celery, Redis, pytest-django | Arquitectura monolítica, ORM avanzado, background tasks | [django-expert.md](./agentes/backend/django-expert.md) |
+| **Node.js Expert** | Node.js 20+, npm/pnpm, ESM, streams, worker threads | Event loop, async patterns, streams, performance | [nodejs-expert.md](./agentes/backend/nodejs-expert.md) |
+| **Express Expert** | Express 4.x, middleware, helmet, PM2, winston | APIs REST, middlewares, error handling, security | [express-expert.md](./agentes/backend/express-expert.md) |
+| **NestJS Expert** | NestJS, TypeORM, Passport, Swagger, Jest | Arquitectura modular, DI, decorators, guards, interceptors | [nestjs-expert.md](./agentes/backend/nestjs-expert.md) |
 
 ---
 
@@ -116,12 +116,12 @@ Prompt del sistema y comportamiento del agente...
 
 | Agent Name | Stack | Propósito | Definición |
 |:-----------|:------|:----------|:-----------|
-| **TypeScript Expert** | TypeScript 5.x, ESLint, type-fest, zod | Tipado avanzado (generics, conditional types), migraciones JS→TS | [typescript-expert.md](./agents/frontend/typescript-expert.md) |
-| **React Expert** | React 18+, Hooks, Redux Toolkit, React Query, Vite | Component design, state management, performance optimization | [react-expert.md](./agents/frontend/react-expert.md) |
-| **Next.js Expert** | Next.js 14+, App Router, Server Components, Middleware | SSR, SSG, ISR, routing, performance, SEO | [nextjs-expert.md](./agents/frontend/nextjs-expert.md) |
-| **Angular Expert** | Angular 17+, Signals, RxJS, NgRx, Standalone Components | Arquitectura de apps, reactividad, state management, forms | [angular-expert.md](./agents/frontend/angular-expert.md) |
-| **Vue Expert** | Vue 3, Composition API, Pinia, Vite, Vitest | Reactivity system, composables, state management | [vue-expert.md](./agents/frontend/vue-expert.md) |
-| **CSS/Styling Expert** | CSS3, Sass, Tailwind CSS, CSS Modules, styled-components | Layouts (Flexbox, Grid), responsive design, animations | [css-styling-expert.md](./agents/frontend/css-styling-expert.md) |
+| **TypeScript Expert** | TypeScript 5.x, ESLint, type-fest, zod | Tipado avanzado (generics, conditional types), migraciones JS→TS | [typescript-expert.md](./agentes/frontend/typescript-expert.md) |
+| **React Expert** | React 18+, Hooks, Redux Toolkit, React Query, Vite | Component design, state management, performance optimization | [react-expert.md](./agentes/frontend/react-expert.md) |
+| **Next.js Expert** | Next.js 14+, App Router, Server Components, Middleware | SSR, SSG, ISR, routing, performance, SEO | [nextjs-expert.md](./agentes/frontend/nextjs-expert.md) |
+| **Angular Expert** | Angular 17+, Signals, RxJS, NgRx, Standalone Components | Arquitectura de apps, reactividad, state management, forms | [angular-expert.md](./agentes/frontend/angular-expert.md) |
+| **Vue Expert** | Vue 3, Composition API, Pinia, Vite, Vitest | Reactivity system, composables, state management | [vue-expert.md](./agentes/frontend/vue-expert.md) |
+| **CSS/Styling Expert** | CSS3, Sass, Tailwind CSS, CSS Modules, styled-components | Layouts (Flexbox, Grid), responsive design, animations | [css-styling-expert.md](./agentes/frontend/css-styling-expert.md) |
 
 ---
 
@@ -129,11 +129,11 @@ Prompt del sistema y comportamiento del agente...
 
 | Agent Name | Stack | Propósito | Definición |
 |:-----------|:------|:----------|:-----------|
-| **PostgreSQL Expert** | PostgreSQL 15+, pgAdmin, EXPLAIN ANALYZE, partitioning | Modelado, índices, query tuning, partitioning | [postgresql-expert.md](./agents/databases/postgresql-expert.md) |
-| **MSSQL Expert** | SQL Server 2022, T-SQL, SSMS, execution plans | Stored procedures, triggers, índices, performance tuning | [mssql-expert.md](./agents/databases/mssql-expert.md) |
-| **MongoDB Expert** | MongoDB 6.x+, Compass, aggregation framework, sharding | Modelado NoSQL, aggregation pipelines, sharding | [mongodb-expert.md](./agents/databases/mongodb-expert.md) |
-| **Redis Expert** | Redis 7.x, data structures, pub/sub, Lua scripting | Caching strategies, session storage, rate limiting | [redis-expert.md](./agents/databases/redis-expert.md) |
-| **SQLite Expert** | SQLite 3, migrations, WAL mode, FTS5 | Testing/local, migraciones, limitaciones de concurrencia | [sqlite-expert.md](./agents/databases/sqlite-expert.md) |
+| **PostgreSQL Expert** | PostgreSQL 15+, pgAdmin, EXPLAIN ANALYZE, partitioning | Modelado, índices, query tuning, partitioning | [postgresql-expert.md](./agentes/databases/postgresql-expert.md) |
+| **MSSQL Expert** | SQL Server 2022, T-SQL, SSMS, execution plans | Stored procedures, triggers, índices, performance tuning | [mssql-expert.md](./agentes/databases/mssql-expert.md) |
+| **MongoDB Expert** | MongoDB 6.x+, Compass, aggregation framework, sharding | Modelado NoSQL, aggregation pipelines, sharding | [mongodb-expert.md](./agentes/databases/mongodb-expert.md) |
+| **Redis Expert** | Redis 7.x, data structures, pub/sub, Lua scripting | Caching strategies, session storage, rate limiting | [redis-expert.md](./agentes/databases/redis-expert.md) |
+| **SQLite Expert** | SQLite 3, migrations, WAL mode, FTS5 | Testing/local, migraciones, limitaciones de concurrencia | [sqlite-expert.md](./agentes/databases/sqlite-expert.md) |
 
 ---
 
@@ -141,15 +141,15 @@ Prompt del sistema y comportamiento del agente...
 
 | Agent Name | Stack | Propósito | Definición |
 |:-----------|:------|:----------|:-----------|
-| **Software Architecture Expert** | C4 Model, UML, ADR, Mermaid, PlantUML | Decision records, trade-offs, patterns arquitectónicos | [software-architecture-expert.md](./agents/architecture-devops/software-architecture-expert.md) |
-| **Microservices Expert** | Docker, Kubernetes, gRPC, Kafka, Istio | Bounded contexts, comunicación, resiliencia, service mesh | [microservices-expert.md](./agents/architecture-devops/microservices-expert.md) |
-| **Event-Driven Expert** | Kafka, RabbitMQ, EventBridge, Debezium | Diseño de eventos, idempotencia, ordering, CQRS | [event-driven-expert.md](./agents/architecture-devops/event-driven-expert.md) |
-| **API Design Expert** | OpenAPI, AsyncAPI, REST, GraphQL, gRPC | Diseño de APIs, versionado, documentación, contratos | [api-design-expert.md](./agents/architecture-devops/api-design-expert.md) |
-| **CI/CD Expert** | GitHub Actions, GitLab CI, Jenkins, ArgoCD | Pipelines, gates, deployment strategies, rollback | [cicd-expert.md](./agents/architecture-devops/cicd-expert.md) |
-| **IaC Expert** | Terraform, Pulumi, CloudFormation, Ansible | Infraestructura reproducible, modularización, drift detection | [iac-expert.md](./agents/architecture-devops/iac-expert.md) |
-| **Observability Expert** | Prometheus, Grafana, ELK, Jaeger, OpenTelemetry | Instrumentación (metrics, logs, traces), alerting, SLOs | [observability-expert.md](./agents/architecture-devops/observability-expert.md) |
-| **Security Expert** | OWASP Top 10, SAST, DAST, Snyk, threat modeling | Security reviews, SAST/DAST, threat modeling (STRIDE) | [security-expert.md](./agents/architecture-devops/security-expert.md) |
-| **Kubernetes Expert** | Kubernetes, Helm, Kustomize, kubectl, k9s | Deployments, Services, Ingress, RBAC, autoscaling | [kubernetes-expert.md](./agents/architecture-devops/kubernetes-expert.md) |
+| **Software Architecture Expert** | C4 Model, UML, ADR, Mermaid, PlantUML | Decision records, trade-offs, patterns arquitectónicos | [software-architecture-expert.md](./agentes/architecture-devops/software-architecture-expert.md) |
+| **Microservices Expert** | Docker, Kubernetes, gRPC, Kafka, Istio | Bounded contexts, comunicación, resiliencia, service mesh | [microservices-expert.md](./agentes/architecture-devops/microservices-expert.md) |
+| **Event-Driven Expert** | Kafka, RabbitMQ, EventBridge, Debezium | Diseño de eventos, idempotencia, ordering, CQRS | [event-driven-expert.md](./agentes/architecture-devops/event-driven-expert.md) |
+| **API Design Expert** | OpenAPI, AsyncAPI, REST, GraphQL, gRPC | Diseño de APIs, versionado, documentación, contratos | [api-design-expert.md](./agentes/architecture-devops/api-design-expert.md) |
+| **CI/CD Expert** | GitHub Actions, GitLab CI, Jenkins, ArgoCD | Pipelines, gates, deployment strategies, rollback | [cicd-expert.md](./agentes/architecture-devops/cicd-expert.md) |
+| **IaC Expert** | Terraform, Pulumi, CloudFormation, Ansible | Infraestructura reproducible, modularización, drift detection | [iac-expert.md](./agentes/architecture-devops/iac-expert.md) |
+| **Observability Expert** | Prometheus, Grafana, ELK, Jaeger, OpenTelemetry | Instrumentación (metrics, logs, traces), alerting, SLOs | [observability-expert.md](./agentes/architecture-devops/observability-expert.md) |
+| **Security Expert** | OWASP Top 10, SAST, DAST, Snyk, threat modeling | Security reviews, SAST/DAST, threat modeling (STRIDE) | [security-expert.md](./agentes/architecture-devops/security-expert.md) |
+| **Kubernetes Expert** | Kubernetes, Helm, Kustomize, kubectl, k9s | Deployments, Services, Ingress, RBAC, autoscaling | [kubernetes-expert.md](./agentes/architecture-devops/kubernetes-expert.md) |
 
 ---
 
@@ -157,11 +157,11 @@ Prompt del sistema y comportamiento del agente...
 
 | Agent Name | Stack | Propósito | Definición |
 |:-----------|:------|:----------|:-----------|
-| **TDD Expert** | TDD workflow, JUnit, pytest, Jest, Vitest | Test-first development, red-green-refactor, anti-patterns | [tdd-expert.md](./agents/testing/tdd-expert.md) |
-| **BDD Expert** | Cucumber, Gherkin, SpecFlow, Behave | Criterios de aceptación, escenarios Given-When-Then | [bdd-expert.md](./agents/testing/bdd-expert.md) |
-| **Performance Testing Expert** | JMeter, k6, Locust, Gatling | Planes de carga (load, stress, spike), benchmarks | [performance-testing-expert.md](./agents/testing/performance-testing-expert.md) |
-| **E2E Testing Expert** | Playwright, Cypress, Selenium, Puppeteer | Automatización UI tests, page object model, flaky tests | [e2e-testing-expert.md](./agents/testing/e2e-testing-expert.md) |
-| **QA Automation Expert** | Selenium, Cypress, Playwright, test frameworks | Estrategia de automatización, test pyramid, mantenimiento | [qa-automation-expert.md](./agents/testing/qa-automation-expert.md) |
+| **TDD Expert** | TDD workflow, JUnit, pytest, Jest, Vitest | Test-first development, red-green-refactor, anti-patterns | [tdd-expert.md](./agentes/testing/tdd-expert.md) |
+| **BDD Expert** | Cucumber, Gherkin, SpecFlow, Behave | Criterios de aceptación, escenarios Given-When-Then | [bdd-expert.md](./agentes/testing/bdd-expert.md) |
+| **Performance Testing Expert** | JMeter, k6, Locust, Gatling | Planes de carga (load, stress, spike), benchmarks | [performance-testing-expert.md](./agentes/testing/performance-testing-expert.md) |
+| **E2E Testing Expert** | Playwright, Cypress, Selenium, Puppeteer | Automatización UI tests, page object model, flaky tests | [e2e-testing-expert.md](./agentes/testing/e2e-testing-expert.md) |
+| **QA Automation Expert** | Selenium, Cypress, Playwright, test frameworks | Estrategia de automatización, test pyramid, mantenimiento | [qa-automation-expert.md](./agentes/testing/qa-automation-expert.md) |
 
 ---
 
@@ -169,14 +169,14 @@ Prompt del sistema y comportamiento del agente...
 
 | Agent Name | Stack | Propósito | Definición |
 |:-----------|:------|:----------|:-----------|
-| **Data Science Expert** | pandas, NumPy, scikit-learn, Jupyter, MLflow | EDA, feature engineering, pipelines reproducibles | [data-science-expert.md](./agents/data-ml-finance/data-science-expert.md) |
-| **ML/DL Expert** | TensorFlow, PyTorch, Keras, Hugging Face | Model design, training, hyperparameter tuning, deployment | [ml-dl-expert.md](./agents/data-ml-finance/ml-dl-expert.md) |
-| **RL Expert** | OpenAI Gym, Stable Baselines3, Ray RLlib | Diseño de entornos, reward shaping, algoritmos (DQN, PPO) | [rl-expert.md](./agents/data-ml-finance/rl-expert.md) |
-| **NLP Expert** | Hugging Face, spaCy, NLTK, LangChain | Text processing, embeddings, fine-tuning LLMs, RAG | [nlp-expert.md](./agents/data-ml-finance/nlp-expert.md) |
-| **Computer Vision Expert** | OpenCV, TensorFlow/PyTorch, YOLO, Detectron2 | Object detection, segmentation, image classification | [computer-vision-expert.md](./agents/data-ml-finance/computer-vision-expert.md) |
-| **Quant Finance Expert** | NumPy, pandas, QuantLib, zipline, TA-Lib | Modelos financieros, pricing, risk metrics, backtesting | [quant-finance-expert.md](./agents/data-ml-finance/quant-finance-expert.md) |
-| **Trading Systems Expert** | FIX protocol, low-latency patterns, order management | Arquitectura de trading, simulación, order execution | [trading-systems-expert.md](./agents/data-ml-finance/trading-systems-expert.md) |
-| **Data Visualization Expert** | Matplotlib, Seaborn, Plotly, D3.js, Tableau | Diseño de gráficos, dashboards, storytelling visual | [data-visualization-expert.md](./agents/data-ml-finance/data-visualization-expert.md) |
+| **Data Science Expert** | pandas, NumPy, scikit-learn, Jupyter, MLflow | EDA, feature engineering, pipelines reproducibles | [data-science-expert.md](./agentes/data-ml-finance/data-science-expert.md) |
+| **ML/DL Expert** | TensorFlow, PyTorch, Keras, Hugging Face | Model design, training, hyperparameter tuning, deployment | [ml-dl-expert.md](./agentes/data-ml-finance/ml-dl-expert.md) |
+| **RL Expert** | OpenAI Gym, Stable Baselines3, Ray RLlib | Diseño de entornos, reward shaping, algoritmos (DQN, PPO) | [rl-expert.md](./agentes/data-ml-finance/rl-expert.md) |
+| **NLP Expert** | Hugging Face, spaCy, NLTK, LangChain | Text processing, embeddings, fine-tuning LLMs, RAG | [nlp-expert.md](./agentes/data-ml-finance/nlp-expert.md) |
+| **Computer Vision Expert** | OpenCV, TensorFlow/PyTorch, YOLO, Detectron2 | Object detection, segmentation, image classification | [computer-vision-expert.md](./agentes/data-ml-finance/computer-vision-expert.md) |
+| **Quant Finance Expert** | NumPy, pandas, QuantLib, zipline, TA-Lib | Modelos financieros, pricing, risk metrics, backtesting | [quant-finance-expert.md](./agentes/data-ml-finance/quant-finance-expert.md) |
+| **Trading Systems Expert** | FIX protocol, low-latency patterns, order management | Arquitectura de trading, simulación, order execution | [trading-systems-expert.md](./agentes/data-ml-finance/trading-systems-expert.md) |
+| **Data Visualization Expert** | Matplotlib, Seaborn, Plotly, D3.js, Tableau | Diseño de gráficos, dashboards, storytelling visual | [data-visualization-expert.md](./agentes/data-ml-finance/data-visualization-expert.md) |
 
 ---
 
@@ -184,10 +184,10 @@ Prompt del sistema y comportamiento del agente...
 
 | Agent Name | Stack | Propósito | Definición |
 |:-----------|:------|:----------|:-----------|
-| **Technical Writer Expert** | Markdown, MkDocs, Docusaurus, Sphinx, Vale | Redacción de manuales, API docs, tutorials, style guides | [technical-writer-expert.md](./agents/documentation/technical-writer-expert.md) |
-| **API Documentation Expert** | OpenAPI/Swagger, AsyncAPI, Redoc, Stoplight | Documentación de APIs, ejemplos, authentication | [api-documentation-expert.md](./agents/documentation/api-documentation-expert.md) |
-| **Content Creator Expert** | LinkedIn/Twitter formats, copywriting, Canva | Adaptar contenido técnico a posts, threads, visuales | [content-creator-expert.md](./agents/documentation/content-creator-expert.md) |
-| **Diagram Expert** | Mermaid, PlantUML, draw.io, Excalidraw, C4 | Diagramas de arquitectura, flujo, secuencia, clases | [diagram-expert.md](./agents/documentation/diagram-expert.md) |
+| **Technical Writer Expert** | Markdown, MkDocs, Docusaurus, Sphinx, Vale | Redacción de manuales, API docs, tutorials, style guides | [technical-writer-expert.md](./agentes/documentation/technical-writer-expert.md) |
+| **API Documentation Expert** | OpenAPI/Swagger, AsyncAPI, Redoc, Stoplight | Documentación de APIs, ejemplos, authentication | [api-documentation-expert.md](./agentes/documentation/api-documentation-expert.md) |
+| **Content Creator Expert** | LinkedIn/Twitter formats, copywriting, Canva | Adaptar contenido técnico a posts, threads, visuales | [content-creator-expert.md](./agentes/documentation/content-creator-expert.md) |
+| **Diagram Expert** | Mermaid, PlantUML, draw.io, Excalidraw, C4 | Diagramas de arquitectura, flujo, secuencia, clases | [diagram-expert.md](./agentes/documentation/diagram-expert.md) |
 
 ---
 
@@ -195,13 +195,13 @@ Prompt del sistema y comportamiento del agente...
 
 | Agent Name | Stack | Propósito | Definición |
 |:-----------|:------|:----------|:-----------|
-| **PM/PO Advisor** | Roadmaps, OKRs, user stories, RICE, MoSCoW | Definición de scope, priorización, acceptance criteria | [pm-po-advisor.md](./agents/business-roles/pm-po-advisor.md) |
-| **UX Research Expert** | User interviews, personas, usability testing, A/B testing | Diseñar tests de usabilidad, interpretar resultados | [ux-research-expert.md](./agents/business-roles/ux-research-expert.md) |
-| **UX/UI Designer** | Figma, Sketch, design systems, prototyping, WCAG | Wireframes, mockups, prototypes, design systems | [ux-ui-designer.md](./agents/business-roles/ux-ui-designer.md) |
-| **Scrum Master / Agile Coach** | Scrum, Kanban, retrospectives, sprint planning | Facilitar ceremonias, remover impedimentos, coaching | [scrum-master-agile-coach.md](./agents/business-roles/scrum-master-agile-coach.md) |
-| **Tech Lead / EM Advisor** | 1-on-1s, performance reviews, hiring, roadmaps | Gestión de equipos, mentoring, technical strategy | [tech-lead-em-advisor.md](./agents/business-roles/tech-lead-em-advisor.md) |
-| **SRE Advisor** | SLIs/SLOs/SLAs, incident response, on-call, runbooks | Definir SLOs, runbooks, incident management | [sre-advisor.md](./agents/business-roles/sre-advisor.md) |
-| **DevRel / Developer Advocate** | Community building, conference talks, blog posts | Crear contenido técnico, engagement con comunidad | [devrel-developer-advocate.md](./agents/business-roles/devrel-developer-advocate.md) |
+| **PM/PO Advisor** | Roadmaps, OKRs, user stories, RICE, MoSCoW | Definición de scope, priorización, acceptance criteria | [pm-po-advisor.md](./agentes/business-roles/pm-po-advisor.md) |
+| **UX Research Expert** | User interviews, personas, usability testing, A/B testing | Diseñar tests de usabilidad, interpretar resultados | [ux-research-expert.md](./agentes/business-roles/ux-research-expert.md) |
+| **UX/UI Designer** | Figma, Sketch, design systems, prototyping, WCAG | Wireframes, mockups, prototypes, design systems | [ux-ui-designer.md](./agentes/business-roles/ux-ui-designer.md) |
+| **Scrum Master / Agile Coach** | Scrum, Kanban, retrospectives, sprint planning | Facilitar ceremonias, remover impedimentos, coaching | [scrum-master-agile-coach.md](./agentes/business-roles/scrum-master-agile-coach.md) |
+| **Tech Lead / EM Advisor** | 1-on-1s, performance reviews, hiring, roadmaps | Gestión de equipos, mentoring, technical strategy | [tech-lead-em-advisor.md](./agentes/business-roles/tech-lead-em-advisor.md) |
+| **SRE Advisor** | SLIs/SLOs/SLAs, incident response, on-call, runbooks | Definir SLOs, runbooks, incident management | [sre-advisor.md](./agentes/business-roles/sre-advisor.md) |
+| **DevRel / Developer Advocate** | Community building, conference talks, blog posts | Crear contenido técnico, engagement con comunidad | [devrel-developer-advocate.md](./agentes/business-roles/devrel-developer-advocate.md) |
 
 ---
 
@@ -209,9 +209,9 @@ Prompt del sistema y comportamiento del agente...
 
 | Agent Name | Stack | Propósito | Definición |
 |:-----------|:------|:----------|:-----------|
-| **Debugging & Root Cause Expert** | Tracing (Jaeger), profiling (pprof, py-spy), flamegraphs | Diagnóstico de incidentes, RCA, performance profiling | [debugging-root-cause-expert.md](./agents/debugging/debugging-root-cause-expert.md) |
-| **Migration Specialist** | DB migration tools, feature flags, canary deploys | Planes de migración, rollback strategies, zero-downtime | [migration-specialist.md](./agents/debugging/migration-specialist.md) |
-| **Code Review Expert** | GitHub/GitLab PR reviews, SonarQube, ESLint | Code review best practices, feedback efectivo | [code-review-expert.md](./agents/debugging/code-review-expert.md) |
+| **Debugging & Root Cause Expert** | Tracing (Jaeger), profiling (pprof, py-spy), flamegraphs | Diagnóstico de incidentes, RCA, performance profiling | [debugging-root-cause-expert.md](./agentes/debugging/debugging-root-cause-expert.md) |
+| **Migration Specialist** | DB migration tools, feature flags, canary deploys | Planes de migración, rollback strategies, zero-downtime | [migration-specialist.md](./agentes/debugging/migration-specialist.md) |
+| **Code Review Expert** | GitHub/GitLab PR reviews, SonarQube, ESLint | Code review best practices, feedback efectivo | [code-review-expert.md](./agentes/debugging/code-review-expert.md) |
 
 ---
 
@@ -219,8 +219,8 @@ Prompt del sistema y comportamiento del agente...
 
 | Agent Name | Stack | Propósito | Definición |
 |:-----------|:------|:----------|:-----------|
-| **Compliance & Governance Expert** | GDPR, SOC2, ISO 27001, audit trails, policies | Requisitos regulatorios, auditorías, controles de acceso | [compliance-governance-expert.md](./agents/compliance/compliance-governance-expert.md) |
-| **Accessibility Expert** | WCAG 2.1, ARIA, axe DevTools, screen readers | Auditorías de accesibilidad, remediación, WCAG compliance | [accessibility-expert.md](./agents/compliance/accessibility-expert.md) |
+| **Compliance & Governance Expert** | GDPR, SOC2, ISO 27001, audit trails, policies | Requisitos regulatorios, auditorías, controles de acceso | [compliance-governance-expert.md](./agentes/compliance/compliance-governance-expert.md) |
+| **Accessibility Expert** | WCAG 2.1, ARIA, axe DevTools, screen readers | Auditorías de accesibilidad, remediación, WCAG compliance | [accessibility-expert.md](./agentes/compliance/accessibility-expert.md) |
 
 ---
 

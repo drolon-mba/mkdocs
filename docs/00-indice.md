@@ -179,10 +179,10 @@
 
 | Tipo de Reporte | Template | Ejemplo |
 |:----------------|:---------|:--------|
-| **Bug Report** | [📄 Ver Template](./reports/templates/bug-report-template.md) | [🐛 Ver Ejemplo](./reports/examples/bug-report-example.md) |
-| **Feature Request** | [📄 Ver Template](./reports/templates/feature-request-template.md) | [💡 Ver Ejemplo](./reports/examples/feature-request-example.md) |
-| **Post-Mortem** | [📄 Ver Template](./reports/templates/post-mortem-template.md) | [💀 Ver Ejemplo](./reports/examples/post-mortem-example.md) |
-| **RFC** | [📄 Ver Template](./reports/templates/rfc-template.md) | [📝 Ver Ejemplo](./reports/examples/rfc-example.md) |
+| **Bug Report** | [📄 Ver Template](./reportes/templates/bug-report-template.md) | [🐛 Ver Ejemplo](./reportes/examples/bug-report-example.md) |
+| **Feature Request** | [📄 Ver Template](./reportes/templates/feature-request-template.md) | [💡 Ver Ejemplo](./reportes/examples/feature-request-example.md) |
+| **Post-Mortem** | [📄 Ver Template](./reportes/templates/post-mortem-template.md) | [💀 Ver Ejemplo](./reportes/examples/post-mortem-example.md) |
+| **RFC** | [📄 Ver Template](./reportes/templates/rfc-template.md) | [📝 Ver Ejemplo](./reportes/examples/rfc-example.md) |
 
 ---
 

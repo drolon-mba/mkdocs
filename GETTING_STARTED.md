@@ -52,7 +52,7 @@ cd mkdocs
 
 Es recomendable usar un entorno virtual para aislar las dependencias del proyecto.
 
-#### En Windows:
+#### En Windows
 
 ```bash
 # Crear entorno virtual
@@ -62,7 +62,7 @@ python -m venv env
 .\env\Scripts\activate
 ```
 
-#### En Linux/Mac:
+#### En Linux/Mac
 
 ```bash
 # Crear entorno virtual
@@ -107,7 +107,7 @@ Para ver la documentación en tu navegador con recarga automática:
 mkdocs serve
 ```
 
-Esto iniciará un servidor local en http://127.0.0.1:8000
+Esto iniciará un servidor local en <http://127.0.0.1:8000>
 
 > 🔥 **Hot Reload**: Los cambios que hagas en los archivos `.md` se reflejarán automáticamente en el navegador.
 
@@ -149,7 +149,7 @@ docs/
 ├── 00-indice.md         # Índice general
 ├── 01-fundamentos.md    # Sección 1
 ├── 02-*.md              # Más secciones
-└── reports/             # Templates y ejemplos
+└── reportes/             # Templates y ejemplos
     ├── templates/
     └── examples/
 ```
@@ -207,6 +207,7 @@ graph TD
     B -->|Sí| C[Acción 1]
     B -->|No| D[Acción 2]
 ```
+
 ```
 
 #### PlantUML
@@ -219,6 +220,7 @@ Usuario -> Sistema: Solicitud
 Sistema --> Usuario: Respuesta
 @enduml
 ```
+
 ```
 
 ### Personalizar Configuración
@@ -245,6 +247,7 @@ mkdocs gh-deploy
 ```
 
 Este comando:
+
 1. Construye el sitio
 2. Crea/actualiza la rama `gh-pages`
 3. Pushea los cambios a GitHub
@@ -326,7 +329,8 @@ plugins:
 
 ### El servidor no recarga automáticamente
 
-**Solución**: 
+**Solución**:
+
 1. Detén el servidor (Ctrl+C)
 2. Limpia la caché: `mkdocs build --clean`
 3. Reinicia: `mkdocs serve`

@@ -36,44 +36,57 @@ Esta guía está diseñada para:
 ## 📋 Contenido
 
 ### 🎯 Fundamentos
+
 - Niveles de criticidad, reglas generales de código, reglas por lenguaje y framework
 
 ### 🔬 Desarrollo y Testing
+
 - TDD, BDD, ATDD, DDD, FDD, MDD, PBT
 - Testing de backend, frontend, mobile, performance
 
 ### 🏗️ Arquitectura y Diseño
+
 - Arquitecturas de software, patrones de diseño, FSM
 
 ### 🚀 Operaciones
+
 - DevOps, CI/CD, seguridad, observabilidad, performance
 
 ### 💾 Datos y APIs
+
 - Bases de datos (SQL, NoSQL, Time Series, Graph)
 - APIs (REST, GraphQL, gRPC, WebSockets)
 
 ### 📱 Interfaces y Experiencia
+
 - Desarrollo móvil, UI/UX, accesibilidad
 
 ### ☁️ Infraestructura
+
 - Multi-cloud, serverless, containerization, edge computing
 
 ### 🤖 Datos Avanzados
+
 - Machine Learning, Deep Learning, MLOps, Ciencia de Datos
 
 ### ✅ Calidad y Gestión
+
 - Code coverage, static analysis, linting, peer review
 
 ### 🛠️ Resolución de Problemas
+
 - Ishikawa, 5 Porqués, Pareto, Six Sigma, Kaizen, Lean
 
 ### 📊 Estrategia y Negocio
+
 - FODA, PESTEL, Porter, Product Management, OKRs, KPIs
 
 ### 👥 Cultura y Colaboración
+
 - Pair programming, code review, postmortems, FinOps
 
 ### 📝 Documentación
+
 - Markdown, Mermaid, PlantUML, C4, convenciones, templates
 
 ## 🚀 Quick Start
@@ -103,7 +116,7 @@ pip install -r requeriments.txt
 mkdocs serve
 ```
 
-Visita http://127.0.0.1:8000 en tu navegador.
+Visita <http://127.0.0.1:8000> en tu navegador.
 
 ## 🛠️ Tecnologías
 
@@ -122,7 +135,7 @@ mkdocs/
 │   ├── 00-indice.md              # Índice general
 │   ├── 01-fundamentos.md         # Fundamentos
 │   ├── ...                       # Más secciones (02-28)
-│   └── reports/                  # Templates y ejemplos
+│   └── reportes/                  # Templates y ejemplos
 │       ├── templates/            # Plantillas de reportes
 │       └── examples/             # Ejemplos de reportes
 ├── mkdocs.yml                     # Configuración de MkDocs

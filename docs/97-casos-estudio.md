@@ -33,7 +33,7 @@ Los casos de estudio sirven para:
 
 ### 🌐 Desarrollo Web y Frontend
 
-- [**Portafolio Personal con TypeScript, Angular y SQLite**](./casos-estudio/portafolio-personal-ts-angular.md)
+- [**Portafolio Personal con TypeScript, Angular y SQLite**](./casos-de-estudio/portafolio-personal-ts-angular.md)
   - **Stack**: TypeScript, Angular, SQLite
   - **Conceptos**: Arquitectura Hexagonal, Screaming Architecture, i18n, Design System
   - **Decisiones clave**: Por qué TypeScript sobre JavaScript, Angular sobre React, SQLite sobre PostgreSQL
