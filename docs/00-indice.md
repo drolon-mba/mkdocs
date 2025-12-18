@@ -159,6 +159,12 @@
 - [40 - Gobernanza Low-Code/No-Code (LCNC)](./40-lowcode-nocode.md)
   - ¿Qué es LCNC Governance?, Riesgos Clave de LCNC, Políticas de Seguridad y Acceso, Data Governance para LCNC, Ciclo de Vida y Auditoría, Roles y Accountability, Anti-patrones, Recursos.
 
+### 📚 Casos de Estudio
+
+- [97 - Casos de Estudio](./97-casos-estudio.md)
+  - Análisis detallado de proyectos reales con decisiones técnicas y arquitectónicas justificadas
+  - **Portafolio Personal** (TypeScript, Angular, SQLite): Arquitectura Hexagonal, Screaming Architecture, i18n, ADRs
+
 ### 📝 Recursos de práctica de código y preparación para entrevistas
 
 - [98 - Recursos de práctica de código y preparación para entrevistas](./98-recursos-entrevistas.md)

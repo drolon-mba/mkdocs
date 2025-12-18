@@ -107,4 +107,4 @@ Abordar el riesgo y la seguridad de la proliferación de herramientas *Low-Code/
 
 ---
 
-[⬅️ Anterior: Capítulo 39 - Data Literacy](./39-data-literacy.md) | ⬆️ [Volver arriba](#40-gobernanza-low-codeno-code-lcnc) | [➡️ Siguiente: Recursos de práctica de código y preparación para entrevistas](./98-recursos-entrevistas.md)
+[⬅️ Anterior: Capítulo 39 - Data Literacy](./39-data-literacy.md) | ⬆️ [Volver arriba](#40-gobernanza-low-codeno-code-lcnc) | [➡️ Siguiente: Casos de Estudio](./97-casos-estudio.md)

@@ -147,4 +147,4 @@
 
 ---
 
-[⬅️ Anterior: Gobernanza Low-Code/No-Code (LCNC)](./40-lowcode-nocode.md) | [⬆️ Volver arriba](#98-recursos-de-practica-de-codigo-y-preparacion-para-entrevistas) | [➡️ Siguiente: Glosario](./99-glosario.md)
+[⬅️ Anterior: Casos de Estudio](./97-casos-estudio.md) | [⬆️ Volver arriba](#98-recursos-de-practica-de-codigo-y-preparacion-para-entrevistas) | [➡️ Siguiente: Glosario](./99-glosario.md)
