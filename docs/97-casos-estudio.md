@@ -45,6 +45,13 @@ Los casos de estudio sirven para:
   - **Decisiones clave**: Por qué 3 modelos, PostgreSQL + TimescaleDB sobre MongoDB, FastAPI sobre Django, Wizard multinivel
   - **Artefactos**: ADRs, JTBD, North Star Metric, Pattern Analysis
 
+- [**Voice Volume Tracker para Windows**](./casos-de-estudio/voice-volume-tracker-windows.md)
+  - **Stack**: C# + .NET 8, WPF, NAudio, ML.NET/ONNX, Windows Service
+  - **Conceptos**: Speaker Verification (ML), Procesamiento de Audio en Tiempo Real, FSM (Finite State Machine), DirectX Overlay
+  - **Decisiones clave**: C# sobre Python/Electron, SpeechBrain ECAPA-TDNN, Arquitectura Hexagonal, Encriptación AES-256
+  - **Artefactos**: ADRs, Property-Based Testing, Performance Profiling, Anti-patrones documentados
+  - **Partes**: [Parte 1 (Arquitectura)](./casos-de-estudio/voice-volume-tracker-windows.md) | [Parte 2 (ML y Alertas)](./casos-de-estudio/voice-volume-tracker-parte2.md) | [Parte 3 (Seguridad)](./casos-de-estudio/voice-volume-tracker-parte3.md)
+
 ---
 
 ## 🔗 Relación con otros Capítulos
