@@ -39,6 +39,12 @@ Los casos de estudio sirven para:
   - **Decisiones clave**: Por qué TypeScript sobre JavaScript, Angular sobre React, SQLite sobre PostgreSQL
   - **Artefactos**: ADRs, Decision Journal, Pre-Mortem
 
+- [**Diario Digital de Emociones (Mood Tracker)**](./casos-de-estudio/diario-emociones-mood-tracker.md)
+  - **Stack**: FastAPI, React/Next.js, PostgreSQL + TimescaleDB, OAuth 2.0
+  - **Conceptos**: 3 Modelos de Emociones (Ekman, Plutchik, PAD), ML (K-Means), Visualizaciones 3D, Series Temporales
+  - **Decisiones clave**: Por qué 3 modelos, PostgreSQL + TimescaleDB sobre MongoDB, FastAPI sobre Django, Wizard multinivel
+  - **Artefactos**: ADRs, JTBD, North Star Metric, Pattern Analysis
+
 ---
 
 ## 🔗 Relación con otros Capítulos
